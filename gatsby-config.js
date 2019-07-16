@@ -4,7 +4,7 @@ module.exports = {
     description: `GraphQL Everywhere~`,
     author: `@leroywan`,
   },
-  pathPrefix: `/site`,
+  pathPrefix: `/`,
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
