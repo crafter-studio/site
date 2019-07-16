@@ -1,0 +1,22 @@
+.Layout {
+  position: relative;
+}
+
+.Header {
+  grid-area: header;
+  background: pink;
+
+  .hamburgerMenuActive & {
+    background: red;
+  }
+}
+
+.Content {
+  grid-area: content;
+  background: green;
+}
+
+.Footer {
+  grid-area: footer;
+  background: grey;
+}

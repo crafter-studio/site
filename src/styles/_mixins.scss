@@ -1,0 +1,110 @@
+@import 'variables';
+
+@mixin mobile {
+  @media (min-width: #{$breakpoint-mobile}) {
+    @content;
+  }
+}
+
+@mixin small {
+  @media (min-width: #{$breakpoint-small}) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media (min-width: #{$breakpoint-medium}) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media (min-width: #{$breakpoint-large}) {
+    @content;
+  }
+}
+
+@mixin xlarge {
+  @media (min-width: #{$breakpoint-xlarge}) {
+    @content;
+  }
+}
+
+@mixin max-screen-width {
+  margin-left: $spacing;
+  margin-right: $spacing;
+
+  @include large {
+    max-width: $max-screen-width;
+    margin: 0 auto;
+  }
+}
+
+@mixin box-shadow {
+  box-shadow: 1px 2px 6px 1px rgba(0, 0, 0, 0.1);
+}
+
+// ========================================
+// ANIMATIONS
+// ========================================
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@mixin fadeIn($animation-duration: $animation-duration) {
+  animation: fadeIn $animation-duration ease-in forwards;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@mixin slideUp($animation-duration: $animation-duration) {
+  transform: translateY(20px);
+  animation: slideUp $animation-duration ease-in forwards;
+}
+
+@mixin animation($animation-names...) {
+  animation-name: $animation-names;
+  animation-duration: $animation-duration;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+
+@mixin underlined {
+  &:after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    background-color: $color-primary;
+    width: 0;
+    left: 50%;
+    bottom: 0;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    -webkit-transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+    transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+  }
+
+  &:hover {
+    color: $color-primary;
+  }
+
+  &:hover:after {
+    width: 100%;
+  }
+}

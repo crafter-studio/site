@@ -1,0 +1,40 @@
+@import 'variables';
+@import 'mixins';
+
+html {
+  font-size: $root-font-size;
+
+  @include large {
+    font-size: $root-font-size-medium;
+  }
+
+  @include xlarge {
+    font-size: $root-font-size-xlarge;
+  }
+}
+
+body {
+  font-size: $font-size;
+  font-family: $font-family;
+  font-weight: $font-weight-regular;
+}
+
+a {
+  color: $color-link;
+  text-decoration: none;
+  font-weight: $font-weight-regular;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  line-height: $line-height;
+}
+
+p {
+  color: $color-text;
+}

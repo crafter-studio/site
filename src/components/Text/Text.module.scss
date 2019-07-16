@@ -1,0 +1,93 @@
+.TextContainer {
+  display: block;
+  position: relative;
+
+  p {
+    margin-top: 0;
+    margin-bottom: $spacing-tight;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &.alignLeft {
+    text-align: left;
+  }
+
+  &.alignCenter {
+    text-align: center;
+  }
+
+  &.alignRight {
+    text-align: right;
+  }
+
+  &.alignJustify {
+    text-align: justify;
+  }
+}
+
+.Text {
+  display: block;
+  line-height: $line-height;
+  margin: 0;
+
+  &.sizeH1 {
+    font-size: $font-size-xlarge;
+  }
+
+  &.sizeH2 {
+    font-size: $font-size-large;
+  }
+
+  &.sizeH3 {
+    font-size: $font-size-medium;
+  }
+
+  &.sizeH4 {
+    font-size: $font-size;
+  }
+
+  &.sizeH5,
+  &.sizeH6 {
+    font-size: $font-size-small;
+  }
+
+  &.alignLeft {
+    text-align: left;
+  }
+
+  &.alignCenter {
+    text-align: center;
+  }
+
+  &.alignRight {
+    text-align: right;
+  }
+
+  &.alignJustify {
+    text-align: justify;
+  }
+
+  &.upperCase {
+    text-transform: uppercase;
+    line-height: $line-height;
+    letter-spacing: $letter-spacing;
+  }
+}
+
+.Text.Heading {
+  display: block;
+  line-height: $line-height;
+  margin-bottom: $spacing-tight;
+  margin-top: $spacing;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  &:only-child {
+    margin: 0;
+  }
+}

@@ -1,0 +1,54 @@
+.InputContainer {
+  margin-top: $spacing-tight;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.Input {
+  width: 100%;
+  border: none;
+  background: $color-background-primary;
+  padding: $spacing-tight;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box; /* Firefox, other Gecko */
+  box-sizing: border-box;
+
+  &:focus {
+    outline: 0;
+    background-color: $color-outline;
+  }
+}
+
+.Label {
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing;
+  font-size: $font-size-xsmall;
+  font-weight: $font-weight-bold;
+  cursor: pointer;
+
+  .InputContainer:focus-within & {
+    color: $color-primary;
+  }
+}
+
+.Textarea {
+  width: 100%;
+  min-height: 150px;
+  border: none;
+  background: $color-background-primary;
+  padding: $spacing-tight;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box; /* Firefox, other Gecko */
+  box-sizing: border-box;
+
+  &:focus {
+    outline: 0;
+    background-color: $color-outline;
+  }
+}
+
+.Select {
+  cursor: pointer;
+}

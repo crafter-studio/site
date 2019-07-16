@@ -1,0 +1,33 @@
+$content-grid-gutter: ($max-screen-width - $max-content-width) / 2;
+
+.Grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 100% minmax(0, 1fr) minmax(
+      0,
+      1fr
+    );
+  min-width: 0;
+  min-height: 0;
+
+  @include medium {
+    grid-template-columns:
+      minmax(0, 1fr) minmax(0, $content-grid-gutter) $max-content-width minmax(
+        0,
+        $content-grid-gutter
+      )
+      minmax(0, 1fr);
+  }
+}
+
+.Grid > * {
+  grid-column: 3;
+}
+
+.FullWidth {
+  grid-column: 1 / -1;
+}
+
+.ScreenWidth {
+  grid-column: 2 / -2;
+}
