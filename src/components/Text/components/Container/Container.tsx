@@ -3,7 +3,7 @@ import React from 'react';
 import styles from '../../Text.module.scss';
 import {classNames, classVariants} from '../../../utils/classNames';
 
-export interface Props {
+interface Props {
   align?: 'left' | 'center' | 'right' | 'justify';
 }
 

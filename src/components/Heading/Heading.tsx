@@ -3,7 +3,7 @@ import React from 'react';
 import {classNames, classVariants} from '../utils/classNames';
 import styles from './Heading.module.scss';
 
-export interface Props {
+interface Props {
   tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   uppercase?: boolean;
   center?: boolean;

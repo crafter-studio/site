@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './MaxContentWidth.module.scss';
 import {classNames} from '../utils/classNames';
 
-export interface Props {
+interface Props {
   fullHeight?: boolean;
 }
 

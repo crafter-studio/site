@@ -2,9 +2,9 @@ import React from 'react';
 
 import styles from './PageWrapper.module.scss';
 
-import SEO from '../Seo/seo';
+import SEO from '../SEO';
 
-export interface Props {
+interface Props {
   title: string;
   description: string;
   keywords: string[];

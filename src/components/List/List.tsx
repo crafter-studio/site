@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './List.module.scss';
 import {classNames} from '../../components/utils/classNames';
 
-export interface Props {
+interface Props {
   ordered?: boolean;
   noBullets?: boolean;
   listStyle?: 'disc' | 'circle' | 'square' | 'decimal' | 'lower-roman';

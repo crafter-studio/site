@@ -4,7 +4,7 @@ import {classNames, classVariants} from '../utils/classNames';
 import Container from './components/Container';
 import styles from './Text.module.scss';
 
-export interface Props {
+interface Props {
   tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   size?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   align?: 'left' | 'center' | 'right' | 'justify';

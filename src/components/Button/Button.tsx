@@ -5,7 +5,7 @@ import {classNames, classVariants} from '../utils/classNames';
 
 import styles from './Button.module.scss';
 
-export interface Props {
+interface Props {
   value: string;
   linkPath?: string;
   submit?: boolean;
@@ -16,7 +16,7 @@ export interface Props {
 type State = {};
 type ComposedProps = Props;
 
-export interface ButtonGroupProps {
+interface ButtonGroupProps {
   children: any;
   spacing?: 'tight' | 'loose';
   align?: 'left' | 'center' | 'right';

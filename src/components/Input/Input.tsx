@@ -3,7 +3,7 @@ import React from 'react';
 import Select from './components/Select';
 import styles from './Input.module.scss';
 
-export interface Props {
+interface Props {
   name: string;
   id: string;
   type?: string;
