@@ -10,7 +10,10 @@ interface Props {
 type State = {};
 type ComposedProps = Props;
 
-export default class Header extends React.PureComponent<ComposedProps, State> {
+export default class MaxContentWidth extends React.PureComponent<
+  ComposedProps,
+  State
+> {
   render() {
     const {children, fullHeight} = this.props;
 

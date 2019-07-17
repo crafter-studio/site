@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './PageWrapper.module.scss';
 
-import SEO from '../SEO';
+import {SEO} from '..';
 
 interface Props {
   title: string;
