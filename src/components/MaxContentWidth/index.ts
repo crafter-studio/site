@@ -1,3 +1,3 @@
-import MaxcontentWidth from './MaxcontentWidth';
+import MaxContentWidth from './MaxContentWidth';
 
-export default MaxcontentWidth;
+export default MaxContentWidth;
