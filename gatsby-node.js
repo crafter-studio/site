@@ -6,24 +6,24 @@
 
 // You can delete this file if you're not using it
 
-exports.onCreatePage = ({page, actions}) => {
-  const {deletePage, createPage} = actions;
+// exports.onCreatePage = ({page, actions}) => {
+//   const {deletePage, createPage} = actions;
 
-  return new Promise((resolve) => {
-    // if the page component is the index page component
-    if (`${page.componentPath}`.includes(`/src/pages/index/index.ts`)) {
-      deletePage(page);
+//   return new Promise((resolve) => {
+//     // if the page component is the index page component
+//     if (`${page.componentPath}`.includes(`/src/pages/index/index.ts`)) {
+//       deletePage(page);
 
-      // create a new page but with '/' as path
-      createPage({
-        ...page,
-        path: '/',
-      });
-    }
+//       // create a new page but with '/' as path
+//       createPage({
+//         ...page,
+//         path: '/',
+//       });
+//     }
 
-    resolve();
-  });
-};
+//     resolve();
+//   });
+// };
 
 // const postTemplate = path.resolve(`./src/templates/post.js`);
 

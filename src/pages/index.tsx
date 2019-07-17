@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {PageWrapper, Layout, Content} from '../../components';
+import {PageWrapper, Layout, Content} from '../components';
 
 interface Props {}
 
