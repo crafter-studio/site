@@ -1,8 +1,6 @@
 import React from 'react';
 
-import styles from './PageWrapper.module.scss';
-
-import {SEO} from '..';
+import {SeoWrapper} from '..';
 
 interface Props {
   title: string;
@@ -22,7 +20,7 @@ export default class PageWrapper extends React.PureComponent<
 
     return (
       <div>
-        <SEO
+        <SeoWrapper
           title={title}
           description={description}
           keywords={keywords}
