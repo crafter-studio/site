@@ -13,7 +13,7 @@ $max-content-width: 740px;
 // ======================================
 // FONTS
 // ======================================
-$font-family: 'Open Sans';
+$font-family: 'Muli';
 
 $root-font-size: 10px;
 $root-font-size-medium: 11px;
@@ -91,3 +91,51 @@ $header-height: 68px;
 // FOOTER
 // ======================================
 $footer-height: 280px;
+
+// ========================================
+// MIXINS
+// ========================================
+
+@mixin mobile {
+  @media (min-width: #{$breakpoint-mobile}) {
+    @content;
+  }
+}
+
+@mixin small {
+  @media (min-width: #{$breakpoint-small}) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media (min-width: #{$breakpoint-medium}) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media (min-width: #{$breakpoint-large}) {
+    @content;
+  }
+}
+
+@mixin xlarge {
+  @media (min-width: #{$breakpoint-xlarge}) {
+    @content;
+  }
+}
+
+@mixin max-screen-width {
+  margin-left: $spacing;
+  margin-right: $spacing;
+
+  @include large {
+    max-width: $max-screen-width;
+    margin: 0 auto;
+  }
+}
+
+@mixin box-shadow {
+  box-shadow: 1px 2px 6px 1px rgba(0, 0, 0, 0.1);
+}

@@ -32,7 +32,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sass`,
       options: {
-        data: '@import "global.scss";',
+        data: '@import "variables.scss";',
         includePaths: ['src/styles'],
       },
     },
@@ -42,12 +42,6 @@ module.exports = {
         rule: {
           include: /\.inline\.svg$/,
         },
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [`Open Sans\:400,700,900`],
       },
     },
     {
