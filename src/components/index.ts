@@ -16,6 +16,6 @@ export {default as MaxContentWidth} from './MaxContentWidth';
 
 export {default as PageWrapper} from './PageWrapper';
 
-export {default as SEO} from './SEO';
+export {default as SeoWrapper} from './SeoWrapper';
 
 export {default as Text} from './Text';
