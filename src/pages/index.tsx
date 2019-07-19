@@ -14,7 +14,7 @@ export default class IndexPage extends React.PureComponent<
   render() {
     return (
       <PageWrapper
-        title="Homepage"
+        title="Web Design and Development"
         description="Description"
         keywords={['keyword', 'things']}
       >
