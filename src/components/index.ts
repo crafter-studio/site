@@ -18,4 +18,7 @@ export {default as PageWrapper} from './PageWrapper';
 
 export {default as SeoWrapper} from './SeoWrapper';
 
+// This is an empty export to add global styling and should not be used
+export {default as Styles} from './Styles';
+
 export {default as Text} from './Text';
