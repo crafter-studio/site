@@ -296,3 +296,11 @@ p {
   src: url('./font/Muli-Regular.ttf') format('truetype');
   font-display: fallback;
 }
+
+@font-face {
+  font-family: 'Muli';
+  font-weight: 900;
+  font-style: normal;
+  src: url('./font/Muli-Black.ttf') format('truetype');
+  font-display: fallback;
+}
