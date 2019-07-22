@@ -9,6 +9,9 @@
   p {
     color: white;
     opacity: 0.3;
+    max-height: calc(100vh - 40px);
+    overflow: hidden;
+    text-align: justify;
   }
 }
 
