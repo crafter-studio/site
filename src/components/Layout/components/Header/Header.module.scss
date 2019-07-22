@@ -1,5 +1,11 @@
 .Header {
   height: $header-height;
+
+  & > div {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
 }
 
 .HeaderContent {

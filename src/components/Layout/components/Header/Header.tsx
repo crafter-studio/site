@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './Header.module.scss';
 import Logo from './assets/crafter-studio-logo.svg';
-import {MaxContentWidth} from '../../../../components';
+import {Content} from '../../../../components';
 import Menu from './components/Menu';
 
 export interface Props {}
@@ -14,16 +14,18 @@ export default class Header extends React.PureComponent<ComposedProps, State> {
   render() {
     return (
       <header className={styles.Header}>
-        <MaxContentWidth fullHeight>
-          <div className={styles.HeaderContent}>
-            <div className={styles.LogoContainer}>
-              <Logo />
+        <Content>
+          <Content.ScreenWidth>
+            <div className={styles.HeaderContent}>
+              <div className={styles.LogoContainer}>
+                <Logo />
+              </div>
+              <div className={styles.HamburgerMenuWrapper}>
+                <Menu />
+              </div>
             </div>
-            <div className={styles.HamburgerMenuWrapper}>
-              <Menu />
-            </div>
-          </div>
-        </MaxContentWidth>
+          </Content.ScreenWidth>
+        </Content>
       </header>
     );
   }

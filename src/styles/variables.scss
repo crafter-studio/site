@@ -1,14 +1,24 @@
 // ======================================
+// SPACICNG
+// ======================================
+$spacing: 20px;
+$spacing-tight: 10px;
+$spacing-loose: 30px;
+$spacing-extra-loose: 40px;
+$letter-spacing: 1.5px;
+$line-height: 1.3;
+
+// ======================================
 // BREAKPOINTS
 // ======================================
+$max-screen-width: 1060px;
+$max-content-width: 740px;
+
 $breakpoint-mobile: 320px;
 $breakpoint-small: 540px;
 $breakpoint-medium: 720px;
-$breakpoint-large: 1020px;
+$breakpoint-large: $max-screen-width + $spacing * 2;
 $breakpoint-xlarge: 1480px;
-
-$max-screen-width: 1000px;
-$max-content-width: 740px;
 
 // ======================================
 // FONTS
@@ -58,16 +68,6 @@ $color-text-neg: #e0e0e0;
 
 // Link
 $color-link: black;
-
-// ======================================
-// SPACICNG
-// ======================================
-$spacing: 2rem;
-$spacing-tight: 1rem;
-$spacing-loose: 3rem;
-$spacing-extra-loose: 4rem;
-$letter-spacing: 1.5px;
-$line-height: 1.3;
 
 // ======================================
 // ANIMATION
