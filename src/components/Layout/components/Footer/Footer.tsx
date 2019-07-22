@@ -9,6 +9,6 @@ type ComposedProps = Props;
 
 export default class Footer extends React.PureComponent<ComposedProps, State> {
   render() {
-    return <div>This is the footer</div>;
+    return <div></div>;
   }
 }
