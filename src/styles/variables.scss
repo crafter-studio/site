@@ -37,7 +37,7 @@ $font-size-xlarge: 2.7rem;
 // ======================================
 
 // Colors
-$color-primary: #1f70ad;
+$color-primary: #ffcc00;
 $color-secondary: #ff9c22;
 $color-tertiary: red;
 $white: rgb(250, 250, 250);
@@ -48,13 +48,13 @@ $color-gradient-primary: linear-gradient(
   $color-primary,
   darken($color-primary, 15)
 );
-$color-light-grey: rgb(248, 248, 248);
+$color-light-grey: #f0f0f0;
 
 // Text
-$color-heading: black;
-$color-text: rgb(80, 80, 100);
-$color-heading-neg: $white;
-$color-text-neg: rgb(230, 230, 230);
+$color-heading: #121212;
+$color-text: #363636;
+$color-heading-neg: #f0f0f0;
+$color-text-neg: #e0e0e0;
 
 // Link
 $color-link: black;

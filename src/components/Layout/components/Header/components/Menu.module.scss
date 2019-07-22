@@ -1,17 +1,29 @@
+$menu-height: 27px;
+$menu-width: 27px;
+
 .HamburgerMenu {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: $spacing-tight;
-  height: 21px;
-  width: 30px;
+  min-height: $menu-height;
+  min-width: $menu-width;
   cursor: pointer;
 }
 
 .LineBottom,
+.LineMiddle,
 .LineTop {
-  height: 3px;
-  width: 30px;
+  height: $menu-height / 5;
+  width: 100%;
   background-color: black;
+}
+
+.LineMiddle {
+  width: 100% * 2 / 3;
+}
+
+.LineBottom {
+  width: 100% * 1 / 3;
 }

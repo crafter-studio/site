@@ -1,10 +1,10 @@
 .Layout {
   position: relative;
+  background: #ffcc00;
 }
 
 .Header {
   grid-area: header;
-  background: pink;
 
   .hamburgerMenuActive & {
     background: red;
@@ -13,10 +13,9 @@
 
 .Content {
   grid-area: content;
-  background: green;
+  overflow: auto;
 }
 
 .Footer {
   grid-area: footer;
-  background: grey;
 }

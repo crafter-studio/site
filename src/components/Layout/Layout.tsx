@@ -28,10 +28,7 @@ class Layout extends React.PureComponent<ComposedProps, State> {
         <div className={styles.Header}>
           <Header />
         </div>
-        <div className={styles.Content}>
-          <p>{`${hamburgerMenuActive}`}</p>
-          {children}
-        </div>
+        <div className={styles.Content}>{children}</div>
         <div className={styles.Footer}>
           <Footer />
         </div>

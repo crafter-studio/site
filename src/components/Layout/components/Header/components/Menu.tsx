@@ -24,6 +24,7 @@ class Menu extends React.PureComponent<ComposedProps, State> {
         className={styles.HamburgerMenu}
       >
         <div className={styles.LineTop} />
+        <div className={styles.LineMiddle} />
         <div className={styles.LineBottom} />
       </div>
     );

@@ -7,6 +7,16 @@
   height: 100%;
 }
 
+.LogoContainer {
+  display: flex;
+  align-items: center;
+
+  svg {
+    height: 30px;
+    width: 30px;
+  }
+}
+
 .HamburgerMenuWrapper {
   flex: 1;
   display: flex;
