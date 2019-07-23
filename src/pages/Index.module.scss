@@ -9,13 +9,14 @@
   }
 
   h1 {
-    font-size: 48px;
-    width: 75%;
+    font-size: 40px;
+    width: 100%;
     text-shadow: -2px 2px 0px rgba($color-heading, 0.4);
     text-transform: uppercase;
 
     @include small {
       font-size: 52px;
+      width: 75%;
     }
 
     @include medium {
