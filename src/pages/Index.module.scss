@@ -1,22 +1,29 @@
 .HeroContainer {
   height: calc(100vh - #{$header-height});
 
+  & > div {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    transform: translateY(-$header-height/2);
+  }
+
   h1 {
-    font-size: 60px;
-    width: 100%;
+    font-size: 48px;
+    width: 75%;
     text-shadow: -2px 2px 0px rgba($color-heading, 0.4);
-    padding-top: 140px;
+    text-transform: uppercase;
 
     @include small {
-      padding-top: 120px;
-      width: 75%;
-      font-size: 72px;
+      font-size: 52px;
     }
 
     @include medium {
+      font-size: 64px;
+    }
+
+    @include large {
       width: 50%;
-      padding-top: 100px;
-      font-size: 86px;
     }
   }
 }
