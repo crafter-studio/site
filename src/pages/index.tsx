@@ -23,7 +23,11 @@ export default class IndexPage extends React.PureComponent<
           <div className={styles.HeroContainer}>
             <Content>
               <Content.ScreenWidth>
-                <Text tag="h1">The best web studio on planet Earth.</Text>
+                <Text tag="h1">
+                  <div>The best web</div>
+                  <div>studio on</div>
+                  <div>planet Earth.</div>
+                </Text>
               </Content.ScreenWidth>
             </Content>
           </div>
