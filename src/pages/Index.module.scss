@@ -23,6 +23,10 @@
     }
 
     @include large {
+      font-size: 72px;
+    }
+
+    @include xlarge {
       font-size: 80px;
     }
   }

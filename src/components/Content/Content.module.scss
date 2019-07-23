@@ -21,6 +21,12 @@ $content-grid-gutter: ($max-screen-width - $max-content-width) / 2;
   @include large {
     grid-template-columns: 1fr $content-grid-gutter $max-content-width $content-grid-gutter 1fr;
   }
+
+  @include xlarge {
+    grid-template-columns:
+      1fr $content-grid-gutter minmax($max-content-width, 70vw)
+      $content-grid-gutter 1fr;
+  }
 }
 
 .Grid > * {

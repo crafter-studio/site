@@ -24,7 +24,7 @@ class Background extends React.PureComponent<ComposedProps, State> {
     return (
       <div className={className}>
         <div className={styles.BackgroundContent}>
-          <Text size="h5">
+          <p>
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
             odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.
             Suspendisse urna nibh, viverra non, semper suscipit, posuere a,
@@ -134,7 +134,7 @@ class Background extends React.PureComponent<ComposedProps, State> {
             Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut
             turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere
             a, pede.
-          </Text>
+          </p>
         </div>
       </div>
     );
