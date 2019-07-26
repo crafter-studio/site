@@ -2,7 +2,9 @@ import React from 'react';
 
 import styles from './Grid.module.scss';
 
-export interface Props {}
+export interface Props {
+  article?: boolean;
+}
 
 type State = {};
 type ComposedProps = Props;
@@ -12,13 +14,15 @@ class Grid extends React.PureComponent<ComposedProps, State> {
   static ScreenWidth;
 
   render() {
-    const {children} = this.props;
+    const {children, article} = this.props;
 
-    return (
-      <div className={styles.GridContainer}>
-        <article className={styles.Grid}>{children}</article>
-      </div>
+    const GridContent = article ? (
+      <article className={styles.Grid}>{children}</article>
+    ) : (
+      <div className={styles.Grid}>{children}</div>
     );
+
+    return <div className={styles.GridContainer}>{GridContent}</div>;
   }
 }
 
