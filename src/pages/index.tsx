@@ -31,6 +31,11 @@ export default class IndexPage extends React.PureComponent<
               </Grid.ScreenWidth>
             </Grid>
           </div>
+          <div className={styles.FirstSection}>
+            <div className={styles.Hypnotize}>
+              <h1>CRAFTER STUDIO</h1>
+            </div>
+          </div>
         </Layout>
       </PageWrapper>
     );

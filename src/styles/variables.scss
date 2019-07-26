@@ -38,9 +38,9 @@ $font-size-subscript: 0.8rem;
 $font-size-xsmall: 1rem;
 $font-size-small: 1.3rem;
 $font-size: 1.6rem;
-$font-size-medium: 1.8rem;
-$font-size-large: 2.4rem;
-$font-size-xlarge: 2.7rem;
+$font-size-medium: 2.2rem;
+$font-size-large: 3.6rem;
+$font-size-xlarge: 4.6rem;
 
 // ======================================
 // COLOR Palette
@@ -58,7 +58,8 @@ $color-gradient-primary: linear-gradient(
   $color-primary,
   darken($color-primary, 15)
 );
-$color-light-grey: #f0f0f0;
+$color-white: #f0f0f0;
+$color-black: #121212;
 
 // Text
 $color-heading: #121212;
