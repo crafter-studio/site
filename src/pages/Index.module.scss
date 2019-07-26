@@ -1,11 +1,10 @@
 .HeroContainer {
-  height: calc(100vh - #{$header-height});
+  height: 100vh;
 
   & > div {
     display: flex;
     align-items: center;
     height: 100%;
-    transform: translateY(-$header-height/2);
   }
 
   h1 {
