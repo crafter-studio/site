@@ -18,8 +18,7 @@
   align-items: center;
 
   svg {
-    height: 30px;
-    width: 30px;
+    height: $header-height - 2 * $spacing;
   }
 }
 

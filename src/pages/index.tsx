@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from './Index.module.scss';
-import {PageWrapper, Layout, Text, Content} from '../components';
+import {PageWrapper, Layout, Text, Grid} from '../components';
 
 interface Props {}
 
@@ -21,15 +21,15 @@ export default class IndexPage extends React.PureComponent<
       >
         <Layout>
           <div className={styles.HeroContainer}>
-            <Content>
-              <Content.ScreenWidth>
+            <Grid>
+              <Grid.ScreenWidth>
                 <Text tag="h1">
                   <div>The best web</div>
                   <div>studio on</div>
                   <div>planet Earth.</div>
                 </Text>
-              </Content.ScreenWidth>
-            </Content>
+              </Grid.ScreenWidth>
+            </Grid>
           </div>
         </Layout>
       </PageWrapper>

@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './Header.module.scss';
 import Logo from './assets/crafter-studio-logo.svg';
-import {Content} from '../../../../components';
+import {Grid} from '../../../../components';
 import Menu from './components/Menu';
 
 export interface Props {}
@@ -14,8 +14,8 @@ export default class Header extends React.PureComponent<ComposedProps, State> {
   render() {
     return (
       <header className={styles.Header}>
-        <Content>
-          <Content.ScreenWidth>
+        <Grid>
+          <Grid.ScreenWidth>
             <div className={styles.HeaderContent}>
               <div className={styles.LogoContainer}>
                 <Logo />
@@ -24,8 +24,8 @@ export default class Header extends React.PureComponent<ComposedProps, State> {
                 <Menu />
               </div>
             </div>
-          </Content.ScreenWidth>
-        </Content>
+          </Grid.ScreenWidth>
+        </Grid>
       </header>
     );
   }

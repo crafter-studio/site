@@ -1,13 +1,13 @@
 import React from 'react';
 
-import styles from './Content.module.scss';
+import styles from './Grid.module.scss';
 
 export interface Props {}
 
 type State = {};
 type ComposedProps = Props;
 
-class Heading extends React.PureComponent<ComposedProps, State> {
+class Grid extends React.PureComponent<ComposedProps, State> {
   static FullWidth;
   static ScreenWidth;
 
@@ -30,6 +30,6 @@ const ScreenWidth = ({children}) => (
   <div className={styles.ScreenWidth}>{children}</div>
 );
 
-Heading.FullWidth = FullWidth;
-Heading.ScreenWidth = ScreenWidth;
-export default Heading;
+Grid.FullWidth = FullWidth;
+Grid.ScreenWidth = ScreenWidth;
+export default Grid;
