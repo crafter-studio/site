@@ -1,10 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
-
-import styles from './Menu.module.scss';
-
 import {ReduxState} from '../../../../../redux/reducers';
 import {toggleHamburgerMenu} from '../../../../../redux/actions';
+
+import styles from './Menu.module.scss';
+import {classNames} from '../../../../utils/classNames';
 
 export interface Props {}
 
@@ -18,11 +18,12 @@ class Menu extends React.PureComponent<ComposedProps, State> {
   }
 
   render() {
+    const {darkModeActive} = this.props;
+    console.log(darkModeActive);
+    const className = classNames(styles.HamburgerMenu, styles.DarkModeActive);
+
     return (
-      <div
-        onClick={this.handleMenuClick.bind(this)}
-        className={styles.HamburgerMenu}
-      >
+      <div onClick={this.handleMenuClick.bind(this)} className={className}>
         <div className={styles.LineTop} />
         <div className={styles.LineMiddle} />
         <div className={styles.LineBottom} />
@@ -34,8 +35,9 @@ class Menu extends React.PureComponent<ComposedProps, State> {
 function mapStateToProps(state) {
   const {
     toggleHamburgerMenu: {hamburgerMenuActive},
+    toggleDarkMode: {darkModeActive},
   } = state;
-  return {hamburgerMenuActive};
+  return {hamburgerMenuActive, darkModeActive};
 }
 
 export default connect(

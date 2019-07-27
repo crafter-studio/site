@@ -1,9 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {ReduxState} from '../../redux/reducers';
 
 import styles from './Layout.module.scss';
-
-import {ReduxState} from '../../redux/reducers';
 import {classNames} from '../utils/classNames';
 
 import Background from '../Background';

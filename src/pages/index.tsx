@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from './Index.module.scss';
-import {PageWrapper, Layout, Text, Grid} from '../components';
+import {PageWrapper, Layout, Text, Grid, Scroll} from '../components';
 
 interface Props {}
 
@@ -31,11 +31,19 @@ export default class IndexPage extends React.PureComponent<
               </Grid.ScreenWidth>
             </Grid>
           </div>
-          <div className={styles.FirstSection}>
-            <div className={styles.Hypnotize}>
-              <h1>CRAFTER STUDIO</h1>
+          <Scroll darkMode>
+            <div className={styles.FirstSection}>
+              <div className={styles.Hypnotize}>
+                <h1>CRAFTER STUDIO</h1>
+              </div>
             </div>
-          </div>
+          </Scroll>
+          <Scroll>
+            <div style={{height: '1000px', background: 'grey'}} />
+          </Scroll>
+          <Scroll darkMode>
+            <div style={{height: '1000px', background: 'yellow'}} />
+          </Scroll>
         </Layout>
       </PageWrapper>
     );

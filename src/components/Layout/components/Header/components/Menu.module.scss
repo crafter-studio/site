@@ -12,6 +12,10 @@ $menu-width: 27px;
   cursor: pointer;
 }
 
+.DarkModeActive {
+  background: yellow;
+}
+
 .LineBottom,
 .LineMiddle,
 .LineTop {
@@ -19,6 +23,10 @@ $menu-width: 27px;
   width: 100%;
   background-color: black;
   transition: transform $animation-duration ease-out;
+
+  .DarkModeActive & {
+    background-color: $color-white;
+  }
 }
 
 .LineMiddle {

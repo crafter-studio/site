@@ -7,16 +7,27 @@ interface ReduxProps {
 
 export interface State {
   hamburgerMenuActive: boolean;
+  darkModeActive: boolean;
 }
 
 const initialState: State = {
   hamburgerMenuActive: false,
+  darkModeActive: false,
 };
 
 export const toggleHamburgerMenu = (state = initialState, action) => {
   switch (action.type) {
     case Actions.TOGGLE_HAMBURGER_MENU:
       return {...state, hamburgerMenuActive: action.hamburgerMenuActive};
+    default:
+      return state;
+  }
+};
+
+export const toggleDarkMode = (state = initialState, action) => {
+  switch (action.type) {
+    case Actions.TOGGLE_DARK_MODE:
+      return {...state, darkModeactive: action.darkModeactive};
     default:
       return state;
   }

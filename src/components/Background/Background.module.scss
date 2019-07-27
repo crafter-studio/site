@@ -24,7 +24,7 @@
     font-size: $font-size-small;
 
     @include xlarge {
-      font-size: calc(#{$font-size-medium} + 0.5vw);
+      font-size: $font-size-medium;
     }
   }
 }

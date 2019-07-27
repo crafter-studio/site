@@ -1,6 +1,7 @@
 import {combineReducers} from 'redux';
-import {toggleHamburgerMenu} from './reducers';
+import {toggleHamburgerMenu, toggleDarkMode} from './reducers';
 
 export default combineReducers({
   toggleHamburgerMenu,
+  toggleDarkMode,
 });

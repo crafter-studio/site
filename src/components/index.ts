@@ -18,6 +18,8 @@ export {default as MaxContentWidth} from './MaxContentWidth';
 
 export {default as PageWrapper} from './PageWrapper';
 
+export {default as Scroll} from './Scroll';
+
 export {default as SeoWrapper} from './SeoWrapper';
 
 // This is an empty export to add global styling and should not be used
