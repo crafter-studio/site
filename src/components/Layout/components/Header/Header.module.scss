@@ -5,6 +5,7 @@
   left: 50%;
   top: 0;
   transform: translateX(-50%);
+  z-index: $z-header;
 
   & > div {
     height: 100%;

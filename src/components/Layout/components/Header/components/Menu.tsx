@@ -19,8 +19,10 @@ class Menu extends React.PureComponent<ComposedProps, State> {
 
   render() {
     const {darkModeActive} = this.props;
-    console.log(darkModeActive);
-    const className = classNames(styles.HamburgerMenu, styles.DarkModeActive);
+    const className = classNames(
+      styles.HamburgerMenu,
+      darkModeActive && styles.DarkModeActive,
+    );
 
     return (
       <div onClick={this.handleMenuClick.bind(this)} className={className}>

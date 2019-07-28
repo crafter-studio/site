@@ -27,7 +27,7 @@ export const toggleHamburgerMenu = (state = initialState, action) => {
 export const toggleDarkMode = (state = initialState, action) => {
   switch (action.type) {
     case Actions.TOGGLE_DARK_MODE:
-      return {...state, darkModeactive: action.darkModeactive};
+      return {...state, darkModeActive: action.darkModeActive};
     default:
       return state;
   }

@@ -23,10 +23,6 @@ class Scroll extends React.PureComponent<ComposedProps, State> {
     document.addEventListener('scroll', this.handleScroll);
   }
 
-  componentDidUpdate() {
-    console.log('DarkMode: ', this.props.darkModeActive);
-  }
-
   componentWillUnmount() {
     document.removeEventListener('scroll', this.handleScroll);
   }
@@ -34,16 +30,21 @@ class Scroll extends React.PureComponent<ComposedProps, State> {
   private isInViewport = (e, {top: t, height: h} = e.getBoundingClientRect()) =>
     t <= innerHeight && t + h >= 0;
 
-  private handleScroll() {
-    const {darkMode = false, handleInView, dispatch} = this.props;
+  private isAtTopOfPage = (e, {top: t} = e.getBoundingClientRect()) =>
+    t < 0 && t > -100;
 
-    if (this.isInViewport(this.scrollRef.current)) {
+  private handleScroll() {
+    const {darkMode, handleInView, dispatch} = this.props;
+
+    if (this.isAtTopOfPage(this.scrollRef.current)) {
       if (darkMode) {
         dispatch(toggleDarkMode(true));
       } else {
         dispatch(toggleDarkMode(false));
       }
+    }
 
+    if (this.isInViewport(this.scrollRef.current)) {
       if (handleInView == null) {
         return;
       }
