@@ -1,23 +1,34 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {ReduxState} from '../../redux/reducers';
+import {toggleDarkMode} from '../../redux/actions';
 
 import styles from './Header.module.scss';
 import Logo from './assets/crafter-studio-logo.svg';
 import {Grid} from '../../../../components';
+import {classNames} from '../../../utils/classNames';
 import Menu from './components/Menu';
 
 export interface Props {}
 
 type State = {};
-type ComposedProps = Props;
+type ComposedProps = ReduxState & Props;
 
-export default class Header extends React.PureComponent<ComposedProps, State> {
+class Header extends React.PureComponent<ComposedProps, State> {
   render() {
+    const {darkModeActive} = this.props;
+
+    const logoClass = classNames(
+      styles.LogoContainer,
+      darkModeActive && styles.DarkModeActive,
+    );
+
     return (
       <header className={styles.Header}>
         <Grid>
           <Grid.ScreenWidth>
             <div className={styles.HeaderContent}>
-              <div className={styles.LogoContainer}>
+              <div className={logoClass}>
                 <Logo />
               </div>
               <div className={styles.HamburgerMenuWrapper}>
@@ -30,3 +41,15 @@ export default class Header extends React.PureComponent<ComposedProps, State> {
     );
   }
 }
+
+function mapStateToProps(state) {
+  const {
+    toggleDarkMode: {darkModeActive},
+  } = state;
+  return {darkModeActive};
+}
+
+export default connect(
+  mapStateToProps,
+  null,
+)(Header);
