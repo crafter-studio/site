@@ -45,9 +45,12 @@ class Scroll extends React.PureComponent<ComposedProps, State> {
   }
 
   render() {
+    // window object does not exist in Webpack's Node environment, this is to prevent the error
+    const browserWindow = typeof window !== 'undefined' ? window : null;
+
     return (
       <Waypoint
-        scrollableAncestor={window}
+        scrollableAncestor={browserWindow}
         bottomOffset="90%"
         onEnter={this.handleOnEnter}
         onLeave={this.handleOnLeave}
