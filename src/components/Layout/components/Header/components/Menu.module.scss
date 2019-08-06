@@ -18,10 +18,15 @@ $menu-width: 27px;
   height: $menu-height / 5;
   width: 100%;
   background-color: black;
-  transition: transform $animation-duration ease-out;
+  transition: transform $animation-duration ease-out,
+    background-color $animation-duration ease-in-out;
 
   .DarkModeActive & {
-    background-color: $color-white;
+    background-color: rgba($color-white, $translucent);
+  }
+
+  .DarkModeActive:hover & {
+    background-color: rgba($color-white, $opaque);
   }
 }
 
