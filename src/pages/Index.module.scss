@@ -65,6 +65,6 @@
     background-clip: text;
     background-image: url('../images/hypnotize-background.png');
     animation: bgAnimation 20s linear infinite;
-    opacity: 0.3;
+    opacity: $translucent;
   }
 }
