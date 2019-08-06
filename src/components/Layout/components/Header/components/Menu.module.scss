@@ -17,7 +17,7 @@ $menu-width: 27px;
 .LineTop {
   height: $menu-height / 5;
   width: 100%;
-  background-color: black;
+  background-color: $color-black;
   transition: transform $animation-duration ease-out,
     background-color $animation-duration ease-in-out;
 
