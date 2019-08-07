@@ -22,6 +22,7 @@
 .LogoContainer {
   display: flex;
   align-items: center;
+  cursor: pointer;
 
   svg {
     stroke: $color-black;
@@ -34,7 +35,6 @@
       fill: rgba($color-white, $translucent);
       transition: stroke $animation-duration ease-in-out,
         fill $animation-duration ease-in-out;
-      cursor: pointer;
     }
   }
 
