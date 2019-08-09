@@ -1,9 +1,7 @@
 import React from 'react';
 
-import {Parallax, ParallaxLayer} from 'react-spring/renderprops-addons';
-
 import styles from './Index.module.scss';
-import {PageWrapper, Layout, Text, Grid, Scroll} from '../components';
+import {PageWrapper, Layout, Scroll, ScrambledText} from '../components';
 
 interface Props {}
 
@@ -25,7 +23,13 @@ export default class IndexPage extends React.PureComponent<
           <Scroll darkMode>
             <div className={styles.FirstSection}>
               <div className={styles.Hypnotize}>
-                <h1>CRAFTER STUDIO</h1>
+                <h1>
+                  <ScrambledText
+                    message="CRAFTER STUDIO"
+                    speed={250}
+                    duration={3000}
+                  />
+                </h1>
               </div>
             </div>
           </Scroll>
