@@ -21,7 +21,7 @@ class Scroll extends React.PureComponent<ComposedProps, State> {
   }
 
   private handleOnEnter() {
-    const {darkMode, onEnter, dispatch} = this.props;
+    const {darkMode = false, onEnter, dispatch} = this.props;
 
     if (darkMode) {
       dispatch(toggleDarkMode(true));
