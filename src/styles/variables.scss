@@ -47,7 +47,7 @@ $font-size-xlarge: 4.6rem;
 // ======================================
 
 // Colors
-$color-primary: #ffcc00;
+$color-primary: #f6e100;
 $color-secondary: #ff9c22;
 $color-tertiary: red;
 $color-background-primary: rgb(240, 240, 240);
@@ -57,7 +57,7 @@ $color-gradient-primary: linear-gradient(
   $color-primary,
   darken($color-primary, 15)
 );
-$color-white: #f0f0f0;
+$color-white: #fafafa;
 $color-black: #121212;
 
 // Text
@@ -70,7 +70,7 @@ $color-text-neg: #e0e0e0;
 $color-link: black;
 
 // Transparency
-$translucent: 0.55;
+$translucent: 0.4;
 $opaque: 1;
 
 // ======================================

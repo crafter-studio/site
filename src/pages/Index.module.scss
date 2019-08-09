@@ -8,9 +8,10 @@
   }
 
   h1 {
+    color: $color-black;
     font-size: 36px;
     width: 100%;
-    text-shadow: -2px 2px 0px rgba($color-heading, 0.4);
+    text-shadow: -2px 2px 0px rgba($color-black, $translucent);
     text-transform: uppercase;
 
     @include small {

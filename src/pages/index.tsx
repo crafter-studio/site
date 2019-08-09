@@ -1,5 +1,7 @@
 import React from 'react';
 
+import {Parallax, ParallaxLayer} from 'react-spring/renderprops-addons';
+
 import styles from './Index.module.scss';
 import {PageWrapper, Layout, Text, Grid, Scroll} from '../components';
 
@@ -20,17 +22,6 @@ export default class IndexPage extends React.PureComponent<
         keywords={['keyword', 'things']}
       >
         <Layout>
-          <div className={styles.HeroContainer}>
-            <Grid>
-              <Grid.ScreenWidth>
-                <Text tag="h1">
-                  <div>The best web</div>
-                  <div>studio on</div>
-                  <div>planet Earth.</div>
-                </Text>
-              </Grid.ScreenWidth>
-            </Grid>
-          </div>
           <Scroll darkMode>
             <div className={styles.FirstSection}>
               <div className={styles.Hypnotize}>

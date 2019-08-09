@@ -1,12 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {ReduxState} from '../../redux/reducers';
 
 import styles from './Background.module.scss';
-
-import {ReduxState} from '../../redux/reducers';
-import {classNames} from '../utils/classNames';
-
 import {Text} from '../../components';
+import {classNames} from '../utils/classNames';
 
 export interface Props {}
 
@@ -24,7 +22,7 @@ class Background extends React.PureComponent<ComposedProps, State> {
     return (
       <div className={className}>
         <div className={styles.BackgroundContent}>
-          <p>
+          {/* <p>
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
             odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.
             Suspendisse urna nibh, viverra non, semper suscipit, posuere a,
@@ -134,7 +132,7 @@ class Background extends React.PureComponent<ComposedProps, State> {
             Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut
             turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere
             a, pede.
-          </p>
+          </p> */}
         </div>
       </div>
     );
