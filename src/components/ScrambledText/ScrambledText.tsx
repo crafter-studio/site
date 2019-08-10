@@ -60,7 +60,7 @@ class ScrambledChar extends React.PureComponent<ComposedProps, State> {
 
   private randomChar() {
     const {char} = this.props;
-    const chars = '!<>-_\\/[]{}—=+*^?#________' + char;
+    const chars = '!<>-_\\/[]{}—=+*^?#________  ' + char;
 
     return chars[Math.floor(Math.random() * chars.length)];
   }
