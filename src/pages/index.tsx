@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './Index.module.scss';
 import {
-  AnimatedSquare,
+  AnimatedButton,
   PageWrapper,
   Layout,
   Background,
@@ -30,8 +30,14 @@ export default class IndexPage extends React.PureComponent<
         <Layout>
           <Scroll darkMode>
             <div className={styles.HeroSection}>
-              <Background />
               <div className={styles.Hypnotize}>
+                <p style={{marginBottom: '10px'}}>
+                  <ScrambledText
+                    message="Microsites, Shopify, Web Design & Development"
+                    speed={1000}
+                    duration={4500}
+                  />
+                </p>
                 <h1>
                   <ScrambledText
                     message="CRAFTER STUDIO"
@@ -39,13 +45,10 @@ export default class IndexPage extends React.PureComponent<
                     duration={3000}
                   />
                 </h1>
-                <p>
-                  <ScrambledText
-                    message="Microsites, Shopify, Web Design & Development"
-                    speed={1000}
-                    duration={4500}
-                  />
-                </p>
+              </div>
+              <div>
+                <AnimatedButton to="/work" content="Our Work" />
+                <AnimatedButton to="/work" content="Our Process" />
               </div>
             </div>
           </Scroll>

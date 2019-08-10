@@ -1,4 +1,4 @@
-export {default as AnimatedSquare} from './AnimatedSquare';
+export {default as AnimatedButton} from './AnimatedButton';
 
 export {default as Background} from './Background';
 

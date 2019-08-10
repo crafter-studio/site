@@ -1,5 +1,6 @@
 .HeroSection {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
@@ -13,18 +14,6 @@
   100% {
     background-position: center right;
   }
-}
-
-.Background {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 0;
-  width: 50vw;
-  height: 50vw;
-  max-width: 300px;
-  max-height: 300px;
 }
 
 .Hypnotize {
@@ -48,7 +37,7 @@
     word-wrap: break-word;
     word-break: break-all;
 
-    @include medium {
+    @include small {
       background-size: $font-size-small * 5;
       font-size: $font-size-xlarge;
     }
@@ -61,10 +50,23 @@
   p {
     word-wrap: break-word;
     word-break: break-all;
-    font-size: 1.1rem;
+    font-size: 0.8rem;
     color: $color-text-neg;
     letter-spacing: $letter-spacing;
     background-color: rgba($color-black, 0.8);
     margin: 0;
+
+    @include small {
+      font-size: 1.1rem;
+    }
+
+    @include large {
+      font-size: $font-size-small;
+    }
+  }
+
+  .Button {
+    height: 40px;
+    width: 120px;
   }
 }
