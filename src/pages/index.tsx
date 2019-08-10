@@ -35,20 +35,10 @@ export default class IndexPage extends React.PureComponent<
                 <h1>
                   <ScrambledText
                     message="CRAFTER STUDIO"
-                    speed={200}
+                    speed={500}
                     duration={3000}
                   />
                 </h1>
-                {/* <Text size="h5" uppercase>
-                  <ScrambledText
-                    message="Microsites, Shopify, Web Development & Design"
-                    speed={250}
-                    duration={3000}
-                  />
-                </Text> */}
-              </div>
-              <div className={styles.Background}>
-                <AnimatedSquare />
               </div>
             </div>
           </Scroll>

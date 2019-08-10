@@ -60,13 +60,13 @@ class ScrambledChar extends React.PureComponent<ComposedProps, State> {
 
   private randomChar() {
     const {char} = this.props;
-    const chars = '!<>-_\\/[]{}—=+*^?#________  ' + char;
+    const chars = '!<>-_\\/[]{}—=+*^?#_-$@01&' + char;
 
     return chars[Math.floor(Math.random() * chars.length)];
   }
 
   render() {
-    return <>{this.state.scramblingChar}</>;
+    return this.state.scramblingChar;
   }
 }
 
@@ -84,21 +84,32 @@ const ScrambledText = ({message, speed = 40, duration = 2000}) => {
   }
 
   function variedSpeed() {
-    return variableNumber(speed / 2, speed);
+    return variableNumber(speed / 1.5, speed);
   }
 
   function variedDuration() {
     return variableNumber(duration / 3, duration);
   }
 
-  return messageArray.map((item, index) => (
-    <ScrambledChar
-      key={index}
-      char={message[index]}
-      speed={variedSpeed()}
-      duration={variedDuration()}
-    />
-  ));
+  const scrambledText = messageArray.map((item, index) => {
+    if (message[index] === ' ') {
+      return <span key={index}>{'\u00A0'}</span>;
+    } else {
+      return (
+        <span key={index}>
+          <ScrambledChar
+            char={message[index]}
+            speed={variedSpeed()}
+            duration={variedDuration()}
+          />
+        </span>
+      );
+    }
+  });
+
+  console.log(scrambledText);
+
+  return scrambledText;
 };
 
 export default ScrambledText;

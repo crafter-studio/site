@@ -37,17 +37,17 @@
     font-size: $font-size-large - 0.2;
     color: transparent;
     background-repeat: repeat;
-    background-size: $font-size-small * 4;
+    background-size: 280px;
     background-clip: text;
-    background-image: url('../images/hypnotize-background.png');
-    animation: bgAnimation 36s linear infinite;
+    background-image: url('../images/vertical-waves.png');
+    animation: bgAnimation 16s linear infinite;
     margin-top: 0;
     margin-bottom: $spacing / 2;
-    opacity: 0.8;
-    z-index: 1;
+    opacity: 1;
+    z-index: 2;
 
     @include medium {
-      background-size: $font-size-small * 5;
+      // background-size: $font-size-small * 5;
       font-size: $font-size-xlarge;
     }
 
