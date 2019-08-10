@@ -1,0 +1,59 @@
+$button-width: 120px;
+$button-height: 120px;
+$button-circumference: (2 * $button-width) + (2 * $button-height);
+
+@keyframes drawSquare {
+  0% {
+    stroke-dasharray: $button-height $button-circumference;
+    stroke-dashoffset: neg($button-width + $button-height/2);
+    stroke-width: 2px;
+  }
+
+  100% {
+    stroke-dasharray: $button-circumference;
+    stroke-dashoffset: 0;
+    stroke-width: 4px;
+  }
+}
+
+@keyframes rotateSquare {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.SvgWrapper {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  animation: rotateSquare 6s ease-in-out forwards;
+
+  > svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  //   &:hover .Rect {
+  //     stroke-dasharray: $button-circumference;
+  //     stroke-dashoffset: 0;
+  //     stroke-width: 2px;
+  //   }
+}
+
+.Rect {
+  fill: transparent;
+  stroke-dasharray: $button-height $button-circumference;
+  stroke-dashoffset: neg($button-width + $button-height/2);
+  stroke-width: 2px;
+  stroke: $color-primary;
+  transition: $animation-duration stroke-dasharray ease-in-out,
+    $animation-duration stroke-dashoffset ease-in-out,
+    $animation-duration stroke-width ease-in-out,
+    $animation-duration-long fill ease-in-out;
+
+  animation: drawSquare 6s ease-in-out forwards;
+}

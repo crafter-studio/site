@@ -48,6 +48,7 @@ $font-size-xlarge: 4.6rem;
 
 // Colors
 $color-primary: #f6e100;
+$color-accent-neg: #cdc038;
 $color-secondary: #ff9c22;
 $color-tertiary: red;
 $color-background-primary: rgb(240, 240, 240);
@@ -64,7 +65,7 @@ $color-black: #121212;
 $color-heading: #121212;
 $color-text: #363636;
 $color-heading-neg: #f0f0f0;
-$color-text-neg: #e0e0e0;
+$color-text-neg: #bababa;
 
 // Link
 $color-link: black;
@@ -143,4 +144,12 @@ $footer-height: 280px;
 
 @mixin box-shadow {
   box-shadow: 1px 2px 6px 1px rgba(0, 0, 0, 0.1);
+}
+
+// ====================================================================================
+// FUNCTIONS
+// ====================================================================================
+
+@function neg($value) {
+  @return #{0 - $value};
 }

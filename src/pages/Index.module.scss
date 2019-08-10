@@ -1,40 +1,8 @@
-.HeroContainer {
+.HeroSection {
   height: 100vh;
-
-  & > div {
-    display: flex;
-    align-items: center;
-    height: 100%;
-  }
-
-  h1 {
-    color: $color-black;
-    font-size: 36px;
-    width: 100%;
-    text-shadow: -2px 2px 0px rgba($color-black, $translucent);
-    text-transform: uppercase;
-
-    @include small {
-      font-size: 52px;
-    }
-
-    @include medium {
-      font-size: 64px;
-    }
-
-    @include large {
-      font-size: 72px;
-    }
-
-    @include xlarge {
-      font-size: 80px;
-    }
-  }
-}
-
-.FirstSection {
   display: flex;
-  background-color: $color-white;
+  align-items: center;
+  justify-content: center;
 }
 
 @keyframes bgAnimation {
@@ -47,27 +15,53 @@
   }
 }
 
+.Background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  width: 50vw;
+  height: 50vw;
+  max-width: 300px;
+  max-height: 300px;
+}
+
 .Hypnotize {
-  flex: 1;
-  position: relative;
-  height: 100vh;
-  background-color: $color-black;
+  text-align: center;
+  padding-left: $spacing;
+  padding-right: $spacing;
+  z-index: 100;
 
   h1 {
-    position: absolute;
-    text-align: center;
-    width: 60vw;
-    top: 50%;
-    left: 50%;
-    margin: 0;
-    transform: translate(-50%, -50%);
-    font-size: $font-size-xlarge;
+    font-size: $font-size-large;
     color: transparent;
     background-repeat: repeat;
-    background-size: 120px;
+    background-size: $font-size-small * 4;
     background-clip: text;
     background-image: url('../images/hypnotize-background.png');
-    animation: bgAnimation 20s linear infinite;
-    opacity: $translucent;
+    animation: bgAnimation 36s linear infinite;
+    margin-top: 0;
+    margin-bottom: $spacing / 2;
+    opacity: 0.8;
+    z-index: 1;
+
+    @include medium {
+      background-size: $font-size-small * 5;
+      font-size: $font-size-xlarge;
+    }
+
+    @include large {
+      font-size: $font-size-xlarge * 1.2;
+    }
+  }
+
+  p {
+    font-size: $font-size-small;
+    color: $color-text-neg;
+    letter-spacing: $letter-spacing;
+    background-color: rgba($color-black, 0.8);
+    padding-top: $spacing / 2;
+    padding-bottom: $spacing / 2;
   }
 }

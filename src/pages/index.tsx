@@ -1,7 +1,15 @@
 import React from 'react';
 
 import styles from './Index.module.scss';
-import {PageWrapper, Layout, Scroll, ScrambledText} from '../components';
+import {
+  AnimatedSquare,
+  PageWrapper,
+  Layout,
+  Background,
+  Text,
+  Scroll,
+  ScrambledText,
+} from '../components';
 
 interface Props {}
 
@@ -21,15 +29,26 @@ export default class IndexPage extends React.PureComponent<
       >
         <Layout>
           <Scroll darkMode>
-            <div className={styles.FirstSection}>
+            <div className={styles.HeroSection}>
+              <Background />
               <div className={styles.Hypnotize}>
                 <h1>
                   <ScrambledText
                     message="CRAFTER STUDIO"
+                    speed={200}
+                    duration={1500}
+                  />
+                </h1>
+                <Text size="h5" uppercase>
+                  <ScrambledText
+                    message="Microsites, Shopify, Web Development & Design"
                     speed={250}
                     duration={3000}
                   />
-                </h1>
+                </Text>
+              </div>
+              <div className={styles.Background}>
+                <AnimatedSquare />
               </div>
             </div>
           </Scroll>
