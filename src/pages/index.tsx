@@ -39,6 +39,13 @@ export default class IndexPage extends React.PureComponent<
                     duration={3000}
                   />
                 </h1>
+                <p>
+                  <ScrambledText
+                    message="Microsites, Shopify, Web Design & Development"
+                    speed={1000}
+                    duration={4500}
+                  />
+                </p>
               </div>
             </div>
           </Scroll>

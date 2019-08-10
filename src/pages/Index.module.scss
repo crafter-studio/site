@@ -1,8 +1,8 @@
 .HeroSection {
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100vh;
 }
 
 @keyframes bgAnimation {
@@ -31,23 +31,25 @@
   text-align: center;
   padding-left: $spacing;
   padding-right: $spacing;
-  z-index: 100;
+  max-width: calc(100vw - #{$spacing * 2});
 
   h1 {
     font-size: $font-size-large - 0.2;
     color: transparent;
     background-repeat: repeat;
-    background-size: 280px;
+    background-size: $font-size-small * 4;
     background-clip: text;
-    background-image: url('../images/vertical-waves.png');
-    animation: bgAnimation 16s linear infinite;
+    background-image: url('../images/hypnotize-background.png');
+    animation: bgAnimation 240s linear infinite;
     margin-top: 0;
     margin-bottom: $spacing / 2;
     opacity: 1;
     z-index: 2;
+    word-wrap: break-word;
+    word-break: break-all;
 
     @include medium {
-      // background-size: $font-size-small * 5;
+      background-size: $font-size-small * 5;
       font-size: $font-size-xlarge;
     }
 
@@ -57,11 +59,12 @@
   }
 
   p {
-    font-size: $font-size-small;
+    word-wrap: break-word;
+    word-break: break-all;
+    font-size: 1.1rem;
     color: $color-text-neg;
     letter-spacing: $letter-spacing;
     background-color: rgba($color-black, 0.8);
-    padding-top: $spacing / 2;
-    padding-bottom: $spacing / 2;
+    margin: 0;
   }
 }

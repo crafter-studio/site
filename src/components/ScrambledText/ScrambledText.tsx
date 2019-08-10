@@ -96,8 +96,9 @@ const ScrambledText = ({message, speed = 40, duration = 2000}) => {
       return <span key={index}>{'\u00A0'}</span>;
     } else {
       return (
-        <span key={index}>
+        <span>
           <ScrambledChar
+            key={index}
             char={message[index]}
             speed={variedSpeed()}
             duration={variedDuration()}
