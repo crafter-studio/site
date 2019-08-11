@@ -84,7 +84,9 @@
   .Rect {
     fill: transparent;
     stroke-dasharray: $button-height $button-circumference;
-    stroke-dashoffset: calc(0 - (#{$button-width} + #{$button-height} / 2));
+    stroke-dashoffset: calc(
+      0px - var(--button-width) - calc(var(--button-height) / 2)
+    );
     stroke-width: 4px;
     stroke: $color-text-neg;
     transition: $animation-duration stroke-dasharray ease-in-out,
