@@ -36,7 +36,7 @@ export default class AnimatedButton extends React.PureComponent<
       this.setState({
         renderedWidth: width,
       });
-    }, 100);
+    }, 500);
   }
 
   componentDidUpdate() {
