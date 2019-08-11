@@ -50,18 +50,14 @@
   p {
     word-wrap: break-word;
     word-break: break-all;
-    font-size: 0.8rem;
+    font-size: $font-size-small;
     color: $color-text-neg;
     letter-spacing: $letter-spacing;
     background-color: rgba($color-black, 0.8);
     margin: 0;
 
-    @include small {
-      font-size: 1.1rem;
-    }
-
     @include large {
-      font-size: $font-size-small;
+      font-size: $font-size;
     }
   }
 

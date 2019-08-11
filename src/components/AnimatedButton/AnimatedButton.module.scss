@@ -36,7 +36,7 @@
   position: relative;
   cursor: pointer;
   animation: fadeIn $animation-duration-long ease-in-out forwards;
-  animation-delay: 4.5s;
+  animation-delay: 3s;
   opacity: 0;
 
   &:not(:first-child) {
@@ -75,20 +75,21 @@
   }
 
   &:hover .Rect {
-    stroke-dasharray: $button-circumference;
-    stroke-dashoffset: 0;
+    stroke-dasharray: $button-circumference $button-circumference;
+    stroke-dashoffset: 0px;
     stroke-width: 3px;
     stroke: $color-primary;
   }
 
   .Rect {
     fill: transparent;
-    stroke-dasharray: $button-height $button-circumference;
+    stroke-dasharray: calc(var(--button-height) * 2)
+      calc(#{$button-circumference} - calc(var(--button-height) * 2));
     stroke-dashoffset: calc(
-      0px - var(--button-width) - calc(var(--button-height) / 2)
+      0px - var(--button-width) - var(--button-height) - var(--button-height)
     );
     stroke-width: 4px;
-    stroke: $color-text-neg;
+    stroke: rgba($color-text-neg, $translucent);
     transition: $animation-duration stroke-dasharray ease-in-out,
       $animation-duration stroke-dashoffset ease-in-out,
       $animation-duration stroke-width ease-in-out,

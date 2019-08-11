@@ -33,22 +33,21 @@ export default class IndexPage extends React.PureComponent<
               <div className={styles.Hypnotize}>
                 <p style={{marginBottom: '10px'}}>
                   <ScrambledText
-                    message="Microsites, Shopify, Web Design & Development"
+                    message="Web Development & Design"
                     speed={1000}
-                    duration={4500}
+                    duration={3000}
                   />
                 </p>
                 <h1>
                   <ScrambledText
                     message="CRAFTER STUDIO"
                     speed={500}
-                    duration={3000}
+                    duration={2000}
                   />
                 </h1>
               </div>
               <div>
-                <AnimatedButton to="/work" content="Our Work" />
-                <AnimatedButton to="/work" content="Our Process" />
+                <AnimatedButton width={160} to="/work" content="Our Process" />
               </div>
             </div>
           </Scroll>
