@@ -1,5 +1,5 @@
-$menu-height: 27px;
-$menu-width: 27px;
+$menu-height: $spacing;
+$menu-width: $spacing;
 
 .HamburgerMenu {
   display: flex;
@@ -9,6 +9,8 @@ $menu-width: 27px;
   overflow: hidden;
   min-height: $menu-height;
   min-width: $menu-width;
+  max-height: $header-height / 2;
+  max-width: $header-height / 2;
   cursor: pointer;
 }
 

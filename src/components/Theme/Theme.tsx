@@ -13,7 +13,7 @@ interface Props {
 type State = {};
 type ComposedProps = ReduxState & Props;
 
-class Scroll extends React.PureComponent<ComposedProps, State> {
+class Theme extends React.PureComponent<ComposedProps, State> {
   constructor(props) {
     super(props);
     this.handleOnEnter = this.handleOnEnter.bind(this);
@@ -25,6 +25,8 @@ class Scroll extends React.PureComponent<ComposedProps, State> {
 
     if (darkMode) {
       dispatch(toggleDarkMode(true));
+    } else {
+      dispatch(toggleDarkMode(false));
     }
 
     if (onEnter != null) {
@@ -37,6 +39,8 @@ class Scroll extends React.PureComponent<ComposedProps, State> {
 
     if (darkMode) {
       dispatch(toggleDarkMode(false));
+    } else {
+      dispatch(toggleDarkMode(true));
     }
 
     if (onLeave != null) {
@@ -71,4 +75,4 @@ function mapStateToProps(state) {
 export default connect(
   mapStateToProps,
   null,
-)(Scroll);
+)(Theme);

@@ -46,12 +46,16 @@
   }
 
   svg {
-    height: $header-height - 2 * $spacing;
+    height: $spacing;
+    max-height: $header-height / 2;
   }
 }
 
-.HamburgerMenuWrapper {
+.CompanyName {
   flex: 1;
+}
+
+.HamburgerMenuWrapper {
   display: flex;
   align-items: center;
   justify-content: flex-end;

@@ -2,13 +2,12 @@ import React from 'react';
 
 import styles from './Index.module.scss';
 import {
-  AnimatedButton,
+  Text,
   PageWrapper,
   Layout,
-  Background,
-  Text,
-  Scroll,
+  Theme,
   ScrambledText,
+  AnimatedButton,
 } from '../components';
 
 interface Props {}
@@ -28,16 +27,9 @@ export default class IndexPage extends React.PureComponent<
         keywords={['keyword', 'things']}
       >
         <Layout>
-          <Scroll darkMode>
+          <Theme darkMode>
             <div className={styles.HeroSection}>
               <div className={styles.Hypnotize}>
-                <p style={{marginBottom: '10px'}}>
-                  <ScrambledText
-                    message="Web Development & Design"
-                    speed={1000}
-                    duration={3000}
-                  />
-                </p>
                 <h1>
                   <ScrambledText
                     message="CRAFTER STUDIO"
@@ -46,11 +38,23 @@ export default class IndexPage extends React.PureComponent<
                   />
                 </h1>
               </div>
-              <div>
-                <AnimatedButton width={160} to="/work" content="Our Process" />
+              <div className={styles.Tagline}>
+                <Text>Web Development & Design</Text>
               </div>
+              {/* <div className={styles.QuickLinks}>
+                <AnimatedButton width={160} to="/about" content="About Us" />
+                <AnimatedButton width={140} to="/work" content="Our Work" />>
+              </div> */}
             </div>
-          </Scroll>
+          </Theme>
+          <Theme darkMode={false}>
+            <div
+              style={{marginTop: '420px', height: '100vh', background: 'white'}}
+            />
+          </Theme>
+          <Theme darkMode>
+            <div style={{height: '100vh', background: 'black'}} />
+          </Theme>
         </Layout>
       </PageWrapper>
     );

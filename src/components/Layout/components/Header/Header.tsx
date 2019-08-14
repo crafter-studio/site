@@ -5,7 +5,7 @@ import {toggleDarkMode} from '../../redux/actions';
 
 import styles from './Header.module.scss';
 import Logo from './assets/crafter-studio-logo.svg';
-import {Grid} from '../../../../components';
+import {Grid, Text} from '../../../../components';
 import {classNames} from '../../../utils/classNames';
 import Menu from './components/Menu';
 
@@ -30,6 +30,11 @@ class Header extends React.PureComponent<ComposedProps, State> {
             <div className={styles.HeaderContent}>
               <div className={logoClass}>
                 <Logo />
+              </div>
+              <div className={styles.CompanyName}>
+                {/* <Text size="h4" tag="h2" align="center" uppercase>
+                  Crafter
+                </Text> */}
               </div>
               <div className={styles.HamburgerMenuWrapper}>
                 <Menu />

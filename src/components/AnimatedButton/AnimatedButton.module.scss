@@ -77,18 +77,18 @@
   &:hover .Rect {
     stroke-dasharray: $button-circumference $button-circumference;
     stroke-dashoffset: 0px;
-    stroke-width: 3px;
+    stroke-width: 2px;
     stroke: $color-primary;
   }
 
   .Rect {
     fill: transparent;
-    stroke-dasharray: calc(var(--button-height) * 2)
-      calc(#{$button-circumference} - calc(var(--button-height) * 2));
+    stroke-dasharray: calc(#{$button-width / 3}) $button-circumference;
     stroke-dashoffset: calc(
-      0px - var(--button-width) - var(--button-height) - var(--button-height)
+      0px - var(--button-width) - var(--button-height) - #{var(--button-width) /
+        3}
     );
-    stroke-width: 4px;
+    stroke-width: 3px;
     stroke: rgba($color-text-neg, $translucent);
     transition: $animation-duration stroke-dasharray ease-in-out,
       $animation-duration stroke-dashoffset ease-in-out,
