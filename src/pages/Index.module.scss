@@ -1,13 +1,16 @@
 .HeroSection {
-  position: fixed;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 420px;
+  height: 280px;
   width: 100%;
-  background-color: $color-black;
-  z-index: -1;
+  background-color: $color-white;
+
+  @include large {
+    height: 420px;
+  }
 }
 
 @keyframes bgAnimation {
@@ -20,25 +23,35 @@
   }
 }
 
+@keyframes fadeInTextColor {
+  from {
+    color: rgba(0, 0, 0, 0);
+  }
+
+  to {
+    color: rgba($color-heading, 1);
+  }
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(50%);
+    transform: translateY(calc(#{$spacing * 2} + 50%));
   }
 
   to {
     opacity: 1;
-    transform: translateY(0px);
+    transform: translateY($spacing);
   }
 }
 
 @keyframes fadeUpHeroText {
   0% {
-    transform: translateY(15%);
+    transform: translateY(calc(#{$spacing} + 15%));
   }
 
   100% {
-    transform: translateY(0px);
+    transform: translateY($spacing);
   }
 }
 
@@ -52,8 +65,8 @@
   p {
     opacity: 0;
     animation: fadeInUp $animation-duration-long ease-in-out forwards;
-    animation-delay: 2s;
-    color: $color-text-neg;
+    animation-delay: 1.5s;
+    color: $color-text;
   }
 }
 
@@ -62,9 +75,8 @@
   padding-left: $spacing;
   padding-right: $spacing;
   max-width: calc(100vw - #{$spacing * 2});
-  transform: translateY(15%);
-  animation: fadeUpHeroText $animation-duration-long ease-in-out forwards;
-  animation-delay: 2s;
+  transform: translateY(calc(#{$spacing} + 15%));
+  animation: fadeUpHeroText $animation-duration-long 1.5s ease-in-out forwards;
 
   h1 {
     font-size: $font-size-large - 0.2;
@@ -80,14 +92,13 @@
     z-index: 2;
     word-wrap: break-word;
     word-break: break-all;
+    color: rgba($color-heading, 0);
+    animation: fadeInTextColor $animation-duration-long 1.5s ease-in-out
+      forwards;
 
     @include small {
       background-size: $font-size-small * 5;
       font-size: $font-size-xlarge;
-    }
-
-    @include large {
-      font-size: $font-size-xlarge * 1.2;
     }
   }
 

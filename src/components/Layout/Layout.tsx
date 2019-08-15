@@ -5,7 +5,6 @@ import {ReduxState} from '../../redux/reducers';
 import styles from './Layout.module.scss';
 import {classNames} from '../utils/classNames';
 
-import Background from '../Background';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
@@ -25,7 +24,6 @@ class Layout extends React.PureComponent<ComposedProps, State> {
 
     return (
       <div className={layoutClassName}>
-        <Background />
         <div className={styles.Header}>
           <Header />
         </div>

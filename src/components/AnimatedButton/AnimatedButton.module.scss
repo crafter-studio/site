@@ -36,7 +36,7 @@
   position: relative;
   cursor: pointer;
   animation: fadeIn $animation-duration-long ease-in-out forwards;
-  animation-delay: 3s;
+  animation-delay: 1.75s;
   opacity: 0;
 
   &:not(:first-child) {
@@ -72,6 +72,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    z-index: -1;
   }
 
   &:hover .Rect {

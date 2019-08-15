@@ -1,7 +1,9 @@
 import React from 'react';
+import {Waypoint} from 'react-waypoint';
 
 import styles from './Index.module.scss';
 import {
+  Decor,
   Text,
   PageWrapper,
   Layout,
@@ -19,7 +21,14 @@ export default class IndexPage extends React.PureComponent<
   ComposedProps,
   State
 > {
+  state: State = {};
+  constructor(props) {
+    super(props);
+  }
+
   render() {
+    const browserWindow = typeof window !== 'undefined' ? window : null;
+
     return (
       <PageWrapper
         title="Web Design and Development"
@@ -27,34 +36,24 @@ export default class IndexPage extends React.PureComponent<
         keywords={['keyword', 'things']}
       >
         <Layout>
-          <Theme darkMode>
-            <div className={styles.HeroSection}>
-              <div className={styles.Hypnotize}>
-                <h1>
-                  <ScrambledText
-                    message="CRAFTER STUDIO"
-                    speed={500}
-                    duration={2000}
-                  />
-                </h1>
-              </div>
-              <div className={styles.Tagline}>
-                <Text>Web Development & Design</Text>
-              </div>
-              {/* <div className={styles.QuickLinks}>
-                <AnimatedButton width={160} to="/about" content="About Us" />
-                <AnimatedButton width={140} to="/work" content="Our Work" />>
-              </div> */}
+          <div className={styles.HeroSection}>
+            <div className={styles.Hypnotize}>
+              <h1>
+                <ScrambledText
+                  message="CRAFTER STUDIO"
+                  speed={500}
+                  duration={1500}
+                />
+              </h1>
             </div>
-          </Theme>
-          <Theme darkMode={false}>
-            <div
-              style={{marginTop: '420px', height: '100vh', background: 'white'}}
-            />
-          </Theme>
-          <Theme darkMode>
-            <div style={{height: '100vh', background: 'black'}} />
-          </Theme>
+            <div className={styles.Tagline}>
+              <Text>Web Development & Design</Text>
+            </div>
+          </div>
+          <div />
+          <Decor.TriangleTop color="#fcfcfc" />
+          <div style={{height: '100vh'}} />
+          <Theme darkMode />
         </Layout>
       </PageWrapper>
     );
