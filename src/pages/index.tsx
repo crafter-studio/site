@@ -1,5 +1,4 @@
 import React from 'react';
-import {Waypoint} from 'react-waypoint';
 
 import styles from './Index.module.scss';
 import {
@@ -7,9 +6,8 @@ import {
   Text,
   PageWrapper,
   Layout,
-  Theme,
   ScrambledText,
-  AnimatedButton,
+  Scroll,
 } from '../components';
 
 interface Props {}
@@ -27,8 +25,6 @@ export default class IndexPage extends React.PureComponent<
   }
 
   render() {
-    const browserWindow = typeof window !== 'undefined' ? window : null;
-
     return (
       <PageWrapper
         title="Web Design and Development"
@@ -53,7 +49,10 @@ export default class IndexPage extends React.PureComponent<
           <div />
           <Decor.TriangleTop color="#fcfcfc" />
           <div style={{height: '100vh'}} />
-          <Theme darkMode />
+          <Scroll>
+            <Decor.DotsGrid width={75} height={75} />
+          </Scroll>
+          <div style={{height: '100vh'}} />
         </Layout>
       </PageWrapper>
     );

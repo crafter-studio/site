@@ -24,6 +24,8 @@ export {default as PageWrapper} from './PageWrapper';
 
 export {default as ScrambledText} from './ScrambledText';
 
+export {default as Scroll} from './Scroll';
+
 export {default as Theme} from './Theme';
 
 export {default as SeoWrapper} from './SeoWrapper';
