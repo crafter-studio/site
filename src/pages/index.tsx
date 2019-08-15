@@ -47,8 +47,13 @@ export default class IndexPage extends React.PureComponent<
             </div>
           </div>
           <div />
-          <Decor.TriangleTop color="#fcfcfc" />
-          <div style={{height: '100vh'}} />
+          <Decor.TriangleTop
+            color="var(--color-light-grey)"
+            background="var(--color-dark-grey)"
+          />
+          <div
+            style={{height: '100vh', backgroundColor: 'var(--color-dark-grey)'}}
+          />
           <Scroll>
             <Decor.DotsGrid width={75} height={75} />
           </Scroll>

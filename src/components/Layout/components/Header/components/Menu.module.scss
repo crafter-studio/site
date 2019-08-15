@@ -24,7 +24,7 @@ $menu-width: $spacing;
     background-color $animation-duration ease-in-out;
 
   .DarkModeActive & {
-    background-color: rgba($color-white, $translucent);
+    background-color: rgba($color-light-grey, $translucent);
   }
 
   .DarkModeActive:hover & {

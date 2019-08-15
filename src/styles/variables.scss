@@ -43,22 +43,17 @@ $font-size-large: 3.6rem;
 $font-size-xlarge: 4.6rem;
 
 // ======================================
-// COLOR Palette
+// COLOR Palette | Note: CSS variables of
+// these values are also stored in
+// Styles.module.scss
 // ======================================
 
 // Colors
 $color-primary: #ffda12;
-$color-accent-neg: #cdc038;
-$color-secondary: #ff9c22;
-$color-tertiary: red;
-$color-background-primary: rgb(240, 240, 240);
-$color-outline: #f0f8ff;
-$color-gradient-primary: linear-gradient(
-  -45deg,
-  $color-primary,
-  darken($color-primary, 15)
-);
-$color-white: #fcfcfc;
+$color-input-bg: #fafafa;
+$color-input-outline: #f0f8ff;
+$color-light-grey: #fcfcfc;
+$color-dark-grey: #efefef;
 $color-black: #121212;
 
 // Text

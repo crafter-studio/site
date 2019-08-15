@@ -31,8 +31,8 @@
 
   &.DarkModeActive {
     svg {
-      stroke: rgba($color-white, $translucent);
-      fill: rgba($color-white, $translucent);
+      stroke: rgba($color-light-grey, $translucent);
+      fill: rgba($color-light-grey, $translucent);
       transition: stroke $animation-duration ease-in-out,
         fill $animation-duration ease-in-out;
     }
@@ -40,8 +40,8 @@
 
   &.DarkModeActive:hover {
     svg {
-      stroke: rgba($color-white, $opaque);
-      fill: rgba($color-white, $opaque);
+      stroke: rgba($color-light-grey, $opaque);
+      fill: rgba($color-light-grey, $opaque);
     }
   }
 

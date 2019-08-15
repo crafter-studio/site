@@ -9,7 +9,7 @@
 .Input {
   width: 100%;
   border: none;
-  background: $color-background-primary;
+  background: $color-input-bg;
   padding: $spacing-tight;
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box; /* Firefox, other Gecko */
@@ -17,7 +17,7 @@
 
   &:focus {
     outline: 0;
-    background-color: $color-outline;
+    background-color: $color-input-outline;
   }
 }
 
@@ -37,7 +37,7 @@
   width: 100%;
   min-height: 150px;
   border: none;
-  background: $color-background-primary;
+  background: $color-input-bg;
   padding: $spacing-tight;
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box; /* Firefox, other Gecko */
@@ -45,7 +45,7 @@
 
   &:focus {
     outline: 0;
-    background-color: $color-outline;
+    background-color: $color-input-outline;
   }
 }
 
