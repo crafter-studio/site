@@ -58,17 +58,23 @@ export default class IndexPage extends React.PureComponent<
               backgroundColor: 'var(--color-dark-grey)',
             }}
           />
-          <Decor.Triangle color="var(--color-dark-grey)" />
-          <Scroll bottomOffset="50%">
-            <Scroll.LoadContent>
-              <Decor.DotsGrid width={75} height={75} />
-            </Scroll.LoadContent>
-            <Scroll.LoadAnimation>
-              <div className={styles.AnimationThing}>
-                <h1>Animate Me</h1>
-              </div>
-            </Scroll.LoadAnimation>
-          </Scroll>
+          <Decor.Triangle
+            color="var(--color-dark-grey)"
+            background="var(--color-light-grey)"
+          />
+          <div
+            style={{
+              height: '100vh',
+              backgroundColor: 'var(--color-light-grey)',
+            }}
+          >
+            <div style={{paddingTop: '80px'}} />
+            <Scroll bottomOffset="50%">
+              <Scroll.LoadContent>
+                <Decor.DotsGrid width={105} height={105} />
+              </Scroll.LoadContent>
+            </Scroll>
+          </div>
           <div style={{height: '100vh'}} />
         </Layout>
       </PageWrapper>

@@ -1,10 +1,10 @@
-@keyframes growTriangleTop {
+@keyframes growTriangle {
   from {
     border-width: 0 100vw 0 0;
   }
 
   to {
-    border-width: $spacing * 4 100vw 0 0;
+    border-width: var(--triangle-height) 100vw 0 0;
   }
 }
 
@@ -28,6 +28,17 @@
   }
 }
 
+.TriangleContainer {
+  --triangle-height: #{$spacing * 2};
+  overflow-x: hidden;
+  width: 100%;
+  height: var(--triangle-height);
+
+  @include large {
+    --triangle-height: #{$spacing * 4};
+  }
+}
+
 .Triangle {
   width: 0;
   height: 0;
@@ -36,7 +47,7 @@
   border-color: $color-light-grey transparent transparent transparent;
   background: transparent;
   overflow-x: hidden;
-  animation: growTriangleTop $animation-duration-long ease-in-out forwards
+  animation: growTriangle $animation-duration-long ease-in-out forwards
     var(--scroll-animation-play-state);
 }
 

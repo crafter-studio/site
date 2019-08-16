@@ -16,10 +16,8 @@ const Triangle: React.SFC<TriangleProps> = ({
     <Scroll bottomOffset="0">
       <Scroll.LoadAnimation>
         <div
+          className={styles.TriangleContainer}
           style={{
-            overflowX: 'hidden',
-            width: '100%',
-            height: '80px',
             backgroundColor: `${background}`,
           }}
         >
