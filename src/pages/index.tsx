@@ -8,6 +8,7 @@ import {
   Layout,
   ScrambledText,
   Scroll,
+  Theme,
 } from '../components';
 
 interface Props {}
@@ -52,7 +53,10 @@ export default class IndexPage extends React.PureComponent<
             background="var(--color-dark-grey)"
           />
           <div
-            style={{height: '100vh', backgroundColor: 'var(--color-dark-grey)'}}
+            style={{
+              height: '100vh',
+              backgroundColor: 'var(--color-dark-grey)',
+            }}
           />
           <Decor.Triangle color="var(--color-dark-grey)" />
           <Scroll bottomOffset="50%">

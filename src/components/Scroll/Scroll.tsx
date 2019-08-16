@@ -18,6 +18,7 @@ const LoadAnimation: React.FC<LoadAnimationProps> = ({
   const LoadAnimationClass = contentInView
     ? styles.LoadAnimation
     : styles.LoadAnimationPaused;
+
   return (
     <>
       {React.Children.map(children, (child: any) => {
@@ -84,13 +85,7 @@ class Scroll extends React.PureComponent<ComposedProps, State> {
           bottomOffset={bottomOffset}
         />
         {React.Children.map(children, (child: any) => {
-          if (child.type.displayName === 'LoadContent') {
-            return React.cloneElement(child, {contentInView});
-          }
-
-          if (child.type.displayName === 'LoadAnimation') {
-            return React.cloneElement(child, {contentInView});
-          }
+          return React.cloneElement(child, {contentInView});
         })}
       </div>
     );
