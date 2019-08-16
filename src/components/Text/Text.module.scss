@@ -31,27 +31,35 @@
 .Text {
   display: block;
   line-height: $line-height;
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: $spacing-tight;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   &.sizeH1 {
-    font-size: $font-size-xlarge;
+    font-size: $font-size-h1;
   }
 
   &.sizeH2 {
-    font-size: $font-size-large;
+    font-size: $font-size-h2;
   }
 
   &.sizeH3 {
-    font-size: $font-size-medium;
+    font-size: $font-size-h3;
   }
 
   &.sizeH4 {
-    font-size: $font-size;
+    font-size: $font-size-h4;
   }
 
-  &.sizeH5,
+  &.sizeH5 {
+    font-size: $font-size-h5;
+  }
+
   &.sizeH6 {
-    font-size: $font-size-small;
+    font-size: $font-size-h6;
   }
 
   &.alignLeft {
@@ -80,10 +88,10 @@
 .Text.Heading {
   display: block;
   line-height: $line-height;
-  margin-bottom: $spacing-tight;
-  margin-top: $spacing;
+  margin-bottom: $spacing;
+  margin-top: $spacing-loose;
 
-  &:first-of-type {
+  &:first-child {
     margin-top: 0;
   }
 

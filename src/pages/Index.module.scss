@@ -80,10 +80,10 @@
   animation: fadeUpHeroText $animation-duration-long 1.5s ease-in-out forwards;
 
   h1 {
-    font-size: $font-size-large - 0.2;
+    font-size: $font-size-h1;
     color: transparent;
     background-repeat: repeat;
-    background-size: $font-size-small * 4;
+    background-size: $font-size-h1;
     background-clip: text;
     background-image: url('../images/hypnotize-background.png');
     animation: bgAnimation 240s linear infinite;
@@ -98,15 +98,15 @@
       forwards;
 
     @include small {
-      background-size: $font-size-small * 5;
-      font-size: $font-size-xlarge;
+      background-size: $font-size-h1 * 2;
+      font-size: $font-size-h1 * 1.5;
     }
   }
 
   p {
     word-wrap: break-word;
     word-break: break-all;
-    font-size: $font-size-small;
+    font-size: $font-size;
     color: $color-text-neg;
     letter-spacing: $letter-spacing;
     background-color: rgba($color-black, 0.8);

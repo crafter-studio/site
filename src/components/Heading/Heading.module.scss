@@ -8,24 +8,27 @@
   }
 
   &.Heading1 {
-    font-size: $font-size-xlarge;
+    font-size: $font-size-h1;
   }
 
   &.Heading2 {
-    font-size: $font-size-large;
+    font-size: $font-size-h2;
   }
 
   &.Heading3 {
-    font-size: $font-size-medium;
+    font-size: $font-size-h3;
   }
 
   &.Heading4 {
-    font-size: $font-size;
+    font-size: $font-size-h4;
   }
 
-  &.Heading5,
+  &.Heading5 {
+    font-size: $font-size-h5;
+  }
+
   &.Heading6 {
-    font-size: $font-size-small;
+    font-size: $font-size-h6;
   }
 }
 

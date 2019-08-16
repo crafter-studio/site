@@ -8,7 +8,7 @@ import {
   Layout,
   ScrambledText,
   Scroll,
-  Theme,
+  Grid,
 } from '../components';
 
 interface Props {}
@@ -55,9 +55,46 @@ export default class IndexPage extends React.PureComponent<
           <div
             style={{
               height: '100vh',
+              paddingTop: '80px',
+              paddingBottom: '80px',
               backgroundColor: 'var(--color-dark-grey)',
             }}
-          />
+          >
+            <Grid>
+              <Grid.ScreenWidth>
+                <Text tag="h1" uppercase>
+                  We Build Websites
+                </Text>
+                <Text>
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                  Donec odio. Quisque volutpat mattis eros. Nullam malesuada
+                  erat ut turpis. Suspendisse urna nibh, viverra non, semper
+                  suscipit, posuere a, pede. Lorem ipsum dolor sit amet,
+                  consectetuer adipiscing elit. Donec odio. Quisque volutpat
+                  mattis eros. Nullam malesuada erat ut turpis.
+                </Text>
+                <Text>
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                  Donec odio. Quisque volutpat mattis eros. Nullam malesuada
+                  erat ut turpis. Suspendisse urna nibh, viverra non, semper
+                  suscipit, posuere a, pede. Lorem ipsum dolor sit amet,
+                  consectetuer adipiscing elit. Donec odio. Quisque volutpat
+                  mattis eros. Nullam malesuada erat ut turpis.
+                </Text>
+                <Text tag="h2" uppercase>
+                  We Build Websites
+                </Text>
+                <Text>
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                  Donec odio. Quisque volutpat mattis eros. Nullam malesuada
+                  erat ut turpis. Suspendisse urna nibh, viverra non, semper
+                  suscipit, posuere a, pede. Lorem ipsum dolor sit amet,
+                  consectetuer adipiscing elit. Donec odio. Quisque volutpat
+                  mattis eros. Nullam malesuada erat ut turpis.
+                </Text>
+              </Grid.ScreenWidth>
+            </Grid>
+          </div>
           <Decor.Triangle
             color="var(--color-dark-grey)"
             background="var(--color-light-grey)"
