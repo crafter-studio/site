@@ -1,7 +1,6 @@
 import React from 'react';
+import {Scroll} from '../../components';
 
-import SvgGrid from './SvgGrid';
-import {classNames} from '../utils/classNames';
 import styles from './Decor.module.scss';
 
 interface TriangleProps {
@@ -14,22 +13,26 @@ const Triangle: React.SFC<TriangleProps> = ({
   background = 'transparent',
 }) => {
   return (
-    <div
-      style={{
-        overflowX: 'hidden',
-        width: '100%',
-        height: '80px',
-        backgroundColor: `${background}`,
-      }}
-    >
-      <div
-        style={{
-          borderColor: `${color} transparent transparent transparent`,
-          backgroundColor: `${background}`,
-        }}
-        className={styles.TriangleTop}
-      />
-    </div>
+    <Scroll bottomOffset="0">
+      <Scroll.LoadAnimation>
+        <div
+          style={{
+            overflowX: 'hidden',
+            width: '100%',
+            height: '80px',
+            backgroundColor: `${background}`,
+          }}
+        >
+          <div
+            style={{
+              borderColor: `${color} transparent transparent transparent`,
+              backgroundColor: `${background}`,
+            }}
+            className={styles.Triangle}
+          />
+        </div>
+      </Scroll.LoadAnimation>
+    </Scroll>
   );
 };
 

@@ -15,7 +15,9 @@ const LoadAnimation: React.FC<LoadAnimationProps> = ({
   children,
   contentInView,
 }) => {
-  const LoadAnimationClass = classNames(contentInView && styles.LoadAnimation);
+  const LoadAnimationClass = contentInView
+    ? styles.LoadAnimation
+    : styles.LoadAnimationPaused;
   return (
     <>
       {React.Children.map(children, (child: any) => {

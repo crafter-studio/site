@@ -28,7 +28,7 @@
   }
 }
 
-.TriangleTop {
+.Triangle {
   width: 0;
   height: 0;
   border-style: solid;
@@ -36,7 +36,8 @@
   border-color: $color-light-grey transparent transparent transparent;
   background: transparent;
   overflow-x: hidden;
-  animation: growTriangleTop $animation-duration-long 1.5s ease-in-out forwards;
+  animation: growTriangleTop $animation-duration-long ease-in-out forwards
+    var(--scroll-animation-play-state);
 }
 
 .DotsGrid {

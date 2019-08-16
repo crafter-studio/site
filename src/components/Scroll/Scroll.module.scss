@@ -1,3 +1,9 @@
 .LoadAnimation {
+  --scroll-animation-play-state: paused;
+  animation-play-state: paused !important;
+}
+
+.LoadAnimation {
+  --scroll-animation-play-state: running;
   animation-play-state: running !important;
 }
