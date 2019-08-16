@@ -1,8 +1,51 @@
-import React from 'react';
+import React, {ReactComponentElement} from 'react';
 import {Waypoint} from 'react-waypoint';
 
+import {classNames} from '../utils/classNames';
+import styles from './Scroll.module.scss';
+
+// ===================================================================================
+// Scroll.LoadAnimation
+// ===================================================================================
+interface LoadAnimationProps {
+  contentInView: boolean;
+}
+
+const LoadAnimation: React.FC<LoadAnimationProps> = ({
+  children,
+  contentInView,
+}) => {
+  const LoadAnimationClass = classNames(contentInView && styles.LoadAnimation);
+  return (
+    <>
+      {React.Children.map(children, (child: any) => {
+        return React.cloneElement(child, {
+          className: classNames(child.props.className, LoadAnimationClass),
+        });
+      })}
+    </>
+  );
+};
+
+// ===================================================================================
+// Scroll.LoadContent
+// ===================================================================================
+interface LoadContentProps {
+  contentInView: boolean;
+}
+
+const LoadContent: React.FC<LoadContentProps> = ({children, contentInView}) => {
+  const content = contentInView ? children : '';
+  return <>{content}</>;
+};
+
+// ===================================================================================
+// Scroll
+// ===================================================================================
+interface NoProps {}
+
 interface Props {
-  bottomOffSet?: string;
+  bottomOffset?: string;
 }
 interface State {
   contentInView: boolean;
@@ -10,7 +53,9 @@ interface State {
 
 type ComposedProps = Props;
 
-export default class Scroll extends React.PureComponent<ComposedProps, State> {
+class Scroll extends React.PureComponent<ComposedProps, State> {
+  static LoadContent: React.FC<NoProps>;
+  static LoadAnimation: React.FC<NoProps>;
   state: State = {
     contentInView: false,
   };
@@ -20,19 +65,12 @@ export default class Scroll extends React.PureComponent<ComposedProps, State> {
   }
 
   handleOnEnter() {
-    console.log('in view');
     this.setState({contentInView: true});
   }
 
-  loadContent() {
-    const {children} = this.props;
-    const {contentInView} = this.state;
-
-    const content = contentInView ? children : '';
-    return content;
-  }
   render() {
-    const {bottomOffSet = '33.33%'} = this.props;
+    const {children, bottomOffset = '33.33%'} = this.props;
+    const {contentInView} = this.state;
 
     // window object does not exist in Webpack's Node environment, this is to prevent the error
     const browserWindow = typeof window !== 'undefined' ? window : null;
@@ -41,10 +79,23 @@ export default class Scroll extends React.PureComponent<ComposedProps, State> {
         <Waypoint
           scrollableAncestor={browserWindow}
           onEnter={this.handleOnEnter}
-          bottomOffset={bottomOffSet}
+          bottomOffset={bottomOffset}
         />
-        {this.loadContent()}
+        {React.Children.map(children, (child: any) => {
+          if (child.type.displayName === 'LoadContent') {
+            return React.cloneElement(child, {contentInView});
+          }
+
+          if (child.type.displayName === 'LoadAnimation') {
+            return React.cloneElement(child, {contentInView});
+          }
+        })}
       </div>
     );
   }
 }
+
+Scroll.LoadAnimation = LoadAnimation;
+Scroll.LoadContent = LoadContent;
+
+export default Scroll;

@@ -55,6 +55,11 @@
   }
 }
 
+.AnimationThing {
+  opacity: 0;
+  animation: fadeInUp $animation-duration-long ease-in-out forwards paused;
+}
+
 .QuickLinks {
   text-align: center;
   position: absolute;

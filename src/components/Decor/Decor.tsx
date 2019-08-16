@@ -9,7 +9,7 @@ interface TriangleProps {
   background?: string;
 }
 
-const TriangleTop: React.SFC<TriangleProps> = ({
+const Triangle: React.SFC<TriangleProps> = ({
   color,
   background = 'transparent',
 }) => {
@@ -106,13 +106,12 @@ interface State {}
 type ComposedProps = Props;
 
 export default class Decor extends React.PureComponent<ComposedProps, State> {
-  static TriangleTop: React.SFC<TriangleProps>;
-  static TriangleBottom;
+  static Triangle: React.SFC<TriangleProps>;
   static DotsGrid: React.SFC<DotsGridProps>;
   render() {
     return null;
   }
 }
 
-Decor.TriangleTop = TriangleTop;
+Decor.Triangle = Triangle;
 Decor.DotsGrid = DotsGrid;
