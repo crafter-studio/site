@@ -62,58 +62,19 @@ export default class IndexPage extends React.PureComponent<
             }}
           >
             <Grid>
-              <Grid.ScreenWidth>
-                <Text tag="h1" uppercase>
-                  We Build Websites
-                </Text>
-                <Text>
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                  Donec odio. Quisque volutpat mattis eros. Nullam malesuada
-                  erat ut turpis. Suspendisse urna nibh, viverra non, semper
-                  suscipit, posuere a, pede. Lorem ipsum dolor sit amet,
-                  consectetuer adipiscing elit. Donec odio. Quisque volutpat
-                  mattis eros. Nullam malesuada erat ut turpis.
-                </Text>
-                <Text tag="h2" uppercase>
-                  We Build Websites
-                </Text>
-                <Text>
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                  Donec odio. Quisque volutpat mattis eros. Nullam malesuada
-                  erat ut turpis. Suspendisse urna nibh, viverra non, semper
-                  suscipit, posuere a, pede. Lorem ipsum dolor sit amet,
-                  consectetuer adipiscing elit. Donec odio. Quisque volutpat
-                  mattis eros. Nullam malesuada erat ut turpis.
-                </Text>
-                <Text tag="h3" uppercase>
-                  We Build Websites
-                </Text>
-                <Text>
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                  Donec odio. Quisque volutpat mattis eros. Nullam malesuada
-                  erat ut turpis. Suspendisse urna nibh, viverra non, semper
-                  suscipit, posuere a, pede. Lorem ipsum dolor sit amet,
-                  consectetuer adipiscing elit. Donec odio. Quisque volutpat
-                  mattis eros. Nullam malesuada erat ut turpis.
-                </Text>
-                <Text tag="h4" uppercase>
-                  We Build Websites
-                </Text>
-                <Text>
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                  Donec odio. Quisque volutpat mattis eros. Nullam malesuada
-                  erat ut turpis. Suspendisse urna nibh, viverra non, semper
-                  suscipit, posuere a, pede. Lorem ipsum dolor sit amet,
-                  consectetuer adipiscing elit. Donec odio. Quisque volutpat
-                  mattis eros. Nullam malesuada erat ut turpis.
-                </Text>
-              </Grid.ScreenWidth>
+              <Text tag="h2" uppercase>
+                We Build Websites
+              </Text>
+              <Text>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
+                odio. Quisque volutpat mattis eros. Nullam malesuada erat ut
+                turpis. Suspendisse urna nibh, viverra non, semper suscipit,
+                posuere a, pede. Lorem ipsum dolor sit amet, consectetuer
+                adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+                Nullam malesuada erat ut turpis.
+              </Text>
             </Grid>
           </div>
-          <Decor.Triangle
-            color="var(--color-dark-grey)"
-            background="var(--color-light-grey)"
-          />
           <div
             style={{
               height: '100vh',
