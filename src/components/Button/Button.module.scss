@@ -59,7 +59,9 @@
   background-color: $color-primary;
   color: $color-light-grey;
   letter-spacing: $letter-spacing;
-  font-size: $font-size;
+  text-transform: uppercase;
+  font-size: $font-size-subscript;
+  font-weight: $font-weight-bold;
   transition: background-color $animation-duration ease-in;
   cursor: pointer;
 
@@ -75,5 +77,10 @@
   &:focus,
   &:hover {
     background-color: darken($color-primary, 10);
+  }
+
+  &.ButtonSubdued {
+    background-color: $color-button-subdued;
+    color: $color-button-primary-text;
   }
 }

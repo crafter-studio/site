@@ -8,6 +8,7 @@ import styles from './Button.module.scss';
 interface Props {
   value: string;
   linkPath?: string;
+  subdued?: boolean;
   submit?: boolean;
   uppercase?: boolean;
   fullWidth?: boolean;
@@ -28,7 +29,19 @@ class Button extends React.PureComponent<ComposedProps, State> {
   static Group: Group;
 
   render() {
-    const {value, submit, uppercase, linkPath = '/', fullWidth} = this.props;
+    const {
+      value,
+      submit,
+      subdued,
+      uppercase,
+      linkPath = '/',
+      fullWidth,
+    } = this.props;
+
+    const buttonClass = classNames(
+      styles.Button,
+      subdued && styles.ButtonSubdued,
+    );
 
     const linkButton = (
       <Link className={styles.Button} to={linkPath}>

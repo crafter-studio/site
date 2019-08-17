@@ -33,6 +33,7 @@
   line-height: $line-height;
   margin-top: 0;
   margin-bottom: $spacing-tight;
+  font-size: $font-size-h4;
 
   &:last-child {
     margin-bottom: 0;
@@ -85,10 +86,34 @@
   }
 }
 
+h1.Heading {
+  font-size: $font-size-h1;
+}
+
+h2.Heading {
+  font-size: $font-size-h2;
+}
+
+h3.Heading {
+  font-size: $font-size-h3;
+}
+
+h4.Heading {
+  font-size: $font-size-h4;
+}
+
+h5.Heading {
+  font-size: $font-size-h5;
+}
+
+h6.Heading {
+  font-size: $font-size-h6;
+}
+
 .Text.Heading {
   display: block;
   line-height: $line-height;
-  margin-bottom: $spacing;
+  margin-bottom: $spacing-tight;
   margin-top: $spacing-loose;
 
   &:first-child {

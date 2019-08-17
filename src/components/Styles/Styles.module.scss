@@ -246,8 +246,16 @@ table {
 html {
   font-size: $root-font-size;
 
-  @include large {
+  @include small {
+    font-size: $root-font-size-small;
+  }
+
+  @include medium {
     font-size: $root-font-size-medium;
+  }
+
+  @include large {
+    font-size: $root-font-size-large;
   }
 
   @include xlarge {
@@ -267,6 +275,8 @@ a {
   font-weight: $font-weight-regular;
 }
 
+input,
+a,
 h1,
 h2,
 h3,
@@ -283,10 +293,12 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: $font-family-heading;
   color: $color-heading;
 }
 
 p {
+  font-family: $font-family-body;
   color: $color-text;
 }
 
@@ -327,5 +339,21 @@ h6 {
   font-weight: 900;
   font-style: normal;
   src: url('./font/Muli-Black.ttf') format('truetype');
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Ehrhardt';
+  font-weight: 400;
+  font-style: normal;
+  src: url('./font/Ehrhardt-Regular.ttf') format('truetype');
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Ehrhardt';
+  font-weight: 600;
+  font-style: normal;
+  src: url('./font/Ehrhardt-Semibold.ttf') format('truetype');
   font-display: fallback;
 }

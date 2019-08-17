@@ -24,22 +24,26 @@ $breakpoint-xlarge: 1480px;
 // FONTS
 // ======================================
 $font-family: 'Muli';
+$font-family-heading: 'Muli';
+$font-family-body: 'Ehrhardt';
 
 $root-font-size: 10px;
-$root-font-size-medium: 11px;
-$root-font-size-xlarge: 12px;
+$root-font-size-small: 11px;
+$root-font-size-medium: 11.5px;
+$root-font-size-large: 12px;
+$root-font-size-xlarge: 13px;
 
 $font-weight-light: 300;
 $font-weight-regular: 400;
 $font-weight-bold: 700;
 $font-weight-black: 900;
 
-$font-size-subscript: 0.8rem;
-$font-size: 1.6rem;
+$font-size-subscript: 1.2rem;
+$font-size: 1.8rem;
 
-$font-size-h1: 3rem;
-$font-size-h2: 2.6rem;
-$font-size-h3: 2.4rem;
+$font-size-h1: 2.8rem;
+$font-size-h2: 2.4rem;
+$font-size-h3: 2.2rem;
 $font-size-h4: 2rem;
 $font-size-h5: 1.8rem;
 $font-size-h6: 1.8rem;
@@ -52,17 +56,22 @@ $font-size-h6: 1.8rem;
 
 // Colors
 $color-primary: #ffda12;
-$color-input-bg: #fafafa;
-$color-input-outline: #f0f8ff;
+$color-input-bg: #f2f2f2;
+$color-input-outline: lighten($color-primary, 40);
 $color-light-grey: #fcfcfc;
 $color-dark-grey: #efefef;
 $color-black: #121212;
+$color-subdued: $color-light-grey;
 
 // Text
 $color-heading: #121212;
 $color-text: #484848;
 $color-heading-neg: #f0f0f0;
 $color-text-neg: #bababa;
+
+// Button
+$color-button-primary-text: $color-black;
+$color-button-subdued: $color-subdued;
 
 // Link
 $color-link: black;

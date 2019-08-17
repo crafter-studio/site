@@ -55,6 +55,7 @@ export default class Input extends React.PureComponent<ComposedProps, State> {
         type={type}
         name={name}
         placeholder={placeholder}
+        autoComplete={name}
       >
         {children}
       </input>

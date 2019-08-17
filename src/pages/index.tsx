@@ -9,6 +9,8 @@ import {
   ScrambledText,
   Scroll,
   Grid,
+  Input,
+  Button,
 } from '../components';
 
 interface Props {}
@@ -54,7 +56,6 @@ export default class IndexPage extends React.PureComponent<
           />
           <div
             style={{
-              height: '100vh',
               paddingTop: '80px',
               paddingBottom: '80px',
               backgroundColor: 'var(--color-dark-grey)',
@@ -73,6 +74,9 @@ export default class IndexPage extends React.PureComponent<
                   consectetuer adipiscing elit. Donec odio. Quisque volutpat
                   mattis eros. Nullam malesuada erat ut turpis.
                 </Text>
+                <Text tag="h2" uppercase>
+                  We Build Websites
+                </Text>
                 <Text>
                   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
                   Donec odio. Quisque volutpat mattis eros. Nullam malesuada
@@ -81,7 +85,18 @@ export default class IndexPage extends React.PureComponent<
                   consectetuer adipiscing elit. Donec odio. Quisque volutpat
                   mattis eros. Nullam malesuada erat ut turpis.
                 </Text>
-                <Text tag="h2" uppercase>
+                <Text tag="h3" uppercase>
+                  We Build Websites
+                </Text>
+                <Text>
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                  Donec odio. Quisque volutpat mattis eros. Nullam malesuada
+                  erat ut turpis. Suspendisse urna nibh, viverra non, semper
+                  suscipit, posuere a, pede. Lorem ipsum dolor sit amet,
+                  consectetuer adipiscing elit. Donec odio. Quisque volutpat
+                  mattis eros. Nullam malesuada erat ut turpis.
+                </Text>
+                <Text tag="h4" uppercase>
                   We Build Websites
                 </Text>
                 <Text>
@@ -105,12 +120,18 @@ export default class IndexPage extends React.PureComponent<
               backgroundColor: 'var(--color-light-grey)',
             }}
           >
-            <div style={{paddingTop: '80px'}} />
-            <Scroll bottomOffset="50%">
-              <Scroll.LoadContent>
-                <Decor.DotsGrid width={105} height={105} />
-              </Scroll.LoadContent>
-            </Scroll>
+            <div style={{paddingTop: '80px', paddingBottom: '80px'}}>
+              <Grid>
+                <form>
+                  <Input id="name" type="text" name="name" label="Name" />
+                  <Input id="email" type="email" name="email" label="Email" />
+                  <Button.Group align="right" spacing="tight">
+                    <Button value="Back" />
+                    <Button submit value="Submit" />
+                  </Button.Group>
+                </form>
+              </Grid>
+            </div>
           </div>
           <div style={{height: '100vh'}} />
         </Layout>
