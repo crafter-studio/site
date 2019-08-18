@@ -24,7 +24,7 @@ export default class IndexPage extends React.PureComponent<
         description="Description"
         keywords={['keyword', 'things']}
       >
-        <Layout>
+        <Page.Layout>
           <div className={styles.HeroSection}>
             <div className={styles.Hypnotize}>
               <h1
@@ -58,7 +58,7 @@ export default class IndexPage extends React.PureComponent<
           <Page.Section>
             <Decor.Noise />
           </Page.Section>
-        </Layout>
+        </Page.Layout>
       </Page>
     );
   }

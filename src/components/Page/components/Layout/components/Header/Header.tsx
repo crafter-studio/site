@@ -1,12 +1,11 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {ReduxState} from '../../redux/reducers';
-import {toggleDarkMode} from '../../redux/actions';
+import {ReduxState} from '../../../../../../redux/reducers';
 
 import styles from './Header.module.scss';
 import Logo from './assets/crafter-studio-logo.svg';
-import {Grid, Text} from '../../../../components';
-import {classNames} from '../../../utils/classNames';
+import {Grid} from '../../../../../../components';
+import {classNames} from '../../../../../utils/classNames';
 import Menu from './components/Menu';
 
 export interface Props {}

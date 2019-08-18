@@ -1,9 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {ReduxState} from '../../redux/reducers';
+import {ReduxState} from '../../../../redux/reducers';
 
 import styles from './Layout.module.scss';
-import {classNames} from '../utils/classNames';
+import {classNames} from '../../../utils/classNames';
 
 import Header from './components/Header';
 import Footer from './components/Footer';

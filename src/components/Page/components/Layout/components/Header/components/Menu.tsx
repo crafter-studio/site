@@ -1,10 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {ReduxState} from '../../../../../redux/reducers';
-import {toggleHamburgerMenu} from '../../../../../redux/actions';
+import {ReduxState} from '../../../../../../../redux/reducers';
+import {toggleHamburgerMenu} from '../../../../../../../redux/actions';
 
 import styles from './Menu.module.scss';
-import {classNames} from '../../../../utils/classNames';
+import {classNames} from '../../../../../../utils/classNames';
 
 export interface Props {}
 
