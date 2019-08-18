@@ -1,0 +1,52 @@
+@keyframes growTriangle {
+  from {
+    border-width: 0 100vw 0 0;
+  }
+
+  to {
+    border-width: var(--triangle-height) 100vw 0 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    fill: #ababab;
+  }
+
+  to {
+    fill: rgba(black, 1);
+  }
+}
+
+.TriangleContainer {
+  --triangle-height: #{$spacing * 2};
+  overflow-x: hidden;
+  width: 100%;
+  height: var(--triangle-height);
+
+  @include large {
+    --triangle-height: #{$spacing * 4};
+  }
+}
+
+.Triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0;
+  border-color: $color-light-grey transparent transparent transparent;
+  background: transparent;
+  overflow-x: hidden;
+  animation: growTriangle $animation-duration-long ease-in-out forwards
+    var(--scroll-animation-play-state);
+}
