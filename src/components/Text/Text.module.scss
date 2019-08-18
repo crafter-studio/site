@@ -81,7 +81,6 @@
 
   &.uppercase {
     text-transform: uppercase;
-    line-height: $line-height;
     letter-spacing: $letter-spacing;
   }
 }
@@ -115,6 +114,12 @@ h6.Heading {
   line-height: $line-height;
   margin-bottom: $spacing-tight;
   margin-top: $spacing-loose;
+  font-weight: normal;
+
+  &.uppercase {
+    font-family: $font-family-secondary;
+    font-weight: $font-weight-bold;
+  }
 
   &:first-child {
     margin-top: 0;

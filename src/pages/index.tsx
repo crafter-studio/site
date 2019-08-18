@@ -7,12 +7,11 @@ import {
   PageWrapper,
   Layout,
   ScrambledText,
-  Scroll,
   Grid,
-  Input,
-  Button,
 } from '../components';
 
+import placeholder from '../images/placeholder.jpg';
+import noise from '../images/noise.jpg';
 interface Props {}
 
 type State = {};
@@ -37,7 +36,13 @@ export default class IndexPage extends React.PureComponent<
         <Layout>
           <div className={styles.HeroSection}>
             <div className={styles.Hypnotize}>
-              <h1>
+              <h1
+                style={{
+                  fontFamily: 'Muli',
+                  fontWeight: 700,
+                  letterSpacing: '1.5px',
+                }}
+              >
                 <ScrambledText
                   message="CRAFTER STUDIO"
                   speed={500}
@@ -50,51 +55,42 @@ export default class IndexPage extends React.PureComponent<
             </div>
           </div>
           <div />
-          <Decor.Triangle
-            color="var(--color-light-grey)"
-            background="var(--color-dark-grey)"
+          <Decor.Triangle color="var(--color-light-grey)" />
+          <div
+            style={{
+              paddingTop: '80px',
+              paddingBottom: '80px',
+              height: '300px',
+              backgroundColor: 'transparent',
+            }}
           />
           <div
             style={{
               paddingTop: '80px',
               paddingBottom: '80px',
-              backgroundColor: 'var(--color-dark-grey)',
-            }}
-          >
-            <Grid>
-              <Text tag="h2" uppercase>
-                We Build Websites
-              </Text>
-              <Text>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-                odio. Quisque volutpat mattis eros. Nullam malesuada erat ut
-                turpis. Suspendisse urna nibh, viverra non, semper suscipit,
-                posuere a, pede. Lorem ipsum dolor sit amet, consectetuer
-                adipiscing elit. Donec odio. Quisque volutpat mattis eros.
-                Nullam malesuada erat ut turpis.
-              </Text>
-            </Grid>
-          </div>
-          <div
-            style={{
-              height: '100vh',
               backgroundColor: 'var(--color-light-grey)',
             }}
           >
             <div style={{paddingTop: '80px', paddingBottom: '80px'}}>
               <Grid>
-                <form>
-                  <Input id="name" type="text" name="name" label="Name" />
-                  <Input id="email" type="email" name="email" label="Email" />
-                  <Button.Group align="right" spacing="tight">
-                    <Button value="Back" />
-                    <Button submit value="Submit" />
-                  </Button.Group>
-                </form>
+                <Text size="h1" align="center">
+                  We deconstruct preconceived ideas to better shape concepts and
+                  push boundaries; that's our purpose, the essence of our
+                  culture.
+                </Text>
               </Grid>
             </div>
           </div>
-          <div style={{height: '100vh'}} />
+          <div
+            style={{
+              height: '300px',
+              position: 'relative',
+              paddingTop: '80px',
+              paddingBottom: '80px',
+            }}
+          >
+            <Decor.Noise />
+          </div>
         </Layout>
       </PageWrapper>
     );

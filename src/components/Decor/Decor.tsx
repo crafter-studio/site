@@ -1,4 +1,6 @@
 import React from 'react';
+
+import {Noise} from './components';
 import {Scroll} from '../../components';
 
 import styles from './Decor.module.scss';
@@ -109,6 +111,7 @@ type ComposedProps = Props;
 export default class Decor extends React.PureComponent<ComposedProps, State> {
   static Triangle: React.SFC<TriangleProps>;
   static DotsGrid: React.SFC<DotsGridProps>;
+  static Noise;
   render() {
     return null;
   }
@@ -116,3 +119,4 @@ export default class Decor extends React.PureComponent<ComposedProps, State> {
 
 Decor.Triangle = Triangle;
 Decor.DotsGrid = DotsGrid;
+Decor.Noise = Noise;
