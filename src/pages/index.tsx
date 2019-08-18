@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from './Index.module.scss';
-import {Decor, Text, Page, Layout, ScrambledText, Grid} from '../components';
+import {Decor, Text, Page, ScrambledText, Grid} from '../components';
 
 interface Props {}
 
