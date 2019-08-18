@@ -20,7 +20,7 @@ export {default as Lists} from './List';
 
 export {default as MaxContentWidth} from './MaxContentWidth';
 
-export {default as PageWrapper} from './PageWrapper';
+export {default as Page} from './Page';
 
 export {default as ScrambledText} from './ScrambledText';
 

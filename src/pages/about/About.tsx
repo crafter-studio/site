@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {PageWrapper} from '../../components';
+import {Page} from '../../components';
 
 interface Props {}
 
@@ -13,13 +13,13 @@ export default class IndexPage extends React.PureComponent<
 > {
   render() {
     return (
-      <PageWrapper
+      <Page
         title="Title"
         description="Description"
         keywords={['keyword', 'things']}
       >
         <h1>This is the about page</h1>
-      </PageWrapper>
+      </Page>
     );
   }
 }

@@ -1,17 +1,8 @@
 import React from 'react';
 
 import styles from './Index.module.scss';
-import {
-  Decor,
-  Text,
-  PageWrapper,
-  Layout,
-  ScrambledText,
-  Grid,
-} from '../components';
+import {Decor, Text, Page, Layout, ScrambledText, Grid} from '../components';
 
-import placeholder from '../images/placeholder.jpg';
-import noise from '../images/noise.jpg';
 interface Props {}
 
 type State = {};
@@ -28,7 +19,7 @@ export default class IndexPage extends React.PureComponent<
 
   render() {
     return (
-      <PageWrapper
+      <Page
         title="Web Design and Development"
         description="Description"
         keywords={['keyword', 'things']}
@@ -56,43 +47,19 @@ export default class IndexPage extends React.PureComponent<
           </div>
           <div />
           <Decor.Triangle color="var(--color-light-grey)" />
-          <div
-            style={{
-              paddingTop: '80px',
-              paddingBottom: '80px',
-              height: '300px',
-              backgroundColor: 'transparent',
-            }}
-          />
-          <div
-            style={{
-              paddingTop: '80px',
-              paddingBottom: '80px',
-              backgroundColor: 'var(--color-light-grey)',
-            }}
-          >
-            <div style={{paddingTop: '80px', paddingBottom: '80px'}}>
-              <Grid>
-                <Text size="h1" align="center">
-                  We deconstruct preconceived ideas to better shape concepts and
-                  push boundaries; that's our purpose, the essence of our
-                  culture.
-                </Text>
-              </Grid>
-            </div>
-          </div>
-          <div
-            style={{
-              height: '300px',
-              position: 'relative',
-              paddingTop: '80px',
-              paddingBottom: '80px',
-            }}
-          >
+          <Page.Section>
+            <Grid>
+              <Text size="h1" align="center">
+                We deconstruct preconceived ideas to better shape concepts and
+                push boundaries; that's our purpose, the essence of our culture.
+              </Text>
+            </Grid>
+          </Page.Section>
+          <Page.Section>
             <Decor.Noise />
-          </div>
+          </Page.Section>
         </Layout>
-      </PageWrapper>
+      </Page>
     );
   }
 }

@@ -1,6 +1,9 @@
 import React from 'react';
 
 import {SeoWrapper} from '..';
+import {Section} from './components';
+
+interface NoProps {}
 
 interface Props {
   title: string;
@@ -11,10 +14,8 @@ interface Props {
 
 type State = {};
 type ComposedProps = Props;
-export default class PageWrapper extends React.PureComponent<
-  ComposedProps,
-  State
-> {
+export default class Page extends React.PureComponent<ComposedProps, State> {
+  static Section: React.FC<NoProps>;
   render() {
     const {title, description, keywords, lang, children} = this.props;
 
@@ -31,3 +32,5 @@ export default class PageWrapper extends React.PureComponent<
     );
   }
 }
+
+Page.Section = Section;

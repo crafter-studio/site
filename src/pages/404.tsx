@@ -1,16 +1,16 @@
 import React from 'react';
 
-import {PageWrapper} from '../components';
+import {Page} from '../components';
 
 const NotFoundPage = () => (
-  <PageWrapper
+  <Page
     title="404"
     description="404 Description"
     keywords={['keywords', 'go', 'here']}
   >
     <h1>NOT FOUND</h1>
     <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </PageWrapper>
+  </Page>
 );
 
 export default NotFoundPage;
