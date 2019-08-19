@@ -1,17 +1,14 @@
 import React from 'react';
 
-import styles from './Index.module.scss';
-import {Decor, Text, Page, ScrambledText, Grid} from '../components';
+import styles from './Home.module.scss';
+import {Decor, Text, Page, ScrambledText, Grid} from '../../components';
 
 interface Props {}
 
 type State = {};
 type ComposedProps = Props;
 
-export default class IndexPage extends React.PureComponent<
-  ComposedProps,
-  State
-> {
+export default class Home extends React.PureComponent<ComposedProps, State> {
   state: State = {};
   constructor(props) {
     super(props);
