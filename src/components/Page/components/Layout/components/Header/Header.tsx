@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'gatsby';
 import {connect} from 'react-redux';
 import {ReduxState} from '../../../../../../redux/reducers';
 
@@ -27,9 +28,11 @@ class Header extends React.PureComponent<ComposedProps, State> {
         <Grid>
           <Grid.ScreenWidth>
             <div className={styles.HeaderContent}>
-              <div className={logoClass}>
-                <Logo />
-              </div>
+              <Link to="/">
+                <div className={logoClass}>
+                  <Logo />
+                </div>
+              </Link>
               <div className={styles.CompanyName}>
                 {/* <Text size="h4" tag="h2" align="center" uppercase>
                   Crafter
