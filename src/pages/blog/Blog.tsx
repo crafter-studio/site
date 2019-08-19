@@ -7,18 +7,17 @@ interface Props {}
 type State = {};
 type ComposedProps = Props;
 
-export default class IndexPage extends React.PureComponent<
-  ComposedProps,
-  State
-> {
+export default class Blog extends React.PureComponent<ComposedProps, State> {
   render() {
     return (
       <Page
-        title="Title"
+        title="Blog"
         description="Description"
         keywords={['keyword', 'things']}
       >
-        <h1>This is the about page</h1>
+        <Page.Layout>
+          <h1>This is the blog page</h1>
+        </Page.Layout>
       </Page>
     );
   }
