@@ -114,7 +114,7 @@ h6.Heading {
   line-height: $line-height;
   margin-bottom: $spacing-tight;
   margin-top: $spacing-loose;
-  font-weight: normal;
+  font-weight: $font-weight-bold;
 
   &.uppercase {
     font-family: $font-family-secondary;

@@ -106,7 +106,6 @@ exports.createPages = async ({graphql, actions}) => {
   // and we use it for the slug to preserve url structure.
   // The Post ID is prefixed with 'POST_'
   allWordpressPost.edges.forEach((edge) => {
-    console.log('\n\n\n', edge.node);
     createPage({
       path: `/blog/${edge.node.slug}`,
       component: slash(postTemplate),
