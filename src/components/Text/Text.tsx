@@ -1,4 +1,5 @@
 import React from 'react';
+import Hyphenate from 'react-hyphen';
 
 import {classNames, classVariants} from '../utils/classNames';
 import Container from './components/Container';
@@ -9,6 +10,7 @@ interface Props {
   size?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   align?: 'left' | 'center' | 'right' | 'justify';
   uppercase?: boolean;
+  hyphen?: boolean;
   spaceUnder?: 'tight' | 'loose' | 'extra-loose';
 }
 
@@ -54,7 +56,7 @@ export default class Text extends React.PureComponent<ComposedProps, State> {
   static Container = Container;
 
   render() {
-    const {tag, uppercase, align, size, children} = this.props;
+    const {tag, uppercase, align, size, hyphen = true, children} = this.props;
 
     const composedClass = classNames(
       styles.Text,
@@ -64,6 +66,9 @@ export default class Text extends React.PureComponent<ComposedProps, State> {
       size && styles[classVariants('size', size)],
     );
 
-    return wrapComponentWithTag(children, composedClass, tag);
+    const content = wrapComponentWithTag(children, composedClass, tag);
+
+    const processedText = hyphen ? <Hyphenate>{content}</Hyphenate> : content;
+    return processedText;
   }
 }
