@@ -135,83 +135,80 @@
   }
 }
 
-.About {
-  background: $color-primary;
+.AboutSection {
+  padding-bottom: $spacing;
+  background-color: $color-light-grey;
 
   @include small {
-    background: $color-light-grey;
+    padding-bottom: $spacing * 2;
   }
-}
 
-.SectionHeading {
-  position: relative;
-  z-index: 10;
-  h1 {
-    text-transform: uppercase;
-    font-family: 'Muli';
-    font-weight: 700;
-    font-size: 5rem;
-    letter-spacing: 6px;
-    color: $color-heading;
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: 0;
-    transform: translate(0, -50%);
+  .Heading {
+    position: relative;
+    z-index: 10;
+    h1 {
+      text-transform: uppercase;
+      font-family: 'Muli';
+      font-weight: 700;
+      font-size: 5rem;
+      letter-spacing: 6px;
+      color: $color-heading;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 0;
+      transform: translate(0, -60%);
+      opacity: 0;
+      animation: fadeIn $animation-duration-long 2s ease-in-out forwards;
+      padding-left: $spacing;
+      padding-right: $spacing;
+
+      @include large {
+        padding-left: $spacing * 2;
+        padding-right: $spacing * 2;
+      }
+    }
+  }
+
+  .Content {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: $spacing $spacing;
+    padding-top: $spacing * 1.5;
+    background: $color-primary;
+    min-height: 400px;
+    height: 100%;
     opacity: 0;
     animation: fadeIn $animation-duration-long 2s ease-in-out forwards;
 
-    @include small {
-      padding-left: $spacing;
-    }
-
     @include large {
-      padding-left: $spacing * 2;
+      flex-direction: row;
+      padding: $spacing * 2 $spacing * 2;
     }
-  }
-}
 
-.PageSection {
-  background: $color-primary;
-  padding-top: $spacing * 2;
-  padding-bottom: $spacing * 2;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  opacity: 0;
-  animation: fadeIn $animation-duration-long 2s ease-in-out forwards;
+    .Text {
+      flex-basis: calc(50% - #{$spacing / 2});
+      display: flex;
+      align-items: center;
+    }
 
-  @include small {
-    padding: $spacing;
-    padding-top: $spacing * 3;
-    padding-bottom: $spacing * 3;
-  }
+    .Image {
+      margin-bottom: $spacing;
+      flex-basis: calc(50% - #{$spacing / 2});
 
-  @include large {
-    padding: $spacing * 2;
-    padding-top: $spacing * 3;
-    padding-bottom: $spacing * 3;
-    flex-direction: row;
-  }
-}
+      @include large {
+        margin-bottom: 0;
+      }
 
-@keyframes scrollImage {
-  from {
-    object-position: top;
-  }
+      img {
+        max-height: 360px;
+        object-fit: cover;
 
-  to {
-    object-position: bottom;
-  }
-}
-
-.ImageContainer {
-  height: 280px;
-  overflow-y: hidden;
-
-  img {
-    object-fit: cover;
-    object-position: top;
-    animation: scrollImage 20s 5s linear alternate infinite;
+        @include large {
+          max-height: 100%;
+        }
+      }
+    }
   }
 }

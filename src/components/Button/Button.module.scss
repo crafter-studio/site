@@ -60,8 +60,9 @@
   color: $color-light-grey;
   letter-spacing: $letter-spacing;
   text-transform: uppercase;
+  font-family: $font-family-secondary;
   font-size: $font-size-subscript;
-  font-weight: $font-weight-bold;
+  font-weight: $font-weight-regular;
   transition: background-color $animation-duration ease-in;
   cursor: pointer;
 

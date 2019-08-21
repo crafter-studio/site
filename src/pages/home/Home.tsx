@@ -1,9 +1,16 @@
 import React from 'react';
 
 import styles from './Home.module.scss';
-import {Decor, Text, Page, ScrambledText, Grid, Theme} from '../../components';
+import {
+  Text,
+  Page,
+  ScrambledText,
+  Grid,
+  Button,
+  AnimatedButton,
+} from '../../components';
 
-import casper from '../../images/casper_full.png';
+import placeholder from '../../images/placeholder.jpg';
 
 interface Props {}
 
@@ -41,36 +48,43 @@ export default class Home extends React.PureComponent<ComposedProps, State> {
             </div>
           </div>
           <div />
-          <div className={styles.About}>
+          <div className={styles.AboutSection}>
             <Grid>
               <Grid.ScreenWidth>
-                <div className={styles.SectionHeading}>
+                <div className={styles.Heading}>
                   <h1>About.</h1>
                 </div>
-                <div className={styles.PageSection}>
-                  <div style={{flex: '1', marginRight: '20px'}}>
-                    <Text hyphenated>
-                      Paragraphs Lorem ipsum dolor sit amet, consectetuer
-                      adipiscing elit. Donec odio. Quisque volutpat mattis eros.
-                      Nullam malesuada erat ut turpis. Suspendisse urna nibh,
-                      viverra non, semper suscipit, posuere a, pede.
-                    </Text>
-                    <Text hyphenated>
-                      Paragraphs Lorem ipsum dolor sit amet, consectetuer
-                      adipiscing elit. Donec odio. Quisque volutpat mattis eros.
-                      Nullam malesuada erat ut turpis.
-                    </Text>
+                <div className={styles.Content}>
+                  <div className={styles.Image}>
+                    <img src={placeholder} />
                   </div>
-                  <div className={styles.ImageContainer} style={{flex: '1'}}>
-                    <img style={{width: '100%'}} src={casper} />
+                  <div className={styles.Text}>
+                    <div>
+                      <Text tag="h3" size="h1">
+                        Innovating New Things
+                      </Text>
+                      <Text hyphenated>
+                        We are a house of creativity who operate in and around
+                        product and communication. Small enough for undivided
+                        attention. Big enough to offer services in all
+                        disciplines. Sure, this might be a slightly
+                        over-simplified summary of what we do, but hey, who
+                        likes to read long descriptions anyways? So let’s cut
+                        the mustard and jump straight to the pudding. Let the
+                        scrolling commence.
+                      </Text>
+                      <div style={{textAlign: 'left'}}>
+                        <AnimatedButton to="about" content="Read More" />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </Grid.ScreenWidth>
             </Grid>
           </div>
-          <Page.Section>
+          <Page.Section bgColor="var(--color-dark-grey)">
             <Grid>
-              <Text size="h1" align="center">
+              <Text size="h1" align="center" color="var(--color-heading)">
                 Donec nec justo eget felis facilisis fermentum. Aliquam
                 porttitor mauris sit amet orci. Aenean dignissim pellentesque
                 felis.

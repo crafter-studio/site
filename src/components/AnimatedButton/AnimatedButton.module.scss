@@ -39,10 +39,6 @@
   animation-delay: 1.75s;
   opacity: 0;
 
-  &:not(:first-child) {
-    margin-left: $spacing;
-  }
-
   .LinkPlaceholder {
     visibility: hidden;
     display: inline-block;
@@ -53,10 +49,12 @@
   }
 
   .Link {
+    font-family: $font-family-secondary;
+    font-weight: $font-weight-bold;
     display: block;
     text-align: center;
-    color: $color-text-neg;
-    font-size: 1.1rem;
+    color: $color-heading;
+    font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: $letter-spacing;
     transition: color $animation-duration-long ease-in-out;
@@ -64,7 +62,7 @@
   }
 
   &:hover .Link {
-    color: $color-primary;
+    color: $color-heading;
   }
 
   > svg {
@@ -78,8 +76,8 @@
   &:hover .Rect {
     stroke-dasharray: $button-circumference $button-circumference;
     stroke-dashoffset: 0px;
-    stroke-width: 2px;
-    stroke: $color-primary;
+    stroke-width: 5px;
+    stroke: $color-heading;
   }
 
   .Rect {
@@ -87,10 +85,10 @@
     stroke-dasharray: calc(#{$button-width / 3}) $button-circumference;
     stroke-dashoffset: calc(
       0px - var(--button-width) - var(--button-height) - #{var(--button-width) /
-        3}
+        1}
     );
-    stroke-width: 3px;
-    stroke: rgba($color-text-neg, $translucent);
+    stroke-width: 5px;
+    stroke: $color-heading;
     transition: $animation-duration stroke-dasharray ease-in-out,
       $animation-duration stroke-dashoffset ease-in-out,
       $animation-duration stroke-width ease-in-out,
