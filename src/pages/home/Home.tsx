@@ -3,6 +3,8 @@ import React from 'react';
 import styles from './Home.module.scss';
 import {Decor, Text, Page, ScrambledText, Grid, Theme} from '../../components';
 
+import casper from '../../images/casper_full.png';
+
 interface Props {}
 
 type State = {};
@@ -43,12 +45,25 @@ export default class Home extends React.PureComponent<ComposedProps, State> {
             <Grid>
               <Grid.ScreenWidth>
                 <div className={styles.SectionHeading}>
-                  <h1>who?</h1>
+                  <h1>About.</h1>
                 </div>
                 <div className={styles.PageSection}>
-                  <Page.Section>
-                    <div style={{height: '600px'}} />
-                  </Page.Section>
+                  <div style={{flex: '1', marginRight: '20px'}}>
+                    <Text hyphenated>
+                      Paragraphs Lorem ipsum dolor sit amet, consectetuer
+                      adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+                      Nullam malesuada erat ut turpis. Suspendisse urna nibh,
+                      viverra non, semper suscipit, posuere a, pede.
+                    </Text>
+                    <Text hyphenated>
+                      Paragraphs Lorem ipsum dolor sit amet, consectetuer
+                      adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+                      Nullam malesuada erat ut turpis.
+                    </Text>
+                  </div>
+                  <div className={styles.ImageContainer} style={{flex: '1'}}>
+                    <img style={{width: '100%'}} src={casper} />
+                  </div>
                 </div>
               </Grid.ScreenWidth>
             </Grid>
@@ -56,8 +71,9 @@ export default class Home extends React.PureComponent<ComposedProps, State> {
           <Page.Section>
             <Grid>
               <Text size="h1" align="center">
-                We deconstruct preconceived ideas to better shape concepts and
-                push boundaries; that's our purpose, the essence of our culture.
+                Donec nec justo eget felis facilisis fermentum. Aliquam
+                porttitor mauris sit amet orci. Aenean dignissim pellentesque
+                felis.
               </Text>
             </Grid>
           </Page.Section>
