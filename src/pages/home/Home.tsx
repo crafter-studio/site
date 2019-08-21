@@ -8,9 +8,10 @@ import {
   Grid,
   Button,
   AnimatedButton,
+  Link,
 } from '../../components';
 
-import placeholder from '../../images/placeholder.jpg';
+import placeholder from '../../images/casper.png';
 
 interface Props {}
 
@@ -73,9 +74,7 @@ export default class Home extends React.PureComponent<ComposedProps, State> {
                         the mustard and jump straight to the pudding. Let the
                         scrolling commence.
                       </Text>
-                      <div style={{textAlign: 'left'}}>
-                        <AnimatedButton to="about" content="Read More" />
-                      </div>
+                      <Link to="/about">Read More</Link>
                     </div>
                   </div>
                 </div>

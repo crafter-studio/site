@@ -14,6 +14,8 @@ export {default as Heading} from './Heading';
 
 export {default as Input} from './Input';
 
+export {default as Link} from './Link';
+
 export {default as Lists} from './List';
 
 export {default as MaxContentWidth} from './MaxContentWidth';
