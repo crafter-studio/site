@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from './Home.module.scss';
-import {Decor, Text, Page, ScrambledText, Grid} from '../../components';
+import {Decor, Text, Page, ScrambledText, Grid, Theme} from '../../components';
 
 interface Props {}
 
@@ -24,13 +24,7 @@ export default class Home extends React.PureComponent<ComposedProps, State> {
         <Page.Layout>
           <div className={styles.HeroSection}>
             <div className={styles.Hypnotize}>
-              <h1
-                style={{
-                  fontFamily: 'Muli',
-                  fontWeight: 700,
-                  letterSpacing: '1.5px',
-                }}
-              >
+              <h1>
                 <ScrambledText
                   message="CRAFTER STUDIO"
                   speed={500}
@@ -39,11 +33,23 @@ export default class Home extends React.PureComponent<ComposedProps, State> {
               </h1>
             </div>
             <div className={styles.Tagline}>
-              <Text>Web Development & Design</Text>
+              <Grid>
+                <Text align="center">Web Design & Development</Text>
+              </Grid>
             </div>
           </div>
           <div />
-          <Decor.Triangle color="var(--color-light-grey)" />
+          <Theme darkMode>
+            <Page.Section bgColor="var(--color-black)">
+              <Grid>
+                <Text size="h1" color="var(--color-light-grey)">
+                  You deserve quality. We Are a small team of web-experts that
+                  create product-centered microsites for brands targeting a new
+                  market.
+                </Text>
+              </Grid>
+            </Page.Section>
+          </Theme>
           <Page.Section>
             <Grid>
               <Text size="h1" align="center">
@@ -52,9 +58,20 @@ export default class Home extends React.PureComponent<ComposedProps, State> {
               </Text>
             </Grid>
           </Page.Section>
-          <Page.Section>
-            <Decor.Noise />
-          </Page.Section>
+          <Theme darkMode>
+            <Page.Section>
+              <div
+                style={{
+                  height: '500px',
+                  width: '800px',
+                  margin: 'auto',
+                  textAlign: 'center',
+                  paddingTop: '200px',
+                }}
+              />
+              <Decor.Noise />
+            </Page.Section>
+          </Theme>
         </Page.Layout>
       </Page>
     );

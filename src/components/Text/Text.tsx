@@ -10,7 +10,8 @@ interface Props {
   size?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   align?: 'left' | 'center' | 'right' | 'justify';
   uppercase?: boolean;
-  hyphen?: boolean;
+  hyphenated?: boolean;
+  color?: string;
   spaceUnder?: 'tight' | 'loose' | 'extra-loose';
 }
 
@@ -21,31 +22,60 @@ function wrapComponentWithTag(
   reactElement: React.ReactNode,
   className: string,
   tag: Props['tag'],
+  color: string,
 ): React.ReactElement {
   const headerClass = classNames(styles.Heading, className);
 
   let tagMarkup;
   switch (tag) {
     case 'h1':
-      tagMarkup = <h1 className={headerClass}>{reactElement}</h1>;
+      tagMarkup = (
+        <h1 style={{color}} className={headerClass}>
+          {reactElement}
+        </h1>
+      );
       break;
     case 'h2':
-      tagMarkup = <h2 className={headerClass}>{reactElement}</h2>;
+      tagMarkup = (
+        <h2 style={{color}} className={headerClass}>
+          {reactElement}
+        </h2>
+      );
       break;
     case 'h3':
-      tagMarkup = <h3 className={headerClass}>{reactElement}</h3>;
+      tagMarkup = (
+        <h3 style={{color}} className={headerClass}>
+          {reactElement}
+        </h3>
+      );
       break;
     case 'h4':
-      tagMarkup = <h4 className={headerClass}>{reactElement}</h4>;
+      tagMarkup = (
+        <h4 style={{color}} className={headerClass}>
+          {reactElement}
+        </h4>
+      );
       break;
     case 'h5':
-      tagMarkup = <h5 className={headerClass}>{reactElement}</h5>;
+      tagMarkup = (
+        <h5 style={{color}} className={headerClass}>
+          {reactElement}
+        </h5>
+      );
       break;
     case 'h6':
-      tagMarkup = <h6 className={headerClass}>{reactElement}</h6>;
+      tagMarkup = (
+        <h6 style={{color}} className={headerClass}>
+          {reactElement}
+        </h6>
+      );
       break;
     default:
-      tagMarkup = <p className={className}>{reactElement}</p>;
+      tagMarkup = (
+        <p style={{color}} className={className}>
+          {reactElement}
+        </p>
+      );
       break;
   }
 
@@ -56,7 +86,15 @@ export default class Text extends React.PureComponent<ComposedProps, State> {
   static Container = Container;
 
   render() {
-    const {tag, uppercase, align, size, hyphen = true, children} = this.props;
+    const {
+      tag,
+      uppercase,
+      align,
+      size,
+      color,
+      hyphenated = false,
+      children,
+    } = this.props;
 
     const composedClass = classNames(
       styles.Text,
@@ -66,9 +104,13 @@ export default class Text extends React.PureComponent<ComposedProps, State> {
       size && styles[classVariants('size', size)],
     );
 
-    const content = wrapComponentWithTag(children, composedClass, tag);
+    const content = wrapComponentWithTag(children, composedClass, tag, color);
 
-    const processedText = hyphen ? <Hyphenate>{content}</Hyphenate> : content;
+    const processedText = hyphenated ? (
+      <Hyphenate>{content}</Hyphenate>
+    ) : (
+      content
+    );
     return processedText;
   }
 }

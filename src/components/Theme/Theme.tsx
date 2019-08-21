@@ -20,13 +20,25 @@ class Theme extends React.PureComponent<ComposedProps, State> {
     this.handleOnLeave = this.handleOnLeave.bind(this);
   }
 
+  private activeDarkThemeColors() {
+    const root = document.documentElement;
+    root.style.setProperty('--color-text-themed', 'var(--color-light-grey)');
+  }
+
+  private deactiveDarkThemeColors() {
+    const root = document.documentElement;
+    root.style.setProperty('--color-text-themed', 'var(--color-text)');
+  }
+
   private handleOnEnter() {
     const {darkMode = false, onEnter, dispatch} = this.props;
 
     if (darkMode) {
       dispatch(toggleDarkMode(true));
+      this.activeDarkThemeColors();
     } else {
       dispatch(toggleDarkMode(false));
+      this.deactiveDarkThemeColors();
     }
 
     if (onEnter != null) {
@@ -39,8 +51,10 @@ class Theme extends React.PureComponent<ComposedProps, State> {
 
     if (darkMode) {
       dispatch(toggleDarkMode(false));
+      this.deactiveDarkThemeColors();
     } else {
       dispatch(toggleDarkMode(true));
+      this.activeDarkThemeColors();
     }
 
     if (onLeave != null) {
@@ -59,7 +73,8 @@ class Theme extends React.PureComponent<ComposedProps, State> {
         onEnter={this.handleOnEnter}
         onLeave={this.handleOnLeave}
       >
-        {this.props.children}
+        {/* Waypoint needs a DOM node to compute boundaries */}
+        <div>{this.props.children}</div>
       </Waypoint>
     );
   }
