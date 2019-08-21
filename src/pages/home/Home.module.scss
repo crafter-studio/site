@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: calc(100vh - #{$spacing * 8});
+  height: calc(100vh - #{$spacing * 4});
   width: 100%;
   background-color: $color-light-grey;
 }
@@ -22,7 +22,7 @@
 @keyframes fadeInTextColor {
   from {
     color: rgba(0, 0, 0, 0);
-    transform: scale(1.5);
+    transform: scale(1.6);
   }
 
   to {
@@ -100,7 +100,7 @@
     word-wrap: break-word;
     word-break: break-all;
     color: rgba($color-text, 0);
-    transform: scale(1.5);
+    transform: scale(1.6);
     animation: fadeInTextColor $animation-duration-long 1.7s ease-in-out
       forwards;
   }
@@ -123,4 +123,42 @@
     height: 40px;
     width: 120px;
   }
+}
+
+.About {
+  background: $color-primary;
+
+  @include small {
+    background: $color-light-grey;
+  }
+}
+
+.SectionHeading {
+  position: relative;
+  z-index: 10;
+  h1 {
+    text-transform: uppercase;
+    font-family: 'Muli';
+    font-weight: 700;
+    font-size: 6rem;
+    letter-spacing: 10px;
+    color: $color-heading;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    transform: translate(0, -50%);
+
+    @include small {
+      padding-left: $spacing;
+    }
+
+    @include large {
+      padding-left: $spacing * 2;
+    }
+  }
+}
+
+.PageSection {
+  background: $color-primary;
 }

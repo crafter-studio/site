@@ -39,17 +39,20 @@ export default class Home extends React.PureComponent<ComposedProps, State> {
             </div>
           </div>
           <div />
-          <Theme darkMode>
-            <Page.Section bgColor="var(--color-black)">
-              <Grid>
-                <Text size="h1" color="var(--color-light-grey)">
-                  You deserve quality. We Are a small team of web-experts that
-                  create product-centered microsites for brands targeting a new
-                  market.
-                </Text>
-              </Grid>
-            </Page.Section>
-          </Theme>
+          <div className={styles.About}>
+            <Grid>
+              <Grid.ScreenWidth>
+                <div className={styles.SectionHeading}>
+                  <h1>who?</h1>
+                </div>
+                <div className={styles.PageSection}>
+                  <Page.Section>
+                    <div style={{height: '600px'}} />
+                  </Page.Section>
+                </div>
+              </Grid.ScreenWidth>
+            </Grid>
+          </div>
           <Page.Section>
             <Grid>
               <Text size="h1" align="center">
@@ -58,20 +61,6 @@ export default class Home extends React.PureComponent<ComposedProps, State> {
               </Text>
             </Grid>
           </Page.Section>
-          <Theme darkMode>
-            <Page.Section>
-              <div
-                style={{
-                  height: '500px',
-                  width: '800px',
-                  margin: 'auto',
-                  textAlign: 'center',
-                  paddingTop: '200px',
-                }}
-              />
-              <Decor.Noise />
-            </Page.Section>
-          </Theme>
         </Page.Layout>
       </Page>
     );

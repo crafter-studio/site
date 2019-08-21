@@ -34,7 +34,6 @@
   margin-top: 0;
   margin-bottom: $spacing-tight;
   font-size: $font-size;
-  color: var(--color-text);
   transition: color $animation-duration ease-in-out;
 
   &:last-child {
@@ -117,7 +116,6 @@ h6.Heading {
   margin-bottom: $spacing-tight;
   margin-top: $spacing-loose;
   font-weight: $font-weight-bold;
-  color: var(--color-heading);
 
   &.uppercase {
     font-family: $font-family-secondary;
