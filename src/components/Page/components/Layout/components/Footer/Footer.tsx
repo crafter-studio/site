@@ -96,6 +96,17 @@ export default class Footer extends React.PureComponent<ComposedProps, State> {
             </Grid.ScreenWidth>
           </Grid>
         </Page.Section>
+        <div className={styles.Copyright}>
+          <Grid>
+            <Grid.ScreenWidth>
+              <Text.Container align="center">
+                <Text size="subscript">
+                  Copyright © {new Date().getFullYear()} Crafter Studio
+                </Text>
+              </Text.Container>
+            </Grid.ScreenWidth>
+          </Grid>
+        </div>
       </footer>
     );
   }

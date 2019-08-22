@@ -92,6 +92,10 @@
     text-transform: uppercase;
     letter-spacing: $letter-spacing;
   }
+
+  &.subdued {
+    color: $color-text-subdued;
+  }
 }
 
 h1.Heading {
