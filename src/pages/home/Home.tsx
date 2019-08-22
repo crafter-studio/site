@@ -11,7 +11,7 @@ import {
   Link,
 } from '../../components';
 
-import placeholder from '../../images/casper.png';
+import placeholder from '../../images/casper.PNG';
 import placeholder_1 from '../../images/placeholder_1.jpg';
 import placeholder_2 from '../../images/placeholder_2.jpg';
 import placeholder_3 from '../../images/placeholder_3.jpg';
