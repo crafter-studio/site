@@ -96,13 +96,13 @@
 }
 
 .AboutSection {
-  padding-bottom: $spacing;
+  padding-bottom: $spacing * 2;
   background-color: $color-light-grey;
   opacity: 0;
   animation: fadeIn $animation-duration-long 2s ease-in-out forwards;
 
   @include small {
-    padding-bottom: $spacing * 2;
+    padding-bottom: $spacing * 4;
   }
 
   .Heading {
@@ -155,14 +155,14 @@
     }
 
     .Text {
-      flex-basis: calc(50% - #{$spacing / 2});
+      flex-basis: calc(50% - #{$spacing});
       display: flex;
       align-items: center;
     }
 
     .Image {
       margin-bottom: $spacing;
-      flex-basis: calc(50% - #{$spacing / 2});
+      flex-basis: calc(50% - #{$spacing});
 
       @include large {
         margin-bottom: 0;
