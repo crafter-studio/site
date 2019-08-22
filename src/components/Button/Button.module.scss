@@ -56,7 +56,7 @@
   padding-right: $spacing;
   padding-top: $spacing-tight;
   padding-bottom: $spacing-tight;
-  background-color: $color-primary;
+  background-color: $color-btn-primary;
   color: $color-light-grey;
   letter-spacing: $letter-spacing;
   text-transform: uppercase;
@@ -68,6 +68,7 @@
 
   // get rid of default styling for inputs
   border: none;
+  text-decoration: none;
 
   .ButtonWrapper.fullWidth & {
     width: 100%;

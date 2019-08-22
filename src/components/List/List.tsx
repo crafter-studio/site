@@ -5,6 +5,7 @@ import {classNames} from '../../components/utils/classNames';
 
 interface Props {
   ordered?: boolean;
+  noPadding?: boolean;
   noBullets?: boolean;
   listStyle?: 'disc' | 'circle' | 'square' | 'decimal' | 'lower-roman';
 }
@@ -16,11 +17,18 @@ export default class List extends React.PureComponent<ComposedProps, State> {
   static Item;
 
   render() {
-    const {children, ordered, noBullets = false, listStyle} = this.props;
+    const {
+      children,
+      ordered,
+      noPadding,
+      noBullets = false,
+      listStyle,
+    } = this.props;
 
     const className = classNames(
       styles.List,
       noBullets && styles.noBullets,
+      noPadding && styles.noPadding,
       ordered && styles.ordered,
     );
 
@@ -41,11 +49,16 @@ export default class List extends React.PureComponent<ComposedProps, State> {
 const Item = ({children, icon, iconSize}) => {
   const className = classNames(icon && styles.ListItemBullet);
   const iconSizeStyle = iconSize ? iconSize : '';
+  const iconMarkup = icon ? (
+    <span style={{fontSize: iconSizeStyle}} className={className}>
+      {icon}
+    </span>
+  ) : (
+    ''
+  );
   return (
     <li className={styles.ListItem}>
-      <span style={{fontSize: iconSizeStyle}} className={className}>
-        {icon}
-      </span>
+      {iconMarkup}
       {children}
     </li>
   );

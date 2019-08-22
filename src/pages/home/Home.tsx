@@ -77,9 +77,15 @@ export default class Home extends React.PureComponent<ComposedProps, State> {
                         over-simplified summary of what we do, but hey, who
                         likes to read long descriptions anyways? So let’s cut
                         the mustard and jump straight to the pudding. Let the
-                        scrolling commence.
+                        scrolling commence. Insert a{' '}
+                        <Link to="/something" animated>
+                          link here
+                        </Link>
+                        might make things weird.
                       </Text>
-                      <Link to="/about">Read More</Link>
+                      <Link to="/about" animated>
+                        Read More
+                      </Link>
                     </div>
                   </div>
                 </div>

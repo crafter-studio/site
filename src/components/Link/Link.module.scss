@@ -1,38 +1,59 @@
 .Link {
-  color: $color-text;
-  font-family: $font-family-secondary;
-  font-size: $font-size-subscript;
-  text-transform: uppercase;
   letter-spacing: $letter-spacing;
-  padding: $spacing-tight;
   position: relative;
-  display: inline-block;
 
   a {
-    display: inline-block;
-    font-weight: $font-weight-bold;
-    transition: transform $animation-duration ease-in-out;
+    position: relative;
+    text-decoration: none;
   }
 
-  &:hover {
-    a {
-      transform: translateY(20%);
-    }
+  &.secondaryFont {
+    font-family: $font-family-secondary;
   }
 
-  &:after {
+  &.underlined a {
+    text-decoration: underline;
+  }
+
+  &.animated a:after {
     content: '';
-    height: 2px;
-    left: 50%;
-    bottom: 0;
-    transform: translate(-50%, 0);
     position: absolute;
-    background: $color-text;
-    width: 50%;
-    transition: width $animation-duration ease-in-out;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background-color: rgba($color-text, $translucent);
   }
 
-  &:hover:after {
+  &.animated a {
+    text-decoration: none;
+    display: inline-block;
+    color: $color-text;
+    transition: color $animation-duration ease-in-out;
+  }
+
+  &.animated a:before {
+    content: '';
+    position: absolute;
     width: 100%;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background-color: $color-link;
+    visibility: hidden;
+    transform-origin: center left;
+    transform: scaleX(0);
+    transition: all $animation-duration ease-in-out;
+  }
+
+  &.animated:hover {
+    a {
+      color: $color-link;
+    }
+
+    a:before {
+      visibility: visible;
+      transform: scaleX(1);
+    }
   }
 }

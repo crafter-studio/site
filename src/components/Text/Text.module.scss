@@ -64,6 +64,14 @@
     font-size: $font-size-h6;
   }
 
+  &.sizeSmall {
+    font-size: $font-size-small;
+  }
+
+  &.sizeSubscript {
+    font-size: $font-size-subscript;
+  }
+
   &.alignLeft {
     text-align: left;
   }

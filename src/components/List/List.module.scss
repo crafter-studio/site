@@ -13,6 +13,10 @@
     }
   }
 
+  &.noPadding {
+    padding: 0;
+  }
+
   &.noBullets {
     list-style: none;
   }

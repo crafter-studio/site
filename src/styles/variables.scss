@@ -38,15 +38,15 @@ $font-weight-regular: 400;
 $font-weight-bold: 700;
 $font-weight-black: 900;
 
-$font-size-subscript: 1.2rem;
-$font-size: 1.9rem;
-
 $font-size-h1: 2.8rem;
 $font-size-h2: 2.4rem;
 $font-size-h3: 2.2rem;
 $font-size-h4: 2rem;
 $font-size-h5: 1.9rem;
 $font-size-h6: 1.9rem;
+$font-size: 1.9rem;
+$font-size-small: 1.6rem;
+$font-size-subscript: 1.2rem;
 
 // ======================================
 // COLOR Palette | Note: CSS variables of
@@ -55,10 +55,10 @@ $font-size-h6: 1.9rem;
 // ======================================
 
 // Colors
-$color-primary: #fff4bf;
+$color-primary: #f1f1f1;
 $color-secondary: #5bacdb;
 $color-input-bg: #f2f2f2;
-$color-input-outline: lighten($color-primary, 40);
+$color-input-outline: rgba(24, 85, 252, 0.1);
 $color-light-grey: #fcfcfc;
 $color-dark-grey: #efefef;
 $color-black: #121212;
@@ -71,11 +71,12 @@ $color-heading-neg: #f0f0f0;
 $color-text-neg: #bababa;
 
 // Button
+$color-btn-primary: $color-black;
 $color-button-primary-text: $color-black;
 $color-button-subdued: $color-subdued;
 
 // Link
-$color-link: black;
+$color-link: rgb(24, 85, 252);
 
 // Transparency
 $translucent: 0.4;

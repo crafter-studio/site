@@ -7,7 +7,7 @@ import styles from './Text.module.scss';
 
 interface Props {
   tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-  size?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  size?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'small' | 'subscript';
   align?: 'left' | 'center' | 'right' | 'justify';
   uppercase?: boolean;
   hyphenated?: boolean;
