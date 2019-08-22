@@ -11,7 +11,7 @@ import {
   Link,
 } from '../../components';
 
-import placeholder from '../../images/casper.png';
+import placeholder_house from '../../images/house.png';
 import placeholder_1 from '../../images/placeholder_1.jpg';
 import placeholder_2 from '../../images/placeholder_2.jpg';
 import placeholder_3 from '../../images/placeholder_3.jpg';
@@ -62,7 +62,7 @@ export default class Home extends React.PureComponent<ComposedProps, State> {
                 </div>
                 <div className={styles.Content}>
                   <div className={styles.Image}>
-                    <img src={placeholder} />
+                    <img src={placeholder_house} />
                   </div>
                   <div className={styles.Text}>
                     <div>
