@@ -1,10 +1,10 @@
 .Link {
-  letter-spacing: $letter-spacing;
   position: relative;
 
   a {
     position: relative;
     text-decoration: none;
+    color: $color-link;
   }
 
   &.secondaryFont {

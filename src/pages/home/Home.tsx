@@ -76,12 +76,9 @@ export default class Home extends React.PureComponent<ComposedProps, State> {
                         disciplines. Sure, this might be a slightly
                         over-simplified summary of what we do, but hey, who
                         likes to read long descriptions anyways? So let’s cut
-                        the mustard and jump straight to the pudding. Let the
-                        scrolling commence. Insert a{' '}
-                        <Link to="/something" animated>
-                          link here
-                        </Link>
-                        might make things weird.
+                        the mustard and jump straight to the{' '}
+                        <Link to="/pudding">pudding</Link>. Let the scrolling
+                        commence.
                       </Text>
                       <Link to="/about" animated>
                         Read More
@@ -123,9 +120,8 @@ export default class Home extends React.PureComponent<ComposedProps, State> {
           <Page.Section bgColor="var(--color-dark-grey)">
             <Grid>
               <Text size="h1" align="center" color="var(--color-heading)">
-                Donec nec justo eget felis facilisis fermentum. Aliquam
-                porttitor mauris sit amet orci. Aenean dignissim pellentesque
-                felis.
+                We deconstruct preconceived ideas to better shape concepts and
+                push boundaries; that's our purpose, the essence of our culture.
               </Text>
             </Grid>
           </Page.Section>

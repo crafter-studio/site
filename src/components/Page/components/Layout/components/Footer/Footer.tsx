@@ -1,8 +1,14 @@
 import React from 'react';
-import {Link} from 'gatsby';
 
 import styles from './Footer.module.scss';
-import {Page, Grid, Text, List, Button} from '../../../../../../components';
+import {
+  Page,
+  Grid,
+  Text,
+  List,
+  Button,
+  Link,
+} from '../../../../../../components';
 
 export interface Props {}
 
