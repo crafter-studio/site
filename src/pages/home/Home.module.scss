@@ -199,7 +199,13 @@
         'b c a a'
         'd e a a';
       grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: repeat(2, #{($max-content-width / 4)});
+
+      $extra-screen-width: calc(calc(100vw - #{$max-content-width}) / 2);
+      $max-grid-width: calc(
+        (#{$max-content-width - $spacing-tight * 3} + #{$extra-screen-width}) /
+          4
+      );
+      grid-template-rows: repeat(2, $max-grid-width);
     }
 
     @include large {
