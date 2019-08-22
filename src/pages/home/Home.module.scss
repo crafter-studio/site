@@ -199,16 +199,31 @@
         'b c a a'
         'd e a a';
       grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: repeat(
-        2,
-        #{($max-content-width / 4) - ($spacing-tight * 3)}
-      );
+      grid-template-rows: repeat(2, #{($max-content-width / 4)});
     }
 
     @include large {
+      $width-without-grid-gap: $max-screen-width - $spacing-tight * 3;
+      grid-template-rows: repeat(2, #{($width-without-grid-gap / 4)});
+    }
+
+    @include xlarge {
+      $content-grid-gutter: ($max-screen-width - $max-content-width) / 2;
+      $minimum-width: 740px;
+      $minimum-grid-width: ($minimum-width / 4) - ($spacing-tight * 3 / 4);
+
+      $extra-width-spacing: $content-grid-gutter * 2;
+      $grid-gap-spacing: $spacing-tight * 3;
+      $xlarge-screen-content-width: 50vw;
+      $maximum-grid-width: calc(
+        (
+            #{$extra-width-spacing} + #{$xlarge-screen-content-width} - #{$grid-gap-spacing}
+          ) / 4
+      );
+
       grid-template-rows: repeat(
         2,
-        #{($max-screen-width / 4) - ($spacing-tight * 3)}
+        minmax($minimum-grid-width, $maximum-grid-width)
       );
     }
 
