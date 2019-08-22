@@ -11,6 +11,7 @@ import {
   Link,
 } from '../../components';
 
+import placeholder from '../../images/placeholder.jpg';
 import placeholder_house from '../../images/house.png';
 import placeholder_1 from '../../images/placeholder_1.jpg';
 import placeholder_2 from '../../images/placeholder_2.jpg';
@@ -89,6 +90,34 @@ export default class Home extends React.PureComponent<ComposedProps, State> {
               </Grid.ScreenWidth>
             </Grid>
           </div>
+          <Page.Section bgColor="var(--color-light-grey)">
+            <Grid>
+              <Grid.ScreenWidth>
+                <div className={styles.WorkSection}>
+                  <div className={styles.Heading}>
+                    <h1>Services.</h1>
+                  </div>
+                </div>
+                <div>
+                  <div
+                    style={{
+                      display: 'grid',
+                      height: '200px',
+                      backgroundColor: 'var(--color-primary)',
+                      gridGap: '40px',
+                      padding: '40px',
+                      gridTemplateColumns: 'repeat(4, 1fr)',
+                    }}
+                  >
+                    <img src={placeholder} />
+                    <img src={placeholder} />
+                    <img src={placeholder} />
+                    <img src={placeholder} />
+                  </div>
+                </div>
+              </Grid.ScreenWidth>
+            </Grid>
+          </Page.Section>
           <Page.Section bgColor="var(--color-light-grey)">
             <Grid>
               <Grid.ScreenWidth>
