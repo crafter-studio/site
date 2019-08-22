@@ -61,8 +61,8 @@ export default class Home extends React.PureComponent<ComposedProps, State> {
                   </div>
                   <div className={styles.Text}>
                     <div>
-                      <Text tag="h3" size="h1">
-                        Innovating New Things
+                      <Text tag="h3" size="h2">
+                        A House Of Creatives
                       </Text>
                       <Text hyphenated>
                         We are a house of creativity who operate in and around
