@@ -143,9 +143,9 @@
     flex-direction: column;
     padding: $spacing $spacing;
     padding-top: $spacing * 1.5;
-    background: $color-primary;
     min-height: 400px;
     height: 100%;
+    background-color: $color-primary;
 
     @include large {
       flex-direction: row;
@@ -273,5 +273,12 @@
       grid-area: e;
       background-color: rgb(167, 231, 228);
     }
+  }
+}
+
+.ServicesSection {
+  .Heading h1 {
+    @include HomeSectionHeading();
+    left: 0;
   }
 }

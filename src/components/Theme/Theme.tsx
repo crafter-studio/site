@@ -23,12 +23,17 @@ class Theme extends React.PureComponent<ComposedProps, State> {
 
   private activeDarkThemeColors() {
     const root = document.documentElement;
-    root.style.setProperty('--color-text-themed', 'var(--color-light-grey)');
+    root.style.setProperty('--color-text-themed', 'var(--color-text-neg)');
+    root.style.setProperty(
+      '--color-heading-themed',
+      'var(--color-heading-neg)',
+    );
   }
 
   private deactiveDarkThemeColors() {
     const root = document.documentElement;
     root.style.setProperty('--color-text-themed', 'var(--color-text)');
+    root.style.setProperty('--color-heading-themed', 'var(--color-heading)');
   }
 
   private handleOnEnter() {
@@ -58,10 +63,8 @@ class Theme extends React.PureComponent<ComposedProps, State> {
       dispatch(setBgColor('var(--color-bg)'));
     }
 
-    if (darkMode) {
-      dispatch(toggleDarkMode(false));
-      this.deactiveDarkThemeColors();
-    }
+    dispatch(toggleDarkMode(false));
+    this.deactiveDarkThemeColors();
 
     if (onLeave != null) {
       onLeave();
@@ -74,8 +77,10 @@ class Theme extends React.PureComponent<ComposedProps, State> {
 
     return (
       <Waypoint
+        fireOnRapidScroll
         scrollableAncestor={browserWindow}
-        bottomOffset="90%"
+        bottomOffset={`${(browserWindow.innerHeight * 2) / 3}`}
+        topOffset={`${(browserWindow.innerHeight * 1) / 3}`}
         onEnter={this.handleOnEnter}
         onLeave={this.handleOnLeave}
       >

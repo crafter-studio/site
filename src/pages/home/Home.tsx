@@ -83,12 +83,59 @@ export default class Home extends React.PureComponent<ComposedProps, State> {
               </Grid.ScreenWidth>
             </Grid>
           </div>
+          <Theme darkMode bgColor="var(--color-black)">
+            <Page.Section>
+              <Grid>
+                <Text
+                  size="h1"
+                  align="center"
+                  color="var(--color-heading-themed)"
+                >
+                  We deconstruct preconceived ideas to better shape concepts and
+                  push boundaries; that's our purpose, the essence of our
+                  culture.
+                </Text>
+              </Grid>
+            </Page.Section>
+          </Theme>
           <Page.Section>
             <Grid>
               <Grid.ScreenWidth>
                 <div className={styles.WorkSection}>
                   <div className={styles.Heading}>
-                    <h1>Services.</h1>
+                    <h1 style={{color: 'var(--color-heading-themed)'}}>
+                      Work.
+                    </h1>
+                  </div>
+                  <div className={styles.WorkGrid}>
+                    <div className={styles.Big}>
+                      <img src={placeholder_1} />
+                    </div>
+                    <div className={styles.B}>
+                      <img src={placeholder_5} />
+                    </div>
+                    <div className={styles.C}>
+                      <img src={placeholder_2} />
+                    </div>
+                    <div className={styles.D}>
+                      <img src={placeholder_4} />
+                    </div>
+                    <div className={styles.E}>
+                      <img src={placeholder_3} />
+                    </div>
+                  </div>
+                </div>
+              </Grid.ScreenWidth>
+            </Grid>
+          </Page.Section>
+          <Page.Section>
+            <Grid>
+              <Grid.ScreenWidth>
+                <div className={styles.ServicesSection}>
+                  <div className={styles.Heading}>
+                    <h1 style={{color: 'var(--color-heading-themed)'}}>
+                      Services.
+                    </h1>
                   </div>
                 </div>
                 <div>
@@ -109,44 +156,6 @@ export default class Home extends React.PureComponent<ComposedProps, State> {
                   </div>
                 </div>
               </Grid.ScreenWidth>
-            </Grid>
-          </Page.Section>
-          <Theme bgColor="lightyellow">
-            <Page.Section>
-              <Grid>
-                <Grid.ScreenWidth>
-                  <div className={styles.WorkSection}>
-                    <div className={styles.Heading}>
-                      <h1>Work.</h1>
-                    </div>
-                    <div className={styles.WorkGrid}>
-                      <div className={styles.Big}>
-                        <img src={placeholder_1} />
-                      </div>
-                      <div className={styles.B}>
-                        <img src={placeholder_5} />
-                      </div>
-                      <div className={styles.C}>
-                        <img src={placeholder_2} />
-                      </div>
-                      <div className={styles.D}>
-                        <img src={placeholder_4} />
-                      </div>
-                      <div className={styles.E}>
-                        <img src={placeholder_3} />
-                      </div>
-                    </div>
-                  </div>
-                </Grid.ScreenWidth>
-              </Grid>
-            </Page.Section>
-          </Theme>
-          <Page.Section bgColor="var(--color-dark-grey)">
-            <Grid>
-              <Text size="h1" align="center" color="var(--color-heading)">
-                We deconstruct preconceived ideas to better shape concepts and
-                push boundaries; that's our purpose, the essence of our culture.
-              </Text>
             </Grid>
           </Page.Section>
         </Page.Layout>
