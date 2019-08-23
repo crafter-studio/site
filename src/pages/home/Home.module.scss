@@ -300,7 +300,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: $spacing-tight;
-  grid-template-areas: 'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h';
+  grid-template-areas: 'a' 'b' 'c' 'd';
 
   @include small {
     grid-template-columns: repeat(2, 1fr);
@@ -353,17 +353,37 @@
 
   .E {
     grid-area: e;
+    display: none;
+
+    @include small {
+      display: block;
+    }
   }
 
   .F {
     grid-area: f;
+    display: none;
+
+    @include small {
+      display: block;
+    }
   }
 
   .G {
     grid-area: g;
+    display: none;
+
+    @include small {
+      display: block;
+    }
   }
 
   .H {
     grid-area: h;
+    display: none;
+
+    @include small {
+      display: block;
+    }
   }
 }
