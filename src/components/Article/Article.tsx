@@ -72,7 +72,7 @@ function transform(node) {
     if (className.includes('full-width')) {
       return (
         <Article.FullWidth key={cuid()}>
-          {processNodes(node.children, transform)}
+          <figure>{processNodes(node.children, transform)}</figure>
         </Article.FullWidth>
       );
     }
@@ -80,7 +80,7 @@ function transform(node) {
     if (className.includes('wide')) {
       return (
         <Article.Wide key={cuid()}>
-          {processNodes(node.children, transform)}
+          <figure>{processNodes(node.children, transform)}</figure>
         </Article.Wide>
       );
     }

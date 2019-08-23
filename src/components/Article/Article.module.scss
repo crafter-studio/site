@@ -24,14 +24,23 @@ $max-article-width: 640px;
 
   figure {
     margin: $spacing 0;
+    background-color: $color-dark-grey;
 
     img {
+      vertical-align: middle;
       margin: 0;
+    }
+
+    figcaption {
+      padding: $spacing-tight;
     }
   }
 
-  img {
-    margin: $spacing 0;
+  figcaption {
+    font-size: $font-size-subscript;
+    max-width: $max-article-width;
+    font-weight: $font-weight-bold;
+    margin: 0 auto;
   }
 
   @include medium {
