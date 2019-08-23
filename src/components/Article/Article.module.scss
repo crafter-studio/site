@@ -50,6 +50,15 @@ $max-article-width: 640px;
   }
 }
 
+.Article .ArticleTitle {
+  margin-bottom: $spacing;
+
+  h1 {
+    line-height: 1;
+    font-size: 4.3rem;
+  }
+}
+
 .FullWidth {
   grid-column: 1 / -1;
 }

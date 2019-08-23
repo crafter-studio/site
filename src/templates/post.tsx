@@ -1,5 +1,6 @@
 import React from 'react';
 import {graphql} from 'gatsby';
+import striptags from 'striptags';
 
 import {Page, Article} from '../components';
 
@@ -9,13 +10,11 @@ export const query = graphql`
       edges {
         node {
           id
-          content
-          path
           slug
-          template
-          categories {
-            name
-          }
+          title
+          content
+          excerpt
+          date
         }
       }
     }
@@ -31,16 +30,18 @@ type ComposedProps = Props;
 
 class Blog extends React.PureComponent<ComposedProps, State> {
   render() {
-    const html = this.props.data.allWordpressPost.edges[0].node.content;
+    const post = this.props.data.allWordpressPost.edges[0].node;
+    const {title, date, excerpt, content} = post;
+    const description = striptags(excerpt);
     return (
       <Page
-        title="Blog"
-        description="Description"
+        title={`${title}`}
+        description={`${description}`}
         keywords={['keyword', 'things']}
       >
         <Page.Layout>
           <div style={{marginTop: '80px', marginBottom: '80px'}}>
-            <Article html={html} />
+            <Article title={title} date={date} html={content} />
           </div>
         </Page.Layout>
       </Page>

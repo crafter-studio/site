@@ -10,10 +10,10 @@ const options = {
   transform,
 };
 
-function transform(node, index) {
+function transform(node) {
   if (node.type === 'tag' && node.name === 'p') {
     return (
-      <Text hyphen key={cuid()}>
+      <Text hyphenated key={cuid()}>
         {processNodes(node.children, transform)}
       </Text>
     );
@@ -37,7 +37,7 @@ function transform(node, index) {
 
   if (node.type === 'tag' && node.name === 'h3') {
     return (
-      <Text key={cuid()} tag="h3">
+      <Text key={cuid()} tag="h3" size="small" uppercase>
         {processNodes(node.children, transform)}
       </Text>
     );
@@ -88,6 +88,8 @@ function transform(node, index) {
 }
 
 export interface Props {
+  title: string;
+  date: string;
   html: string;
 }
 
@@ -99,11 +101,16 @@ class Article extends React.PureComponent<ComposedProps, State> {
   static Wide;
 
   render() {
-    const {html} = this.props;
+    const {title, date, html} = this.props;
     const markup = ReactHtmlParser(html, options);
     return (
       <div className={styles.ArticleContainer}>
-        <div className={styles.Article}>{markup}</div>
+        <article className={styles.Article}>
+          <div className={styles.ArticleTitle}>
+            <Text tag="h1">{title}</Text>
+          </div>
+          {markup}
+        </article>
       </div>
     );
   }
