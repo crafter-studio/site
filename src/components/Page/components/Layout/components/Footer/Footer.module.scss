@@ -1,5 +1,10 @@
 .Footer {
-  background-color: $color-bg;
+  background-color: $color-dark-grey;
+  padding-top: $spacing;
+
+  @include medium {
+    padding-top: $spacing * 4;
+  }
 }
 
 .FooterGrid {
@@ -24,5 +29,12 @@
 }
 
 .Copyright {
-  padding: $spacing;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: $spacing;
+
+  @include medium {
+    height: $spacing * 4;
+  }
 }
