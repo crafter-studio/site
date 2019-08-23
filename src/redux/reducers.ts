@@ -14,7 +14,7 @@ export interface State {
 const initialState: State = {
   hamburgerMenuActive: false,
   darkModeActive: false,
-  bgColor: 'var(--color-light-grey)',
+  bgColor: 'var(--color-bg)',
 };
 
 export const toggleHamburgerMenu = (state = initialState, action) => {

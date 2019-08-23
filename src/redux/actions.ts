@@ -15,6 +15,6 @@ export const toggleDarkMode = (darkModeActive) => ({
 });
 
 export const setBgColor = (bgColor) => ({
-  type: Actions.TOGGLE_DARK_MODE,
+  type: Actions.SET_BG_COLOR,
   bgColor,
 });

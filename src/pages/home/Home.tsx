@@ -1,15 +1,7 @@
 import React from 'react';
 
 import styles from './Home.module.scss';
-import {
-  Text,
-  Page,
-  ScrambledText,
-  Grid,
-  Button,
-  AnimatedButton,
-  Link,
-} from '../../components';
+import {Text, Page, ScrambledText, Grid, Theme, Link} from '../../components';
 
 import placeholder from '../../images/placeholder.jpg';
 import placeholder_house from '../../images/house.png';
@@ -119,34 +111,36 @@ export default class Home extends React.PureComponent<ComposedProps, State> {
               </Grid.ScreenWidth>
             </Grid>
           </Page.Section>
-          <Page.Section>
-            <Grid>
-              <Grid.ScreenWidth>
-                <div className={styles.WorkSection}>
-                  <div className={styles.Heading}>
-                    <h1>Work.</h1>
+          <Theme bgColor="lightyellow">
+            <Page.Section>
+              <Grid>
+                <Grid.ScreenWidth>
+                  <div className={styles.WorkSection}>
+                    <div className={styles.Heading}>
+                      <h1>Work.</h1>
+                    </div>
+                    <div className={styles.WorkGrid}>
+                      <div className={styles.Big}>
+                        <img src={placeholder_1} />
+                      </div>
+                      <div className={styles.B}>
+                        <img src={placeholder_5} />
+                      </div>
+                      <div className={styles.C}>
+                        <img src={placeholder_2} />
+                      </div>
+                      <div className={styles.D}>
+                        <img src={placeholder_4} />
+                      </div>
+                      <div className={styles.E}>
+                        <img src={placeholder_3} />
+                      </div>
+                    </div>
                   </div>
-                  <div className={styles.WorkGrid}>
-                    <div className={styles.Big}>
-                      <img src={placeholder_1} />
-                    </div>
-                    <div className={styles.B}>
-                      <img src={placeholder_5} />
-                    </div>
-                    <div className={styles.C}>
-                      <img src={placeholder_2} />
-                    </div>
-                    <div className={styles.D}>
-                      <img src={placeholder_4} />
-                    </div>
-                    <div className={styles.E}>
-                      <img src={placeholder_3} />
-                    </div>
-                  </div>
-                </div>
-              </Grid.ScreenWidth>
-            </Grid>
-          </Page.Section>
+                </Grid.ScreenWidth>
+              </Grid>
+            </Page.Section>
+          </Theme>
           <Page.Section bgColor="var(--color-dark-grey)">
             <Grid>
               <Text size="h1" align="center" color="var(--color-heading)">

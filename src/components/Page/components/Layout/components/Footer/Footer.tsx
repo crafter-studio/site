@@ -18,7 +18,7 @@ type ComposedProps = Props;
 export default class Footer extends React.PureComponent<ComposedProps, State> {
   render() {
     return (
-      <footer>
+      <footer className={styles.Footer}>
         <Page.Section>
           <Grid>
             <Grid.ScreenWidth>

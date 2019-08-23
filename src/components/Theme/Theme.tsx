@@ -1,11 +1,12 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {ReduxState} from '../../redux/reducers';
-import {toggleDarkMode} from '../../redux/actions';
+import {toggleDarkMode, setBgColor} from '../../redux/actions';
 import {Waypoint} from 'react-waypoint';
 
 interface Props {
   darkMode?: boolean;
+  bgColor?: string;
   onEnter?: () => void;
   onLeave?: () => void;
 }
@@ -31,7 +32,11 @@ class Theme extends React.PureComponent<ComposedProps, State> {
   }
 
   private handleOnEnter() {
-    const {darkMode = false, onEnter, dispatch} = this.props;
+    const {darkMode = false, bgColor, onEnter, dispatch} = this.props;
+
+    if (bgColor) {
+      dispatch(setBgColor(bgColor));
+    }
 
     if (darkMode) {
       dispatch(toggleDarkMode(true));
@@ -47,7 +52,11 @@ class Theme extends React.PureComponent<ComposedProps, State> {
   }
 
   private handleOnLeave() {
-    const {darkMode, onLeave, dispatch} = this.props;
+    const {darkMode, bgColor, onLeave, dispatch} = this.props;
+
+    if (bgColor) {
+      dispatch(setBgColor('var(--color-bg)'));
+    }
 
     if (darkMode) {
       dispatch(toggleDarkMode(false));
