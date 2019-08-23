@@ -85,17 +85,19 @@ export default class Home extends React.PureComponent<ComposedProps, State> {
           </div>
           <Theme darkMode bgColor="var(--color-black)">
             <Page.Section>
-              <Grid>
-                <Text
-                  size="h1"
-                  align="center"
-                  color="var(--color-heading-themed)"
-                >
-                  We deconstruct preconceived ideas to better shape concepts and
-                  push boundaries; that's our purpose, the essence of our
-                  culture.
-                </Text>
-              </Grid>
+              <div className={styles.AboutText}>
+                <Grid>
+                  <Text
+                    size="h1"
+                    align="center"
+                    color="var(--color-heading-themed)"
+                  >
+                    We deconstruct preconceived ideas to better shape concepts
+                    and push boundaries; that's our purpose, the essence of our
+                    culture.
+                  </Text>
+                </Grid>
+              </div>
             </Page.Section>
           </Theme>
           <Page.Section>

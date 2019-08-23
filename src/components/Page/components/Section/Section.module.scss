@@ -1,11 +1,11 @@
 .Section {
   position: relative;
-  padding-top: $spacing * 2;
-  padding-bottom: $spacing * 2;
+  margin-top: $spacing * 2;
+  margin-bottom: $spacing * 2;
   transition: background-color $animation-duration ease-in;
 
   @include large {
-    padding-top: $spacing * 4;
-    padding-bottom: $spacing * 4;
+    margin-top: $spacing * 4;
+    margin-bottom: $spacing * 4;
   }
 }

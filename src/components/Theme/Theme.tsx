@@ -79,8 +79,8 @@ class Theme extends React.PureComponent<ComposedProps, State> {
       <Waypoint
         fireOnRapidScroll
         scrollableAncestor={browserWindow}
-        bottomOffset={`${(browserWindow.innerHeight * 2) / 3}`}
-        topOffset={`${(browserWindow.innerHeight * 1) / 3}`}
+        topOffset="33%"
+        bottomOffset="66%"
         onEnter={this.handleOnEnter}
         onLeave={this.handleOnLeave}
       >
