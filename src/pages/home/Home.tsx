@@ -169,7 +169,32 @@ export default class Home extends React.PureComponent<ComposedProps, State> {
                       Blog.
                     </h1>
                   </div>
-                  <div className={styles.BlogGrid} />
+                  <div className={styles.BlogGrid}>
+                    <div className={styles.A}>
+                      <img src={placeholder} />
+                    </div>
+                    <div className={styles.B}>
+                      <img src={placeholder} />
+                    </div>
+                    <div className={styles.C}>
+                      <img src={placeholder} />
+                    </div>
+                    <div className={styles.D}>
+                      <img src={placeholder} />
+                    </div>
+                    <div className={styles.E}>
+                      <img src={placeholder} />
+                    </div>
+                    <div className={styles.F}>
+                      <img src={placeholder} />
+                    </div>
+                    <div className={styles.G}>
+                      <img src={placeholder} />
+                    </div>
+                    <div className={styles.H}>
+                      <img src={placeholder} />
+                    </div>
+                  </div>
                 </div>
               </Grid.ScreenWidth>
             </Grid>

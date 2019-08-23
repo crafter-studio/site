@@ -289,13 +289,81 @@
 }
 
 .BlogSection {
+  text-align: center;
   .Heading h1 {
     @include HomeSectionHeading();
     right: 0;
   }
+}
 
-  .BlogGrid {
-    background-color: $color-dark-grey;
-    height: 500px;
+.BlogGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: $spacing-tight;
+  grid-template-areas: 'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h';
+
+  @include small {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: 'a b' 'c d' 'e f' 'g h';
+  }
+
+  @include medium {
+    height: 820px;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    grid-template-areas:
+      'a a a a a b b c c c'
+      'a a a a a b b c c c'
+      'a a a a a b b c c c'
+      'a a a a a b b d d d'
+      'a a a a a b b d d d'
+      'e e e e e e e d d d'
+      'e e e e e e e d d d'
+      'f f f g g g g h h h'
+      'f f f g g g g h h h'
+      'f f f g g g g h h h';
+  }
+
+  & > div {
+    width: 100%;
+    height: 100%;
+    background: black;
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  .A {
+    grid-area: a;
+  }
+
+  .B {
+    grid-area: b;
+  }
+
+  .C {
+    grid-area: c;
+  }
+
+  .D {
+    grid-area: d;
+  }
+
+  .E {
+    grid-area: e;
+  }
+
+  .F {
+    grid-area: f;
+  }
+
+  .G {
+    grid-area: g;
+  }
+
+  .H {
+    grid-area: h;
   }
 }
