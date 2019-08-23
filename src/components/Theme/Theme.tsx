@@ -61,9 +61,6 @@ class Theme extends React.PureComponent<ComposedProps, State> {
     if (darkMode) {
       dispatch(toggleDarkMode(false));
       this.deactiveDarkThemeColors();
-    } else {
-      dispatch(toggleDarkMode(true));
-      this.activeDarkThemeColors();
     }
 
     if (onLeave != null) {
