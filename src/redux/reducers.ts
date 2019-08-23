@@ -8,11 +8,13 @@ interface ReduxProps {
 export interface State {
   hamburgerMenuActive: boolean;
   darkModeActive: boolean;
+  bgColor: string;
 }
 
 const initialState: State = {
   hamburgerMenuActive: false,
   darkModeActive: false,
+  bgColor: 'var(--color-light-grey)',
 };
 
 export const toggleHamburgerMenu = (state = initialState, action) => {
@@ -28,6 +30,15 @@ export const toggleDarkMode = (state = initialState, action) => {
   switch (action.type) {
     case Actions.TOGGLE_DARK_MODE:
       return {...state, darkModeActive: action.darkModeActive};
+    default:
+      return state;
+  }
+};
+
+export const setBgColor = (state = initialState, action) => {
+  switch (action.type) {
+    case Actions.SET_BG_COLOR:
+      return {...state, bgColor: action.bgColor};
     default:
       return state;
   }

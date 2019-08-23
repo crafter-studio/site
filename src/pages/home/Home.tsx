@@ -37,6 +37,7 @@ export default class Home extends React.PureComponent<ComposedProps, State> {
         description="Description"
         keywords={['keyword', 'things']}
       >
+        <Page.Background />
         <Page.Layout>
           <div className={styles.HeroSection}>
             <div className={styles.Hypnotize}>
@@ -59,7 +60,7 @@ export default class Home extends React.PureComponent<ComposedProps, State> {
             <Grid>
               <Grid.ScreenWidth>
                 <div className={styles.Heading}>
-                  <h1>About.</h1>
+                  <h1>Hello.</h1>
                 </div>
                 <div className={styles.Content}>
                   <div className={styles.Image}>
@@ -90,7 +91,7 @@ export default class Home extends React.PureComponent<ComposedProps, State> {
               </Grid.ScreenWidth>
             </Grid>
           </div>
-          <Page.Section bgColor="var(--color-light-grey)">
+          <Page.Section>
             <Grid>
               <Grid.ScreenWidth>
                 <div className={styles.WorkSection}>
@@ -118,7 +119,7 @@ export default class Home extends React.PureComponent<ComposedProps, State> {
               </Grid.ScreenWidth>
             </Grid>
           </Page.Section>
-          <Page.Section bgColor="var(--color-light-grey)">
+          <Page.Section>
             <Grid>
               <Grid.ScreenWidth>
                 <div className={styles.WorkSection}>
