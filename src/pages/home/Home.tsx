@@ -160,6 +160,20 @@ export default class Home extends React.PureComponent<ComposedProps, State> {
               </Grid.ScreenWidth>
             </Grid>
           </Page.Section>
+          <Page.Section>
+            <Grid>
+              <Grid.ScreenWidth>
+                <div className={styles.BlogSection}>
+                  <div className={styles.Heading}>
+                    <h1 style={{color: 'var(--color-heading-themed)'}}>
+                      Blog.
+                    </h1>
+                  </div>
+                  <div className={styles.BlogGrid} />
+                </div>
+              </Grid.ScreenWidth>
+            </Grid>
+          </Page.Section>
         </Page.Layout>
       </Page>
     );

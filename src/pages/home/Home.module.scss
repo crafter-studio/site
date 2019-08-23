@@ -287,3 +287,15 @@
     left: 0;
   }
 }
+
+.BlogSection {
+  .Heading h1 {
+    @include HomeSectionHeading();
+    right: 0;
+  }
+
+  .BlogGrid {
+    background-color: $color-dark-grey;
+    height: 500px;
+  }
+}
