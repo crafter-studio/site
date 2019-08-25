@@ -129,12 +129,11 @@
 }
 
 .AboutSection {
-  opacity: 0;
-  animation: fadeIn $animation-duration-long 2s ease-in-out forwards;
-
   .Heading h1 {
     @include HomeSectionHeading;
     left: 0;
+    opacity: 0;
+    animation: fadeIn $animation-duration-long 2s ease-in-out forwards;
   }
 
   .Content {
