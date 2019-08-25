@@ -140,8 +140,7 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    padding: $spacing $spacing;
-    padding-top: $spacing * 1.5;
+    padding: $spacing * 1.5 $spacing;
     min-height: 400px;
     height: 100%;
     background-color: $color-primary;
@@ -241,7 +240,7 @@
       cursor: pointer;
       width: 100%;
       height: 100%;
-      min-height: 300px;
+      min-height: 240px;
 
       @include medium {
         min-height: initial;
@@ -346,9 +345,14 @@
   }
 
   & > div {
+    min-height: 240px;
     width: 100%;
     height: 100%;
     background: black;
+
+    @include medium {
+      min-height: initial;
+    }
 
     img {
       object-fit: cover;
