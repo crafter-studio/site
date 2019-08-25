@@ -110,20 +110,29 @@ export default class Home extends React.PureComponent<ComposedProps, State> {
                     </h1>
                   </div>
                   <div className={styles.WorkGrid}>
-                    <div className={styles.Big}>
+                    <div className={styles.A}>
                       <img src={placeholder_1} />
                     </div>
                     <div className={styles.B}>
-                      <img src={placeholder_5} />
+                      <img src={placeholder_4} />
                     </div>
                     <div className={styles.C}>
-                      <img src={placeholder_2} />
+                      <img src={placeholder_1} />
                     </div>
                     <div className={styles.D}>
-                      <img src={placeholder_4} />
+                      <img src={placeholder_2} />
                     </div>
                     <div className={styles.E}>
                       <img src={placeholder_3} />
+                    </div>
+                    <div className={styles.F}>
+                      <img src={placeholder_5} />
+                    </div>
+                    <div className={styles.G}>
+                      <img src={placeholder_2} />
+                    </div>
+                    <div className={styles.H}>
+                      <img src={placeholder_4} />
                     </div>
                   </div>
                 </div>
@@ -170,29 +179,20 @@ export default class Home extends React.PureComponent<ComposedProps, State> {
                     </h1>
                   </div>
                   <div className={styles.BlogGrid}>
-                    <div className={styles.A}>
+                    <div className={styles.Big}>
                       <img src={placeholder_1} />
                     </div>
                     <div className={styles.B}>
-                      <img src={placeholder_4} />
+                      <img src={placeholder_5} />
                     </div>
                     <div className={styles.C}>
-                      <img src={placeholder_1} />
+                      <img src={placeholder_2} />
                     </div>
                     <div className={styles.D}>
-                      <img src={placeholder_2} />
+                      <img src={placeholder_4} />
                     </div>
                     <div className={styles.E}>
                       <img src={placeholder_3} />
-                    </div>
-                    <div className={styles.F}>
-                      <img src={placeholder_5} />
-                    </div>
-                    <div className={styles.G}>
-                      <img src={placeholder_2} />
-                    </div>
-                    <div className={styles.H}>
-                      <img src={placeholder_4} />
                     </div>
                   </div>
                 </div>

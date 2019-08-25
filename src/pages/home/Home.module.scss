@@ -183,7 +183,7 @@
   padding-bottom: $spacing * 4;
 }
 
-.WorkSection {
+.BlogSection {
   // background-color: $color-secondary;
 
   .Heading h1 {
@@ -191,7 +191,7 @@
     right: 0;
   }
 
-  .WorkGrid {
+  .BlogGrid {
     display: grid;
     grid-gap: $spacing-tight;
     grid-template-columns: 1fr;
@@ -288,7 +288,7 @@
   }
 }
 
-.BlogSection {
+.WorkSection {
   text-align: center;
   .Heading h1 {
     @include HomeSectionHeading();
@@ -296,7 +296,7 @@
   }
 }
 
-.BlogGrid {
+.WorkGrid {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: $spacing-tight;
