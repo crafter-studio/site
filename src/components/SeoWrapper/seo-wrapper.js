@@ -3,20 +3,30 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import {StaticQuery, graphql} from 'gatsby';
 
-function SeoWrapper({description, lang, meta, keywords, title}) {
+function SeoWrapper({
+  description,
+  lang,
+  meta,
+  keywords,
+  title,
+  disableSiteName,
+}) {
   return (
     <StaticQuery
       query={detailsQuery}
       render={(data) => {
         const metaDescription =
           description || data.site.siteMetadata.description;
+        const titleTemplate = disableSiteName
+          ? title
+          : `%s | ${data.site.siteMetadata.title}`;
         return (
           <Helmet
             htmlAttributes={{
               lang,
             }}
             title={title}
-            titleTemplate={`${data.site.siteMetadata.title} | %s`}
+            titleTemplate={titleTemplate}
             meta={[
               {
                 name: `description`,

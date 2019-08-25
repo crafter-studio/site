@@ -38,6 +38,7 @@ class Blog extends React.PureComponent<ComposedProps, State> {
         title={`${title}`}
         description={`${description}`}
         keywords={['keyword', 'things']}
+        disableSiteName
       >
         <Page.Layout>
           <div style={{marginTop: '80px', marginBottom: '80px'}}>

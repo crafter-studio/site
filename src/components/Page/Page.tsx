@@ -12,6 +12,7 @@ interface Props {
   description: string;
   keywords: string[];
   lang?: string;
+  disableSiteName?: boolean;
 }
 
 type State = {};
@@ -21,7 +22,14 @@ export default class Page extends React.PureComponent<ComposedProps, State> {
   static Layout: React.FC<NoProps>;
   static Section: React.FC<SectionProps>;
   render() {
-    const {title, description, keywords, lang, children} = this.props;
+    const {
+      title,
+      description,
+      keywords,
+      lang,
+      disableSiteName,
+      children,
+    } = this.props;
 
     return (
       <div className={styles.Page}>
@@ -30,6 +38,7 @@ export default class Page extends React.PureComponent<ComposedProps, State> {
           description={description}
           keywords={keywords}
           lang={lang}
+          disableSiteName={disableSiteName}
         />
         {children}
       </div>
