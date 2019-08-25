@@ -30,16 +30,13 @@ $max-article-width: 640px;
       vertical-align: middle;
       margin: 0;
     }
-
-    figcaption {
-      padding: $spacing-tight;
-    }
   }
 
   figcaption {
+    padding: $spacing-tight;
     font-size: $font-size-subscript;
     max-width: $max-article-width;
-    font-weight: $font-weight-bold;
+    font-style: italic;
     margin: 0 auto;
   }
 
