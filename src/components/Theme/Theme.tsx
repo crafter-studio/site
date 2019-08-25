@@ -77,7 +77,6 @@ class Theme extends React.PureComponent<ComposedProps, State> {
 
     return (
       <Waypoint
-        fireOnRapidScroll
         scrollableAncestor={browserWindow}
         topOffset="33%"
         bottomOffset="66%"

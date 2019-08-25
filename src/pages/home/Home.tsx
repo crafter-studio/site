@@ -149,21 +149,54 @@ export default class Home extends React.PureComponent<ComposedProps, State> {
                     </h1>
                   </div>
                 </div>
-                <div>
-                  <div
-                    style={{
-                      display: 'grid',
-                      height: '200px',
-                      backgroundColor: 'var(--color-primary)',
-                      gridGap: '40px',
-                      padding: '40px',
-                      gridTemplateColumns: 'repeat(4, 1fr)',
-                    }}
-                  >
-                    <img src={placeholder} />
-                    <img src={placeholder} />
-                    <img src={placeholder} />
-                    <img src={placeholder} />
+                <div className={styles.ServicesGrid}>
+                  <div>
+                    <div>
+                      <img src={placeholder} />
+                    </div>
+                    <Text tag="h4" size="small" uppercase>
+                      Content Writing
+                    </Text>
+                    <Text hyphenated size="small">
+                      Some text goes here to describe my service. Hopefully the
+                      fish will bite and take the bait.
+                    </Text>
+                  </div>
+                  <div>
+                    <div>
+                      <img src={placeholder} />
+                    </div>
+                    <Text tag="h4" size="small" uppercase>
+                      Web Development
+                    </Text>
+                    <Text hyphenated size="small">
+                      Some text goes here to describe my service. Hopefully the
+                      fish will bite and take the bait.
+                    </Text>
+                  </div>
+                  <div>
+                    <div>
+                      <img src={placeholder} />
+                    </div>
+                    <Text tag="h4" size="small" uppercase>
+                      Web Design
+                    </Text>
+                    <Text hyphenated size="small">
+                      Some text goes here to describe my service. Hopefully the
+                      fish will bite and take the bait.
+                    </Text>
+                  </div>
+                  <div>
+                    <div>
+                      <img src={placeholder} />
+                    </div>
+                    <Text tag="h4" size="small" uppercase>
+                      SEO
+                    </Text>
+                    <Text hyphenated size="small">
+                      Some text goes here to describe my service. Hopefully the
+                      fish will bite and take the bait.
+                    </Text>
                   </div>
                 </div>
               </Grid.ScreenWidth>
