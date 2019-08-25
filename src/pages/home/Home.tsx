@@ -1,28 +1,57 @@
 import React from 'react';
+import {StaticQuery, graphql} from 'gatsby';
+import Img from 'gatsby-image';
+import BackgroundImage from 'gatsby-background-image';
 
 import styles from './Home.module.scss';
 import {Text, Page, ScrambledText, Grid, Theme, Link} from '../../components';
 
 import placeholder from '../../images/placeholder.jpg';
-import placeholder_house from '../../images/house.png';
 import placeholder_1 from '../../images/placeholder_1.jpg';
 import placeholder_2 from '../../images/placeholder_2.jpg';
 import placeholder_3 from '../../images/placeholder_3.jpg';
 import placeholder_4 from '../../images/placeholder_4.jpg';
 import placeholder_5 from '../../images/placeholder_5.jpg';
 
-interface Props {}
+interface Props {
+  data: any;
+}
 
 type State = {};
 type ComposedProps = Props;
 
-export default class Home extends React.PureComponent<ComposedProps, State> {
+class Home extends React.PureComponent<ComposedProps, State> {
   state: State = {};
   constructor(props) {
     super(props);
   }
 
   render() {
+    const {
+      data: {
+        house: {
+          childImageSharp: {fluid: houseImage},
+        },
+        placeholder: {
+          childImageSharp: {fluid: placeholder},
+        },
+        placeholder_1: {
+          childImageSharp: {fluid: placeholder_1},
+        },
+        placeholder_2: {
+          childImageSharp: {fluid: placeholder_2},
+        },
+        placeholder_3: {
+          childImageSharp: {fluid: placeholder_3},
+        },
+        placeholder_4: {
+          childImageSharp: {fluid: placeholder_4},
+        },
+        placeholder_5: {
+          childImageSharp: {fluid: placeholder_5},
+        },
+      },
+    } = this.props;
     return (
       <Page
         title="Web Design and Development"
@@ -56,7 +85,10 @@ export default class Home extends React.PureComponent<ComposedProps, State> {
                 </div>
                 <div className={styles.Content}>
                   <div className={styles.Image}>
-                    <img src={placeholder_house} />
+                    <BackgroundImage
+                      className={styles.ImageItem}
+                      fluid={houseImage}
+                    />
                   </div>
                   <div className={styles.Text}>
                     <div>
@@ -110,30 +142,38 @@ export default class Home extends React.PureComponent<ComposedProps, State> {
                     </h1>
                   </div>
                   <div className={styles.WorkGrid}>
-                    <div className={styles.A}>
-                      <img src={placeholder_1} />
-                    </div>
-                    <div className={styles.B}>
-                      <img src={placeholder_4} />
-                    </div>
-                    <div className={styles.C}>
-                      <img src={placeholder_1} />
-                    </div>
-                    <div className={styles.D}>
-                      <img src={placeholder_2} />
-                    </div>
-                    <div className={styles.E}>
-                      <img src={placeholder_3} />
-                    </div>
-                    <div className={styles.F}>
-                      <img src={placeholder_5} />
-                    </div>
-                    <div className={styles.G}>
-                      <img src={placeholder_2} />
-                    </div>
-                    <div className={styles.H}>
-                      <img src={placeholder_4} />
-                    </div>
+                    <BackgroundImage
+                      fluid={placeholder_1}
+                      className={styles.A}
+                    />
+                    <BackgroundImage
+                      fluid={placeholder_5}
+                      className={styles.B}
+                    />
+                    <BackgroundImage
+                      fluid={placeholder_1}
+                      className={styles.C}
+                    />
+                    <BackgroundImage
+                      fluid={placeholder_2}
+                      className={styles.D}
+                    />
+                    <BackgroundImage
+                      fluid={placeholder_3}
+                      className={styles.E}
+                    />
+                    <BackgroundImage
+                      fluid={placeholder_5}
+                      className={styles.F}
+                    />
+                    <BackgroundImage
+                      fluid={placeholder_2}
+                      className={styles.G}
+                    />
+                    <BackgroundImage
+                      fluid={placeholder_4}
+                      className={styles.H}
+                    />
                   </div>
                 </div>
               </Grid.ScreenWidth>
@@ -152,7 +192,7 @@ export default class Home extends React.PureComponent<ComposedProps, State> {
                 <div className={styles.ServicesGrid}>
                   <div>
                     <div>
-                      <img src={placeholder} />
+                      <Img fluid={placeholder} />
                     </div>
                     <Text tag="h4" size="small" uppercase>
                       Content Writing
@@ -165,7 +205,7 @@ export default class Home extends React.PureComponent<ComposedProps, State> {
                   </div>
                   <div>
                     <div>
-                      <img src={placeholder} />
+                      <Img fluid={placeholder} />
                     </div>
                     <Text tag="h4" size="small" uppercase>
                       Web Development
@@ -178,7 +218,7 @@ export default class Home extends React.PureComponent<ComposedProps, State> {
                   </div>
                   <div>
                     <div>
-                      <img src={placeholder} />
+                      <Img fluid={placeholder} />
                     </div>
                     <Text tag="h4" size="small" uppercase>
                       Web Design
@@ -191,7 +231,7 @@ export default class Home extends React.PureComponent<ComposedProps, State> {
                   </div>
                   <div>
                     <div>
-                      <img src={placeholder} />
+                      <Img fluid={placeholder} />
                     </div>
                     <Text tag="h4" size="small" uppercase>
                       SEO
@@ -216,21 +256,26 @@ export default class Home extends React.PureComponent<ComposedProps, State> {
                     </h1>
                   </div>
                   <div className={styles.BlogGrid}>
-                    <div className={styles.Big}>
-                      <img src={placeholder_1} />
-                    </div>
-                    <div className={styles.B}>
-                      <img src={placeholder_5} />
-                    </div>
-                    <div className={styles.C}>
-                      <img src={placeholder_2} />
-                    </div>
-                    <div className={styles.D}>
-                      <img src={placeholder_4} />
-                    </div>
-                    <div className={styles.E}>
-                      <img src={placeholder_3} />
-                    </div>
+                    <BackgroundImage
+                      className={styles.Big}
+                      fluid={placeholder_1}
+                    />
+                    <BackgroundImage
+                      className={styles.B}
+                      fluid={placeholder_5}
+                    />
+                    <BackgroundImage
+                      className={styles.C}
+                      fluid={placeholder_2}
+                    />
+                    <BackgroundImage
+                      className={styles.D}
+                      fluid={placeholder_4}
+                    />
+                    <BackgroundImage
+                      className={styles.E}
+                      fluid={placeholder_3}
+                    />
                   </div>
                 </div>
               </Grid.ScreenWidth>
@@ -241,3 +286,62 @@ export default class Home extends React.PureComponent<ComposedProps, State> {
     );
   }
 }
+
+export default () => (
+  <StaticQuery
+    query={graphql`
+      query {
+        house: file(relativePath: {eq: "house.png"}) {
+          childImageSharp {
+            fluid(quality: 100, maxWidth: 800) {
+              ...GatsbyImageSharpFluid_noBase64
+            }
+          }
+        }
+        placeholder: file(relativePath: {eq: "placeholder.jpg"}) {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        placeholder_1: file(relativePath: {eq: "placeholder_1.jpg"}) {
+          childImageSharp {
+            fluid(quality: 100, maxWidth: 600) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        placeholder_2: file(relativePath: {eq: "placeholder_2.jpg"}) {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        placeholder_3: file(relativePath: {eq: "placeholder_3.jpg"}) {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        placeholder_4: file(relativePath: {eq: "placeholder_4.jpg"}) {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        placeholder_5: file(relativePath: {eq: "placeholder_5.jpg"}) {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    `}
+    render={(data) => <Home data={data} />}
+  />
+);
