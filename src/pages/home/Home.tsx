@@ -158,8 +158,9 @@ export default class Home extends React.PureComponent<ComposedProps, State> {
                       Content Writing
                     </Text>
                     <Text hyphenated size="small">
-                      Some text goes here to describe my service. Hopefully the
-                      fish will bite and take the bait.
+                      Content is king. We write with your brand in mind and
+                      ensures SEO is also somewhat in there. Your tone is our
+                      baby yo.
                     </Text>
                   </div>
                   <div>
@@ -170,8 +171,9 @@ export default class Home extends React.PureComponent<ComposedProps, State> {
                       Web Development
                     </Text>
                     <Text hyphenated size="small">
-                      Some text goes here to describe my service. Hopefully the
-                      fish will bite and take the bait.
+                      We build websites. It's just what we are good at, and we
+                      do it freggin well yo. Just take a look at our detailed
+                      checklist.
                     </Text>
                   </div>
                   <div>
@@ -182,8 +184,9 @@ export default class Home extends React.PureComponent<ComposedProps, State> {
                       Web Design
                     </Text>
                     <Text hyphenated size="small">
-                      Some text goes here to describe my service. Hopefully the
-                      fish will bite and take the bait.
+                      We create functional, timeless, designs that speaks like
+                      your brand and ensures your first impressions are the best
+                      ones.
                     </Text>
                   </div>
                   <div>
@@ -194,8 +197,9 @@ export default class Home extends React.PureComponent<ComposedProps, State> {
                       SEO
                     </Text>
                     <Text hyphenated size="small">
-                      Some text goes here to describe my service. Hopefully the
-                      fish will bite and take the bait.
+                      Your site will be quite up there when people search your
+                      company name because we make sure you put your best foot
+                      forward.
                     </Text>
                   </div>
                 </div>
