@@ -93,6 +93,10 @@
     letter-spacing: $letter-spacing;
   }
 
+  &.italic {
+    font-style: italic;
+  }
+
   &.subdued {
     color: $color-text-subdued;
   }

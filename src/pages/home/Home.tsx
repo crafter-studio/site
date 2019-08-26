@@ -81,6 +81,9 @@ class Home extends React.PureComponent<ComposedProps, State> {
             <div className={styles.Tagline}>
               <Grid>
                 <Text align="center">Web Design & Development</Text>
+                <Text align="center" size="small" italic>
+                  Quality products deserve exceptional websites.
+                </Text>
               </Grid>
             </div>
           </div>
@@ -89,30 +92,26 @@ class Home extends React.PureComponent<ComposedProps, State> {
             <Grid>
               <Grid.ScreenWidth>
                 <div className={styles.Heading}>
-                  <h1>Hello.</h1>
+                  <h1>WELCOME.</h1>
                 </div>
                 <div className={styles.Content}>
                   <div className={styles.Image}>
                     <BackgroundImage
                       className={styles.ImageItem}
-                      fluid={houseImage}
+                      fluid={placeholder_1}
                     />
                   </div>
                   <div className={styles.Text}>
                     <div>
                       <Text tag="h3" size="h2">
-                        A House Of Creatives
+                        We Are A Product-Focused Web Development Team.
                       </Text>
-                      <Text hyphenated>
-                        We are a house of creativity who operate in and around
-                        product and communication. Small enough for undivided
-                        attention. Big enough to offer services in all
-                        disciplines. Sure, this might be a slightly
-                        over-simplified summary of what we do, but hey, who
-                        likes to read long descriptions anyways? So let’s cut
-                        the mustard and jump straight to the{' '}
-                        <Link to="/pudding">pudding</Link>. Let the scrolling
-                        commence.
+                      <Text>
+                        Crafter Studio is a small, agile team of 7 digital
+                        experts specialized in design, development, branding,
+                        and SEO. We extend departments from Fortune 500
+                        companies and growing startups by putting their
+                        product's best foot forward in the digtal space.
                       </Text>
                       <Link to="/about" animated>
                         Read More

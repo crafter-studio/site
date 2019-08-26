@@ -14,6 +14,7 @@ interface Props {
   color?: string;
   subdued?: boolean;
   spaceUnder?: 'tight' | 'loose' | 'extra-loose';
+  italic?: boolean;
 }
 
 type State = {};
@@ -94,7 +95,8 @@ export default class Text extends React.PureComponent<ComposedProps, State> {
       size,
       color,
       subdued,
-      hyphenated = false,
+      italic,
+      hyphenated,
       children,
     } = this.props;
 
@@ -102,6 +104,7 @@ export default class Text extends React.PureComponent<ComposedProps, State> {
       styles.Text,
       uppercase && styles.uppercase,
       subdued && styles.subdued,
+      italic && styles.italic,
       align && styles[classVariants('align', align)],
       tag && styles[classVariants('tag', tag)],
       size && styles[classVariants('size', size)],
