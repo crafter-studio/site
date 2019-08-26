@@ -1,3 +1,6 @@
+// =================================================================================================
+// ANIMATIONS
+// =================================================================================================
 @keyframes fadeInScrambleText {
   from {
     color: rgba(0, 0, 0, 0);
@@ -51,6 +54,25 @@
     }
   }
 }
+
+@mixin fadeInUpOnScroll {
+  opacity: 0;
+  transform: translateY($spacing * 2);
+  animation: fadeInUp $animation-duration-long ease-in-out forwards;
+  animation-play-state: paused;
+
+  *[data='scroll--animate'] & {
+    animation-play-state: running;
+  }
+
+  &[data='scroll--animate'] {
+    animation-play-state: running;
+  }
+}
+
+// =================================================================================================
+// HERO SECTION
+// =================================================================================================
 
 .HeroSection {
   position: relative;
@@ -148,6 +170,10 @@
   z-index: 10;
 }
 
+// =================================================================================================
+// ABOUT SECTION
+// =================================================================================================
+
 .AboutSection {
   .Heading h1 {
     @include HomeSectionHeading;
@@ -198,167 +224,18 @@
   }
 }
 
+// =================================================================================================
+// ABOUT TEXT
+// =================================================================================================
+
 .AboutText {
   padding-top: $spacing * 6;
   padding-bottom: $spacing * 6;
 }
 
-.BlogSection {
-  transform: translateY($spacing * 2);
-
-  .Heading h1 {
-    @include HomeSectionHeading();
-    right: 0;
-  }
-
-  .BlogGrid {
-    display: grid;
-    grid-gap: $spacing-tight;
-    grid-template-columns: 1fr;
-    grid-template-areas: 'a' 'b' 'c' 'd' 'e';
-
-    @include medium {
-      grid-template-areas:
-        'b c a a'
-        'd e a a';
-      grid-template-columns: repeat(4, 1fr);
-
-      $extra-screen-width: calc(calc(100vw - #{$max-content-width}) / 2);
-      $max-grid-width: calc(
-        (#{$max-content-width - $spacing-tight * 3} + #{$extra-screen-width}) /
-          4
-      );
-      grid-template-rows: repeat(2, $max-grid-width);
-    }
-
-    @include large {
-      $width-without-grid-gap: $max-screen-width - $spacing-tight * 3;
-      grid-template-rows: repeat(2, #{($width-without-grid-gap / 4)});
-    }
-
-    @include xlarge {
-      $content-grid-gutter: ($max-screen-width - $max-content-width) / 2;
-      $minimum-width: 740px;
-      $minimum-grid-width: ($minimum-width / 4) - ($spacing-tight * 3 / 4);
-
-      $extra-width-spacing: $content-grid-gutter * 2;
-      $grid-gap-spacing: $spacing-tight * 3;
-      $xlarge-screen-content-width: 50vw;
-      $maximum-grid-width: calc(
-        (
-            #{$extra-width-spacing} + #{$xlarge-screen-content-width} - #{$grid-gap-spacing}
-          ) / 4
-      );
-
-      grid-template-rows: repeat(
-        2,
-        minmax($minimum-grid-width, $maximum-grid-width)
-      );
-    }
-
-    & > div {
-      cursor: pointer;
-      width: 100%;
-      height: 100%;
-      min-height: 240px;
-
-      @include medium {
-        min-height: initial;
-      }
-    }
-
-    img {
-      object-fit: cover;
-      transition: filter $animation-duration-long ease-in-out;
-      transform: translateY($spacing * 2);
-      animation: fadeInUp $animation-duration-long ease-in-out forwards;
-      animation-play-state: paused;
-      opacity: 0;
-      min-height: 240px;
-      @include delayAnimationByChild();
-
-      &:hover {
-        filter: grayscale(0);
-      }
-
-      @include medium {
-        min-height: initial;
-      }
-    }
-
-    .Big {
-      grid-area: a;
-      background-color: rgb(250, 184, 184);
-    }
-
-    .B {
-      grid-area: b;
-      background-color: rgb(196, 236, 173);
-    }
-
-    .C {
-      grid-area: c;
-      background-color: rgb(250, 250, 160);
-    }
-
-    .D {
-      grid-area: d;
-      background-color: rgb(247, 209, 140);
-    }
-
-    .E {
-      grid-area: e;
-      background-color: rgb(167, 231, 228);
-    }
-  }
-}
-
-.BlogSection[data='scroll--animate'] img {
-  animation-play-state: running;
-}
-
-.ServiceSectionContainer {
-  transform: translateY($spacing * 2);
-  animation: fadeInUp $animation-duration-long ease-in-out forwards;
-  animation-play-state: paused;
-  opacity: 0;
-}
-
-.ServicesSection {
-  .Heading h1 {
-    @include HomeSectionHeading();
-    left: 0;
-  }
-}
-
-.ServicesGrid {
-  display: grid;
-  background-color: var(--color-primary);
-  grid-gap: $spacing * 2;
-  padding: $spacing * 2 $spacing;
-  grid-template-columns: 1fr;
-
-  @include medium {
-    grid-gap: $spacing;
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @include large {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  & > div {
-    opacity: 0;
-    transform: translateY($spacing * 2);
-    animation: fadeInUp $animation-duration-long ease-in-out forwards paused;
-    @include delayAnimationByChild;
-  }
-
-  .ServiceSectionContainer[data='scroll--animate'] & > div {
-    animation-play-state: running;
-  }
-}
-
+// =================================================================================================
+// WORK SECTION
+// =================================================================================================
 .WorkSection {
   text-align: center;
   .Heading h1 {
@@ -380,47 +257,40 @@
   }
 
   @include medium {
-    height: 820px;
+    max-height: 640px;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(10, 1fr);
     grid-template-areas:
       'a a a a a b b c c c'
       'a a a a a b b c c c'
       'a a a a a b b c c c'
-      'a a a a a b b d d d'
-      'a a a a a b b d d d'
-      'e e e e e e e d d d'
-      'e e e e e e e d d d'
-      'f f f g g g g h h h'
-      'f f f g g g g h h h'
-      'f f f g g g g h h h';
+      'a a a a a d d d d d'
+      'e e e e e d d d d d'
+      'e e e e e d d d d d'
+      'e e e e e d d d d d'
+      'f f f g g g h h h h'
+      'f f f g g g h h h h'
+      'f f f g g g h h h h';
   }
 
   & > div {
-    min-height: 240px;
+    height: 240px;
     width: 100%;
-    height: 100%;
+    @include delayAnimationByChild;
+    @include fadeInUpOnScroll();
 
     @include medium {
-      min-height: initial;
+      height: initial;
     }
   }
 
   img {
-    min-height: 240px;
+    height: 240px;
     object-fit: cover;
-    opacity: 0;
-    transform: translateY($spacing * 2);
-    animation: fadeInUp $animation-duration-long ease-in-out forwards paused;
-    @include delayAnimationByChild;
 
     @include medium {
-      min-height: initial;
+      height: initial;
     }
-  }
-
-  &[data='scroll--animate'] > img {
-    animation-play-state: running;
   }
 
   .A {
@@ -473,5 +343,131 @@
     @include small {
       display: block;
     }
+  }
+}
+
+// =================================================================================================
+// SERVICES SECTION
+// =================================================================================================
+.ServiceSectionContainer {
+  @include fadeInUpOnScroll();
+}
+
+.ServicesSection {
+  .Heading h1 {
+    @include HomeSectionHeading();
+    left: 0;
+  }
+}
+
+.ServicesGrid {
+  display: grid;
+  background-color: var(--color-primary);
+  grid-gap: $spacing * 2;
+  padding: $spacing * 2 $spacing;
+  grid-template-columns: 1fr;
+
+  @include medium {
+    grid-gap: $spacing;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include large {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  & > div {
+    @include delayAnimationByChild;
+    @include fadeInUpOnScroll();
+  }
+}
+
+// =================================================================================================
+// BLOG SECTION
+// =================================================================================================
+
+.BlogSection {
+  .Heading h1 {
+    @include HomeSectionHeading();
+    right: 0;
+  }
+}
+
+.BlogGrid {
+  display: grid;
+  grid-gap: $spacing-tight;
+  grid-template-columns: 1fr;
+  grid-template-areas: 'a' 'b' 'c' 'd' 'e';
+
+  @include medium {
+    grid-template-areas:
+      'b c a a'
+      'd e a a';
+    grid-template-columns: repeat(4, 1fr);
+
+    $extra-screen-width: calc(calc(100vw - #{$max-content-width}) / 2);
+    $max-grid-width: calc(
+      (#{$max-content-width - $spacing-tight * 3} + #{$extra-screen-width}) / 4
+    );
+    grid-template-rows: repeat(2, $max-grid-width);
+  }
+
+  @include large {
+    $width-without-grid-gap: $max-screen-width - $spacing-tight * 3;
+    grid-template-rows: repeat(2, #{($width-without-grid-gap / 4)});
+  }
+
+  @include xlarge {
+    $content-grid-gutter: ($max-screen-width - $max-content-width) / 2;
+    $minimum-width: 740px;
+    $minimum-grid-width: ($minimum-width / 4) - ($spacing-tight * 3 / 4);
+
+    $extra-width-spacing: $content-grid-gutter * 2;
+    $grid-gap-spacing: $spacing-tight * 3;
+    $xlarge-screen-content-width: 50vw;
+    $maximum-grid-width: calc(
+      (
+          #{$extra-width-spacing} + #{$xlarge-screen-content-width} - #{$grid-gap-spacing}
+        ) / 4
+    );
+
+    grid-template-rows: repeat(
+      2,
+      minmax($minimum-grid-width, $maximum-grid-width)
+    );
+  }
+
+  .Big {
+    grid-area: a;
+  }
+
+  .B {
+    grid-area: b;
+  }
+
+  .C {
+    grid-area: c;
+  }
+
+  .D {
+    grid-area: d;
+  }
+
+  .E {
+    grid-area: e;
+  }
+}
+
+.BlogGrid > div {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  height: 240px;
+
+  @include delayAnimationByChild();
+  @include fadeInUpOnScroll();
+
+  @include medium {
+    height: initial;
   }
 }

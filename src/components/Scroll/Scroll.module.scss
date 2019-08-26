@@ -1,9 +1,11 @@
-.LoadAnimation {
-  --scroll-animation-play-state: paused;
-  animation-play-state: paused !important;
+.LoadAnimationPaused {
+  animation-play-state: paused;
 }
 
 .LoadAnimation {
-  --scroll-animation-play-state: running;
-  animation-play-state: running !important;
+  animation-play-state: running;
+
+  &.PropogateAnimation * {
+    animation-play-state: running;
+  }
 }

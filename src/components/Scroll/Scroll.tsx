@@ -9,23 +9,32 @@ import styles from './Scroll.module.scss';
 // ===================================================================================
 interface LoadAnimationProps {
   contentInView: boolean;
+  propogateAnimation?: boolean;
 }
 
 const LoadAnimation: React.FC<LoadAnimationProps> = ({
   children,
   contentInView,
+  propogateAnimation,
 }) => {
   const LoadAnimationClass = contentInView
     ? styles.LoadAnimation
     : styles.LoadAnimationPaused;
 
   const animationData = contentInView ? 'scroll--animate' : '';
+  const PropogateAnimationClass = propogateAnimation
+    ? styles.PropogateAnimation
+    : null;
 
   return (
     <>
       {React.Children.map(children, (child: any) => {
         return React.cloneElement(child, {
-          className: classNames(child.props.className, LoadAnimationClass),
+          className: classNames(
+            child.props.className,
+            LoadAnimationClass,
+            PropogateAnimationClass,
+          ),
           data: animationData,
         });
       })}
@@ -61,7 +70,7 @@ type ComposedProps = Props;
 
 class Scroll extends React.PureComponent<ComposedProps, State> {
   static LoadContent: React.FC<NoProps>;
-  static LoadAnimation: React.FC<NoProps>;
+  static LoadAnimation: React.FC<Omit<LoadAnimationProps, 'contentInView'>>;
   state: State = {
     contentInView: false,
   };

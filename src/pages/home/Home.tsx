@@ -1,7 +1,6 @@
 import React from 'react';
 import {StaticQuery, graphql} from 'gatsby';
 import Img from 'gatsby-image';
-import BackgroundImage from 'gatsby-background-image';
 
 import styles from './Home.module.scss';
 import {
@@ -13,13 +12,6 @@ import {
   Link,
   Scroll,
 } from '../../components';
-
-import placeholder from '../../images/placeholder.jpg';
-import placeholder_1_x from '../../images/placeholder_1.jpg';
-import placeholder_2_x from '../../images/placeholder_2.jpg';
-import placeholder_3_x from '../../images/placeholder_3.jpg';
-import placeholder_4_x from '../../images/placeholder_4.jpg';
-import placeholder_5_x from '../../images/placeholder_5.jpg';
 
 interface Props {
   data: any;
@@ -37,9 +29,6 @@ class Home extends React.PureComponent<ComposedProps, State> {
   render() {
     const {
       data: {
-        house: {
-          childImageSharp: {fluid: houseImage},
-        },
         placeholder: {
           childImageSharp: {fluid: placeholder},
         },
@@ -68,6 +57,9 @@ class Home extends React.PureComponent<ComposedProps, State> {
       >
         <Page.Background />
         <Page.Layout>
+          {/* ================================================================================================================= */}
+          {/* HERO SECTION */}
+          {/* ================================================================================================================= */}
           <div className={styles.HeroSection}>
             <div className={styles.Hypnotize}>
               <h1>
@@ -88,6 +80,9 @@ class Home extends React.PureComponent<ComposedProps, State> {
             </div>
           </div>
           <div />
+          {/* ================================================================================================================= */}
+          {/* ABOUT SECTION */}
+          {/* ================================================================================================================= */}
           <div className={styles.AboutSection}>
             <Grid>
               <Grid.ScreenWidth>
@@ -96,10 +91,7 @@ class Home extends React.PureComponent<ComposedProps, State> {
                 </div>
                 <div className={styles.Content}>
                   <div className={styles.Image}>
-                    <BackgroundImage
-                      className={styles.ImageItem}
-                      fluid={placeholder_1}
-                    />
+                    <Img className={styles.ImageItem} fluid={placeholder_1} />
                   </div>
                   <div className={styles.Text}>
                     <div>
@@ -122,6 +114,9 @@ class Home extends React.PureComponent<ComposedProps, State> {
               </Grid.ScreenWidth>
             </Grid>
           </div>
+          {/* ================================================================================================================= */}
+          {/* ABOUT TEXT */}
+          {/* ================================================================================================================= */}
           <Theme darkMode bgColor="var(--color-black)">
             <Page.Section>
               <div className={styles.AboutText}>
@@ -139,6 +134,9 @@ class Home extends React.PureComponent<ComposedProps, State> {
               </div>
             </Page.Section>
           </Theme>
+          {/* ================================================================================================================= */}
+          {/* WORK SECTION */}
+          {/* ================================================================================================================= */}
           <Page.Section>
             <Grid>
               <Grid.ScreenWidth>
@@ -149,16 +147,16 @@ class Home extends React.PureComponent<ComposedProps, State> {
                     </h1>
                   </div>
                   <Scroll>
-                    <Scroll.LoadAnimation>
+                    <Scroll.LoadAnimation propogateAnimation>
                       <div className={styles.WorkGrid}>
-                        <img src={placeholder_1_x} className={styles.A} />
-                        <img src={placeholder_5_x} className={styles.B} />
-                        <img src={placeholder_1_x} className={styles.C} />
-                        <img src={placeholder_2_x} className={styles.D} />
-                        <img src={placeholder_3_x} className={styles.E} />
-                        <img src={placeholder_5_x} className={styles.F} />
-                        <img src={placeholder_2_x} className={styles.G} />
-                        <img src={placeholder_4_x} className={styles.H} />
+                        <Img fluid={placeholder_1} className={styles.A} />
+                        <Img fluid={placeholder_5} className={styles.B} />
+                        <Img fluid={placeholder_1} className={styles.C} />
+                        <Img fluid={placeholder_2} className={styles.D} />
+                        <Img fluid={placeholder_3} className={styles.E} />
+                        <Img fluid={placeholder_5} className={styles.F} />
+                        <Img fluid={placeholder_2} className={styles.G} />
+                        <Img fluid={placeholder_4} className={styles.H} />
                       </div>
                     </Scroll.LoadAnimation>
                   </Scroll>
@@ -166,12 +164,14 @@ class Home extends React.PureComponent<ComposedProps, State> {
               </Grid.ScreenWidth>
             </Grid>
           </Page.Section>
-
+          {/* ================================================================================================================= */}
+          {/* SERVICES SECTION */}
+          {/* ================================================================================================================= */}
           <Page.Section>
             <Grid>
               <Grid.ScreenWidth>
                 <Scroll>
-                  <Scroll.LoadAnimation>
+                  <Scroll.LoadAnimation propogateAnimation>
                     <div className={styles.ServiceSectionContainer}>
                       <div className={styles.ServicesSection}>
                         <div className={styles.Heading}>
@@ -240,11 +240,14 @@ class Home extends React.PureComponent<ComposedProps, State> {
               </Grid.ScreenWidth>
             </Grid>
           </Page.Section>
+          {/* ================================================================================================================= */}
+          {/* BLOG SECTION */}
+          {/* ================================================================================================================= */}
           <Page.Section>
             <Grid>
               <Grid.ScreenWidth>
                 <Scroll>
-                  <Scroll.LoadAnimation>
+                  <Scroll.LoadAnimation propogateAnimation>
                     <div className={styles.BlogSection}>
                       <div className={styles.Heading}>
                         <h1 style={{color: 'var(--color-heading-themed)'}}>
@@ -252,11 +255,11 @@ class Home extends React.PureComponent<ComposedProps, State> {
                         </h1>
                       </div>
                       <div className={styles.BlogGrid}>
-                        <img src={placeholder_1_x} className={styles.Big} />
-                        <img src={placeholder_5_x} className={styles.B} />
-                        <img src={placeholder_2_x} className={styles.C} />
-                        <img src={placeholder_4_x} className={styles.D} />
-                        <img src={placeholder_3_x} className={styles.E} />
+                        <Img fluid={placeholder_1} className={styles.Big} />
+                        <Img fluid={placeholder_5} className={styles.B} />
+                        <Img fluid={placeholder_2} className={styles.C} />
+                        <Img fluid={placeholder_4} className={styles.D} />
+                        <Img fluid={placeholder_3} className={styles.E} />
                       </div>
                     </div>
                   </Scroll.LoadAnimation>
@@ -274,13 +277,6 @@ export default () => (
   <StaticQuery
     query={graphql`
       query {
-        house: file(relativePath: {eq: "house.png"}) {
-          childImageSharp {
-            fluid(quality: 100, maxWidth: 600) {
-              ...GatsbyImageSharpFluid_noBase64
-            }
-          }
-        }
         placeholder: file(relativePath: {eq: "placeholder.jpg"}) {
           childImageSharp {
             fluid {
