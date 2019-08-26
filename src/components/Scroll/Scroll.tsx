@@ -19,11 +19,14 @@ const LoadAnimation: React.FC<LoadAnimationProps> = ({
     ? styles.LoadAnimation
     : styles.LoadAnimationPaused;
 
+  const animationData = contentInView ? 'scroll--animate' : '';
+
   return (
     <>
       {React.Children.map(children, (child: any) => {
         return React.cloneElement(child, {
           className: classNames(child.props.className, LoadAnimationClass),
+          data: animationData,
         });
       })}
     </>

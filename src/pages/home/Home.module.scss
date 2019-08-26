@@ -32,6 +32,26 @@
   }
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY($spacing * 2);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@mixin delayAnimationByChild {
+  @for $i from 1 through 10 {
+    &:nth-child(#{$i}) {
+      animation-delay: #{$i * 0.15}s;
+    }
+  }
+}
+
 .HeroSection {
   position: relative;
   display: flex;
@@ -82,7 +102,7 @@
     animation: fadeInHeroText $animation-duration-long ease-in-out forwards;
     animation-delay: 1.5s;
     color: $color-heading;
-    font-size: 2.6rem;
+    font-size: 2.8rem;
 
     @include small {
       font-size: $font-size-h1;
@@ -179,12 +199,12 @@
 }
 
 .AboutText {
-  padding-top: $spacing * 4;
-  padding-bottom: $spacing * 4;
+  padding-top: $spacing * 6;
+  padding-bottom: $spacing * 6;
 }
 
 .BlogSection {
-  // background-color: $color-secondary;
+  transform: translateY($spacing * 2);
 
   .Heading h1 {
     @include HomeSectionHeading();
@@ -250,9 +270,19 @@
     img {
       object-fit: cover;
       transition: filter $animation-duration-long ease-in-out;
+      transform: translateY($spacing * 2);
+      animation: fadeInUp $animation-duration-long ease-in-out forwards;
+      animation-play-state: paused;
+      opacity: 0;
+      min-height: 240px;
+      @include delayAnimationByChild();
 
       &:hover {
         filter: grayscale(0);
+      }
+
+      @include medium {
+        min-height: initial;
       }
     }
 
@@ -283,6 +313,17 @@
   }
 }
 
+.BlogSection[data='scroll--animate'] img {
+  animation-play-state: running;
+}
+
+.ServiceSectionContainer {
+  transform: translateY($spacing * 2);
+  animation: fadeInUp $animation-duration-long ease-in-out forwards;
+  animation-play-state: paused;
+  opacity: 0;
+}
+
 .ServicesSection {
   .Heading h1 {
     @include HomeSectionHeading();
@@ -304,6 +345,17 @@
 
   @include large {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  & > div {
+    opacity: 0;
+    transform: translateY($spacing * 2);
+    animation: fadeInUp $animation-duration-long ease-in-out forwards paused;
+    @include delayAnimationByChild;
+  }
+
+  .ServiceSectionContainer[data='scroll--animate'] & > div {
+    animation-play-state: running;
   }
 }
 
@@ -348,15 +400,27 @@
     min-height: 240px;
     width: 100%;
     height: 100%;
-    background: black;
 
     @include medium {
       min-height: initial;
     }
+  }
 
-    img {
-      object-fit: cover;
+  img {
+    min-height: 240px;
+    object-fit: cover;
+    opacity: 0;
+    transform: translateY($spacing * 2);
+    animation: fadeInUp $animation-duration-long ease-in-out forwards paused;
+    @include delayAnimationByChild;
+
+    @include medium {
+      min-height: initial;
     }
+  }
+
+  &[data='scroll--animate'] > img {
+    animation-play-state: running;
   }
 
   .A {

@@ -15,11 +15,11 @@ import {
 } from '../../components';
 
 import placeholder from '../../images/placeholder.jpg';
-import placeholder_1 from '../../images/placeholder_1.jpg';
-import placeholder_2 from '../../images/placeholder_2.jpg';
-import placeholder_3 from '../../images/placeholder_3.jpg';
-import placeholder_4 from '../../images/placeholder_4.jpg';
-import placeholder_5 from '../../images/placeholder_5.jpg';
+import placeholder_1_x from '../../images/placeholder_1.jpg';
+import placeholder_2_x from '../../images/placeholder_2.jpg';
+import placeholder_3_x from '../../images/placeholder_3.jpg';
+import placeholder_4_x from '../../images/placeholder_4.jpg';
+import placeholder_5_x from '../../images/placeholder_5.jpg';
 
 interface Props {
   data: any;
@@ -148,143 +148,119 @@ class Home extends React.PureComponent<ComposedProps, State> {
                       Work.
                     </h1>
                   </div>
-                  <div className={styles.WorkGrid}>
-                    <BackgroundImage
-                      fluid={placeholder_1}
-                      className={styles.A}
-                    />
-                    <BackgroundImage
-                      fluid={placeholder_5}
-                      className={styles.B}
-                    />
-                    <BackgroundImage
-                      fluid={placeholder_1}
-                      className={styles.C}
-                    />
-                    <BackgroundImage
-                      fluid={placeholder_2}
-                      className={styles.D}
-                    />
-                    <BackgroundImage
-                      fluid={placeholder_3}
-                      className={styles.E}
-                    />
-                    <BackgroundImage
-                      fluid={placeholder_5}
-                      className={styles.F}
-                    />
-                    <BackgroundImage
-                      fluid={placeholder_2}
-                      className={styles.G}
-                    />
-                    <BackgroundImage
-                      fluid={placeholder_4}
-                      className={styles.H}
-                    />
-                  </div>
+                  <Scroll>
+                    <Scroll.LoadAnimation>
+                      <div className={styles.WorkGrid}>
+                        <img src={placeholder_1_x} className={styles.A} />
+                        <img src={placeholder_5_x} className={styles.B} />
+                        <img src={placeholder_1_x} className={styles.C} />
+                        <img src={placeholder_2_x} className={styles.D} />
+                        <img src={placeholder_3_x} className={styles.E} />
+                        <img src={placeholder_5_x} className={styles.F} />
+                        <img src={placeholder_2_x} className={styles.G} />
+                        <img src={placeholder_4_x} className={styles.H} />
+                      </div>
+                    </Scroll.LoadAnimation>
+                  </Scroll>
                 </div>
+              </Grid.ScreenWidth>
+            </Grid>
+          </Page.Section>
+
+          <Page.Section>
+            <Grid>
+              <Grid.ScreenWidth>
+                <Scroll>
+                  <Scroll.LoadAnimation>
+                    <div className={styles.ServiceSectionContainer}>
+                      <div className={styles.ServicesSection}>
+                        <div className={styles.Heading}>
+                          <h1 style={{color: 'var(--color-heading-themed)'}}>
+                            Services.
+                          </h1>
+                        </div>
+                      </div>
+                      <div className={styles.ServicesGrid}>
+                        <div>
+                          <div>
+                            <Img fluid={placeholder} />
+                          </div>
+                          <Text tag="h4" size="small" uppercase>
+                            Content Writing
+                          </Text>
+                          <Text hyphenated size="small">
+                            Content is king. We write with your brand in mind
+                            and ensures SEO is also somewhat in there. Your tone
+                            is our baby yo.
+                          </Text>
+                        </div>
+                        <div>
+                          <div>
+                            <Img fluid={placeholder} />
+                          </div>
+                          <Text tag="h4" size="small" uppercase>
+                            Web Development
+                          </Text>
+                          <Text hyphenated size="small">
+                            We build websites. It's just what we are good at,
+                            and we do it freggin well yo. Just take a look at
+                            our detailed checklist.
+                          </Text>
+                        </div>
+                        <div>
+                          <div>
+                            <Img fluid={placeholder} />
+                          </div>
+                          <Text tag="h4" size="small" uppercase>
+                            Web Design
+                          </Text>
+                          <Text hyphenated size="small">
+                            We create functional, timeless, designs that speaks
+                            like your brand and ensures your first impressions
+                            are the best ones.
+                          </Text>
+                        </div>
+                        <div>
+                          <div>
+                            <Img fluid={placeholder} />
+                          </div>
+                          <Text tag="h4" size="small" uppercase>
+                            SEO
+                          </Text>
+                          <Text hyphenated size="small">
+                            Your site will be quite up there when people search
+                            your company name because we make sure you put your
+                            best foot forward.
+                          </Text>
+                        </div>
+                      </div>
+                    </div>
+                  </Scroll.LoadAnimation>
+                </Scroll>
               </Grid.ScreenWidth>
             </Grid>
           </Page.Section>
           <Page.Section>
             <Grid>
               <Grid.ScreenWidth>
-                <div className={styles.ServicesSection}>
-                  <div className={styles.Heading}>
-                    <h1 style={{color: 'var(--color-heading-themed)'}}>
-                      Services.
-                    </h1>
-                  </div>
-                </div>
-                <div className={styles.ServicesGrid}>
-                  <div>
-                    <div>
-                      <Img fluid={placeholder} />
+                <Scroll>
+                  <Scroll.LoadAnimation>
+                    <div className={styles.BlogSection}>
+                      <div className={styles.Heading}>
+                        <h1 style={{color: 'var(--color-heading-themed)'}}>
+                          Blog.
+                        </h1>
+                      </div>
+                      <div className={styles.BlogGrid}>
+                        <img src={placeholder_1_x} className={styles.Big} />
+                        <img src={placeholder_5_x} className={styles.B} />
+                        <img src={placeholder_2_x} className={styles.C} />
+                        <img src={placeholder_4_x} className={styles.D} />
+                        <img src={placeholder_3_x} className={styles.E} />
+                      </div>
                     </div>
-                    <Text tag="h4" size="small" uppercase>
-                      Content Writing
-                    </Text>
-                    <Text hyphenated size="small">
-                      Content is king. We write with your brand in mind and
-                      ensures SEO is also somewhat in there. Your tone is our
-                      baby yo.
-                    </Text>
-                  </div>
-                  <div>
-                    <div>
-                      <Img fluid={placeholder} />
-                    </div>
-                    <Text tag="h4" size="small" uppercase>
-                      Web Development
-                    </Text>
-                    <Text hyphenated size="small">
-                      We build websites. It's just what we are good at, and we
-                      do it freggin well yo. Just take a look at our detailed
-                      checklist.
-                    </Text>
-                  </div>
-                  <div>
-                    <div>
-                      <Img fluid={placeholder} />
-                    </div>
-                    <Text tag="h4" size="small" uppercase>
-                      Web Design
-                    </Text>
-                    <Text hyphenated size="small">
-                      We create functional, timeless, designs that speaks like
-                      your brand and ensures your first impressions are the best
-                      ones.
-                    </Text>
-                  </div>
-                  <div>
-                    <div>
-                      <Img fluid={placeholder} />
-                    </div>
-                    <Text tag="h4" size="small" uppercase>
-                      SEO
-                    </Text>
-                    <Text hyphenated size="small">
-                      Your site will be quite up there when people search your
-                      company name because we make sure you put your best foot
-                      forward.
-                    </Text>
-                  </div>
-                </div>
-              </Grid.ScreenWidth>
-            </Grid>
-          </Page.Section>
-          <Page.Section>
-            <Grid>
-              <Grid.ScreenWidth>
-                <div className={styles.BlogSection}>
-                  <div className={styles.Heading}>
-                    <h1 style={{color: 'var(--color-heading-themed)'}}>
-                      Blog.
-                    </h1>
-                  </div>
-                  <div className={styles.BlogGrid}>
-                    <BackgroundImage
-                      className={styles.Big}
-                      fluid={placeholder_1}
-                    />
-                    <BackgroundImage
-                      className={styles.B}
-                      fluid={placeholder_5}
-                    />
-                    <BackgroundImage
-                      className={styles.C}
-                      fluid={placeholder_2}
-                    />
-                    <BackgroundImage
-                      className={styles.D}
-                      fluid={placeholder_4}
-                    />
-                    <BackgroundImage
-                      className={styles.E}
-                      fluid={placeholder_3}
-                    />
-                  </div>
-                </div>
+                  </Scroll.LoadAnimation>
+                </Scroll>
               </Grid.ScreenWidth>
             </Grid>
           </Page.Section>
