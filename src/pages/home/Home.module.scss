@@ -387,6 +387,7 @@
 // =================================================================================================
 
 .BlogSection {
+  @include fadeInUpOnScroll();
   .Heading h1 {
     @include HomeSectionHeading();
     right: 0;
