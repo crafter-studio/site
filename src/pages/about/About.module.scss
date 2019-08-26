@@ -1,0 +1,28 @@
+.PageBanner {
+  position: relative;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    font-family: 'Muli';
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: 700;
+    color: transparent;
+    background-repeat: repeat;
+    background-size: 60px;
+    background-clip: text;
+    background-image: url('../../images/hypnotize-background.png');
+    margin-top: 0;
+    margin-bottom: $spacing / 2;
+    opacity: 1;
+    z-index: 2;
+    word-wrap: break-word;
+    word-break: break-all;
+    color: rgba($color-text, 0);
+    animation: fadeInScrambleText $animation-duration-long 1.5s ease-in-out
+      forwards;
+  }
+}
