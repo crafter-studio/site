@@ -12,6 +12,8 @@ import {
   Grid,
 } from '../../components';
 
+import placeholder from '../../images/placeholder_2.jpg';
+
 interface Props {
   data: any;
 }
@@ -75,54 +77,10 @@ class About extends React.PureComponent<ComposedProps, State> {
                 Aliquam porttitor mauris sit amet orci. Aenean dignissim
                 pellentesque felis.
               </Text>
-              <Text color="var(--color-heading-themed)" tag="h2">
-                Some Text Here.
-              </Text>
-              <Text color="var(--color-text-themed)">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-                odio. Quisque volutpat mattis eros. Nullam malesuada erat ut
-                turpis. Suspendisse urna nibh, viverra non, semper suscipit,
-                posuere a, pede. Donec nec justo eget felis facilisis fermentum.
-                Aliquam porttitor mauris sit amet orci. Aenean dignissim
-                pellentesque felis.
-              </Text>
-              <Text color="var(--color-text-themed)">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-                odio. Quisque volutpat mattis eros. Nullam malesuada erat ut
-                turpis. Suspendisse urna nibh, viverra non, semper suscipit,
-                posuere a, pede. Donec nec justo eget felis facilisis fermentum.
-                Aliquam porttitor mauris sit amet orci. Aenean dignissim
-                pellentesque felis. Lorem ipsum dolor sit amet, consectetuer
-                adipiscing elit. Donec odio. Quisque volutpat mattis eros.
-                Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra
-                non, semper suscipit, posuere a, pede. Donec nec justo eget
-                felis facilisis fermentum. Aliquam porttitor mauris sit amet
-                orci. Aenean dignissim pellentesque felis.
-              </Text>
-              <Text color="var(--color-heading-themed)" tag="h2">
-                Some Text Here.
-              </Text>
-              <Text color="var(--color-text-themed)">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-                odio. Quisque volutpat mattis eros. Nullam malesuada erat ut
-                turpis. Suspendisse urna nibh, viverra non, semper suscipit,
-                posuere a, pede. Donec nec justo eget felis facilisis fermentum.
-                Aliquam porttitor mauris sit amet orci. Aenean dignissim
-                pellentesque felis.
-              </Text>
-              <Text color="var(--color-text-themed)">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-                odio. Quisque volutpat mattis eros. Nullam malesuada erat ut
-                turpis. Suspendisse urna nibh, viverra non, semper suscipit,
-                posuere a, pede. Donec nec justo eget felis facilisis fermentum.
-                Aliquam porttitor mauris sit amet orci. Aenean dignissim
-                pellentesque felis. Lorem ipsum dolor sit amet, consectetuer
-                adipiscing elit. Donec odio. Quisque volutpat mattis eros.
-                Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra
-                non, semper suscipit, posuere a, pede. Donec nec justo eget
-                felis facilisis fermentum. Aliquam porttitor mauris sit amet
-                orci. Aenean dignissim pellentesque felis.
-              </Text>
+              <img
+                style={{objectFit: 'cover', width: '100%', height: '300px'}}
+                src={placeholder}
+              />
             </Grid>
           </Page.Section>
         </Page.Layout>
