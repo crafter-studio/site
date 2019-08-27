@@ -1,5 +1,9 @@
 $content-grid-gutter: ($max-screen-width - $max-content-width) / 2;
 
+.GridContainer {
+  width: 100%;
+}
+
 .Grid {
   display: grid;
   width: 100%;

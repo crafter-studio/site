@@ -1,10 +1,16 @@
 import React from 'react';
 import {StaticQuery, graphql} from 'gatsby';
-import Img from 'gatsby-image';
-import BackgroundImage from 'gatsby-background-image';
 
 import styles from './About.module.scss';
-import {Text, Page, Decor, Theme, ScrambledText} from '../../components';
+import {
+  Text,
+  Page,
+  Decor,
+  Theme,
+  ScrambledText,
+  Article,
+  Grid,
+} from '../../components';
 
 interface Props {
   data: any;
@@ -28,17 +34,51 @@ class About extends React.PureComponent<ComposedProps, State> {
       >
         <Page.Background />
         <Page.Layout>
-          <Theme darkMode>
+          <Theme darkMode bgColor="var(--color-black)">
             <div className={styles.PageBanner}>
-              <Decor.Noise />
-              <h1>
-                <ScrambledText message="About" speed={300} duration={2000} />
-              </h1>
+              <div style={{zIndex: 1}}>
+                <Decor.Noise />
+              </div>
+              <div className={styles.PageBannerContent}>
+                <Text tag="h1" uppercase>
+                  The mesh of talents, our creative core.
+                </Text>
+                <Text color="var(--color-text-neg)" hyphenated>
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                  Donec odio. Quisque volutpat mattis eros. Nullam malesuada
+                  erat ut turpis. Suspendisse urna nibh, viverra non, semper
+                  suscipit, posuere a, pede. Donec nec justo eget felis
+                  facilisis fermentum. Aliquam porttitor mauris sit amet orci.
+                  Aenean dignissim pellentesque felis.
+                </Text>
+              </div>
             </div>
+            <Page.Section>
+              <Grid>
+                <Grid.ScreenWidth>
+                  <Text color="var(--color-heading-themed)" tag="h2">
+                    We Make Websites.
+                  </Text>
+                  <Text color="var(--color-text-themed)">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                    Donec odio. Quisque volutpat mattis eros. Nullam malesuada
+                    erat ut turpis. Suspendisse urna nibh, viverra non, semper
+                    suscipit, posuere a, pede. Donec nec justo eget felis
+                    facilisis fermentum. Aliquam porttitor mauris sit amet orci.
+                    Aenean dignissim pellentesque felis.
+                  </Text>
+                  <Text color="var(--color-text-themed)">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                    Donec odio. Quisque volutpat mattis eros. Nullam malesuada
+                    erat ut turpis. Suspendisse urna nibh, viverra non, semper
+                    suscipit, posuere a, pede. Donec nec justo eget felis
+                    facilisis fermentum. Aliquam porttitor mauris sit amet orci.
+                    Aenean dignissim pellentesque felis.
+                  </Text>
+                </Grid.ScreenWidth>
+              </Grid>
+            </Page.Section>
           </Theme>
-          <Page.Section>
-            <Text>This is my page</Text>
-          </Page.Section>
         </Page.Layout>
       </Page>
     );
