@@ -34,7 +34,7 @@ class About extends React.PureComponent<ComposedProps, State> {
       >
         <Page.Background />
         <Page.Layout>
-          <Theme darkMode bgColor="var(--color-black)">
+          <Theme darkMode bgColor="black">
             <div className={styles.PageBanner}>
               <div style={{zIndex: 1}}>
                 <Decor.Noise />
@@ -53,32 +53,78 @@ class About extends React.PureComponent<ComposedProps, State> {
                 </Text>
               </div>
             </div>
-            <Page.Section>
-              <Grid>
-                <Grid.ScreenWidth>
-                  <Text color="var(--color-heading-themed)" tag="h2">
-                    We Make Websites.
-                  </Text>
-                  <Text color="var(--color-text-themed)">
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                    Donec odio. Quisque volutpat mattis eros. Nullam malesuada
-                    erat ut turpis. Suspendisse urna nibh, viverra non, semper
-                    suscipit, posuere a, pede. Donec nec justo eget felis
-                    facilisis fermentum. Aliquam porttitor mauris sit amet orci.
-                    Aenean dignissim pellentesque felis.
-                  </Text>
-                  <Text color="var(--color-text-themed)">
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                    Donec odio. Quisque volutpat mattis eros. Nullam malesuada
-                    erat ut turpis. Suspendisse urna nibh, viverra non, semper
-                    suscipit, posuere a, pede. Donec nec justo eget felis
-                    facilisis fermentum. Aliquam porttitor mauris sit amet orci.
-                    Aenean dignissim pellentesque felis.
-                  </Text>
-                </Grid.ScreenWidth>
-              </Grid>
-            </Page.Section>
           </Theme>
+          <Page.Section>
+            <Grid>
+              <Text color="var(--color-heading-themed)" tag="h1">
+                We Make Websites.
+              </Text>
+              <Text color="var(--color-text-themed)">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
+                odio. Quisque volutpat mattis eros. Nullam malesuada erat ut
+                turpis. Suspendisse urna nibh, viverra non, semper suscipit,
+                posuere a, pede. Donec nec justo eget felis facilisis fermentum.
+                Aliquam porttitor mauris sit amet orci. Aenean dignissim
+                pellentesque felis.
+              </Text>
+              <Text color="var(--color-text-themed)">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
+                odio. Quisque volutpat mattis eros. Nullam malesuada erat ut
+                turpis. Suspendisse urna nibh, viverra non, semper suscipit,
+                posuere a, pede. Donec nec justo eget felis facilisis fermentum.
+                Aliquam porttitor mauris sit amet orci. Aenean dignissim
+                pellentesque felis.
+              </Text>
+              <Text color="var(--color-heading-themed)" tag="h2">
+                Some Text Here.
+              </Text>
+              <Text color="var(--color-text-themed)">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
+                odio. Quisque volutpat mattis eros. Nullam malesuada erat ut
+                turpis. Suspendisse urna nibh, viverra non, semper suscipit,
+                posuere a, pede. Donec nec justo eget felis facilisis fermentum.
+                Aliquam porttitor mauris sit amet orci. Aenean dignissim
+                pellentesque felis.
+              </Text>
+              <Text color="var(--color-text-themed)">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
+                odio. Quisque volutpat mattis eros. Nullam malesuada erat ut
+                turpis. Suspendisse urna nibh, viverra non, semper suscipit,
+                posuere a, pede. Donec nec justo eget felis facilisis fermentum.
+                Aliquam porttitor mauris sit amet orci. Aenean dignissim
+                pellentesque felis. Lorem ipsum dolor sit amet, consectetuer
+                adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+                Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra
+                non, semper suscipit, posuere a, pede. Donec nec justo eget
+                felis facilisis fermentum. Aliquam porttitor mauris sit amet
+                orci. Aenean dignissim pellentesque felis.
+              </Text>
+              <Text color="var(--color-heading-themed)" tag="h2">
+                Some Text Here.
+              </Text>
+              <Text color="var(--color-text-themed)">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
+                odio. Quisque volutpat mattis eros. Nullam malesuada erat ut
+                turpis. Suspendisse urna nibh, viverra non, semper suscipit,
+                posuere a, pede. Donec nec justo eget felis facilisis fermentum.
+                Aliquam porttitor mauris sit amet orci. Aenean dignissim
+                pellentesque felis.
+              </Text>
+              <Text color="var(--color-text-themed)">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
+                odio. Quisque volutpat mattis eros. Nullam malesuada erat ut
+                turpis. Suspendisse urna nibh, viverra non, semper suscipit,
+                posuere a, pede. Donec nec justo eget felis facilisis fermentum.
+                Aliquam porttitor mauris sit amet orci. Aenean dignissim
+                pellentesque felis. Lorem ipsum dolor sit amet, consectetuer
+                adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+                Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra
+                non, semper suscipit, posuere a, pede. Donec nec justo eget
+                felis facilisis fermentum. Aliquam porttitor mauris sit amet
+                orci. Aenean dignissim pellentesque felis.
+              </Text>
+            </Grid>
+          </Page.Section>
         </Page.Layout>
       </Page>
     );

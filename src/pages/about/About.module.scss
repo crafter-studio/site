@@ -10,9 +10,21 @@
   }
 }
 
+@keyframes animateText {
+  from {
+    background-position: center right;
+    background-size: 400%;
+  }
+
+  to {
+    background-position: center left;
+    background-size: cover;
+  }
+}
+
 .PageBanner {
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,24 +45,30 @@
     text-transform: uppercase;
     letter-spacing: 5px;
     font-weight: 600;
-    background-repeat: repeat;
-    background-size: 80px;
+    background: linear-gradient(90deg, $color-primary, $color-heading-neg);
+    background-clip: text;
     margin-top: 0;
     margin-bottom: $spacing / 2;
     opacity: 1;
-    color: $color-heading-neg;
+    color: transparent;
+    animation: animateText $animation-duration-long * 2 ease-in-out both;
+    animation-delay: 1s;
 
     &:after {
       content: '';
-      width: $spacing * 4;
+      width: $spacing * 3;
       height: 6px;
       position: absolute;
       bottom: -$spacing;
       left: 0;
       transform-origin: center left;
-      background-color: $color-text-neg;
+      background-color: $color-primary;
       animation: animateLine $animation-duration-long ease-in-out both;
       animation-delay: 1s;
+
+      @include medium {
+        width: $spacing * 4;
+      }
     }
   }
 
