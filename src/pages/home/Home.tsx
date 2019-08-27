@@ -280,42 +280,42 @@ export default () => (
         placeholder: file(relativePath: {eq: "placeholder.jpg"}) {
           childImageSharp {
             fluid {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
         placeholder_1: file(relativePath: {eq: "placeholder_1.jpg"}) {
           childImageSharp {
             fluid(quality: 100, maxWidth: 600) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
         placeholder_2: file(relativePath: {eq: "placeholder_2.jpg"}) {
           childImageSharp {
             fluid(quality: 100, maxWidth: 400) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
         placeholder_3: file(relativePath: {eq: "placeholder_3.jpg"}) {
           childImageSharp {
             fluid(quality: 100, maxWidth: 400) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
         placeholder_4: file(relativePath: {eq: "placeholder_4.jpg"}) {
           childImageSharp {
             fluid(quality: 100, maxWidth: 400) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
         placeholder_5: file(relativePath: {eq: "placeholder_5.jpg"}) {
           childImageSharp {
             fluid(quality: 100, maxWidth: 400) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
