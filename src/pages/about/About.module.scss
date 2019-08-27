@@ -24,7 +24,6 @@
 
 .PageBanner {
   position: relative;
-  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,16 +31,20 @@
   background-image: url('../../images/placeholder_1.jpg');
   background-size: cover;
   background-position: center;
+
+  @include medium {
+    min-height: 100vh;
+  }
 }
 
 .PageBannerContent {
-  max-width: 760px;
+  max-width: $max-content-width;
   z-index: 10;
-  padding: $spacing;
+  padding: $spacing * 4 $spacing;
   h1 {
     position: relative;
     font-family: 'Muli';
-    font-size: 4rem;
+    font-size: 2.8rem;
     text-transform: uppercase;
     letter-spacing: 5px;
     font-weight: 600;
@@ -53,6 +56,14 @@
     color: transparent;
     animation: animateText $animation-duration-long * 2 ease-in-out both;
     animation-delay: 1s;
+
+    @include medium {
+      font-size: 3.2rem;
+    }
+
+    @include large {
+      font-size: 4rem;
+    }
 
     &:after {
       content: '';
