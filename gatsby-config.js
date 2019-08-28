@@ -87,6 +87,7 @@ module.exports = {
           '**/categories',
           '**/posts',
           '**/pages',
+          '**/project',
           '**/media',
           '**/tags',
           '**/taxonomies',
