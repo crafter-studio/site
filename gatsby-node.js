@@ -66,6 +66,19 @@ exports.createPages = async ({graphql, actions}) => {
           }
         }
       }
+      allWordpressWpProject {
+        edges {
+          node {
+            id
+            wordpress_id
+            path
+            status
+            template
+            format
+            slug
+          }
+        }
+      }
     }
   `);
 
@@ -75,7 +88,11 @@ exports.createPages = async ({graphql, actions}) => {
   }
 
   // Access query results via object destructuring
-  const {allWordpressPage, allWordpressPost} = result.data;
+  const {
+    allWordpressPage,
+    allWordpressPost,
+    allWordpressWpProject,
+  } = result.data;
 
   //   // Create Page pages.
   //   const pageTemplate = path.resolve(`./src/templates/page.js`);
@@ -109,6 +126,17 @@ exports.createPages = async ({graphql, actions}) => {
     createPage({
       path: `/blog/${edge.node.slug}`,
       component: slash(postTemplate),
+      context: {
+        wordpress_id: edge.node.wordpress_id,
+      },
+    });
+  });
+
+  const project = path.resolve(`./src/templates/project.tsx`);
+  allWordpressWpProject.edges.forEach((edge) => {
+    createPage({
+      path: `/work/${edge.node.slug}`,
+      component: slash(project),
       context: {
         wordpress_id: edge.node.wordpress_id,
       },
