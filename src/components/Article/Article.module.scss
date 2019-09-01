@@ -24,7 +24,6 @@ $max-article-width: 640px;
 
   figure {
     margin: $spacing 0;
-    background-color: $color-dark-grey;
 
     img {
       vertical-align: middle;
@@ -42,8 +41,8 @@ $max-article-width: 640px;
 
   @include medium {
     grid-template-columns:
-      $spacing minmax(0, 1fr) minmax(0, #{$spacing * 4})
-      $max-article-width minmax(0, #{$spacing * 4}) minmax(0, 1fr)
+      $spacing minmax(0, 1fr) minmax(0, #{$spacing * 6})
+      $max-article-width minmax(0, #{$spacing * 6}) minmax(0, 1fr)
       $spacing;
   }
 }

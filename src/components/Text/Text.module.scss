@@ -34,7 +34,7 @@
   margin-top: 0;
   margin-bottom: $spacing-tight;
   font-size: $font-size;
-  transition: color $animation-duration-long ease-in-out;
+  transition: color $animation-duration ease-in-out;
 
   &:last-child {
     margin-bottom: 0;

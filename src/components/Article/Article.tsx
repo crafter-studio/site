@@ -88,7 +88,7 @@ function transform(node) {
 }
 
 export interface Props {
-  title: string;
+  title?: string;
   date: string;
   html: string;
 }
@@ -103,12 +103,18 @@ class Article extends React.PureComponent<ComposedProps, State> {
   render() {
     const {title, date, html} = this.props;
     const markup = ReactHtmlParser(html, options);
+
+    const titleMarkup = title ? (
+      <div className={styles.ArticleTitle}>
+        <Text tag="h1">{title}</Text>
+      </div>
+    ) : (
+      ''
+    );
     return (
       <div className={styles.ArticleContainer}>
         <article className={styles.Article}>
-          <div className={styles.ArticleTitle}>
-            <Text tag="h1">{title}</Text>
-          </div>
+          {titleMarkup}
           {markup}
         </article>
       </div>

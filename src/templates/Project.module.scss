@@ -1,0 +1,161 @@
+.Header {
+  width: 100%;
+  position: relative;
+}
+
+$headerTopHeight: 420px;
+$headerBottomHeight: 200px;
+$headerHeight: $headerTopHeight + $headerBottomHeight;
+.HeaderTop {
+  height: $headerTopHeight;
+  width: 100%;
+  position: relative;
+  // background-color: $color-dark-grey;
+}
+
+.HeaderBottom {
+  height: 0;
+  width: 100%;
+  position: relative;
+
+  @include large {
+    height: $headerBottomHeight;
+  }
+}
+
+.FeaturedImageBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  opacity: 0.1;
+}
+
+.FeaturedImage {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+
+  @include large {
+    top: $spacing * 4;
+    max-height: calc(100% - #{$spacing * 4});
+    max-width: $max-screen-width;
+  }
+}
+
+.HeaderTag {
+  color: $color-heading;
+  text-transform: uppercase;
+  font-family: $font-family-secondary;
+  font-weight: $font-weight-bold;
+  letter-spacing: $letter-spacing;
+  font-size: $font-size-small;
+  background: $color-primary;
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, 50%);
+  padding: $spacing-tight $spacing;
+  white-space: nowrap;
+}
+
+.TaglineContainer {
+  padding-top: $spacing * 8;
+  padding-bottom: $spacing * 8;
+}
+
+.Tagline {
+  font-size: 4rem;
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--color-heading-themed);
+}
+
+.SummaryContainer {
+  background-color: $color-dark-grey;
+  padding: $spacing * 2 0;
+
+  @include large {
+    padding: $spacing * 4 0;
+  }
+}
+
+.Summary {
+  display: flex;
+  flex-direction: column;
+
+  @include large {
+    flex-direction: row;
+  }
+}
+
+.MainTitle {
+  margin-top: 0;
+  font-size: 4rem;
+  letter-spacing: $letter-spacing * 2;
+  font-family: $font-family-secondary;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.Data {
+  padding-bottom: $spacing;
+  margin-bottom: $spacing;
+
+  @include large {
+    padding: 0;
+    margin: 0;
+    padding-right: $spacing * 2;
+    margin-right: $spacing * 2;
+    border-right: 2px solid rgba($color-heading, $translucent);
+  }
+
+  li {
+    display: inline-block;
+  }
+}
+
+.DataTitle {
+  margin-top: $spacing-loose;
+  margin-bottom: $spacing-tight;
+  text-transform: uppercase;
+  font-family: $font-family-secondary;
+  letter-spacing: $letter-spacing;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-small;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.DataInfo {
+  font-size: $font-size-small;
+  font-style: italic;
+}
+
+.DataTags {
+  display: inline-block;
+  text-transform: uppercase;
+  font-family: $font-family-secondary;
+  font-size: $font-size-subscript;
+  font-weight: $font-weight-bold;
+  padding: 5px;
+  background: rgba($color-primary, 0.75);
+  margin-right: $spacing-tight;
+  font-style: initial;
+}
+
+.Description {
+  flex: 1;
+}
