@@ -24,6 +24,19 @@ class Layout extends React.PureComponent<ComposedProps, State> {
   targetRef = React.createRef();
   targetElement = null;
 
+  constructor(props) {
+    super(props);
+    this.handleMenuClose = this.handleMenuClose.bind(this);
+  }
+
+  handleMenuClose() {
+    const {hamburgerMenuActive, dispatch} = this.props;
+    if (hamburgerMenuActive === false) {
+      return;
+    }
+    dispatch(toggleHamburgerMenu(false));
+  }
+
   componentDidMount() {
     this.targetElement = this.targetRef.current;
   }
@@ -42,7 +55,7 @@ class Layout extends React.PureComponent<ComposedProps, State> {
   }
 
   render() {
-    const {children, hamburgerMenuActive, dispatch} = this.props;
+    const {children, hamburgerMenuActive} = this.props;
 
     const layoutClassName = classNames(
       styles.Layout,
@@ -54,15 +67,15 @@ class Layout extends React.PureComponent<ComposedProps, State> {
         <KeyHandler
           keyEventName={KEYDOWN}
           keyValue="Escape"
-          onKeyHandle={() => {
-            dispatch(toggleHamburgerMenu(false));
-          }}
+          onKeyHandle={this.handleMenuClose}
         />
         <div className={styles.Header}>
           <Header />
         </div>
-        <div className={styles.Content}>{children}</div>
-        <div className={styles.Footer}>
+        <div onClick={this.handleMenuClose} className={styles.Content}>
+          {children}
+        </div>
+        <div onClick={this.handleMenuClose} className={styles.Footer}>
           <Footer />
         </div>
       </div>
