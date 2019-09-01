@@ -248,7 +248,7 @@ table {
   --color-text-themed: #{$color-text};
   --color-bg-themed: #{$color-light-grey};
 
-  --navigation-width: 100vw;
+  --navigation-width: 100%;
   @include large {
     --navigation-width: 50vw;
   }

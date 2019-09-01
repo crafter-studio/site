@@ -34,10 +34,20 @@ class Navigation extends React.PureComponent<ComposedProps, State> {
           <div className={styles.NavigationBackgroundLayer} />
         </div>
         <nav className={styles.Navigation}>
-          <Link to="/work">Work</Link>
-          <Link to="/about">About</Link>
-          <Link to="/blog">Blog</Link>
-          <Link to="/contact">Contact</Link>
+          <div className={styles.NavigationLinks}>
+            <Link animated to="/work">
+              Work
+            </Link>
+            <Link animated to="/about">
+              About
+            </Link>
+            <Link animated to="/blog">
+              Blog
+            </Link>
+            <Link animated to="/contact">
+              Contact
+            </Link>
+          </div>
         </nav>
       </div>
     );

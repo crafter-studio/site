@@ -1,5 +1,12 @@
 import React from 'react';
 import {Link as GatsbyLink} from 'gatsby';
+import {connect} from 'react-redux';
+import {ReduxState} from '../../redux/reducers';
+import {
+  toggleHamburgerMenu,
+  toggleDarkMode,
+  setBgColor,
+} from '../../redux/actions';
 
 import styles from './Link.module.scss';
 import {classNames} from '../../components/utils/classNames';
@@ -11,24 +18,51 @@ interface Props {
   animated?: boolean;
 }
 
-const Link: React.FC<Props> = ({
-  to,
-  animated,
-  secondaryFont,
-  underlined = true,
-  children,
-}) => {
-  const className = classNames(
-    styles.Link,
-    underlined && styles.underlined,
-    animated && styles.animated,
-    secondaryFont && styles.secondaryFont,
-  );
-  return (
-    <span className={className}>
-      <GatsbyLink to={to}>{children}</GatsbyLink>
-    </span>
-  );
-};
+class Link extends React.PureComponent<Props & ReduxState> {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
 
-export default Link;
+  handleClick() {
+    const {dispatch, hamburgerMenuActive} = this.props;
+    dispatch(toggleDarkMode(false));
+    dispatch(setBgColor('var(--color-bg)'));
+    dispatch(toggleHamburgerMenu(false));
+  }
+
+  render() {
+    const {
+      to,
+      animated,
+      secondaryFont,
+      underlined = true,
+      children,
+    } = this.props;
+
+    const className = classNames(
+      styles.Link,
+      underlined && styles.underlined,
+      animated && styles.animated,
+      secondaryFont && styles.secondaryFont,
+    );
+
+    return (
+      <span onClick={this.handleClick} className={className}>
+        <GatsbyLink to={to}>{children}</GatsbyLink>
+      </span>
+    );
+  }
+}
+
+function mapStateToProps(state) {
+  const {
+    toggleHamburgerMenu: {hamburgerMenuActive},
+  } = state;
+  return {hamburgerMenuActive};
+}
+
+export default connect(
+  mapStateToProps,
+  null,
+)(Link);
