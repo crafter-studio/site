@@ -1,6 +1,11 @@
 .Layout {
   position: relative;
   overflow-x: hidden;
+
+  &.HamburgerMenuActive {
+    height: 100vh;
+    overflow: hidden;
+  }
 }
 
 .Header {
