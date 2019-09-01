@@ -19,7 +19,7 @@ class Layout extends React.PureComponent<ComposedProps, State> {
 
     const layoutClassName = classNames(
       styles.Layout,
-      hamburgerMenuActive && styles.hamburgerMenuActive,
+      hamburgerMenuActive && styles.HamburgerMenuActive,
     );
 
     return (

@@ -247,6 +247,11 @@ table {
   --color-text-neg: #{$color-text-neg};
   --color-text-themed: #{$color-text};
   --color-bg-themed: #{$color-light-grey};
+
+  --navigation-width: 100vw;
+  @include large {
+    --navigation-width: 50vw;
+  }
 }
 
 // ====================================================================================

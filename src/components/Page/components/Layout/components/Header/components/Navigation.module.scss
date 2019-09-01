@@ -1,0 +1,58 @@
+.NavigationContainer {
+  z-index: $z-header - 1;
+  overflow-x: hidden;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: var(--navigation-width);
+  height: 100%;
+  transform: translateX(var(--navigation-width));
+  transition: transform $animation-duration ease-in-out;
+
+  &.HamburgerMenuActive {
+    transform: translateX(0);
+  }
+}
+
+.NavigationBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+@mixin delayAnimationByChild {
+  @for $i from 1 through 10 {
+    &:nth-child(#{$i}) {
+      animation-delay: #{$i * 0.025}s;
+      transition-delay: #{$i * 0.025}s;
+      background: rgba($color-primary, $i * 0.1);
+    }
+  }
+}
+
+.NavigationBackgroundLayer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba($color-primary, 0.2);
+  transform: translateX(var(--navigation-width));
+  transition: transform $animation-duration-long ease-in-out;
+  @include delayAnimationByChild;
+
+  .HamburgerMenuActive & {
+    transform: translateX(0);
+  }
+}
+
+.Navigation {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

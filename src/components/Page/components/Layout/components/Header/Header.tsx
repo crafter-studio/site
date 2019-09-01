@@ -7,7 +7,7 @@ import styles from './Header.module.scss';
 import Logo from './assets/crafter-studio-logo.svg';
 import {Grid} from '../../../../../../components';
 import {classNames} from '../../../../../utils/classNames';
-import Menu from './components/Menu';
+import {Menu, Navigation} from './components';
 
 export interface Props {}
 
@@ -24,27 +24,30 @@ class Header extends React.PureComponent<ComposedProps, State> {
     );
 
     return (
-      <header className={styles.Header}>
-        <Grid>
-          <Grid.ScreenWidth>
-            <div className={styles.HeaderContent}>
-              <Link to="/">
-                <div className={logoClass}>
-                  <Logo />
-                </div>
-              </Link>
-              <div className={styles.CompanyName}>
-                {/* <Text size="h4" tag="h2" align="center" uppercase>
+      <>
+        <header className={styles.Header}>
+          <Grid>
+            <Grid.ScreenWidth>
+              <div className={styles.HeaderContent}>
+                <Link to="/">
+                  <div className={logoClass}>
+                    <Logo />
+                  </div>
+                </Link>
+                <div className={styles.CompanyName}>
+                  {/* <Text size="h4" tag="h2" align="center" uppercase>
                   Crafter
                 </Text> */}
+                </div>
+                <div className={styles.HamburgerMenuWrapper}>
+                  <Menu />
+                </div>
               </div>
-              <div className={styles.HamburgerMenuWrapper}>
-                <Menu />
-              </div>
-            </div>
-          </Grid.ScreenWidth>
-        </Grid>
-      </header>
+            </Grid.ScreenWidth>
+          </Grid>
+        </header>
+        <Navigation />
+      </>
     );
   }
 }

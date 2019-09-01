@@ -1,3 +1,4 @@
-import Menu from './Menu';
+import {default as Menu} from './Menu';
+import {default as Navigation} from './Navigation';
 
-export default Menu;
+export {Menu, Navigation};

@@ -18,10 +18,11 @@ class Menu extends React.PureComponent<ComposedProps, State> {
   }
 
   render() {
-    const {darkModeActive} = this.props;
+    const {darkModeActive, hamburgerMenuActive} = this.props;
     const className = classNames(
       styles.HamburgerMenu,
       darkModeActive && styles.DarkModeActive,
+      hamburgerMenuActive && styles.HamburgerMenuActive,
     );
 
     return (

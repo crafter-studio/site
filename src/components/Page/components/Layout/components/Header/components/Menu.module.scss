@@ -30,6 +30,11 @@ $menu-width: $spacing;
   .DarkModeActive:hover & {
     background-color: rgba($color-primary, $opaque);
   }
+
+  .HamburgerMenuActive &,
+  .HamburgerMenuActive:hover & {
+    background-color: $color-black;
+  }
 }
 
 .LineMiddle {

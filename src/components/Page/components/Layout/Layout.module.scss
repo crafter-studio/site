@@ -1,5 +1,6 @@
 .Layout {
   position: relative;
+  overflow-x: hidden;
 }
 
 .Header {
@@ -7,7 +8,22 @@
 
 .Content {
   overflow: auto;
+  opacity: 1;
+  transition: transform $animation-duration-long ease-in-out,
+    opacity $animation-duration-long ease-in-out;
+
+  .HamburgerMenuActive & {
+    opacity: 0.5;
+    transform: translateX(calc(var(--navigation-width) / -1.5));
+  }
 }
 
 .Footer {
+  opacity: 1;
+  transition: transform $animation-duration-long ease-in-out,
+    opacity $animation-duration-long ease-in-out;
+  .HamburgerMenuActive & {
+    opacity: 0.5;
+    transform: translateX(calc(var(--navigation-width) / -1.5));
+  }
 }
