@@ -20,7 +20,6 @@ class Navigation extends React.PureComponent<ComposedProps, State> {
 
   handleNavigationLeave() {
     const {dispatch} = this.props;
-    console.log('BOOO');
     dispatch(toggleHamburgerMenu(false));
   }
   render() {

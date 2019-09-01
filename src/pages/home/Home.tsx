@@ -60,27 +60,25 @@ class Home extends React.PureComponent<ComposedProps, State> {
           {/* ================================================================================================================= */}
           {/* HERO SECTION */}
           {/* ================================================================================================================= */}
-          <Theme darkMode={false} bgColor="var(--color-bg)">
-            <div className={styles.HeroSection}>
-              <div className={styles.Hypnotize}>
-                <h1>
-                  <ScrambledText
-                    message="CRAFTER STUDIO"
-                    speed={500}
-                    duration={1500}
-                  />
-                </h1>
-              </div>
-              <div className={styles.Tagline}>
-                <Grid>
-                  <Text align="center">Web Design & Development</Text>
-                  <Text align="center" size="small" italic>
-                    Quality products deserve exceptional websites.
-                  </Text>
-                </Grid>
-              </div>
+          <div className={styles.HeroSection}>
+            <div className={styles.Hypnotize}>
+              <h1>
+                <ScrambledText
+                  message="CRAFTER STUDIO"
+                  speed={500}
+                  duration={1500}
+                />
+              </h1>
             </div>
-          </Theme>
+            <div className={styles.Tagline}>
+              <Grid>
+                <Text align="center">Web Design & Development</Text>
+                <Text align="center" size="small" italic>
+                  Quality products deserve exceptional websites.
+                </Text>
+              </Grid>
+            </div>
+          </div>
           {/* ================================================================================================================= */}
           {/* ABOUT SECTION */}
           {/* ================================================================================================================= */}
