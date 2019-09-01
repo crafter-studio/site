@@ -46,7 +46,8 @@
     transition: all $animation-duration ease-in-out;
   }
 
-  &.animated:hover {
+  &.animated:hover,
+  &.animated:focus-within {
     a {
       color: $color-link;
     }

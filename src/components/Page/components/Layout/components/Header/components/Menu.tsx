@@ -13,9 +13,9 @@ type State = {};
 type ComposedProps = Props & ReduxState;
 
 class Menu extends React.PureComponent<ComposedProps, State> {
-  handleMenuClick() {
-    const {dispatch, hamburgerMenuActive} = this.props;
-    dispatch(toggleHamburgerMenu(!hamburgerMenuActive));
+  handleMenuOpen() {
+    const {dispatch} = this.props;
+    dispatch(toggleHamburgerMenu(true));
   }
 
   render() {
@@ -27,11 +27,15 @@ class Menu extends React.PureComponent<ComposedProps, State> {
     );
 
     return (
-      <div onClick={this.handleMenuClick.bind(this)} className={className}>
+      <button
+        onFocus={this.handleMenuOpen.bind(this)}
+        onClick={this.handleMenuOpen.bind(this)}
+        className={className}
+      >
         <div className={styles.LineTop} />
         <div className={styles.LineMiddle} />
         <div className={styles.LineBottom} />
-      </div>
+      </button>
     );
   }
 }

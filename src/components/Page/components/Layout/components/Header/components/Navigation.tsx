@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {ReduxState} from '../../../../../../../redux/reducers';
+import {toggleHamburgerMenu} from '../../../../../../../redux/actions';
 
 import styles from './Navigation.module.scss';
 import {classNames} from '../../../../../../utils/classNames';
@@ -12,6 +13,16 @@ type State = {};
 type ComposedProps = Props & ReduxState;
 
 class Navigation extends React.PureComponent<ComposedProps, State> {
+  constructor(props) {
+    super(props);
+    this.handleNavigationLeave = this.handleNavigationLeave.bind(this);
+  }
+
+  handleNavigationLeave() {
+    const {dispatch} = this.props;
+    console.log('BOOO');
+    dispatch(toggleHamburgerMenu(false));
+  }
   render() {
     const {hamburgerMenuActive} = this.props;
     const className = classNames(
@@ -33,7 +44,7 @@ class Navigation extends React.PureComponent<ComposedProps, State> {
           <div className={styles.NavigationBackgroundLayer} />
           <div className={styles.NavigationBackgroundLayer} />
         </div>
-        <nav className={styles.Navigation}>
+        <nav aria-expanded={hamburgerMenuActive} className={styles.Navigation}>
           <div className={styles.NavigationLinks}>
             <Link animated to="/work">
               Work
@@ -44,9 +55,11 @@ class Navigation extends React.PureComponent<ComposedProps, State> {
             <Link animated to="/blog">
               Blog
             </Link>
-            <Link animated to="/contact">
-              Contact
-            </Link>
+            <span onBlur={this.handleNavigationLeave}>
+              <Link animated to="/contact">
+                Contact
+              </Link>
+            </span>
           </div>
         </nav>
       </div>

@@ -25,7 +25,7 @@ class Link extends React.PureComponent<Props & ReduxState> {
   }
 
   handleClick() {
-    const {dispatch, hamburgerMenuActive} = this.props;
+    const {dispatch} = this.props;
     dispatch(toggleDarkMode(false));
     dispatch(setBgColor('var(--color-bg)'));
     dispatch(toggleHamburgerMenu(false));
