@@ -36,7 +36,7 @@ class About extends React.PureComponent<ComposedProps, State> {
       >
         <Page.Background />
         <Page.Layout>
-          <Theme darkMode bgColor="black">
+          <Theme darkMode>
             <div className={styles.PageBanner}>
               <div style={{zIndex: 1}}>
                 <Decor.Noise />

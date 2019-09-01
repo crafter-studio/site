@@ -1,6 +1,11 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import KeyHandler, {KEYDOWN} from 'react-key-handler';
+import {
+  disableBodyScroll,
+  enableBodyScroll,
+  clearAllBodyScrollLocks,
+} from 'body-scroll-lock';
 import {ReduxState} from '../../../../redux/reducers';
 import {toggleHamburgerMenu} from '../../../../redux/actions';
 
@@ -16,6 +21,26 @@ type State = {};
 type ComposedProps = ReduxState & Props;
 
 class Layout extends React.PureComponent<ComposedProps, State> {
+  targetRef = React.createRef();
+  targetElement = null;
+
+  componentDidMount() {
+    this.targetElement = this.targetRef.current;
+  }
+
+  componentDidUpdate() {
+    const {hamburgerMenuActive} = this.props;
+    if (hamburgerMenuActive) {
+      disableBodyScroll(this.targetElement);
+    } else {
+      enableBodyScroll(this.targetElement);
+    }
+  }
+
+  componentWillUnmount() {
+    clearAllBodyScrollLocks();
+  }
+
   render() {
     const {children, hamburgerMenuActive, dispatch} = this.props;
 
