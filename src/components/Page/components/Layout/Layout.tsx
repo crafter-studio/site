@@ -7,7 +7,11 @@ import {
   clearAllBodyScrollLocks,
 } from 'body-scroll-lock';
 import {ReduxState} from '../../../../redux/reducers';
-import {toggleHamburgerMenu} from '../../../../redux/actions';
+import {
+  toggleHamburgerMenu,
+  toggleDarkMode,
+  setBgColor,
+} from '../../../../redux/actions';
 
 import styles from './Layout.module.scss';
 import {classNames} from '../../../utils/classNames';
@@ -38,7 +42,13 @@ class Layout extends React.PureComponent<ComposedProps, State> {
   }
 
   componentDidMount() {
+    const {dispatch} = this.props;
+    const root = document.documentElement;
     this.targetElement = this.targetRef.current;
+    root.style.setProperty('--color-text-themed', 'var(--color-text)');
+    root.style.setProperty('--color-heading-themed', 'var(--color-heading)');
+    dispatch(setBgColor('var(--color-bg)'));
+    dispatch(toggleHamburgerMenu(false));
   }
 
   componentDidUpdate() {

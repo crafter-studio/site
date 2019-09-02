@@ -2,11 +2,7 @@ import React from 'react';
 import {Link as GatsbyLink} from 'gatsby';
 import {connect} from 'react-redux';
 import {ReduxState} from '../../redux/reducers';
-import {
-  toggleHamburgerMenu,
-  toggleDarkMode,
-  setBgColor,
-} from '../../redux/actions';
+import {toggleHamburgerMenu, toggleDarkMode} from '../../redux/actions';
 
 import styles from './Link.module.scss';
 import {classNames} from '../../components/utils/classNames';
@@ -25,10 +21,11 @@ class Link extends React.PureComponent<Props & ReduxState> {
   }
 
   handleClick() {
-    const {dispatch} = this.props;
+    const {dispatch, to} = this.props;
     dispatch(toggleDarkMode(false));
-    dispatch(setBgColor('var(--color-bg)'));
-    dispatch(toggleHamburgerMenu(false));
+    if (to === location.pathname) {
+      dispatch(toggleHamburgerMenu(false));
+    }
   }
 
   render() {
