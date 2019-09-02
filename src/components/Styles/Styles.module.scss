@@ -249,7 +249,7 @@ table {
   --color-bg-themed: #{$color-light-grey};
 
   --navigation-width: 100%;
-  @include large {
+  @include medium {
     --navigation-width: 50vw;
   }
 }
