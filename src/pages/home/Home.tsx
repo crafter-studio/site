@@ -94,7 +94,7 @@ class Home extends React.PureComponent<ComposedProps, State> {
                   </div>
                   <div className={styles.Text}>
                     <div>
-                      <Text tag="h3" size="h2">
+                      <Text tag="h3">
                         We Are A Product-Focused Web Development Team.
                       </Text>
                       <Text>
