@@ -84,7 +84,7 @@ class Scroll extends React.PureComponent<ComposedProps, State> {
   }
 
   render() {
-    const {children, bottomOffset = '20%'} = this.props;
+    const {children, bottomOffset = '10%'} = this.props;
     const {contentInView} = this.state;
 
     // window object does not exist in Webpack's Node environment, this is to prevent the error

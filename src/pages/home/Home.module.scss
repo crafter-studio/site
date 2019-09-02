@@ -195,6 +195,10 @@
       display: flex;
       align-items: center;
       padding: $spacing;
+
+      @include medium {
+        padding: $spacing * 2;
+      }
     }
 
     .Image {
