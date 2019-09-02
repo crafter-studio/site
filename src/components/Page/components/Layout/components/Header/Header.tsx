@@ -1,11 +1,10 @@
 import React from 'react';
-import {Link} from 'gatsby';
 import {connect} from 'react-redux';
 import {ReduxState} from '../../../../../../redux/reducers';
 
 import styles from './Header.module.scss';
 import Logo from './assets/crafter-studio-logo.svg';
-import {Grid} from '../../../../../../components';
+import {Grid, Link} from '../../../../../../components';
 import {classNames} from '../../../../../utils/classNames';
 import {Menu, Navigation} from './components';
 

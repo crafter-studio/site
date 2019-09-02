@@ -1,14 +1,7 @@
 import React from 'react';
 
 import styles from './Footer.module.scss';
-import {
-  Page,
-  Grid,
-  Text,
-  List,
-  Button,
-  Link,
-} from '../../../../../../components';
+import {Grid, Text, List, Button, Link} from '../../../../../../components';
 
 export interface Props {}
 
@@ -28,11 +21,10 @@ export default class Footer extends React.PureComponent<ComposedProps, State> {
                 </Text>
                 <Text.Container>
                   <Text size="small">
-                    Don't be an apple, eat cheese. Why haven't everyone figured
-                    out why children like to roll in mud so much? I think it is
-                    because in their past life they were little pigs. Don't be
-                    an apple, eat cheese. Why haven't everyone figured out why
-                    children like to roll in mud so much?
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                    Donec odio. Quisque volutpat mattis eros. Nullam malesuada
+                    erat ut turpis. Suspendisse urna nibh, viverra non, semper
+                    suscipit, posuere a, pede.
                   </Text>
                 </Text.Container>
               </div>

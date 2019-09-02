@@ -188,9 +188,9 @@ class Home extends React.PureComponent<ComposedProps, State> {
                             Content Writing
                           </Text>
                           <Text hyphenated size="small">
-                            Content is king. We write with your brand in mind
-                            and ensures SEO is also somewhat in there. Your tone
-                            is our baby yo.
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing
+                            elit. Donec odio. Quisque volutpat mattis eros.
+                            Nullam malesuada erat ut turpis.
                           </Text>
                         </div>
                         <div>
@@ -201,9 +201,9 @@ class Home extends React.PureComponent<ComposedProps, State> {
                             Web Development
                           </Text>
                           <Text hyphenated size="small">
-                            We build websites. It's just what we are good at,
-                            and we do it freggin well yo. Just take a look at
-                            our detailed checklist.
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing
+                            elit. Donec odio. Quisque volutpat mattis eros.
+                            Nullam malesuada erat ut turpis.
                           </Text>
                         </div>
                         <div>
@@ -214,9 +214,9 @@ class Home extends React.PureComponent<ComposedProps, State> {
                             Web Design
                           </Text>
                           <Text hyphenated size="small">
-                            We create functional, timeless, designs that speaks
-                            like your brand and ensures your first impressions
-                            are the best ones.
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing
+                            elit. Donec odio. Quisque volutpat mattis eros.
+                            Nullam malesuada erat ut turpis.
                           </Text>
                         </div>
                         <div>
@@ -227,9 +227,9 @@ class Home extends React.PureComponent<ComposedProps, State> {
                             SEO
                           </Text>
                           <Text hyphenated size="small">
-                            Your site will be quite up there when people search
-                            your company name because we make sure you put your
-                            best foot forward.
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing
+                            elit. Donec odio. Quisque volutpat mattis eros.
+                            Nullam malesuada erat ut turpis.
                           </Text>
                         </div>
                       </div>

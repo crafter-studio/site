@@ -94,7 +94,7 @@ class Work extends React.PureComponent<ComposedProps, State> {
                   <div className={styles.Data}>
                     <Text.Container>
                       <h5 className={styles.DataTitle}>Company</h5>
-                      <p className={styles.DataInfo}>Transpring Canada</p>
+                      <p className={styles.DataInfo}>Panasonic Canada</p>
                       <h5 className={styles.DataTitle}>Year</h5>
                       <p className={styles.DataInfo}>2016</p>
                       <h5 className={styles.DataTitle}>Tags</h5>
@@ -114,21 +114,22 @@ class Work extends React.PureComponent<ComposedProps, State> {
                     </Text.Container>
                   </div>
                   <div className={styles.Description}>
-                    <Text>
-                      America opened its door In San Francisco after finding
-                      success in Tokyo, Japan. The site was designed to give an
-                      introduction to the company, feature apps, and also serve
-                      as a recruitment platform for potential hires. Lorem Ipsom
-                      dolor eats pickles in public but is not ashamed to be
-                      judged. We do this to make lines longer.
+                    <Text hyphenated>
+                      Praesent dapibus, neque id cursus faucibus, tortor neque
+                      egestas auguae, eu vulputate magna eros eu erat. Aliquam
+                      erat volutpat. Nam dui mi, tincidunt quis, accumsan
+                      porttitor, facilisis luctus, metus. Nam dui mi, tincidunt
+                      quis, accumsan porttitor, facilisis luctus, metus. Morbi
+                      in sem quis dui placerat ornare. Pellentesque odio nisi,
+                      euismod in, pharetra a, ultricies in, diam. Sed arcu.
                     </Text>
-                    <Text>
-                      America opened its door In San Francisco after finding
-                      success in Tokyo, Japan. The site was designed to give an
-                      introduction to the company, feature apps, and also serve
-                      as a recruitment platform for potential hires. Lorem Ipsom
-                      dolor eats pickles in public but is not ashamed to be
-                      judged. We do this to make lines longer.
+                    <Text hyphenated>
+                      Aliquam erat volutpat. Nam dui mi, tincidunt quis,
+                      accumsan porttitor, facilisis luctus, metus. Nam dui mi,
+                      tincidunt quis, accumsan porttitor, facilisis luctus,
+                      metus. Morbi in sem quis dui placerat ornare. Praesent
+                      dapibus, neque id cursus faucibus, tortor neque egestas
+                      auguae, eu vulputate magna eros eu erat.
                     </Text>
                   </div>
                 </div>
