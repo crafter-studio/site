@@ -9,12 +9,31 @@ import {classNames} from '../../../../../../utils/classNames';
 
 export interface Props {}
 
-type State = {};
+type State = {
+  focusing: boolean;
+};
 type ComposedProps = Props & ReduxState;
 
 class Menu extends React.PureComponent<ComposedProps, State> {
+  state: State = {
+    focusing: false,
+  };
+
   handleMenuClick() {
     const {dispatch, hamburgerMenuActive} = this.props;
+    if (this.state.focusing) {
+      return;
+    }
+    dispatch(toggleHamburgerMenu(!hamburgerMenuActive));
+  }
+
+  handleMenuFocus() {
+    const {dispatch, hamburgerMenuActive} = this.props;
+    // Prevents focus and click from firing together...
+    this.setState({focusing: true});
+    setTimeout(() => {
+      this.setState({focusing: false});
+    }, 500);
     dispatch(toggleHamburgerMenu(!hamburgerMenuActive));
   }
 
@@ -28,7 +47,7 @@ class Menu extends React.PureComponent<ComposedProps, State> {
 
     return (
       <button
-        onFocus={this.handleMenuClick.bind(this)}
+        onFocus={this.handleMenuFocus.bind(this)}
         onClick={this.handleMenuClick.bind(this)}
         className={className}
       >
