@@ -1,5 +1,6 @@
 import React from 'react';
 import {StaticQuery, graphql} from 'gatsby';
+import ReactHtmlParser from 'react-html-parser';
 import striptags from 'striptags';
 
 import styles from './Work.module.scss';
@@ -16,11 +17,10 @@ type State = {};
 type ComposedProps = Props;
 
 const Project = ({slug, title, excerpt, tags}) => {
-  console.log(title);
   return (
     <div className={styles.Project}>
       <img src={placeholder} />
-      <h2 className={styles.ProjectTitle}>{`${title}`}</h2>
+      <h2 className={styles.ProjectTitle}>{ReactHtmlParser(title)}</h2>
       <Text>{striptags(excerpt)}</Text>
       <List>
         {tags.map((tag, key) => (

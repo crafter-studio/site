@@ -53,7 +53,7 @@ class Work extends React.PureComponent<ComposedProps, State> {
     const description = striptags(excerpt);
     return (
       <Page
-        title={`${title}`}
+        title={title}
         description={`${description}`}
         keywords={['keyword', 'things']}
         disableSiteName
