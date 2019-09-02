@@ -102,7 +102,7 @@ class Home extends React.PureComponent<ComposedProps, State> {
                         experts specialized in design, development, branding,
                         and SEO. We extend departments from Fortune 500
                         companies and growing startups by putting their
-                        product's best foot forward in the digtal space.
+                        product's best foot forward in the digital space.
                       </Text>
                       <Link to="/about" animated>
                         Read More
