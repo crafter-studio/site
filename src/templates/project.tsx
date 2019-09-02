@@ -62,7 +62,6 @@ class Work extends React.PureComponent<ComposedProps, State> {
         <Page.Layout>
           <div className={styles.Header}>
             <div className={styles.HeaderTop}>
-              <Decor.Noise />
               <img
                 className={styles.FeaturedImageBackground}
                 src={featuredImg}
