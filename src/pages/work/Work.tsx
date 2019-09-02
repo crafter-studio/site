@@ -16,10 +16,11 @@ type State = {};
 type ComposedProps = Props;
 
 const Project = ({slug, title, excerpt, tags}) => {
+  console.log(title);
   return (
     <div className={styles.Project}>
       <img src={placeholder} />
-      <h2 className={styles.ProjectTitle}>{title}</h2>
+      <h2 className={styles.ProjectTitle}>{`${title}`}</h2>
       <Text>{striptags(excerpt)}</Text>
       <List>
         {tags.map((tag, key) => (
