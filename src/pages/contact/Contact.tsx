@@ -20,6 +20,7 @@ export default class Contact extends React.PureComponent<ComposedProps, State> {
         <Page.Layout>
           <Grid>
             <form name="contact" method="POST" data-netlify="true">
+              <input type="hidden" name="crafter-studio-form" value="contact" />
               <p>
                 <label>
                   Your Name: <input type="text" name="name" />
