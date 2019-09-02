@@ -50,7 +50,7 @@
 @mixin delayAnimationByChild {
   @for $i from 1 through 10 {
     &:nth-child(#{$i}) {
-      animation-delay: #{$i * 0.15}s;
+      animation-delay: #{$i * 0.1}s;
     }
   }
 }
