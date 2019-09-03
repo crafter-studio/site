@@ -26,9 +26,8 @@
 @mixin delayAnimationByChild {
   @for $i from 1 through 10 {
     &:nth-child(#{$i}) {
-      animation-delay: #{$i * 0.025}s;
-      transition-delay: #{$i * 0.025}s;
-      background: rgba($color-primary, $i * 0.1);
+      transition-duration: calc(#{$animation-duration-long} + #{$i * 0.1s});
+      background: rgba($color-primary, $i * 0.15);
     }
   }
 }

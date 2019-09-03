@@ -38,10 +38,6 @@ class Navigation extends React.PureComponent<ComposedProps, State> {
           <div className={styles.NavigationBackgroundLayer} />
           <div className={styles.NavigationBackgroundLayer} />
           <div className={styles.NavigationBackgroundLayer} />
-          <div className={styles.NavigationBackgroundLayer} />
-          <div className={styles.NavigationBackgroundLayer} />
-          <div className={styles.NavigationBackgroundLayer} />
-          <div className={styles.NavigationBackgroundLayer} />
         </div>
         <nav aria-expanded={hamburgerMenuActive} className={styles.Navigation}>
           <div className={styles.NavigationLinks}>
