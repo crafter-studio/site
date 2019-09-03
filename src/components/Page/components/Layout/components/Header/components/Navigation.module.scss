@@ -51,7 +51,9 @@
 .Navigation {
   height: 100%;
   opacity: 0;
-  transition: opacity $animation-duration-long 0.4s ease-in-out;
+  transform: translate(50%);
+  transition: opacity $animation-duration-long * 2 ease-in-out,
+    transform $animation-duration-long ease-in-out;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -59,6 +61,7 @@
 
   .HamburgerMenuActive & {
     opacity: 1;
+    transform: translate(0);
   }
 }
 
