@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Contact.module.scss';
 
-import {Page, Grid} from '../../components';
+import {Page, Grid, Input, Button} from '../../components';
 
 interface Props {}
 interface State {}
@@ -18,20 +18,31 @@ export default class Contact extends React.PureComponent<ComposedProps, State> {
       >
         <Page.Background />
         <Page.Layout>
-          <Grid>
-            <form name="Contact Form" method="POST" data-netlify="true">
-              <input type="hidden" name="form-name" value="Contact Form" />
-              <div>
-                <label>Your Email:</label>
-                <input type="email" name="email" />
-              </div>
-              <div>
-                <label>Message:</label>
-                <textarea name="message" />
-              </div>
-              <button type="submit">Send</button>
-            </form>
-          </Grid>
+          <Page.Section>
+            <Grid>
+              <Grid.ScreenWidth>
+                <form name="Contact Form" method="POST" data-netlify="true">
+                  <input type="hidden" name="form-name" value="Contact Form" />
+                  <Input
+                    name="email"
+                    label="email"
+                    type="email"
+                    id="email"
+                    placeholder="hello@crafterstu.com"
+                  />
+                  <Input
+                    textarea
+                    name="message"
+                    label="Your Message"
+                    type="text"
+                    id="message"
+                    placeholder="Write your message here"
+                  />
+                  <Button submit value="Submit" />
+                </form>
+              </Grid.ScreenWidth>
+            </Grid>
+          </Page.Section>
         </Page.Layout>
       </Page>
     );
