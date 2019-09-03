@@ -1,4 +1,4 @@
-@keyframes fadeIn {
+@keyframes fadeInFull {
   from {
     opacity: 0;
   }
@@ -16,23 +16,24 @@
 .Content {
   overflow: auto;
   opacity: 1;
-  animation: fadeIn $animation-duration-long ease-in-out both;
+  animation: fadeInFull $animation-duration-long ease-in-out forwards;
   transition: transform $animation-duration-long ease-in-out,
     opacity $animation-duration-long ease-in-out;
 
   .HamburgerMenuActive & {
     opacity: 0.5;
     transform: translateX(calc(var(--navigation-width) / -1.5));
+    animation: none;
   }
 }
 
 .Footer {
   opacity: 1;
-  animation: fadeIn $animation-duration-long ease-in-out both;
   transition: transform $animation-duration-long ease-in-out,
     opacity $animation-duration-long ease-in-out;
   .HamburgerMenuActive & {
     opacity: 0.5;
     transform: translateX(calc(var(--navigation-width) / -1.5));
+    animation: none;
   }
 }
