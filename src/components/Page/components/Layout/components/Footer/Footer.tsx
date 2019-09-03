@@ -82,7 +82,7 @@ export default class Footer extends React.PureComponent<ComposedProps, State> {
                     <Text size="small">hello@crafterstu.com</Text>
                   </List.Item>
                   <List.Item>
-                    <Button value="Contact Us" linkPath="/contact" />
+                    <Button value="Contact Us" />
                   </List.Item>
                 </List>
               </div>

@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'gatsby';
 
 import {classNames, classVariants} from '../utils/classNames';
 
@@ -7,11 +6,11 @@ import styles from './Button.module.scss';
 
 interface Props {
   value: string;
-  linkPath?: string;
   subdued?: boolean;
   submit?: boolean;
   uppercase?: boolean;
   fullWidth?: boolean;
+  onClick?: () => void;
 }
 
 type State = {};
@@ -28,32 +27,35 @@ type Group = (props: ButtonGroupProps) => React.ReactElement;
 class Button extends React.PureComponent<ComposedProps, State> {
   static Group: Group;
 
+  constructor(props) {
+    super(props);
+    this.handleButtonClick = this.handleButtonClick.bind(this);
+  }
+
+  handleButtonClick() {
+    const {onClick} = this.props;
+    onClick();
+  }
+
   render() {
-    const {
-      value,
-      submit,
-      subdued,
-      uppercase,
-      linkPath = '/',
-      fullWidth,
-    } = this.props;
-
-    const buttonClass = classNames(
-      styles.Button,
-      subdued && styles.ButtonSubdued,
-    );
-
-    const linkButton = (
-      <Link className={styles.Button} to={linkPath}>
-        {value}
-      </Link>
-    );
+    const {value, submit, uppercase, fullWidth} = this.props;
 
     const submitButton = (
-      <input className={styles.Button} type="submit" value={value} />
+      <input
+        onClick={this.handleButtonClick}
+        className={styles.Button}
+        type="submit"
+        value={value}
+      />
     );
 
-    const button = submit ? submitButton : linkButton;
+    const defaultButton = (
+      <div onClick={this.handleButtonClick} className={styles.Button}>
+        {value}
+      </div>
+    );
+
+    const button = submit ? submitButton : defaultButton;
 
     const buttonWrapperClass = classNames(
       styles.ButtonWrapper,
@@ -72,7 +74,11 @@ const Group: Group = ({children, spacing, align}) => {
     align && styles[classVariants('align', align)],
   );
 
-  return <div className={className}>{children}</div>;
+  return (
+    <div onClick={this.handleButtonClick} className={className}>
+      {children}
+    </div>
+  );
 };
 
 Button.Group = Group;

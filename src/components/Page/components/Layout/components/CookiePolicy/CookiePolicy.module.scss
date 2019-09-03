@@ -1,0 +1,51 @@
+.CookiePolicy {
+  background-color: $color-primary;
+  min-height: $spacing * 3;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: $z-header;
+  transition: opacity $animation-duration ease-in-out,
+    transform $animation-duration ease-in-out;
+
+  &.CookieAccepted {
+    opacity: 0;
+    z-index: 0;
+    transform: translateY(100%);
+  }
+}
+
+.ContentContainer {
+  padding: $spacing-tight 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include small {
+    flex-direction: row;
+  }
+}
+
+.Content {
+  padding-bottom: $spacing-tight;
+  flex: 1;
+
+  @include small {
+    padding-bottom: 0;
+    padding-right: $spacing-tight;
+  }
+}
+
+.CookieAccept {
+  width: 100%;
+  transition: transform $animation-duration-short ease-in-out;
+
+  .CookieAccepted & {
+    transform: scale(0.5);
+  }
+
+  @include small {
+    width: 120px;
+  }
+}

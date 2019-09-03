@@ -7,17 +7,14 @@ import {
   clearAllBodyScrollLocks,
 } from 'body-scroll-lock';
 import {ReduxState} from '../../../../redux/reducers';
-import {
-  toggleHamburgerMenu,
-  toggleDarkMode,
-  setBgColor,
-} from '../../../../redux/actions';
+import {toggleHamburgerMenu, setBgColor} from '../../../../redux/actions';
 
 import styles from './Layout.module.scss';
 import {classNames} from '../../../utils/classNames';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
+import CookiePolicy from './components/CookiePolicy';
 
 export interface Props {}
 
@@ -88,6 +85,7 @@ class Layout extends React.PureComponent<ComposedProps, State> {
         <div onClick={this.handleMenuClose} className={styles.Footer}>
           <Footer />
         </div>
+        <CookiePolicy />
       </div>
     );
   }
