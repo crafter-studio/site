@@ -294,11 +294,36 @@ class Home extends React.PureComponent<ComposedProps, State> {
                         </h1>
                       </div>
                       <div className={styles.BlogGrid}>
-                        <Img fluid={placeholder_1} className={styles.Big} />
-                        <Img fluid={placeholder_5} className={styles.B} />
-                        <Img fluid={placeholder_2} className={styles.C} />
-                        <Img fluid={placeholder_4} className={styles.D} />
-                        <Img fluid={placeholder_3} className={styles.E} />
+                        <Link to="/blog/test" className={styles.Big}>
+                          <Img
+                            fluid={placeholder_1}
+                            className={styles.GatsbyImage}
+                          />
+                        </Link>
+                        <Link to="/blog/test" className={styles.B}>
+                          <Img
+                            fluid={placeholder_5}
+                            className={styles.GatsbyImage}
+                          />
+                        </Link>
+                        <Link to="/blog/test" className={styles.C}>
+                          <Img
+                            fluid={placeholder_2}
+                            className={styles.GatsbyImage}
+                          />
+                        </Link>
+                        <Link to="/blog/test" className={styles.D}>
+                          <Img
+                            fluid={placeholder_4}
+                            className={styles.GatsbyImage}
+                          />
+                        </Link>
+                        <Link to="/blog/test" className={styles.E}>
+                          <Img
+                            fluid={placeholder_3}
+                            className={styles.GatsbyImage}
+                          />
+                        </Link>
                       </div>
                     </div>
                   </Scroll.LoadAnimation>
