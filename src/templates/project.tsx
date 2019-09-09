@@ -1,6 +1,7 @@
 import React from 'react';
 import {graphql} from 'gatsby';
 import striptags from 'striptags';
+import ReactHtmlParser from 'react-html-parser';
 
 import styles from './Project.module.scss';
 
@@ -43,7 +44,7 @@ class Work extends React.PureComponent<ComposedProps, State> {
   render() {
     const project = this.props.data.allWordpressWpProject.edges[0].node;
     const {
-      title,
+      title: titleRaw,
       excerpt,
       date,
       content,
@@ -51,6 +52,7 @@ class Work extends React.PureComponent<ComposedProps, State> {
       featured_media: {source_url: featuredImg},
     } = project;
     const description = striptags(excerpt);
+    const title = `${ReactHtmlParser(titleRaw)}`;
     return (
       <Page
         title={title}

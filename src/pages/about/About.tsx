@@ -42,10 +42,10 @@ class About extends React.PureComponent<ComposedProps, State> {
                 <Decor.Noise />
               </div>
               <div className={styles.PageBannerContent}>
-                <Text tag="h1" uppercase>
-                  The mesh of talents, our creative core.
+                <Text tag="h1" align="center" uppercase>
+                  A beautiful mesh of talents.
                 </Text>
-                <Text color="var(--color-text-neg)" hyphenated>
+                <Text align="center" color="var(--color-text-neg)" hyphenated>
                   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
                   Donec odio. Quisque volutpat mattis eros. Nullam malesuada
                   erat ut turpis. Suspendisse urna nibh, viverra non, semper
@@ -58,10 +58,8 @@ class About extends React.PureComponent<ComposedProps, State> {
           </Theme>
           <Page.Section>
             <Grid>
-              <Text color="var(--color-heading-themed)" tag="h1">
-                We Make Websites.
-              </Text>
-              <Text color="var(--color-text-themed)">
+              <Text tag="h1">We Make Websites.</Text>
+              <Text>
                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
                 odio. Quisque volutpat mattis eros. Nullam malesuada erat ut
                 turpis. Suspendisse urna nibh, viverra non, semper suscipit,
@@ -69,7 +67,7 @@ class About extends React.PureComponent<ComposedProps, State> {
                 Aliquam porttitor mauris sit amet orci. Aenean dignissim
                 pellentesque felis.
               </Text>
-              <Text color="var(--color-text-themed)">
+              <Text>
                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
                 odio. Quisque volutpat mattis eros. Nullam malesuada erat ut
                 turpis. Suspendisse urna nibh, viverra non, semper suscipit,

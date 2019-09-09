@@ -148,14 +148,54 @@ class Home extends React.PureComponent<ComposedProps, State> {
                   <Scroll>
                     <Scroll.LoadAnimation propogateAnimation>
                       <div className={styles.WorkGrid}>
-                        <Img fluid={placeholder_1} className={styles.A} />
-                        <Img fluid={placeholder_5} className={styles.B} />
-                        <Img fluid={placeholder_1} className={styles.C} />
-                        <Img fluid={placeholder_2} className={styles.D} />
-                        <Img fluid={placeholder_3} className={styles.E} />
-                        <Img fluid={placeholder_5} className={styles.F} />
-                        <Img fluid={placeholder_2} className={styles.G} />
-                        <Img fluid={placeholder_4} className={styles.H} />
+                        <Link to="/work/test" className={styles.A}>
+                          <Img
+                            fluid={placeholder_1}
+                            className={styles.GatsbyImage}
+                          />
+                        </Link>
+                        <Link to="/work/test" className={styles.B}>
+                          <Img
+                            fluid={placeholder_5}
+                            className={styles.GatsbyImage}
+                          />
+                        </Link>
+                        <Link to="/work/test" className={styles.C}>
+                          <Img
+                            fluid={placeholder_5}
+                            className={styles.GatsbyImage}
+                          />
+                        </Link>
+                        <Link to="/work/test" className={styles.D}>
+                          <Img
+                            fluid={placeholder_2}
+                            className={styles.GatsbyImage}
+                          />
+                        </Link>
+                        <Link to="/work/test" className={styles.E}>
+                          <Img
+                            fluid={placeholder_4}
+                            className={styles.GatsbyImage}
+                          />
+                        </Link>
+                        <Link to="/work/test" className={styles.F}>
+                          <Img
+                            fluid={placeholder_3}
+                            className={styles.GatsbyImage}
+                          />
+                        </Link>
+                        <Link to="/work/test" className={styles.G}>
+                          <Img
+                            fluid={placeholder_1}
+                            className={styles.GatsbyImage}
+                          />
+                        </Link>
+                        <Link to="/work/test" className={styles.H}>
+                          <Img
+                            fluid={placeholder_4}
+                            className={styles.GatsbyImage}
+                          />
+                        </Link>
                       </div>
                     </Scroll.LoadAnimation>
                   </Scroll>

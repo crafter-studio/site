@@ -268,7 +268,7 @@
       'f f f g g g h h h h';
   }
 
-  & > div {
+  & > span {
     height: 240px;
     width: 100%;
     @include delayAnimationByChild;
@@ -277,6 +277,11 @@
     @include medium {
       height: initial;
     }
+  }
+
+  .GatsbyImage {
+    width: 100%;
+    height: 100%;
   }
 
   img {

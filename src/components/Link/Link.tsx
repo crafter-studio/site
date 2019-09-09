@@ -12,6 +12,7 @@ interface Props {
   underlined?: boolean;
   secondaryFont?: boolean;
   animated?: boolean;
+  className?: string;
 }
 
 class Link extends React.PureComponent<Props & ReduxState> {
@@ -35,9 +36,11 @@ class Link extends React.PureComponent<Props & ReduxState> {
       secondaryFont,
       underlined = true,
       children,
+      className: classNameProp,
     } = this.props;
 
     const className = classNames(
+      classNameProp,
       styles.Link,
       underlined && styles.underlined,
       animated && styles.animated,
