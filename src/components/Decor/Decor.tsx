@@ -3,6 +3,7 @@ import React from 'react';
 import {
   AnimatedSquares,
   AnimatedSquareProps,
+  Line,
   Noise,
   Triangle,
   TriangleProps,
@@ -14,14 +15,16 @@ interface State {}
 type ComposedProps = Props;
 
 export default class Decor extends React.PureComponent<ComposedProps, State> {
-  static Triangle: React.SFC<TriangleProps>;
   static AnimatedSquares: React.SFC<AnimatedSquareProps>;
+  static Line;
   static Noise;
+  static Triangle: React.SFC<TriangleProps>;
   render() {
     return null;
   }
 }
 
-Decor.Triangle = Triangle;
 Decor.AnimatedSquares = AnimatedSquares;
+Decor.Line = Line;
 Decor.Noise = Noise;
+Decor.Triangle = Triangle;

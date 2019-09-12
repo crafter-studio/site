@@ -11,6 +11,7 @@ import {
   Theme,
   Link,
   Scroll,
+  Decor,
 } from '../../components';
 
 interface Props {
@@ -154,6 +155,7 @@ class Home extends React.PureComponent<ComposedProps, State> {
                               <Text tag="h4" size="small" uppercase>
                                 Panasonic Supersonic
                               </Text>
+                              <Decor.Line />
                               <Text>
                                 This text describes the project using not a lot
                                 of text. It should be nice and concise.
