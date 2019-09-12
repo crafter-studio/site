@@ -149,48 +149,120 @@ class Home extends React.PureComponent<ComposedProps, State> {
                     <Scroll.LoadAnimation propogateAnimation>
                       <div className={styles.WorkGrid}>
                         <Link to="/work/test" className={styles.A}>
+                          <div className={styles.ImageOverlay}>
+                            <div>
+                              <Text tag="h4" size="small" uppercase>
+                                Panasonic Supersonic
+                              </Text>
+                              <Text>
+                                This text describes the project using not a lot
+                                of text. It should be nice and concise.
+                              </Text>
+                            </div>
+                          </div>
                           <Img
                             fluid={placeholder_1}
                             className={styles.GatsbyImage}
                           />
                         </Link>
-                        <Link to="/work/test" className={styles.B}>
+                        <Link to="/work" className={styles.B}>
+                          <div className={styles.ImageOverlay}>
+                            <div>
+                              <Text tag="h5" size="small" uppercase>
+                                View Projects
+                              </Text>
+                            </div>
+                          </div>
                           <Img
                             fluid={placeholder_5}
                             className={styles.GatsbyImage}
                           />
                         </Link>
-                        <Link to="/work/test" className={styles.C}>
+                        <Link to="/work" className={styles.C}>
+                          <div className={styles.ImageOverlay}>
+                            <div>
+                              <Text tag="h5" size="small" uppercase>
+                                View Projects
+                              </Text>
+                            </div>
+                          </div>
                           <Img
                             fluid={placeholder_5}
                             className={styles.GatsbyImage}
                           />
                         </Link>
                         <Link to="/work/test" className={styles.D}>
+                          <div className={styles.ImageOverlay}>
+                            <div>
+                              <Text tag="h4" size="small" uppercase>
+                                Panasonic Supersonic
+                              </Text>
+                              <Text>
+                                This text describes the project using not a lot
+                                of text. It should be nice and concise.
+                              </Text>
+                            </div>
+                          </div>
                           <Img
                             fluid={placeholder_2}
                             className={styles.GatsbyImage}
                           />
                         </Link>
                         <Link to="/work/test" className={styles.E}>
+                          <div className={styles.ImageOverlay}>
+                            <div>
+                              <Text tag="h4" size="small" uppercase>
+                                Panasonic Supersonic
+                              </Text>
+                              <Text>
+                                This text describes the project using not a lot
+                                of text. It should be nice and concise.
+                              </Text>
+                            </div>
+                          </div>
                           <Img
                             fluid={placeholder_4}
                             className={styles.GatsbyImage}
                           />
                         </Link>
-                        <Link to="/work/test" className={styles.F}>
+                        <Link to="/work" className={styles.F}>
+                          <div className={styles.ImageOverlay}>
+                            <div>
+                              <Text tag="h5" size="small" uppercase>
+                                View Projects
+                              </Text>
+                            </div>
+                          </div>
                           <Img
                             fluid={placeholder_3}
                             className={styles.GatsbyImage}
                           />
                         </Link>
-                        <Link to="/work/test" className={styles.G}>
+                        <Link to="/work" className={styles.G}>
+                          <div className={styles.ImageOverlay}>
+                            <div>
+                              <Text tag="h5" size="small" uppercase>
+                                View Projects
+                              </Text>
+                            </div>
+                          </div>
                           <Img
                             fluid={placeholder_1}
                             className={styles.GatsbyImage}
                           />
                         </Link>
                         <Link to="/work/test" className={styles.H}>
+                          <div className={styles.ImageOverlay}>
+                            <div>
+                              <Text tag="h4" size="small" uppercase>
+                                Panasonic Supersonic
+                              </Text>
+                              <Text>
+                                This text describes the project using not a lot
+                                of text. It should be nice and concise.
+                              </Text>
+                            </div>
+                          </div>
                           <Img
                             fluid={placeholder_4}
                             className={styles.GatsbyImage}

@@ -273,6 +273,31 @@
       'f f f g g g h h h h';
   }
 
+  .ImageOverlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-color: rgba($color-primary, 0);
+    z-index: 1;
+    transition: opacity $animation-duration ease-in-out,
+      background-color $animation-duration ease-in-out;
+
+    & > div {
+      padding: $spacing;
+    }
+
+    &:hover {
+      opacity: 1;
+      background-color: rgba($color-primary, $semi-opaque);
+    }
+  }
+
   & > span {
     height: 240px;
     width: 100%;
@@ -281,6 +306,12 @@
 
     @include medium {
       height: initial;
+    }
+
+    & > a {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
     }
   }
 
