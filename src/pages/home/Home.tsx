@@ -152,14 +152,18 @@ class Home extends React.PureComponent<ComposedProps, State> {
                         <Link to="/work/test" className={styles.A}>
                           <div className={styles.ImageOverlay}>
                             <div>
-                              <Text tag="h4" size="small" uppercase>
-                                Panasonic Supersonic
-                              </Text>
+                              <div className={styles.WorkTitle}>
+                                <Text tag="h4" size="small" uppercase>
+                                  Panasonic Supersonic
+                                </Text>
+                              </div>
                               <Decor.Line />
-                              <Text>
-                                This text describes the project using not a lot
-                                of text. It should be nice and concise.
-                              </Text>
+                              <div className={styles.WorkDescription}>
+                                <Text>
+                                  This text describes the project using not a
+                                  lot of text. It should be nice and concise.
+                                </Text>
+                              </div>
                             </div>
                           </div>
                           <Img

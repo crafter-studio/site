@@ -295,6 +295,19 @@
     &:hover {
       opacity: 1;
       background-color: rgba($color-primary, $semi-opaque);
+
+      .WorkTitle {
+        transform: translateY(neg($spacing-tight / 2));
+      }
+
+      .WorkDescription {
+        transform: translateY($spacing-tight / 2);
+      }
+    }
+
+    .WorkTitle,
+    .WorkDescription {
+      transition: transform $animation-duration-long ease-in-out;
     }
   }
 
