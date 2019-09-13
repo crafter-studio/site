@@ -29,13 +29,12 @@ export default class CookiePolicy extends React.PureComponent<
     localStorage.setItem('cookieAccepted', 'true');
   }
 
-  componentDidMount() {}
-
   render() {
     // localStorage object does not exist in Webpack's Node environment, this is to prevent the error
-    let cookieAccepted = 'false';
+    let cookieAccepted = false;
     if (typeof window !== 'undefined') {
-      localStorage.getItem('cookieAccepted') === 'true' ||
+      cookieAccepted =
+        localStorage.getItem('cookieAccepted') === 'true' ||
         this.state.cookieAccepted;
     }
 
