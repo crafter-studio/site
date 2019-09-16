@@ -180,7 +180,7 @@ class Home extends React.PureComponent<ComposedProps, State> {
                             </div>
                           </div>
                           <Img
-                            fluid={placeholder_5}
+                            fluid={placeholder_4}
                             className={styles.GatsbyImage}
                           />
                         </Link>
@@ -193,7 +193,7 @@ class Home extends React.PureComponent<ComposedProps, State> {
                             </div>
                           </div>
                           <Img
-                            fluid={placeholder_5}
+                            fluid={placeholder_3}
                             className={styles.GatsbyImage}
                           />
                         </Link>
@@ -214,66 +214,6 @@ class Home extends React.PureComponent<ComposedProps, State> {
                             className={styles.GatsbyImage}
                           />
                         </Link>
-                        <Link to="/work/test" className={styles.E}>
-                          <div className={styles.ImageOverlay}>
-                            <div>
-                              <Text tag="h4" size="small" uppercase>
-                                Panasonic Supersonic
-                              </Text>
-                              <Text>
-                                This text describes the project using not a lot
-                                of text. It should be nice and concise.
-                              </Text>
-                            </div>
-                          </div>
-                          <Img
-                            fluid={placeholder_4}
-                            className={styles.GatsbyImage}
-                          />
-                        </Link>
-                        <Link to="/work" className={styles.F}>
-                          <div className={styles.ImageOverlay}>
-                            <div>
-                              <Text tag="h5" size="small" uppercase>
-                                View Projects
-                              </Text>
-                            </div>
-                          </div>
-                          <Img
-                            fluid={placeholder_3}
-                            className={styles.GatsbyImage}
-                          />
-                        </Link>
-                        <Link to="/work" className={styles.G}>
-                          <div className={styles.ImageOverlay}>
-                            <div>
-                              <Text tag="h5" size="small" uppercase>
-                                View Projects
-                              </Text>
-                            </div>
-                          </div>
-                          <Img
-                            fluid={placeholder_1}
-                            className={styles.GatsbyImage}
-                          />
-                        </Link>
-                        <Link to="/work/test" className={styles.H}>
-                          <div className={styles.ImageOverlay}>
-                            <div>
-                              <Text tag="h4" size="small" uppercase>
-                                Panasonic Supersonic
-                              </Text>
-                              <Text>
-                                This text describes the project using not a lot
-                                of text. It should be nice and concise.
-                              </Text>
-                            </div>
-                          </div>
-                          <Img
-                            fluid={placeholder_4}
-                            className={styles.GatsbyImage}
-                          />
-                        </Link>
                       </div>
                     </Scroll.LoadAnimation>
                   </Scroll>
@@ -284,79 +224,85 @@ class Home extends React.PureComponent<ComposedProps, State> {
           {/* ================================================================================================================= */}
           {/* SERVICES SECTION */}
           {/* ================================================================================================================= */}
-          <Page.Section>
-            <Grid>
-              <Grid.ScreenWidth>
-                <Scroll>
-                  <Scroll.LoadAnimation propogateAnimation>
-                    <div className={styles.ServiceSectionContainer}>
-                      <div className={styles.ServicesSection}>
-                        <div className={styles.Heading}>
-                          <h1 style={{color: 'var(--color-heading-themed)'}}>
-                            Services.
-                          </h1>
+          <Theme bgColor="var(--color-primary)">
+            <Page.Section>
+              <Grid>
+                <Grid.ScreenWidth>
+                  <Scroll>
+                    <Scroll.LoadAnimation propogateAnimation>
+                      <div className={styles.ServiceSectionContainer}>
+                        <div className={styles.ServicesSection}>
+                          <div className={styles.Heading}>
+                            <h1 style={{color: 'var(--color-heading-themed)'}}>
+                              Services.
+                            </h1>
+                          </div>
+                        </div>
+                        <div className={styles.ServicesGrid}>
+                          <div>
+                            <Img
+                              className={styles.ServiceImage}
+                              fluid={placeholder_5}
+                            />
+                            <Text tag="h4" size="small" uppercase>
+                              Content Writing
+                            </Text>
+                            <Text hyphenated size="small">
+                              Lorem ipsum dolor sit amet, consectetuer
+                              adipiscing elit. Donec odio. Quisque volutpat
+                              mattis eros. Nullam malesuada erat ut turpis.
+                            </Text>
+                          </div>
+                          <div>
+                            <Img
+                              className={styles.ServiceImage}
+                              fluid={placeholder_5}
+                            />
+                            <Text tag="h4" size="small" uppercase>
+                              Web Development
+                            </Text>
+                            <Text hyphenated size="small">
+                              Lorem ipsum dolor sit amet, consectetuer
+                              adipiscing elit. Donec odio. Quisque volutpat
+                              mattis eros. Nullam malesuada erat ut turpis.
+                            </Text>
+                          </div>
+                          <div>
+                            <Img
+                              className={styles.ServiceImage}
+                              fluid={placeholder_5}
+                            />
+                            <Text tag="h4" size="small" uppercase>
+                              Web Design
+                            </Text>
+                            <Text hyphenated size="small">
+                              Lorem ipsum dolor sit amet, consectetuer
+                              adipiscing elit. Donec odio. Quisque volutpat
+                              mattis eros. Nullam malesuada erat ut turpis.
+                            </Text>
+                          </div>
+                          <div>
+                            <Img
+                              className={styles.ServiceImage}
+                              fluid={placeholder_5}
+                            />
+                            <Text tag="h4" size="small" uppercase>
+                              SEO
+                            </Text>
+                            <Text hyphenated size="small">
+                              Lorem ipsum dolor sit amet, consectetuer
+                              adipiscing elit. Donec odio. Quisque volutpat
+                              mattis eros. Nullam malesuada erat ut turpis.
+                            </Text>
+                          </div>
                         </div>
                       </div>
-                      <div className={styles.ServicesGrid}>
-                        <div>
-                          <div>
-                            <Img fluid={placeholder} />
-                          </div>
-                          <Text tag="h4" size="small" uppercase>
-                            Content Writing
-                          </Text>
-                          <Text hyphenated size="small">
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing
-                            elit. Donec odio. Quisque volutpat mattis eros.
-                            Nullam malesuada erat ut turpis.
-                          </Text>
-                        </div>
-                        <div>
-                          <div>
-                            <Img fluid={placeholder} />
-                          </div>
-                          <Text tag="h4" size="small" uppercase>
-                            Web Development
-                          </Text>
-                          <Text hyphenated size="small">
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing
-                            elit. Donec odio. Quisque volutpat mattis eros.
-                            Nullam malesuada erat ut turpis.
-                          </Text>
-                        </div>
-                        <div>
-                          <div>
-                            <Img fluid={placeholder} />
-                          </div>
-                          <Text tag="h4" size="small" uppercase>
-                            Web Design
-                          </Text>
-                          <Text hyphenated size="small">
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing
-                            elit. Donec odio. Quisque volutpat mattis eros.
-                            Nullam malesuada erat ut turpis.
-                          </Text>
-                        </div>
-                        <div>
-                          <div>
-                            <Img fluid={placeholder} />
-                          </div>
-                          <Text tag="h4" size="small" uppercase>
-                            SEO
-                          </Text>
-                          <Text hyphenated size="small">
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing
-                            elit. Donec odio. Quisque volutpat mattis eros.
-                            Nullam malesuada erat ut turpis.
-                          </Text>
-                        </div>
-                      </div>
-                    </div>
-                  </Scroll.LoadAnimation>
-                </Scroll>
-              </Grid.ScreenWidth>
-            </Grid>
-          </Page.Section>
+                    </Scroll.LoadAnimation>
+                  </Scroll>
+                </Grid.ScreenWidth>
+              </Grid>
+            </Page.Section>
+          </Theme>
           {/* ================================================================================================================= */}
           {/* BLOG SECTION */}
           {/* ================================================================================================================= */}
@@ -426,16 +372,16 @@ export default () => (
             }
           }
         }
-        placeholder_1: file(relativePath: {eq: "placeholder_1.jpg"}) {
+        placeholder_1: file(relativePath: {eq: "panasonic.jpg"}) {
           childImageSharp {
-            fluid(quality: 100, maxWidth: 600) {
+            fluid(quality: 100, maxWidth: 640) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
-        placeholder_2: file(relativePath: {eq: "placeholder_2.jpg"}) {
+        placeholder_2: file(relativePath: {eq: "dyson.jpg"}) {
           childImageSharp {
-            fluid(quality: 100, maxWidth: 400) {
+            fluid(quality: 100, maxWidth: 640) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
@@ -447,14 +393,14 @@ export default () => (
             }
           }
         }
-        placeholder_4: file(relativePath: {eq: "placeholder_4.jpg"}) {
+        placeholder_4: file(relativePath: {eq: "santa_stamp.PNG"}) {
           childImageSharp {
-            fluid(quality: 100, maxWidth: 400) {
+            fluid(quality: 100, maxWidth: 600) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
-        placeholder_5: file(relativePath: {eq: "placeholder_5.jpg"}) {
+        placeholder_5: file(relativePath: {eq: "web-development.jpg"}) {
           childImageSharp {
             fluid(quality: 100, maxWidth: 400) {
               ...GatsbyImageSharpFluid_withWebp
