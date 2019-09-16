@@ -13,6 +13,7 @@ import {
   Scroll,
   Decor,
 } from '../../components';
+import {nodeFromEdges, classNames} from '../../components/utils';
 
 interface Props {
   data: any;
@@ -48,8 +49,33 @@ class Home extends React.PureComponent<ComposedProps, State> {
         placeholder_5: {
           childImageSharp: {fluid: placeholder_5},
         },
+        featuredPost,
+        recentPosts,
       },
     } = this.props;
+    const featuredPostData = nodeFromEdges(featuredPost.edges);
+    const recentPostsData = nodeFromEdges(recentPosts.edges);
+
+    const featuredBlogPost = featuredPostData.map((item, index) => {
+      return (
+        <Link className={styles.Big} key={index} to="/blog/test">
+          <img
+            src={item.featured_media.source_url}
+            className={styles.BlogImage}
+          />
+        </Link>
+      );
+    });
+
+    const recentBlogPosts = recentPostsData.map((item, index) => (
+      <Link key={index} to="/blog/test">
+        <img
+          src={item.featured_media.source_url}
+          className={styles.BlogImage}
+        />
+      </Link>
+    ));
+
     return (
       <Page
         title="Web Design and Development"
@@ -318,36 +344,8 @@ class Home extends React.PureComponent<ComposedProps, State> {
                         </h1>
                       </div>
                       <div className={styles.BlogGrid}>
-                        <Link to="/blog/test" className={styles.Big}>
-                          <Img
-                            fluid={placeholder_1}
-                            className={styles.GatsbyImage}
-                          />
-                        </Link>
-                        <Link to="/blog/test" className={styles.B}>
-                          <Img
-                            fluid={placeholder_5}
-                            className={styles.GatsbyImage}
-                          />
-                        </Link>
-                        <Link to="/blog/test" className={styles.C}>
-                          <Img
-                            fluid={placeholder_2}
-                            className={styles.GatsbyImage}
-                          />
-                        </Link>
-                        <Link to="/blog/test" className={styles.D}>
-                          <Img
-                            fluid={placeholder_4}
-                            className={styles.GatsbyImage}
-                          />
-                        </Link>
-                        <Link to="/blog/test" className={styles.E}>
-                          <Img
-                            fluid={placeholder_3}
-                            className={styles.GatsbyImage}
-                          />
-                        </Link>
+                        {featuredBlogPost}
+                        {recentBlogPosts}
                       </div>
                     </div>
                   </Scroll.LoadAnimation>
@@ -404,6 +402,33 @@ export default () => (
           childImageSharp {
             fluid(quality: 100, maxWidth: 400) {
               ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+        featuredPost: allWordpressPost(
+          filter: {tags: {elemMatch: {name: {eq: "featured"}}}}
+        ) {
+          edges {
+            node {
+              id
+              featured_media {
+                source_url
+              }
+            }
+          }
+        }
+        recentPosts: allWordpressPost(
+          filter: {tags: {elemMatch: {name: {eq: "new"}}}}
+        ) {
+          edges {
+            node {
+              id
+              tags {
+                name
+              }
+              featured_media {
+                source_url
+              }
             }
           }
         }
