@@ -224,7 +224,7 @@ class Home extends React.PureComponent<ComposedProps, State> {
           {/* ================================================================================================================= */}
           {/* SERVICES SECTION */}
           {/* ================================================================================================================= */}
-          <Theme bgColor="var(--color-primary)">
+          <Theme bgColor="var(--color-dark-grey)">
             <Page.Section>
               <Grid>
                 <Grid.ScreenWidth>
