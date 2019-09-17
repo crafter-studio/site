@@ -16,15 +16,15 @@ interface Props {
 type State = {};
 type ComposedProps = Props;
 
-const Project = ({slug, title, excerpt, tags, featuredMedia}) => {
-  const featuredImage = featuredMedia ? featuredMedia.source_url : placeholder;
+const Project = ({slug, title, excerpt, tags, projectThumbnail}) => {
+  const projectImage = projectThumbnail ? projectThumbnail : placeholder;
 
   return (
     <div className={styles.Project}>
       <div className={styles.ProjectImageContainer}>
         <Scroll>
           <Scroll.LoadAnimation propogateAnimation>
-            <img src={featuredImage} className={styles.ProjectImage} />
+            <img src={projectImage} className={styles.ProjectImage} />
           </Scroll.LoadAnimation>
         </Scroll>
       </div>
@@ -82,7 +82,7 @@ class Work extends React.PureComponent<ComposedProps, State> {
                     tags={project.tags}
                     excerpt={project.excerpt}
                     key={key}
-                    featuredMedia={project.featured_media}
+                    projectThumbnail={project.acf.project_thumbnail.source_url}
                   />
                 ))}
               </div>
@@ -108,8 +108,10 @@ export default () => (
                 id
                 name
               }
-              featured_media {
-                source_url
+              acf {
+                project_thumbnail {
+                  source_url
+                }
               }
             }
           }
