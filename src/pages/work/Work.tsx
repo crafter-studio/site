@@ -4,7 +4,7 @@ import ReactHtmlParser from 'react-html-parser';
 import striptags from 'striptags';
 
 import styles from './Work.module.scss';
-import {Page, Grid, Text, List, Link, Button} from '../../components';
+import {Page, Grid, Text, List, Link, Button, Scroll} from '../../components';
 import {nodeFromEdges} from '../../components/utils';
 
 import placeholder from '../../images/placeholder.jpg';
@@ -22,7 +22,11 @@ const Project = ({slug, title, excerpt, tags, featuredMedia}) => {
   return (
     <div className={styles.Project}>
       <div className={styles.ProjectImageContainer}>
-        <img src={featuredImage} className={styles.ProjectImage} />
+        <Scroll>
+          <Scroll.LoadAnimation propogateAnimation>
+            <img src={featuredImage} className={styles.ProjectImage} />
+          </Scroll.LoadAnimation>
+        </Scroll>
       </div>
       <div className={styles.ProjectContentContainer}>
         <div className={styles.ProjectContent}>

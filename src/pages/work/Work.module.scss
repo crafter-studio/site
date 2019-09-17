@@ -1,3 +1,30 @@
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY($spacing * 2);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@mixin fadeInUpOnScroll {
+  opacity: 0;
+  transform: translateY($spacing * 2);
+  animation: fadeInUp $animation-duration-long ease-in-out forwards;
+  animation-play-state: paused;
+
+  *[data='scroll--animate'] & {
+    animation-play-state: running;
+  }
+
+  &[data='scroll--animate'] {
+    animation-play-state: running;
+  }
+}
+
 .ProjectsContainer {
   position: relative;
   margin-top: $header-height;
@@ -7,6 +34,7 @@
   display: flex;
   flex-direction: column;
   margin-bottom: $spacing-loose;
+  overflow-y: hidden;
 
   @include medium {
     flex-direction: row;
@@ -29,6 +57,7 @@
     display: flex;
     align-items: center;
     margin-left: -60px;
+    z-index: 10;
 
     .Project:nth-child(odd) & {
       order: 0;
@@ -36,7 +65,6 @@
       justify-content: flex-end;
       margin-left: 0;
       margin-right: -60px;
-      z-index: 10;
 
       .Tag {
         margin-right: 0;
@@ -53,6 +81,10 @@
   @include medium {
     padding: $spacing;
   }
+}
+
+.ProjectImage {
+  @include fadeInUpOnScroll();
 }
 
 .Tag {
