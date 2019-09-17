@@ -111,10 +111,6 @@ export default () => (
               featured_media {
                 source_url
               }
-              acf {
-                test_label_1
-                test_label_2
-              }
             }
           }
         }

@@ -24,8 +24,8 @@ export const query = graphql`
             name
           }
           acf {
-            test_label_1
-            test_label_2
+            tagline
+            short_description
           }
         }
       }
@@ -50,6 +50,7 @@ class Work extends React.PureComponent<ComposedProps, State> {
       content,
       tags,
       featured_media: {source_url: featuredImg},
+      acf: {tagline, short_description},
     } = project;
     const description = striptags(excerpt);
     const title = `${ReactHtmlParser(titleRaw)}`;
@@ -76,12 +77,10 @@ class Work extends React.PureComponent<ComposedProps, State> {
           <Grid>
             <Theme darkMode bgColor="var(--color-black)">
               <div className={styles.TaglineContainer}>
-                <p className={styles.Tagline}>
-                  Carving a niche for a future classic.
-                </p>
+                <p className={styles.Tagline}>{tagline}</p>
                 <div style={{marginTop: '20px'}}>
                   <Text italic align="center" color="var(--color-text-themed)">
-                    A microsite created for Panasonic Canada
+                    {short_description}
                   </Text>
                 </div>
               </div>
