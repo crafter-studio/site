@@ -44,7 +44,7 @@ const Project = ({slug, title, excerpt, tags, featuredMedia}) => {
               </List.Item>
             ))}
           </List>
-          <Text>{striptags(excerpt)}</Text>
+          <Text hyphenated>{striptags(excerpt)}</Text>
           <Link to={`/work/${slug}`}>
             <Button value="View Case Study" />
           </Link>
@@ -98,7 +98,7 @@ export default () => (
   <StaticQuery
     query={graphql`
       query {
-        allWordpressWpProject {
+        allWordpressWpProject(sort: {fields: [date], order: DESC}) {
           edges {
             node {
               slug

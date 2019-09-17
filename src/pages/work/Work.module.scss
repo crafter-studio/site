@@ -84,7 +84,12 @@
 }
 
 .ProjectImage {
+  object-fit: cover;
   @include fadeInUpOnScroll();
+
+  @include medium {
+    min-height: 400px;
+  }
 }
 
 .Tag {
