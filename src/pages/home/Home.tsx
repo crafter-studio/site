@@ -1,6 +1,7 @@
 import React from 'react';
 import {StaticQuery, graphql} from 'gatsby';
 import Img from 'gatsby-image';
+import LazyLoad from 'react-lazy-load';
 
 import styles from './Home.module.scss';
 import {
@@ -59,20 +60,24 @@ class Home extends React.PureComponent<ComposedProps, State> {
     const featuredBlogPost = featuredPostData.map((item, index) => {
       return (
         <Link className={styles.Big} key={index} to="/blog/test">
-          <img
-            src={item.featured_media.source_url}
-            className={styles.BlogImage}
-          />
+          <LazyLoad height="100%" offsetVertical={1000}>
+            <img
+              src={item.featured_media.source_url}
+              className={styles.BlogImage}
+            />
+          </LazyLoad>
         </Link>
       );
     });
 
     const recentBlogPosts = recentPostsData.map((item, index) => (
       <Link key={index} to="/blog/test">
-        <img
-          src={item.featured_media.source_url}
-          className={styles.BlogImage}
-        />
+        <LazyLoad height="100%" offsetVertical={1000}>
+          <img
+            src={item.featured_media.source_url}
+            className={styles.BlogImage}
+          />
+        </LazyLoad>
       </Link>
     ));
 
