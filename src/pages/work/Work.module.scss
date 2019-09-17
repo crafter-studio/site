@@ -1,13 +1,62 @@
 .ProjectsContainer {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: $spacing;
-
-  @include large {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  position: relative;
+  margin-top: $header-height;
 }
 
 .Project {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: $spacing-loose;
+
+  @include medium {
+    flex-direction: row;
+  }
+}
+
+.ProjectImageContainer {
+  @include medium {
+    flex: 3;
+
+    .Project:nth-child(odd) & {
+      order: 1;
+    }
+  }
+}
+
+.ProjectContentContainer {
+  @include medium {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    margin-left: -60px;
+
+    .Project:nth-child(odd) & {
+      order: 0;
+      text-align: right;
+      justify-content: flex-end;
+      margin-left: 0;
+      margin-right: -60px;
+      z-index: 10;
+
+      .Tag {
+        margin-right: 0;
+        margin-left: $spacing-tight;
+      }
+    }
+  }
+}
+
+.ProjectContent {
+  background: rgba($color-bg, 0.75);
+  padding: $spacing 0;
+
+  @include medium {
+    padding: $spacing;
+  }
+}
+
+.Tag {
+  background-color: $color-primary;
+  padding: $spacing-tight / 2;
+  margin-right: $spacing-tight;
 }

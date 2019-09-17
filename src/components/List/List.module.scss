@@ -24,6 +24,11 @@
   &:first-child {
     margin-top: 0;
   }
+
+  &.unstyled {
+    padding: 0;
+    list-style: none;
+  }
 }
 
 .ListItem {
@@ -38,6 +43,10 @@
 
   .List:first-child {
     margin-top: $spacing-tight / 2;
+  }
+
+  .unstyled & {
+    display: inline-block;
   }
 }
 

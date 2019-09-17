@@ -7,6 +7,7 @@ interface Props {
   ordered?: boolean;
   noPadding?: boolean;
   noBullets?: boolean;
+  unstyled?: boolean;
   listStyle?: 'disc' | 'circle' | 'square' | 'decimal' | 'lower-roman';
 }
 
@@ -23,6 +24,7 @@ export default class List extends React.PureComponent<ComposedProps, State> {
       noPadding,
       noBullets = false,
       listStyle,
+      unstyled,
     } = this.props;
 
     const className = classNames(
@@ -30,6 +32,7 @@ export default class List extends React.PureComponent<ComposedProps, State> {
       noBullets && styles.noBullets,
       noPadding && styles.noPadding,
       ordered && styles.ordered,
+      unstyled && styles.unstyled,
     );
 
     const list = ordered ? (

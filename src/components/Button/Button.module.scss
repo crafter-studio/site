@@ -63,7 +63,8 @@
   font-family: $font-family-secondary;
   font-size: $font-size-subscript;
   font-weight: $font-weight-regular;
-  transition: background-color $animation-duration ease-in;
+  transition: transform $animation-duration-short ease-in,
+    background-color $animation-duration ease-in-out;
   cursor: pointer;
 
   // get rid of default styling for inputs
@@ -78,7 +79,8 @@
 
   &:focus,
   &:hover {
-    background-color: darken($color-primary, 10);
+    transform: scale(1.05);
+    background-color: lighten($color-btn-primary, 15);
   }
 
   &.ButtonSubdued {

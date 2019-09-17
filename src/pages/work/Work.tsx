@@ -4,7 +4,7 @@ import ReactHtmlParser from 'react-html-parser';
 import striptags from 'striptags';
 
 import styles from './Work.module.scss';
-import {Page, Grid, Text, List, Link} from '../../components';
+import {Page, Grid, Text, List, Link, Button} from '../../components';
 import {nodeFromEdges} from '../../components/utils';
 
 import placeholder from '../../images/placeholder.jpg';
@@ -16,20 +16,36 @@ interface Props {
 type State = {};
 type ComposedProps = Props;
 
-const Project = ({slug, title, excerpt, tags}) => {
+const Project = ({slug, title, excerpt, tags, featuredMedia}) => {
+  const featuredImage = featuredMedia ? featuredMedia.source_url : placeholder;
+
   return (
     <div className={styles.Project}>
-      <img src={placeholder} />
-      <h2 className={styles.ProjectTitle}>{ReactHtmlParser(title)}</h2>
-      <Text>{striptags(excerpt)}</Text>
-      <List>
-        {tags.map((tag, key) => (
-          <List.Item key={key}>{tag.name}</List.Item>
-        ))}
-      </List>
-      <Link to={`/work/${slug}`} animated>
-        Slug: {slug}
-      </Link>
+      <div className={styles.ProjectImageContainer}>
+        <img src={featuredImage} className={styles.ProjectImage} />
+      </div>
+      <div className={styles.ProjectContentContainer}>
+        <div className={styles.ProjectContent}>
+          <Text tag="h2" uppercase>
+            {ReactHtmlParser(title)}
+          </Text>
+          <List unstyled>
+            {tags.map((tag, key) => (
+              <List.Item key={key}>
+                <div className={styles.Tag}>
+                  <Text tag="h5" size="subscript" uppercase>
+                    {tag.name}
+                  </Text>
+                </div>
+              </List.Item>
+            ))}
+          </List>
+          <Text>{striptags(excerpt)}</Text>
+          <Link to={`/work/${slug}`}>
+            <Button value="View Case Study" />
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };
@@ -52,23 +68,22 @@ class Work extends React.PureComponent<ComposedProps, State> {
       >
         <Page.Background />
         <Page.Layout>
-          <Page.Section>
-            <Grid>
-              <Grid.ScreenWidth>
-                <div className={styles.ProjectsContainer}>
-                  {projects.map((project, key) => (
-                    <Project
-                      title={project.title}
-                      slug={project.slug}
-                      tags={project.tags}
-                      excerpt={project.excerpt}
-                      key={key}
-                    />
-                  ))}
-                </div>
-              </Grid.ScreenWidth>
-            </Grid>
-          </Page.Section>
+          <Grid>
+            <Grid.ScreenWidth>
+              <div className={styles.ProjectsContainer}>
+                {projects.map((project, key) => (
+                  <Project
+                    title={project.title}
+                    slug={project.slug}
+                    tags={project.tags}
+                    excerpt={project.excerpt}
+                    key={key}
+                    featuredMedia={project.featured_media}
+                  />
+                ))}
+              </div>
+            </Grid.ScreenWidth>
+          </Grid>
         </Page.Layout>
       </Page>
     );
@@ -89,17 +104,13 @@ export default () => (
                 id
                 name
               }
+              featured_media {
+                source_url
+              }
               acf {
                 test_label_1
                 test_label_2
               }
-            }
-          }
-        }
-        house: file(relativePath: {eq: "house.png"}) {
-          childImageSharp {
-            fluid(quality: 100, maxWidth: 600) {
-              ...GatsbyImageSharpFluid_noBase64
             }
           }
         }

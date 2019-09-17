@@ -34,6 +34,9 @@ class Button extends React.PureComponent<ComposedProps, State> {
 
   handleButtonClick() {
     const {onClick} = this.props;
+    if (onClick == null) {
+      return;
+    }
     onClick();
   }
 
