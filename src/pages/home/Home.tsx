@@ -185,14 +185,14 @@ class Home extends React.PureComponent<ComposedProps, State> {
                             <div>
                               <div className={styles.WorkTitle}>
                                 <Text tag="h4" size="small" uppercase>
-                                  Panasonic Supersonic
+                                  Panasonic Prestige
                                 </Text>
                               </div>
                               <Decor.Line />
                               <div className={styles.WorkDescription}>
                                 <Text>
-                                  This text describes the project using not a
-                                  lot of text. It should be nice and concise.
+                                  A microsite to promote the luxury personal
+                                  massage chair.
                                 </Text>
                               </div>
                             </div>
@@ -231,13 +231,19 @@ class Home extends React.PureComponent<ComposedProps, State> {
                         <Link to="/work/test" className={styles.D}>
                           <div className={styles.ImageOverlay}>
                             <div>
-                              <Text tag="h4" size="small" uppercase>
-                                Panasonic Supersonic
-                              </Text>
-                              <Text>
-                                This text describes the project using not a lot
-                                of text. It should be nice and concise.
-                              </Text>
+                              <div className={styles.WorkTitle}>
+                                <Text tag="h4" size="small" uppercase>
+                                  Dyson Supersonic
+                                </Text>
+                              </div>
+                              <Decor.Line />
+                              <div className={styles.WorkDescription}>
+                                <Text>
+                                  A microsite to promote Dyson's luxury
+                                  hairdryer to a new Asian demographic during
+                                  Chinese New Year.
+                                </Text>
+                              </div>
                             </div>
                           </div>
                           <Img
