@@ -2,6 +2,8 @@ import React from 'react';
 import {graphql} from 'gatsby';
 import striptags from 'striptags';
 import ReactHtmlParser from 'react-html-parser';
+import _ from 'lodash';
+import moment from 'moment';
 
 import styles from './Project.module.scss';
 
@@ -16,6 +18,7 @@ export const query = graphql`
           title
           excerpt
           content
+          date
           featured_media {
             source_url
           }
@@ -26,6 +29,8 @@ export const query = graphql`
           acf {
             tagline
             short_description
+            client
+            summary
           }
         }
       }
@@ -50,10 +55,25 @@ class Work extends React.PureComponent<ComposedProps, State> {
       content,
       tags,
       featured_media: {source_url: featuredImg},
-      acf: {tagline, short_description},
+      acf: {tagline, short_description, client, summary: summaryRaw},
     } = project;
+
+    if (!tagline || !short_description || !client || !summaryRaw) {
+      return;
+    }
+
     const description = striptags(excerpt);
     const title = `${ReactHtmlParser(titleRaw)}`;
+    const formattedDate = moment.utc(date).format('DD/MM/YYYY');
+    const summary = summaryRaw.split('\n').map((item, key) => {
+      return (
+        <React.Fragment key={key}>
+          {item}
+          <br />
+        </React.Fragment>
+      );
+    });
+
     return (
       <Page
         title={title}
@@ -94,9 +114,9 @@ class Work extends React.PureComponent<ComposedProps, State> {
                   <div className={styles.Data}>
                     <Text.Container>
                       <h5 className={styles.DataTitle}>Company</h5>
-                      <p className={styles.DataInfo}>Panasonic Canada</p>
-                      <h5 className={styles.DataTitle}>Year</h5>
-                      <p className={styles.DataInfo}>2016</p>
+                      <p className={styles.DataInfo}>{client}</p>
+                      <h5 className={styles.DataTitle}>Date</h5>
+                      <p className={styles.DataInfo}>{formattedDate}</p>
                       <h5 className={styles.DataTitle}>Tags</h5>
                       <List noBullets noPadding>
                         {tags.map((tag, key) => (
@@ -114,23 +134,7 @@ class Work extends React.PureComponent<ComposedProps, State> {
                     </Text.Container>
                   </div>
                   <div className={styles.Description}>
-                    <Text hyphenated>
-                      Praesent dapibus, neque id cursus faucibus, tortor neque
-                      egestas auguae, eu vulputate magna eros eu erat. Aliquam
-                      erat volutpat. Nam dui mi, tincidunt quis, accumsan
-                      porttitor, facilisis luctus, metus. Nam dui mi, tincidunt
-                      quis, accumsan porttitor, facilisis luctus, metus. Morbi
-                      in sem quis dui placerat ornare. Pellentesque odio nisi,
-                      euismod in, pharetra a, ultricies in, diam. Sed arcu.
-                    </Text>
-                    <Text hyphenated>
-                      Aliquam erat volutpat. Nam dui mi, tincidunt quis,
-                      accumsan porttitor, facilisis luctus, metus. Nam dui mi,
-                      tincidunt quis, accumsan porttitor, facilisis luctus,
-                      metus. Morbi in sem quis dui placerat ornare. Praesent
-                      dapibus, neque id cursus faucibus, tortor neque egestas
-                      auguae, eu vulputate magna eros eu erat.
-                    </Text>
+                    <Text>{summary}</Text>
                   </div>
                 </div>
               </Grid.ScreenWidth>
