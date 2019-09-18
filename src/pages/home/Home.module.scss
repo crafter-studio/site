@@ -485,16 +485,10 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    order: 1;
-
-    @include medium {
-      order: 0;
-    }
   }
 
   .FeaturedBlogImageContainer {
     flex: 1;
-    order: 0;
   }
 
   .FeaturedBlogContent {

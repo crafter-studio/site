@@ -3,6 +3,8 @@ import {StaticQuery, graphql} from 'gatsby';
 import Img from 'gatsby-image';
 import LazyLoad from 'react-lazy-load';
 import striptags from 'striptags';
+import ReactHtmlParser from 'react-html-parser';
+import {truncate} from 'lodash';
 
 import styles from './Home.module.scss';
 import ContentWritingImage from '../../images/content-writing.svg';
@@ -69,11 +71,18 @@ class Home extends React.PureComponent<ComposedProps, State> {
       return (
         <div className={styles.Featured}>
           <div className={styles.FeaturedBlog}>
+            <div className={styles.FeaturedBlogImageContainer}>
+              <Link to={`/blog/${item.slug}`}>
+                <LazyLoad height="100%" offsetVertical={1000}>
+                  <img
+                    src={item.featured_media.source_url}
+                    className={styles.BlogImage}
+                  />
+                </LazyLoad>
+              </Link>
+            </div>
             <div className={styles.FeaturedBlogContentContainer}>
               <div className={styles.FeaturedBlogContent}>
-                <Text tag="h3" size="h2">
-                  {item.title}
-                </Text>
                 <List unstyled>
                   {item.tags.map((tag, key) => (
                     <List.Item key={key}>
@@ -85,23 +94,22 @@ class Home extends React.PureComponent<ComposedProps, State> {
                     </List.Item>
                   ))}
                 </List>
-                <Text>{striptags(item.excerpt)}</Text>
+                <Text.Container>
+                  <Text tag="h3" size="h2">
+                    {item.title}
+                  </Text>
+                  <Text>
+                    {truncate(ReactHtmlParser(striptags(item.content)), {
+                      length: 420,
+                    })}
+                  </Text>
+                </Text.Container>
               </div>
               <div className={styles.FeaturedPostLink}>
                 <Link to={`/blog/${item.slug}`}>
                   <Button value="Read Post" />
                 </Link>
               </div>
-            </div>
-            <div className={styles.FeaturedBlogImageContainer}>
-              <Link to={`/blog/${item.slug}`}>
-                <LazyLoad height="100%" offsetVertical={1000}>
-                  <img
-                    src={item.featured_media.source_url}
-                    className={styles.BlogImage}
-                  />
-                </LazyLoad>
-              </Link>
             </div>
           </div>
         </div>
@@ -119,9 +127,6 @@ class Home extends React.PureComponent<ComposedProps, State> {
           </LazyLoad>
         </div>
         <div className={styles.PostContent}>
-          <Text tag="h3" size="h2">
-            {item.title}
-          </Text>
           <List unstyled>
             {item.tags.map((tag, key) => (
               <List.Item key={key}>
@@ -133,10 +138,15 @@ class Home extends React.PureComponent<ComposedProps, State> {
               </List.Item>
             ))}
           </List>
-          <Text hyphenated>{striptags(item.excerpt)}</Text>
-          <Link to={`/blog/${item.slug}`}>
-            <Button value="Read Post" />
-          </Link>
+          <Text.Container>
+            <Text tag="h3" size="h2">
+              {item.title}
+            </Text>
+            <Text hyphenated>{striptags(item.excerpt)}</Text>
+            <Link to={`/blog/${item.slug}`}>
+              <Button value="Read Post" />
+            </Link>
+          </Text.Container>
         </div>
       </div>
     ));
@@ -488,6 +498,7 @@ export default () => (
               slug
               title
               excerpt
+              content
               tags {
                 name
               }
