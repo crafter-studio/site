@@ -63,7 +63,7 @@ class Home extends React.PureComponent<ComposedProps, State> {
 
     const featuredBlogPost = featuredPostData.map((item, index) => {
       return (
-        <Link className={styles.Big} key={index} to="/blog/test">
+        <Link className={styles.Big} key={index} to={`/blog/${item.slug}`}>
           <LazyLoad height="100%" offsetVertical={1000}>
             <img
               src={item.featured_media.source_url}
@@ -75,7 +75,7 @@ class Home extends React.PureComponent<ComposedProps, State> {
     });
 
     const recentBlogPosts = recentPostsData.map((item, index) => (
-      <Link key={index} to="/blog/test">
+      <Link key={index} to={`/blog/${item.slug}`}>
         <LazyLoad height="100%" offsetVertical={1000}>
           <img
             src={item.featured_media.source_url}
@@ -429,6 +429,7 @@ export default () => (
           edges {
             node {
               id
+              slug
               featured_media {
                 source_url
               }
@@ -442,9 +443,7 @@ export default () => (
           edges {
             node {
               id
-              tags {
-                name
-              }
+              slug
               featured_media {
                 source_url
               }
