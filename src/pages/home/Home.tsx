@@ -2,6 +2,8 @@ import React from 'react';
 import {StaticQuery, graphql} from 'gatsby';
 import Img from 'gatsby-image';
 import LazyLoad from 'react-lazy-load';
+import striptags from 'striptags';
+
 import styles from './Home.module.scss';
 import ContentWritingImage from '../../images/content-writing.svg';
 import WebDevelopmentImage from '../../images/web-development.svg';
@@ -17,6 +19,8 @@ import {
   Link,
   Scroll,
   Decor,
+  List,
+  Button,
 } from '../../components';
 import {nodeFromEdges, classNames} from '../../components/utils';
 
@@ -63,26 +67,78 @@ class Home extends React.PureComponent<ComposedProps, State> {
 
     const featuredBlogPost = featuredPostData.map((item, index) => {
       return (
-        <Link className={styles.Big} key={index} to={`/blog/${item.slug}`}>
+        <div className={styles.Featured}>
+          <div className={styles.FeaturedBlog}>
+            <div className={styles.FeaturedBlogContentContainer}>
+              <div className={styles.FeaturedBlogContent}>
+                <Text tag="h3" size="h2">
+                  {item.title}
+                </Text>
+                <List unstyled>
+                  {item.tags.map((tag, key) => (
+                    <List.Item key={key}>
+                      <div className={styles.Tag}>
+                        <Text tag="h5" size="subscript" uppercase>
+                          {tag.name}
+                        </Text>
+                      </div>
+                    </List.Item>
+                  ))}
+                </List>
+                <Text>{striptags(item.excerpt)}</Text>
+              </div>
+              <div className={styles.FeaturedPostLink}>
+                <Link to={`/blog/${item.slug}`}>
+                  <Button value="Read Post" />
+                </Link>
+              </div>
+            </div>
+            <div className={styles.FeaturedBlogImageContainer}>
+              <Link to={`/blog/${item.slug}`}>
+                <LazyLoad height="100%" offsetVertical={1000}>
+                  <img
+                    src={item.featured_media.source_url}
+                    className={styles.BlogImage}
+                  />
+                </LazyLoad>
+              </Link>
+            </div>
+          </div>
+        </div>
+      );
+    });
+
+    const recentBlogPosts = recentPostsData.map((item, index) => (
+      <div className={styles.RecentPost}>
+        <div className={styles.PostImage}>
           <LazyLoad height="100%" offsetVertical={1000}>
             <img
               src={item.featured_media.source_url}
               className={styles.BlogImage}
             />
           </LazyLoad>
-        </Link>
-      );
-    });
-
-    const recentBlogPosts = recentPostsData.map((item, index) => (
-      <Link key={index} to={`/blog/${item.slug}`}>
-        <LazyLoad height="100%" offsetVertical={1000}>
-          <img
-            src={item.featured_media.source_url}
-            className={styles.BlogImage}
-          />
-        </LazyLoad>
-      </Link>
+        </div>
+        <div className={styles.PostContent}>
+          <Text tag="h3" size="h2">
+            {item.title}
+          </Text>
+          <List unstyled>
+            {item.tags.map((tag, key) => (
+              <List.Item key={key}>
+                <div className={styles.Tag}>
+                  <Text tag="h5" size="subscript" uppercase>
+                    {tag.name}
+                  </Text>
+                </div>
+              </List.Item>
+            ))}
+          </List>
+          <Text hyphenated>{striptags(item.excerpt)}</Text>
+          <Link to={`/blog/${item.slug}`}>
+            <Button value="Read Post" />
+          </Link>
+        </div>
+      </div>
     ));
 
     return (
@@ -430,6 +486,11 @@ export default () => (
             node {
               id
               slug
+              title
+              excerpt
+              tags {
+                name
+              }
               featured_media {
                 source_url
               }
@@ -437,13 +498,18 @@ export default () => (
           }
         }
         recentPosts: allWordpressPost(
-          limit: 4
+          limit: 3
           filter: {tags: {elemMatch: {name: {eq: "new"}}}}
         ) {
           edges {
             node {
               id
               slug
+              title
+              excerpt
+              tags {
+                name
+              }
               featured_media {
                 source_url
               }
