@@ -429,6 +429,7 @@ export default () => (
           }
         }
         recentPosts: allWordpressPost(
+          limit: 4
           filter: {tags: {elemMatch: {name: {eq: "new"}}}}
         ) {
           edges {
