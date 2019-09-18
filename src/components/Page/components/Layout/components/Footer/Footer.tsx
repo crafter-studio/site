@@ -1,15 +1,21 @@
 import React from 'react';
+import {StaticQuery, graphql} from 'gatsby';
 
 import styles from './Footer.module.scss';
 import {Grid, Text, List, Button, Link} from '../../../../../../components';
+import {nodeFromEdges} from '../../../../../../components/utils';
 
-export interface Props {}
+export interface Props {
+  data: any;
+}
 
 type State = {};
 type ComposedProps = Props;
 
-export default class Footer extends React.PureComponent<ComposedProps, State> {
+class Footer extends React.PureComponent<ComposedProps, State> {
   render() {
+    const posts = nodeFromEdges(this.props.data.allWordpressPost.edges);
+
     return (
       <footer className={styles.Footer}>
         <Grid>
@@ -33,35 +39,13 @@ export default class Footer extends React.PureComponent<ComposedProps, State> {
                   Blog
                 </Text>
                 <List noPadding noBullets>
-                  <List.Item>
-                    <Text size="small">
-                      <Link to="blog">
-                        A longer post featuring something cool. This is a title.
-                      </Link>
-                    </Text>
-                  </List.Item>
-                  <List.Item>
-                    <Text size="small">
-                      <Link to="blog">Why are web developers so overpaid?</Link>
-                    </Text>
-                  </List.Item>
-                  <List.Item>
-                    <Text size="small">
-                      <Link to="blog">Web design trends of 2020</Link>
-                    </Text>
-                  </List.Item>
-                  <List.Item>
-                    <Text size="small">
-                      <Link to="blog">
-                        Life is too short, eat more veggies.
-                      </Link>
-                    </Text>
-                  </List.Item>
-                  <List.Item>
-                    <Text size="small">
-                      <Link to="blog">One More blog post here.</Link>
-                    </Text>
-                  </List.Item>
+                  {posts.map((post, key) => (
+                    <List.Item key={key}>
+                      <Text size="small">
+                        <Link to={`blog/${post.slug}`}>{post.title}</Link>
+                      </Text>
+                    </List.Item>
+                  ))}
                 </List>
               </div>
               <div className={styles.FooterItem}>
@@ -102,3 +86,21 @@ export default class Footer extends React.PureComponent<ComposedProps, State> {
     );
   }
 }
+
+export default () => (
+  <StaticQuery
+    query={graphql`
+      query {
+        allWordpressPost(limit: 5) {
+          edges {
+            node {
+              title
+              slug
+            }
+          }
+        }
+      }
+    `}
+    render={(data) => <Footer data={data} />}
+  />
+);

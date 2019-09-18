@@ -68,9 +68,9 @@ class Home extends React.PureComponent<ComposedProps, State> {
     const featuredPostData = nodeFromEdges(featuredPost.edges);
     const recentPostsData = nodeFromEdges(recentPosts.edges);
 
-    const featuredBlogPost = featuredPostData.map((item, index) => {
+    const featuredBlogPost = featuredPostData.map((item, key) => {
       return (
-        <div className={styles.Featured}>
+        <div key={key} className={styles.Featured}>
           <div className={styles.FeaturedBlog}>
             <div className={styles.FeaturedBlogImageContainer}>
               <Link to={`/blog/${item.slug}`}>
@@ -120,8 +120,8 @@ class Home extends React.PureComponent<ComposedProps, State> {
       );
     });
 
-    const recentBlogPosts = recentPostsData.map((item, index) => (
-      <div className={styles.RecentPost}>
+    const recentBlogPosts = recentPostsData.map((item, key) => (
+      <div key={key} className={styles.RecentPost}>
         <div className={styles.PostImage}>
           <LazyLoad height="100%" offsetVertical={1000}>
             <img
