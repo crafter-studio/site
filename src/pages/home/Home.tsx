@@ -2,8 +2,12 @@ import React from 'react';
 import {StaticQuery, graphql} from 'gatsby';
 import Img from 'gatsby-image';
 import LazyLoad from 'react-lazy-load';
-
 import styles from './Home.module.scss';
+import ContentWritingImage from '../../images/content-writing.svg';
+import WebDevelopmentImage from '../../images/web-development.svg';
+import WebDesignImage from '../../images/web-design.svg';
+import SeoImage from '../../images/seo.svg';
+
 import {
   Text,
   Page,
@@ -180,7 +184,10 @@ class Home extends React.PureComponent<ComposedProps, State> {
                   <Scroll>
                     <Scroll.LoadAnimation propogateAnimation>
                       <div className={styles.WorkGrid}>
-                        <Link to="/work/test" className={styles.A}>
+                        <Link
+                          to="/work/panasonic-prestige"
+                          className={styles.A}
+                        >
                           <div className={styles.ImageOverlay}>
                             <div>
                               <div className={styles.WorkTitle}>
@@ -228,7 +235,7 @@ class Home extends React.PureComponent<ComposedProps, State> {
                             className={styles.GatsbyImage}
                           />
                         </Link>
-                        <Link to="/work/test" className={styles.D}>
+                        <Link to="/work/dyson-supersonic" className={styles.D}>
                           <div className={styles.ImageOverlay}>
                             <div>
                               <div className={styles.WorkTitle}>
@@ -277,9 +284,9 @@ class Home extends React.PureComponent<ComposedProps, State> {
                         </div>
                         <div className={styles.ServicesGrid}>
                           <div>
-                            <Img
+                            <img
                               className={styles.ServiceImage}
-                              fluid={placeholder_5}
+                              src={ContentWritingImage}
                             />
                             <Text tag="h4" size="small" uppercase>
                               Content Writing
@@ -291,9 +298,9 @@ class Home extends React.PureComponent<ComposedProps, State> {
                             </Text>
                           </div>
                           <div>
-                            <Img
+                            <img
                               className={styles.ServiceImage}
-                              fluid={placeholder_5}
+                              src={WebDevelopmentImage}
                             />
                             <Text tag="h4" size="small" uppercase>
                               Web Development
@@ -305,9 +312,9 @@ class Home extends React.PureComponent<ComposedProps, State> {
                             </Text>
                           </div>
                           <div>
-                            <Img
+                            <img
                               className={styles.ServiceImage}
-                              fluid={placeholder_5}
+                              src={WebDesignImage}
                             />
                             <Text tag="h4" size="small" uppercase>
                               Web Design
@@ -319,9 +326,9 @@ class Home extends React.PureComponent<ComposedProps, State> {
                             </Text>
                           </div>
                           <div>
-                            <Img
+                            <img
                               className={styles.ServiceImage}
-                              fluid={placeholder_5}
+                              src={SeoImage}
                             />
                             <Text tag="h4" size="small" uppercase>
                               SEO
