@@ -5,6 +5,7 @@ import LazyLoad from 'react-lazy-load';
 import striptags from 'striptags';
 import ReactHtmlParser from 'react-html-parser';
 import {truncate} from 'lodash';
+import moment from 'moment';
 
 import styles from './Home.module.scss';
 import ContentWritingImage from '../../images/content-writing.svg';
@@ -94,6 +95,9 @@ class Home extends React.PureComponent<ComposedProps, State> {
                     </List.Item>
                   ))}
                 </List>
+                <Text size="small" italic>
+                  {moment.utc(item.date).format('LL')}
+                </Text>
                 <Text.Container>
                   <Text tag="h3" size="h2">
                     {item.title}
@@ -138,6 +142,9 @@ class Home extends React.PureComponent<ComposedProps, State> {
               </List.Item>
             ))}
           </List>
+          <Text size="small" italic>
+            {moment.utc(item.date).format('LL')}
+          </Text>
           <Text.Container>
             <Text tag="h3" size="h2">
               {item.title}
@@ -499,6 +506,7 @@ export default () => (
               title
               excerpt
               content
+              date
               tags {
                 name
               }
@@ -518,6 +526,7 @@ export default () => (
               slug
               title
               excerpt
+              date
               tags {
                 name
               }
