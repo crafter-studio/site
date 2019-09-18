@@ -10,20 +10,15 @@
 .FooterGrid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  grid-gap: $spacing * 2;
+  grid-gap: $spacing;
 
   @include medium {
-    grid-gap: $spacing * 3;
+    grid-gap: $spacing * 2;
     grid-template-columns: repeat(3, 1fr);
-  }
-
-  @include large {
-    grid-gap: $spacing * 4;
   }
 }
 
 .FooterItem {
-  max-width: 420px;
   width: 100%;
   margin: 0 auto;
 }
@@ -32,7 +27,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: $spacing;
+  height: $spacing * 2;
 
   @include medium {
     height: $spacing * 4;
