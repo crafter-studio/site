@@ -147,7 +147,9 @@ class Home extends React.PureComponent<ComposedProps, State> {
           </Text>
           <Text.Container>
             <Text tag="h3">{item.title}</Text>
-            <Text hyphenated>{striptags(item.excerpt)}</Text>
+            <Text hyphenated>
+              {truncate(striptags(item.excerpt), {length: 160})}
+            </Text>
             <Link to={`/blog/${item.slug}`}>
               <Button value="Read Post" />
             </Link>
