@@ -99,12 +99,10 @@ class Home extends React.PureComponent<ComposedProps, State> {
                   {moment.utc(item.date).format('LL')}
                 </Text>
                 <Text.Container>
-                  <Text tag="h3" size="h2">
-                    {item.title}
-                  </Text>
+                  <Text tag="h3">{item.title}</Text>
                   <Text>
                     {truncate(ReactHtmlParser(striptags(item.content)), {
-                      length: 420,
+                      length: 280,
                     })}
                   </Text>
                 </Text.Container>
@@ -123,12 +121,14 @@ class Home extends React.PureComponent<ComposedProps, State> {
     const recentBlogPosts = recentPostsData.map((item, key) => (
       <div key={key} className={styles.RecentPost}>
         <div className={styles.PostImage}>
-          <LazyLoad height="100%" offsetVertical={1000}>
-            <img
-              src={item.featured_media.source_url}
-              className={styles.BlogImage}
-            />
-          </LazyLoad>
+          <Link to={`/blog/${item.slug}`}>
+            <LazyLoad height="100%" offsetVertical={1000}>
+              <img
+                src={item.featured_media.source_url}
+                className={styles.BlogImage}
+              />
+            </LazyLoad>
+          </Link>
         </div>
         <div className={styles.PostContent}>
           <List unstyled>
@@ -146,9 +146,7 @@ class Home extends React.PureComponent<ComposedProps, State> {
             {moment.utc(item.date).format('LL')}
           </Text>
           <Text.Container>
-            <Text tag="h3" size="h2">
-              {item.title}
-            </Text>
+            <Text tag="h3">{item.title}</Text>
             <Text hyphenated>{striptags(item.excerpt)}</Text>
             <Link to={`/blog/${item.slug}`}>
               <Button value="Read Post" />
