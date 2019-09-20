@@ -2,17 +2,7 @@ import React from 'react';
 import {StaticQuery, graphql} from 'gatsby';
 
 import styles from './About.module.scss';
-import {
-  Text,
-  Page,
-  Decor,
-  Theme,
-  ScrambledText,
-  Article,
-  Grid,
-} from '../../components';
-
-import placeholder from '../../images/placeholder_2.jpg';
+import {Text, Page, Decor, Theme} from '../../components';
 
 interface Props {
   data: any;
@@ -42,45 +32,18 @@ class About extends React.PureComponent<ComposedProps, State> {
                 <Decor.Noise />
               </div>
               <div className={styles.PageBannerContent}>
-                <Text tag="h1" align="center" uppercase>
-                  A beautiful mesh of talents.
+                <Text tag="h1" uppercase>
+                  A melting pot of talent and creativity
                 </Text>
-                <Text align="center" color="var(--color-text-neg)" hyphenated>
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                  Donec odio. Quisque volutpat mattis eros. Nullam malesuada
-                  erat ut turpis. Suspendisse urna nibh, viverra non, semper
-                  suscipit, posuere a, pede. Donec nec justo eget felis
-                  facilisis fermentum. Aliquam porttitor mauris sit amet orci.
-                  Aenean dignissim pellentesque felis.
+                <Text color="var(--color-text-neg)">
+                  Welcome to Crafter Studio. We are a small team of 7 digital
+                  experts specialized in creating product-centered websites. Our
+                  bread and butter is in creating microsites and Shopify stores
+                  trusted by both Fortune 500 companies and startups alike.
                 </Text>
               </div>
             </div>
           </Theme>
-          <Page.Section>
-            <Grid>
-              <Text tag="h1">We Make Websites.</Text>
-              <Text>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-                odio. Quisque volutpat mattis eros. Nullam malesuada erat ut
-                turpis. Suspendisse urna nibh, viverra non, semper suscipit,
-                posuere a, pede. Donec nec justo eget felis facilisis fermentum.
-                Aliquam porttitor mauris sit amet orci. Aenean dignissim
-                pellentesque felis.
-              </Text>
-              <Text>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-                odio. Quisque volutpat mattis eros. Nullam malesuada erat ut
-                turpis. Suspendisse urna nibh, viverra non, semper suscipit,
-                posuere a, pede. Donec nec justo eget felis facilisis fermentum.
-                Aliquam porttitor mauris sit amet orci. Aenean dignissim
-                pellentesque felis.
-              </Text>
-              <img
-                style={{objectFit: 'cover', width: '100%', height: '300px'}}
-                src={placeholder}
-              />
-            </Grid>
-          </Page.Section>
         </Page.Layout>
       </Page>
     );
@@ -91,7 +54,7 @@ export default () => (
   <StaticQuery
     query={graphql`
       query {
-        house: file(relativePath: {eq: "house.png"}) {
+        house: file(relativePath: {eq: "panasonic.jpg"}) {
           childImageSharp {
             fluid(quality: 100, maxWidth: 600) {
               ...GatsbyImageSharpFluid_noBase64

@@ -207,9 +207,6 @@ class Home extends React.PureComponent<ComposedProps, State> {
                         companies and growing startups by putting their
                         product's best foot forward in the digital space.
                       </Text>
-                      <Link to="/about" animated>
-                        Read More
-                      </Link>
                     </div>
                   </div>
                 </div>
@@ -288,7 +285,7 @@ class Home extends React.PureComponent<ComposedProps, State> {
                           <div className={styles.ImageOverlay}>
                             <div>
                               <Text tag="h5" size="small" uppercase>
-                                View Projects
+                                View Project
                               </Text>
                             </div>
                           </div>
