@@ -202,9 +202,9 @@ class Home extends React.PureComponent<ComposedProps, State> {
                       </Text>
                       <Text>
                         Crafter Studio is a small, agile team of 7 digital
-                        experts specialized in web design, development,
-                        branding, and SEO. We extend departments from Fortune
-                        500 companies and growing startups by putting their
+                        experts specialized in web design, development, and
+                        branding. We extend departments from Fortune 500
+                        companies and growing startups by putting their
                         product's best foot forward in the digital space.
                       </Text>
                       <Link to="/about" animated>
