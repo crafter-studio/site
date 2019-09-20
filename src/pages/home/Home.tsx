@@ -198,13 +198,13 @@ class Home extends React.PureComponent<ComposedProps, State> {
                   <div className={styles.Text}>
                     <div>
                       <Text tag="h3">
-                        We Are A Product-Focused Web Development Team.
+                        We Are A Product-Focused Web Development Team
                       </Text>
                       <Text>
                         Crafter Studio is a small, agile team of 7 digital
-                        experts specialized in design, development, branding,
-                        and SEO. We extend departments from Fortune 500
-                        companies and growing startups by putting their
+                        experts specialized in web design, development,
+                        branding, and SEO. We extend departments from Fortune
+                        500 companies and growing startups by putting their
                         product's best foot forward in the digital space.
                       </Text>
                       <Link to="/about" animated>
@@ -228,9 +228,8 @@ class Home extends React.PureComponent<ComposedProps, State> {
                     align="center"
                     color="var(--color-heading-themed)"
                   >
-                    We deconstruct preconceived ideas to better shape concepts
-                    and push boundaries; that's our purpose, the essence of our
-                    culture.
+                    We recognize that exceptional digital experiences sell;
+                    that's the future, and that's the way we thrive.
                   </Text>
                 </Grid>
               </div>
@@ -383,9 +382,11 @@ class Home extends React.PureComponent<ComposedProps, State> {
                               Content Writing
                             </Text>
                             <Text hyphenated size="small">
-                              Lorem ipsum dolor sit amet, consectetuer
-                              adipiscing elit. Donec odio. Quisque volutpat
-                              mattis eros. Nullam malesuada erat ut turpis.
+                              Content is king and quality websites are built
+                              around them. We create content that engages — a
+                              voice that cares about your brand, your products,
+                              as well as those search engine robots working at
+                              Google.
                             </Text>
                           </div>
                           <div>
@@ -394,12 +395,14 @@ class Home extends React.PureComponent<ComposedProps, State> {
                               src={WebDevelopmentImage}
                             />
                             <Text tag="h4" size="small" uppercase>
-                              Web Development
+                              Development
                             </Text>
                             <Text hyphenated size="small">
-                              Lorem ipsum dolor sit amet, consectetuer
-                              adipiscing elit. Donec odio. Quisque volutpat
-                              mattis eros. Nullam malesuada erat ut turpis.
+                              Do you have a crazy idea? We absolutely love
+                              challenges so just tell us your vision and our
+                              team can build it. Focus on your business and
+                              leave the technical jargons to us, that is our job
+                              afterall.
                             </Text>
                           </div>
                           <div>
@@ -408,12 +411,14 @@ class Home extends React.PureComponent<ComposedProps, State> {
                               src={WebDesignImage}
                             />
                             <Text tag="h4" size="small" uppercase>
-                              Web Design
+                              Design
                             </Text>
                             <Text hyphenated size="small">
-                              Lorem ipsum dolor sit amet, consectetuer
-                              adipiscing elit. Donec odio. Quisque volutpat
-                              mattis eros. Nullam malesuada erat ut turpis.
+                              Good, functional design is the most elegant
+                              solution to a business problem. We deconstruct
+                              problems and generate ideas that creates
+                              exceptional experiences consistent to the voice
+                              and feeling of your brand.
                             </Text>
                           </div>
                           <div>
@@ -422,12 +427,14 @@ class Home extends React.PureComponent<ComposedProps, State> {
                               src={SeoImage}
                             />
                             <Text tag="h4" size="small" uppercase>
-                              SEO
+                              Maintainence
                             </Text>
                             <Text hyphenated size="small">
-                              Lorem ipsum dolor sit amet, consectetuer
-                              adipiscing elit. Donec odio. Quisque volutpat
-                              mattis eros. Nullam malesuada erat ut turpis.
+                              Websites tend to grow alongside the business and
+                              objectives may change overtime. For this reason,
+                              we provide support based on your needs whether it
+                              be about hosting, Google Analytics, Pixel, or A/B
+                              testing.
                             </Text>
                           </div>
                         </div>
