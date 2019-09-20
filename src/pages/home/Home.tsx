@@ -252,6 +252,7 @@ class Home extends React.PureComponent<ComposedProps, State> {
                     <Scroll.LoadAnimation propogateAnimation>
                       <div className={styles.WorkGrid}>
                         <Link
+                          unstyled
                           to="/work/panasonic-prestige"
                           className={styles.A}
                         >
@@ -265,24 +266,37 @@ class Home extends React.PureComponent<ComposedProps, State> {
                               <Decor.Line />
                               <div className={styles.WorkDescription}>
                                 <Text>
-                                  A microsite to promote the luxury personal
-                                  massage chair.
+                                  A microsite to promote Panasonic's luxury
+                                  personal massage chair.
                                 </Text>
                               </div>
                             </div>
+                          </div>
+                          <div className={styles.MobileWorkTitle}>
+                            <Text tag="h4" size="subscript" uppercase>
+                              Panasonic Prestige
+                            </Text>
                           </div>
                           <Img
                             fluid={panasonicImage}
                             className={styles.GatsbyImage}
                           />
                         </Link>
-                        <Link to="/work" className={styles.B}>
+                        <Link
+                          to="/work/santas-postal-service"
+                          className={styles.B}
+                        >
                           <div className={styles.ImageOverlay}>
                             <div>
                               <Text tag="h5" size="small" uppercase>
                                 View Projects
                               </Text>
                             </div>
+                          </div>
+                          <div className={styles.MobileWorkTitle}>
+                            <Text tag="h4" size="subscript" uppercase>
+                              Santa's Postal Service
+                            </Text>
                           </div>
                           <Img
                             fluid={santaImage}
@@ -296,6 +310,11 @@ class Home extends React.PureComponent<ComposedProps, State> {
                                 View Projects
                               </Text>
                             </div>
+                          </div>
+                          <div className={styles.MobileWorkTitle}>
+                            <Text tag="h4" size="subscript" uppercase>
+                              Transpring Canada
+                            </Text>
                           </div>
                           <Img
                             fluid={vapeImage}
@@ -313,12 +332,17 @@ class Home extends React.PureComponent<ComposedProps, State> {
                               <Decor.Line />
                               <div className={styles.WorkDescription}>
                                 <Text>
-                                  A microsite to promote Dyson's luxury
-                                  hairdryer to a new Asian demographic during
-                                  Chinese New Year.
+                                  A microsite to market Dyson's luxury hairdryer
+                                  to a new Asian demographic during Chinese New
+                                  Year.
                                 </Text>
                               </div>
                             </div>
+                          </div>
+                          <div className={styles.MobileWorkTitle}>
+                            <Text tag="h4" size="subscript" uppercase>
+                              Dyson Supersonic
+                            </Text>
                           </div>
                           <Img
                             fluid={dysonImage}

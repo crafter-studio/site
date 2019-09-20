@@ -9,7 +9,7 @@ import {classNames} from '../../components/utils/classNames';
 
 interface Props {
   to: string;
-  underlined?: boolean;
+  unstyled?: boolean;
   secondaryFont?: boolean;
   animated?: boolean;
   className?: string;
@@ -34,7 +34,7 @@ class Link extends React.PureComponent<Props & ReduxState> {
       to,
       animated,
       secondaryFont,
-      underlined = true,
+      unstyled,
       children,
       className: classNameProp,
     } = this.props;
@@ -42,7 +42,7 @@ class Link extends React.PureComponent<Props & ReduxState> {
     const className = classNames(
       classNameProp,
       styles.Link,
-      underlined && styles.underlined,
+      unstyled && styles.unstyled,
       animated && styles.animated,
       secondaryFont && styles.secondaryFont,
     );

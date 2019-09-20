@@ -274,6 +274,19 @@
       'c c c c c d d d d d';
   }
 
+  .MobileWorkTitle {
+    position: absolute;
+    bottom: $spacing-tight;
+    left: $spacing-tight;
+    z-index: 10;
+    padding: $spacing-tight / 2 $spacing-tight;
+    background-color: $color-primary;
+
+    @include small {
+      display: none;
+    }
+  }
+
   .ImageOverlay {
     display: flex;
     align-items: center;
@@ -293,16 +306,18 @@
       padding: $spacing;
     }
 
-    &:hover {
-      opacity: 1;
-      background-color: rgba($color-primary, $semi-opaque);
+    @include small {
+      &:hover {
+        opacity: 1;
+        background-color: rgba($color-primary, $semi-opaque);
 
-      .WorkTitle {
-        transform: translateY(neg($spacing-tight / 2));
-      }
+        .WorkTitle {
+          transform: translateY(neg($spacing-tight / 2));
+        }
 
-      .WorkDescription {
-        transform: translateY($spacing-tight / 2);
+        .WorkDescription {
+          transform: translateY($spacing-tight / 2);
+        }
       }
     }
 

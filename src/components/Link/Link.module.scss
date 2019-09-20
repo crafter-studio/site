@@ -1,9 +1,9 @@
 .Link {
   position: relative;
 
-  a {
+  & > a {
     position: relative;
-    text-decoration: none;
+    text-decoration: underline;
     color: $color-link;
   }
 
@@ -11,8 +11,8 @@
     font-family: $font-family-secondary;
   }
 
-  &.underlined a {
-    text-decoration: underline;
+  &.unstyled > a {
+    text-decoration: none;
   }
 
   &.animated a:after {
