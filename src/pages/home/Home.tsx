@@ -43,23 +43,17 @@ class Home extends React.PureComponent<ComposedProps, State> {
   render() {
     const {
       data: {
-        placeholder: {
-          childImageSharp: {fluid: placeholder},
+        panasonicImage: {
+          childImageSharp: {fluid: panasonicImage},
         },
-        placeholder_1: {
-          childImageSharp: {fluid: placeholder_1},
+        dysonImage: {
+          childImageSharp: {fluid: dysonImage},
         },
-        placeholder_2: {
-          childImageSharp: {fluid: placeholder_2},
+        vapeImage: {
+          childImageSharp: {fluid: vapeImage},
         },
-        placeholder_3: {
-          childImageSharp: {fluid: placeholder_3},
-        },
-        placeholder_4: {
-          childImageSharp: {fluid: placeholder_4},
-        },
-        placeholder_5: {
-          childImageSharp: {fluid: placeholder_5},
+        santaImage: {
+          childImageSharp: {fluid: santaImage},
         },
         featuredPost,
         recentPosts,
@@ -199,7 +193,7 @@ class Home extends React.PureComponent<ComposedProps, State> {
                 </div>
                 <div className={styles.Content}>
                   <div className={styles.Image}>
-                    <Img className={styles.ImageItem} fluid={placeholder_1} />
+                    <Img className={styles.ImageItem} fluid={panasonicImage} />
                   </div>
                   <div className={styles.Text}>
                     <div>
@@ -278,7 +272,7 @@ class Home extends React.PureComponent<ComposedProps, State> {
                             </div>
                           </div>
                           <Img
-                            fluid={placeholder_1}
+                            fluid={panasonicImage}
                             className={styles.GatsbyImage}
                           />
                         </Link>
@@ -291,7 +285,7 @@ class Home extends React.PureComponent<ComposedProps, State> {
                             </div>
                           </div>
                           <Img
-                            fluid={placeholder_4}
+                            fluid={santaImage}
                             className={styles.GatsbyImage}
                           />
                         </Link>
@@ -304,7 +298,7 @@ class Home extends React.PureComponent<ComposedProps, State> {
                             </div>
                           </div>
                           <Img
-                            fluid={placeholder_3}
+                            fluid={vapeImage}
                             className={styles.GatsbyImage}
                           />
                         </Link>
@@ -327,7 +321,7 @@ class Home extends React.PureComponent<ComposedProps, State> {
                             </div>
                           </div>
                           <Img
-                            fluid={placeholder_2}
+                            fluid={dysonImage}
                             className={styles.GatsbyImage}
                           />
                         </Link>
@@ -454,44 +448,30 @@ export default () => (
   <StaticQuery
     query={graphql`
       query {
-        placeholder: file(relativePath: {eq: "placeholder.jpg"}) {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
-        placeholder_1: file(relativePath: {eq: "panasonic.jpg"}) {
+        panasonicImage: file(relativePath: {eq: "panasonic.jpg"}) {
           childImageSharp {
             fluid(quality: 100, maxWidth: 640) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
-        placeholder_2: file(relativePath: {eq: "dyson.jpg"}) {
+        dysonImage: file(relativePath: {eq: "dyson.jpg"}) {
           childImageSharp {
             fluid(quality: 100, maxWidth: 640) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
-        placeholder_3: file(relativePath: {eq: "vape.PNG"}) {
+        vapeImage: file(relativePath: {eq: "vape.PNG"}) {
           childImageSharp {
-            fluid(quality: 100, maxWidth: 400) {
+            fluid(quality: 100, maxWidth: 640) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
-        placeholder_4: file(relativePath: {eq: "santa_stamp.PNG"}) {
+        santaImage: file(relativePath: {eq: "santa_stamp.PNG"}) {
           childImageSharp {
-            fluid(quality: 100, maxWidth: 600) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
-        placeholder_5: file(relativePath: {eq: "web-development.jpg"}) {
-          childImageSharp {
-            fluid(quality: 100, maxWidth: 400) {
+            fluid(quality: 100, maxWidth: 640) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
