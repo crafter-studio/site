@@ -29,6 +29,10 @@
       transition-duration: calc(#{$animation-duration-long} + #{$i * 0.1s});
       background: rgba($color-primary, $i * 0.15);
     }
+
+    &:nth-child(1) {
+      background: $color-black;
+    }
   }
 }
 
