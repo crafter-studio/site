@@ -475,7 +475,7 @@ export default () => (
             }
           }
         }
-        placeholder_3: file(relativePath: {eq: "placeholder_3.jpg"}) {
+        placeholder_3: file(relativePath: {eq: "vape.PNG"}) {
           childImageSharp {
             fluid(quality: 100, maxWidth: 400) {
               ...GatsbyImageSharpFluid_withWebp

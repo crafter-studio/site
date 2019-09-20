@@ -60,13 +60,12 @@ class Footer extends React.PureComponent<ComposedProps, State> {
                     <Text size="small">Toronto, Ontario</Text>
                   </List.Item>
                   <List.Item>
-                    <Text size="small">+1 905 135 9425</Text>
-                  </List.Item>
-                  <List.Item>
                     <Text size="small">hello@crafterstu.com</Text>
                   </List.Item>
                   <List.Item>
-                    <Button value="Contact Us" />
+                    <Link to="/contact">
+                      <Button value="Contact Us" />
+                    </Link>
                   </List.Item>
                 </List>
               </div>
