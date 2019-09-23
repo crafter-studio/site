@@ -44,6 +44,9 @@ class Navigation extends React.PureComponent<ComposedProps, State> {
             <Link animated to="/work">
               Work
             </Link>
+            <Link animated to="/approach">
+              Approach
+            </Link>
             <Link animated to="/blog">
               Blog
             </Link>

@@ -13,6 +13,7 @@ interface Props {
   secondaryFont?: boolean;
   animated?: boolean;
   className?: string;
+  aTag?: boolean;
 }
 
 class Link extends React.PureComponent<Props & ReduxState> {
@@ -36,6 +37,7 @@ class Link extends React.PureComponent<Props & ReduxState> {
       secondaryFont,
       unstyled,
       children,
+      aTag,
       className: classNameProp,
     } = this.props;
 
@@ -47,9 +49,15 @@ class Link extends React.PureComponent<Props & ReduxState> {
       secondaryFont && styles.secondaryFont,
     );
 
+    const tagMarkup = aTag ? (
+      <a href={to}>{children}</a>
+    ) : (
+      <GatsbyLink to={to}>{children}</GatsbyLink>
+    );
+
     return (
       <span onClick={this.handleClick} className={className}>
-        <GatsbyLink to={to}>{children}</GatsbyLink>
+        {tagMarkup}
       </span>
     );
   }

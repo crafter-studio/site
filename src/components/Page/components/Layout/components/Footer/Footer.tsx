@@ -36,7 +36,7 @@ class Footer extends React.PureComponent<ComposedProps, State> {
               </div>
               <div className={styles.FooterItem}>
                 <Text tag="h4" size="small" uppercase>
-                  Blog
+                  Recent Blogs
                 </Text>
                 <List noPadding noBullets>
                   {posts.map((post, key) => (
@@ -50,19 +50,21 @@ class Footer extends React.PureComponent<ComposedProps, State> {
               </div>
               <div className={styles.FooterItem}>
                 <Text tag="h4" size="small" uppercase>
-                  Contact Us
+                  Like What You See?
                 </Text>
                 <List noPadding noBullets>
                   <List.Item>
-                    <Text size="small">23 Rue Jernof Street, M2M 6Z9</Text>
+                    <Text size="small">
+                      Contact us through our email or contact page to discuss
+                      your grand vision. We respond within 1-2 business days.
+                    </Text>
                   </List.Item>
                   <List.Item>
-                    <Text size="small">Toronto, Ontario</Text>
-                  </List.Item>
-                  <List.Item>
-                    <Text size="small">hello@crafterstu.com</Text>
-                  </List.Item>
-                  <List.Item>
+                    <Text italic>
+                      <Link animated aTag to="mailto: hello@crafterstu.com">
+                        hello@crafterstu.com
+                      </Link>
+                    </Text>
                     <Link to="/contact">
                       <Button value="Contact Us" />
                     </Link>
