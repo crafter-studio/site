@@ -197,8 +197,8 @@ class Home extends React.PureComponent<ComposedProps, State> {
                   </div>
                   <div className={styles.Text}>
                     <div>
-                      <Text tag="h3">
-                        We Are A Product-Focused Web Development Team
+                      <Text tag="h3" size="h2">
+                        We are a product-focused web development team.
                       </Text>
                       <Text>
                         Crafter Studio is a small, agile team of 7 digital
