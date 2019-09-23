@@ -22,13 +22,16 @@ export default class Contact extends React.PureComponent<ComposedProps, State> {
             <Grid>
               <div className={styles.FormContent}>
                 <Text tag="h2" size="h1">
-                  Let's work together.
+                  Ready to work with us?
                 </Text>
                 <Text>
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                  Donec odio. Quisque volutpat mattis eros. Nullam malesuada
-                  erat ut turpis. Suspendisse urna nibh, viverra non, semper
-                  suscipit, posuere a, pede.
+                  Whether it be a vision, an idea, or a problem that you need
+                  solved, our team is eager to hear about it. We'll explore
+                  different ideas together, brainstorm a few solutions, and in
+                  the end craft something beautiful — sure, we'll probably make
+                  a few mistakes on the way, but we'll also learn from that and
+                  continue refining our solution. Let us become an extension of
+                  your team and let's build something brilliant together.
                 </Text>
               </div>
               <form name="Contact Form" method="POST" data-netlify="true">
@@ -75,10 +78,10 @@ export default class Contact extends React.PureComponent<ComposedProps, State> {
                     Something else in mind?
                   </Text>
                   <Text align="center">
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                    Donec odio. Quisque volutpat mattis eros. Nullam malesuada
-                    erat ut turpis. Please email us at{' '}
-                    <Link>hello@crafterstu.com</Link>
+                    Go ahead and reach out to us at our email address at{' '}
+                    <Link>hello@crafterstu.com</Link> about your wildest ideas
+                    and we will reply within 1-2 business days — we don't
+                    discriminate, we even reply to all of our spam bots.
                   </Text>
                 </div>
               </Grid>
