@@ -50,14 +50,6 @@ export default class Contact extends React.PureComponent<ComposedProps, State> {
                   id="company"
                   placeholder="Ex. Crafter Studio"
                 />
-                <Input.Select id="service" name="service" label="Service">
-                  <option value="">-- Please choose an option --</option>
-                  <option value="Web Design & Development">
-                    Web Design & Development
-                  </option>
-                  <option value="Audit">Website Audit</option>
-                  <option value="Consulting">Consulting</option>
-                </Input.Select>
                 <Input
                   textarea
                   name="message"
@@ -78,10 +70,10 @@ export default class Contact extends React.PureComponent<ComposedProps, State> {
                     Something else in mind?
                   </Text>
                   <Text align="center">
-                    Go ahead and reach out to us at our email address at{' '}
-                    <Link>hello@crafterstu.com</Link> about your wildest ideas
-                    and we will reply within 1-2 business days — we don't
-                    discriminate, we even reply to all of our spam bots.
+                    Reach out to us about your wildest ideas at our email
+                    address at <Link>hello@crafterstu.com</Link> and we will
+                    reply in 1-2 business days — we don't discriminate, we even
+                    reply to all of our spam bots.
                   </Text>
                 </div>
               </Grid>
