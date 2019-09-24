@@ -25,7 +25,7 @@ import {
   List,
   Button,
 } from '../../components';
-import {nodeFromEdges, classNames} from '../../components/utils';
+import {nodeFromEdges} from '../../components/utils';
 
 interface Props {
   data: any;

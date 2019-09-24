@@ -5,7 +5,7 @@ import {toggleHamburgerMenu} from '../../../../../../../redux/actions';
 
 import styles from './Navigation.module.scss';
 import {classNames} from '../../../../../../utils/classNames';
-import {Link} from '../../../../../../../components';
+import {Text, Link} from '../../../../../../../components';
 
 export interface Props {}
 
@@ -44,9 +44,6 @@ class Navigation extends React.PureComponent<ComposedProps, State> {
             <Link animated to="/work">
               Work
             </Link>
-            <Link animated to="/approach">
-              Approach
-            </Link>
             <Link animated to="/blog">
               Blog
             </Link>
@@ -55,6 +52,14 @@ class Navigation extends React.PureComponent<ComposedProps, State> {
                 Contact
               </Link>
             </span>
+          </div>
+          <div className={styles.Social}>
+            <Text>
+              For new business, contact{' '}
+              <Link animated aTag to="mailto: hello@crafterstu.com">
+                <b>hello@crafterstu.com</b>
+              </Link>
+            </Text>
           </div>
         </nav>
       </div>

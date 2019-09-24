@@ -1,0 +1,44 @@
+.PostsContainer {
+  display: grid;
+  grid-gap: $spacing;
+  grid-template-columns: 1fr;
+}
+
+.Post {
+  display: flex;
+  flex-direction: column;
+
+  @include medium {
+    flex-direction: row;
+  }
+}
+
+.Tag {
+  background-color: $color-primary;
+  padding: $spacing-tight / 2;
+  margin: $spacing-tight / 2 0;
+  margin-right: $spacing-tight / 2;
+}
+
+.PostImageContainer {
+  flex: 1;
+}
+
+.PostImage {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.PostContentContainer {
+  flex: 1;
+  background-color: $color-dark-grey;
+}
+
+.PostContent {
+  padding: $spacing;
+}
+
+.PostLink {
+  padding: $spacing;
+}
