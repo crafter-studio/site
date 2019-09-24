@@ -23,14 +23,14 @@ class Footer extends React.PureComponent<ComposedProps, State> {
             <div className={styles.FooterGrid}>
               <div className={styles.FooterItem}>
                 <Text tag="h4" size="small" uppercase>
-                  Random
+                  Our Team
                 </Text>
                 <Text.Container>
                   <Text size="small">
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                    Donec odio. Quisque volutpat mattis eros. Nullam malesuada
-                    erat ut turpis. Suspendisse urna nibh, viverra non, semper
-                    suscipit, posuere a, pede.
+                    We are a tight bunch of technologist and creatives who love
+                    exploring the newest and shiniest technology out there. Our
+                    passion in our craft gets us motivated out of bed every
+                    morning as we obsess over the bringing unique ideas to life.
                   </Text>
                 </Text.Container>
               </div>
