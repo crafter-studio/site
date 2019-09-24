@@ -27,6 +27,18 @@ export const query = graphql`
             name
           }
           acf {
+            stat_one {
+              stat_one_title
+              stat_one_description
+            }
+            stat_two {
+              stat_two_title
+              stat_two_description
+            }
+            stat_three {
+              stat_three_title
+              stat_three_description
+            }
             tagline
             short_description
             client
@@ -55,16 +67,38 @@ class Work extends React.PureComponent<ComposedProps, State> {
       content,
       tags,
       featured_media: {source_url: featuredImg},
-      acf: {tagline, short_description, client, summary: summaryRaw},
     } = project;
 
-    if (!tagline || !short_description || !client || !summaryRaw) {
-      return;
+    const {
+      acf: {
+        tagline,
+        short_description,
+        client,
+        summary: summaryRaw,
+        stat_one,
+        stat_two,
+        stat_three,
+      },
+    } = project;
+
+    if (
+      !tagline ||
+      !short_description ||
+      !client ||
+      !summaryRaw ||
+      !stat_one ||
+      !stat_two ||
+      !stat_three
+    ) {
+      return null;
     }
 
     const description = striptags(excerpt);
     const title = `${ReactHtmlParser(titleRaw)}`;
     const formattedDate = moment.utc(date).format('DD/MM/YYYY');
+    const {stat_one_title, stat_one_description} = stat_one;
+    const {stat_two_title, stat_two_description} = stat_two;
+    const {stat_three_title, stat_three_description} = stat_three;
     const summary = summaryRaw.split('\n').map((item, key) => {
       return (
         <React.Fragment key={key}>
@@ -98,43 +132,59 @@ class Work extends React.PureComponent<ComposedProps, State> {
             <Theme darkMode bgColor="var(--color-black)">
               <div className={styles.TaglineContainer}>
                 <p className={styles.Tagline}>{tagline}</p>
-                <div style={{marginTop: '20px'}}>
-                  <Text italic align="center" color="var(--color-text-themed)">
-                    {short_description}
-                  </Text>
-                </div>
+                <Text italic align="center" color="var(--color-text-themed)">
+                  {short_description}
+                </Text>
               </div>
             </Theme>
           </Grid>
           <div className={styles.SummaryContainer}>
             <Grid>
               <Grid.ScreenWidth>
-                <h1 className={styles.MainTitle}>{title}</h1>
                 <div className={styles.Summary}>
-                  <div className={styles.Data}>
-                    <Text.Container>
-                      <h5 className={styles.DataTitle}>Company</h5>
-                      <p className={styles.DataInfo}>{client}</p>
-                      <h5 className={styles.DataTitle}>Date</h5>
-                      <p className={styles.DataInfo}>{formattedDate}</p>
-                      <h5 className={styles.DataTitle}>Tags</h5>
-                      <List noBullets noPadding>
-                        {tags.map((tag, key) => (
-                          <List.Item key={key}>
-                            <span
-                              className={`${styles.DataInfo} ${
-                                styles.DataTags
-                              }`}
-                            >
-                              {tag.name}
-                            </span>
-                          </List.Item>
-                        ))}
-                      </List>
-                    </Text.Container>
-                  </div>
                   <div className={styles.Description}>
+                    <Text tag="h5" size="h1">
+                      {title}
+                    </Text>
                     <Text>{summary}</Text>
+                  </div>
+                  <div className={styles.Data}>
+                    <div className={styles.ProjectStats}>
+                      <div className={styles.ProjectStat}>
+                        <Text tag="h5" size="small" uppercase>
+                          {stat_one_title}
+                        </Text>
+                        <Text>{stat_one_description}</Text>
+                      </div>
+                      <div className={styles.ProjectStat}>
+                        <Text tag="h5" size="small" uppercase>
+                          {stat_two_title}
+                        </Text>
+                        <Text>{stat_two_description}</Text>
+                      </div>
+                      <div className={styles.ProjectStat}>
+                        <Text tag="h5" size="small" uppercase>
+                          {stat_three_title}
+                        </Text>
+                        <Text>{stat_three_description}</Text>
+                      </div>
+                      <div className={styles.ProjectStat}>
+                        <Text tag="h5" uppercase size="small">
+                          Tags
+                        </Text>
+                        <List noBullets noPadding>
+                          {tags.map((tag, key) => (
+                            <List.Item key={key}>
+                              <span
+                                className={`${styles.DataInfo} ${styles.Tags}`}
+                              >
+                                {tag.name}
+                              </span>
+                            </List.Item>
+                          ))}
+                        </List>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </Grid.ScreenWidth>

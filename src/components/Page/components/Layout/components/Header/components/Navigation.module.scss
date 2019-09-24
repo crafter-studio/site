@@ -6,7 +6,7 @@
   top: 0;
   width: var(--navigation-width);
   height: 100%;
-  transform: translateX(var(--navigation-width));
+  transform: translateX(100%);
   transition: transform $animation-duration ease-in-out;
 
   &.HamburgerMenuActive {
