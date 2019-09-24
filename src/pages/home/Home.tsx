@@ -185,34 +185,39 @@ class Home extends React.PureComponent<ComposedProps, State> {
           {/* ================================================================================================================= */}
           {/* ABOUT SECTION */}
           {/* ================================================================================================================= */}
-          <div className={styles.AboutSection}>
-            <Grid>
-              <Grid.ScreenWidth>
-                <div className={styles.Heading}>
-                  <h1>WELCOME.</h1>
-                </div>
-                <div className={styles.Content}>
-                  <div className={styles.Image}>
-                    <Img className={styles.ImageItem} fluid={panasonicImage} />
+          <Theme bgColor="var(--color-dark-grey)">
+            <div className={styles.AboutSection}>
+              <Grid>
+                <Grid.ScreenWidth>
+                  <div className={styles.Heading}>
+                    <h1>WELCOME.</h1>
                   </div>
-                  <div className={styles.Text}>
-                    <div>
-                      <Text tag="h3" size="h2">
-                        We are a product-focused web development team.
-                      </Text>
-                      <Text>
-                        Crafter Studio is a small, agile team of 7 digital
-                        experts specialized in web design, development, and
-                        branding. We extend departments from Fortune 500
-                        companies and growing startups by putting their
-                        product's best foot forward in the digital space.
-                      </Text>
+                  <div className={styles.Content}>
+                    <div className={styles.Image}>
+                      <Img
+                        className={styles.ImageItem}
+                        fluid={panasonicImage}
+                      />
+                    </div>
+                    <div className={styles.Text}>
+                      <div>
+                        <Text tag="h3" size="h2">
+                          We are a product-focused web development team.
+                        </Text>
+                        <Text>
+                          Crafter Studio is a small, agile team of 7 digital
+                          experts specialized in web design, development, and
+                          branding. We extend departments from Fortune 500
+                          companies and growing startups by putting their
+                          product's best foot forward in the digital space.
+                        </Text>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </Grid.ScreenWidth>
-            </Grid>
-          </div>
+                </Grid.ScreenWidth>
+              </Grid>
+            </div>
+          </Theme>
           {/* ================================================================================================================= */}
           {/* ABOUT TEXT */}
           {/* ================================================================================================================= */}
