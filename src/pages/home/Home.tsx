@@ -384,10 +384,10 @@ class Home extends React.PureComponent<ComposedProps, State> {
                               Content Writing
                             </Text>
                             <Text hyphenated size="small">
-                              Content is king and quality websites are built
+                              Content is king and great websites are built
                               around them. We create content that engages — a
                               voice that cares about your brand, your products,
-                              as well as those search engine robots working at
+                              as well as the search engine robots working at
                               Google.
                             </Text>
                           </div>
@@ -400,11 +400,11 @@ class Home extends React.PureComponent<ComposedProps, State> {
                               Development
                             </Text>
                             <Text hyphenated size="small">
-                              Do you have a crazy idea? We absolutely love
-                              challenges so just tell us your vision and our
-                              team can build it. Focus on your business and
-                              leave the technical jargons to us, that is our job
-                              afterall.
+                              No ideas are out of reach, let us in on your
+                              vision and our team will build it. We will deal
+                              with the technical jargons so you can give your
+                              business your 100% attention, our job is to lift
+                              that weight off your shoulders afterall.
                             </Text>
                           </div>
                           <div>
@@ -416,11 +416,11 @@ class Home extends React.PureComponent<ComposedProps, State> {
                               Design
                             </Text>
                             <Text hyphenated size="small">
-                              Good, functional design is the most elegant
-                              solution to a business problem. We deconstruct
-                              problems and generate ideas that creates
-                              exceptional experiences consistent to the voice
-                              and feeling of your brand.
+                              Good, functional design is the simplest, most
+                              elegant solution to a business problem. We
+                              deconstruct problems and generate ideas that
+                              creates exceptional experiences consistent to the
+                              voice and feeling of your brand.
                             </Text>
                           </div>
                           <div>
