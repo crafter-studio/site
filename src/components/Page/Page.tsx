@@ -9,8 +9,8 @@ interface NoProps {}
 
 interface Props {
   title: string;
-  description: string;
-  keywords: string[];
+  description?: string;
+  keywords?: string[];
   lang?: string;
   disableSiteName?: boolean;
 }

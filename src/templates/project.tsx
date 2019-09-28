@@ -108,11 +108,7 @@ class Work extends React.PureComponent<ComposedProps, State> {
     });
 
     return (
-      <Page
-        title={title}
-        description={description}
-        keywords={tags.map((tag) => tag.name)}
-      >
+      <Page title={title} keywords={tags.map((tag) => tag.name)}>
         <Page.Background />
         <Page.Layout>
           <div className={styles.Header}>

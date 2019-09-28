@@ -91,11 +91,7 @@ class Blog extends React.PureComponent<ComposedProps, State> {
     });
 
     return (
-      <Page
-        title="Web Design and Development"
-        description="Description"
-        keywords={['keyword', 'things']}
-      >
+      <Page title="Blog">
         <Page.Background />
         <Page.Layout>
           <Page.Section>

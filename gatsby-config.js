@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Crafter Studio`,
-    description: `GraphQL Everywhere~`,
+    description: `Crafter Studio is a web development and design agency creating product-focused microsites and Shopify stores.`,
     author: `@leroywan`,
   },
   pathPrefix: `/`,

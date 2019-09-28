@@ -153,11 +153,7 @@ class Home extends React.PureComponent<ComposedProps, State> {
     ));
 
     return (
-      <Page
-        title="Web Design and Development"
-        description="Description"
-        keywords={['keyword', 'things']}
-      >
+      <Page title="Web Design and Development">
         <Page.Background />
         <Page.Layout>
           {/* ================================================================================================================= */}

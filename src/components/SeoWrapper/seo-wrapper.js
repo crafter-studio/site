@@ -67,7 +67,22 @@ function SeoWrapper({
                       name: `keywords`,
                       content: keywords.join(`, `),
                     }
-                  : [],
+                  : {
+                      name: 'keywords',
+                      content: [
+                        'microsite',
+                        'luxury',
+                        'web',
+                        'development',
+                        'design',
+                        'ui',
+                        'ux',
+                        'agency',
+                        'internationalization',
+                        'fast',
+                        'optimized',
+                      ].join(', '),
+                    },
               )
               .concat(meta)}
           />

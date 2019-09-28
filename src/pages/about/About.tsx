@@ -19,11 +19,7 @@ class About extends React.PureComponent<ComposedProps, State> {
 
   render() {
     return (
-      <Page
-        title="Web Design and Development"
-        description="Description"
-        keywords={['keyword', 'things']}
-      >
+      <Page title="About">
         <Page.Background />
         <Page.Layout>
           <Theme darkMode>

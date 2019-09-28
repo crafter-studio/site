@@ -64,11 +64,7 @@ class Work extends React.PureComponent<ComposedProps, State> {
     const projects = nodeFromEdges(data.allWordpressWpProject.edges);
 
     return (
-      <Page
-        title="Web Design and Development"
-        description="Description"
-        keywords={['keyword', 'things']}
-      >
+      <Page title="Work">
         <Page.Background />
         <Page.Layout>
           <Grid>
