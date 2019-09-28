@@ -113,6 +113,7 @@ $headerHeight: $headerTopHeight + $headerBottomHeight;
   padding-top: $spacing * 2;
 
   @include large {
+    flex: 1;
     padding: 0 $spacing * 2;
   }
 }
@@ -131,8 +132,11 @@ $headerHeight: $headerTopHeight + $headerBottomHeight;
 
 .ProjectStats {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
   grid-gap: $spacing;
+
+  @include medium {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   @include large {
     grid-gap: $spacing-loose;
