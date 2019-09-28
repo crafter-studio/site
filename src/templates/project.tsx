@@ -93,9 +93,8 @@ class Work extends React.PureComponent<ComposedProps, State> {
       return null;
     }
 
-    const description = striptags(excerpt);
-    const title = `${ReactHtmlParser(titleRaw)}`;
-    const formattedDate = moment.utc(date).format('DD/MM/YYYY');
+    const description = ReactHtmlParser(striptags(excerpt));
+    const title = ReactHtmlParser(striptags(titleRaw));
     const {stat_one_title, stat_one_description} = stat_one;
     const {stat_two_title, stat_two_description} = stat_two;
     const {stat_three_title, stat_three_description} = stat_three;
@@ -111,9 +110,8 @@ class Work extends React.PureComponent<ComposedProps, State> {
     return (
       <Page
         title={title}
-        description={`${description}`}
-        keywords={['keyword', 'things']}
-        disableSiteName
+        description={description}
+        keywords={tags.map((tag) => tag.name)}
       >
         <Page.Background />
         <Page.Layout>
