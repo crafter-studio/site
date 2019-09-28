@@ -1,7 +1,6 @@
 import React from 'react';
 import {StaticQuery, graphql} from 'gatsby';
 import ReactHtmlParser from 'react-html-parser';
-import striptags from 'striptags';
 
 import styles from './Work.module.scss';
 import {Page, Grid, Text, List, Link, Button, Scroll} from '../../components';
@@ -44,7 +43,7 @@ const Project = ({slug, title, excerpt, tags, projectThumbnail}) => {
               </List.Item>
             ))}
           </List>
-          <Text hyphenated>{striptags(excerpt)}</Text>
+          <Text hyphenated>{ReactHtmlParser(excerpt)}</Text>
           <Link to={`/work/${slug}`}>
             <Button value="View Case Study" />
           </Link>
