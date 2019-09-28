@@ -84,21 +84,38 @@ class Scroll extends React.PureComponent<ComposedProps, State> {
   }
 
   render() {
-    const {children, bottomOffset = '10%'} = this.props;
+    const {children, bottomOffset = '5%'} = this.props;
     const {contentInView} = this.state;
 
     // window object does not exist in Webpack's Node environment, this is to prevent the error
     const browserWindow = typeof window !== 'undefined' ? window : null;
+
+    // Blocks are used with refs in Waypoint to determine the size of the DOM node
+    class Block extends React.PureComponent<{innerRef: any}, {}> {
+      render() {
+        const {children, innerRef} = this.props;
+        return <div ref={innerRef}>{children}</div>;
+      }
+    }
+
+    const BlockWithRef = React.forwardRef((props, ref) => {
+      return (
+        <Block innerRef={ref} {...props}>
+          {React.Children.map(children, (child: any) => {
+            return React.cloneElement(child, {contentInView});
+          })}
+        </Block>
+      );
+    });
     return (
       <div>
         <Waypoint
           scrollableAncestor={browserWindow}
           onEnter={this.handleOnEnter}
           bottomOffset={bottomOffset}
-        />
-        {React.Children.map(children, (child: any) => {
-          return React.cloneElement(child, {contentInView});
-        })}
+        >
+          <BlockWithRef />
+        </Waypoint>
       </div>
     );
   }
