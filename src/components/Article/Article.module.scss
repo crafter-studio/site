@@ -31,6 +31,22 @@ $max-article-width: 640px;
     }
   }
 
+  blockquote {
+    text-align: center;
+    p {
+      font-size: $font-size-h1;
+    }
+
+    cite {
+      font-size: $font-size-subscript;
+    }
+
+    @include Wide();
+    @include medium {
+      margin: $spacing * 2 0;
+    }
+  }
+
   figcaption {
     padding: $spacing-tight;
     font-size: $font-size-subscript;
