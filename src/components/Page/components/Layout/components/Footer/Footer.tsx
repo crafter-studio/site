@@ -27,10 +27,10 @@ class Footer extends React.PureComponent<ComposedProps, State> {
                 </Text>
                 <Text.Container>
                   <Text size="small">
-                    We are a tight bunch of technologist and creatives who love
-                    exploring the newest and shiniest technology out there. Our
-                    passion in our craft gets us motivated out of bed every
-                    morning as we obsess over the bringing unique ideas to life.
+                    We are a tight bunch of digital creatives that love
+                    exploring the newest and shiniest technology available. Our
+                    passion for our craft motivates us out of bed every morning
+                    as we obsess over bringing unique ideas to life.
                   </Text>
                 </Text.Container>
               </div>
@@ -56,7 +56,8 @@ class Footer extends React.PureComponent<ComposedProps, State> {
                   <List.Item>
                     <Text size="small">
                       Contact us through our email or contact page to discuss
-                      your grand vision. We respond within 1-2 business days.
+                      your grand vision, we will respond within 1-2 business
+                      days.
                     </Text>
                   </List.Item>
                   <List.Item>

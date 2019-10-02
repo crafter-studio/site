@@ -330,7 +330,7 @@ class Home extends React.PureComponent<ComposedProps, State> {
                               <div className={styles.WorkDescription}>
                                 <Text>
                                   A microsite to market Dyson's luxury hairdryer
-                                  to a new Asian demographic during Chinese New
+                                  to the Asian demographic during Chinese New
                                   Year.
                                 </Text>
                               </div>
@@ -380,11 +380,11 @@ class Home extends React.PureComponent<ComposedProps, State> {
                               Content Writing
                             </Text>
                             <Text hyphenated size="small">
-                              Content is king and great websites are built
-                              around them. We create content that engages — a
-                              voice that cares about your brand, your products,
-                              as well as the search engine robots working at
-                              Google.
+                              All great web­sites are built upon a foundation of
+                              carefully crafted content. We cre­ate con­tent
+                              that en­gages your audience — a voice that cares
+                              about your prod­ucts, your brand, and search
+                              engines.
                             </Text>
                           </div>
                           <div>
@@ -396,11 +396,11 @@ class Home extends React.PureComponent<ComposedProps, State> {
                               Development
                             </Text>
                             <Text hyphenated size="small">
-                              No ideas are out of reach, let us in on your
-                              vision and our team will build it. We will deal
-                              with the technical jargons so you can give your
-                              business your 100% attention, our job is to lift
-                              that weight off your shoulders afterall.
+                              We are a highly diverse team of digital experts
+                              with experiences ranging from the field of
+                              e-commerce to VR/AR. We believe that all ideas are
+                              attainable; so let us turn that vision into
+                              reality.
                             </Text>
                           </div>
                           <div>
@@ -412,11 +412,12 @@ class Home extends React.PureComponent<ComposedProps, State> {
                               Design
                             </Text>
                             <Text hyphenated size="small">
-                              Good, functional design is the simplest, most
-                              elegant solution to a business problem. We
-                              deconstruct problems and generate ideas that
-                              creates exceptional experiences consistent to the
-                              voice and feeling of your brand.
+                              Good, func­tion­al de­signs are often the simplest
+                              so­lu­tions to a busi­ness prob­lem. We
+                              de­con­struct prob­lems through effective
+                              collaboration and gen­er­ate ideas that allows us
+                              to build ex­cep­tion­al ex­pe­ri­ences which
+                              matches the voice of your brand.
                             </Text>
                           </div>
                           <div>
@@ -428,11 +429,11 @@ class Home extends React.PureComponent<ComposedProps, State> {
                               Maintainence
                             </Text>
                             <Text hyphenated size="small">
-                              Websites tend to grow alongside the business and
-                              objectives may change overtime. For this reason,
-                              we provide support based on your needs whether it
-                              be about hosting, Google Analytics, Pixel, or A/B
-                              testing.
+                              We understand that busi­ness ob­jec­tives tend to
+                              change over­time, which is why we maintain your
+                              products for the long-run. Whether you need
+                              support in host­ing, Google An­a­lyt­ics, Facebook
+                              Pix­el, or A/B test­ing, we've got your back.
                             </Text>
                           </div>
                         </div>
