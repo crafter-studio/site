@@ -21,10 +21,10 @@ export default class Contact extends React.PureComponent<ComposedProps, State> {
                   Refer a friend. Recieve $400.
                 </Text>
                 <Text>
-                  Just fill the form below and submit the form, it's as simple
-                  as that. At Crafter Studio, we build cutting-edge web
-                  experiences for tomorrow's brands. Refer a friend, and we'll
-                  wire you $400 CAD for the successful shoutout.
+                  Just fill the form below and click submit, it's as simple as
+                  that. At Crafter Studio, we build cutting-edge web experiences
+                  for tomorrow's brands. Refer a friend, and we'll wire you $400
+                  CAD for the successful shoutout.
                 </Text>
                 <Text tag="h3" size="small" uppercase>
                   How does it work?
