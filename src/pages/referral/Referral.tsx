@@ -33,8 +33,8 @@ export default class Contact extends React.PureComponent<ComposedProps, State> {
                   We believe in establishing trust and producing quality work
                   with great clients. Once we have signed the contract with the
                   client, we will instantly send you the $400 through your
-                  preferred method. You will be informed by email during the
-                  entire process of the referral. No catch whatsoever.
+                  preferred payment method. You will be informed by email during
+                  the entire process of the referral. No catch whatsoever.
                 </Text>
               </div>
               <form name="Referral Form" method="POST" data-netlify="true">
