@@ -186,7 +186,9 @@ class Home extends React.PureComponent<ComposedProps, State> {
               <Grid>
                 <Grid.ScreenWidth>
                   <div className={styles.Content}>
-                    <div className={styles.Image} />
+                    <div className={styles.Image}>
+                      <Decor.ResponsiveDesign />
+                    </div>
                     <div className={styles.Text}>
                       <Text
                         tag="h4"

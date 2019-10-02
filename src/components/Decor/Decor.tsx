@@ -5,6 +5,7 @@ import {
   AnimatedSquareProps,
   Line,
   Noise,
+  ResponsiveDesign,
   Triangle,
   TriangleProps,
 } from './components';
@@ -18,6 +19,7 @@ export default class Decor extends React.PureComponent<ComposedProps, State> {
   static AnimatedSquares: React.SFC<AnimatedSquareProps>;
   static Line;
   static Noise;
+  static ResponsiveDesign;
   static Triangle: React.SFC<TriangleProps>;
   render() {
     return null;
@@ -27,4 +29,5 @@ export default class Decor extends React.PureComponent<ComposedProps, State> {
 Decor.AnimatedSquares = AnimatedSquares;
 Decor.Line = Line;
 Decor.Noise = Noise;
+Decor.ResponsiveDesign = ResponsiveDesign;
 Decor.Triangle = Triangle;
