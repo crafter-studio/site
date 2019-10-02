@@ -58,23 +58,20 @@ export default class Contact extends React.PureComponent<ComposedProps, State> {
               </form>
             </Grid>
           </Page.Section>
-          <Theme bgColor="var(--color-primary)">
-            <Page.Section>
-              <Grid>
-                <div className={styles.SomethingElse}>
-                  <Text align="center" tag="h2" size="h1">
-                    Something else in mind?
-                  </Text>
-                  <Text align="center">
-                    Reach out to us about your wildest ideas at our email
-                    address at <Link>hello@crafterstu.com</Link> and we will
-                    reply in 1-2 business days — we don't discriminate, we even
-                    reply to all of our spam bots.
-                  </Text>
-                </div>
-              </Grid>
-            </Page.Section>
-          </Theme>
+          <Page.Section>
+            <Grid>
+              <div className={styles.SomethingElse}>
+                <Text align="center" tag="h2" size="h1">
+                  Something else in mind?
+                </Text>
+                <Text align="center">
+                  Let us know about it at <Link aTag>hello@crafterstu.com</Link>
+                  and we will reply in 1-2 business days — no ideas are too
+                  crazy for us.
+                </Text>
+              </div>
+            </Grid>
+          </Page.Section>
         </Page.Layout>
       </Page>
     );
