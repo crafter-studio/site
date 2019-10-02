@@ -185,29 +185,59 @@ class Home extends React.PureComponent<ComposedProps, State> {
             <div className={styles.AboutSection}>
               <Grid>
                 <Grid.ScreenWidth>
-                  <div className={styles.Heading}>
-                    <h1>WELCOME.</h1>
+                  <div className={styles.Content}>
+                    <div className={styles.Image} />
+                    <div className={styles.Text}>
+                      <Text
+                        tag="h4"
+                        size="small"
+                        uppercase
+                        className={styles.AboutTitle}
+                      >
+                        About
+                      </Text>
+                      <Text
+                        tag="h5"
+                        size="h1"
+                        color="var(--color-heading-neg)"
+                        className={styles.AboutTagline}
+                      >
+                        A web agency with standards.
+                      </Text>
+                      <Text color="var(--color-text-neg)" hyphenated>
+                        We are a highly-focused team of 7 digital experts
+                        specialized in cutting-edge web design and development.
+                        We extend departments from Fortune 500 companies and
+                        growing startups by developing modern solutions for
+                        ambitious brands.
+                      </Text>
+                    </div>
                   </div>
                   <div className={styles.Content}>
-                    <div className={styles.Image}>
-                      <Img
-                        className={styles.ImageItem}
-                        fluid={panasonicImage}
-                      />
-                    </div>
+                    <div className={styles.Image} />
                     <div className={styles.Text}>
-                      <div>
-                        <Text tag="h3" size="h2">
-                          We are a product-focused web development team.
-                        </Text>
-                        <Text>
-                          Crafter Studio is a small, agile team of 7 digital
-                          experts specialized in web design, development, and
-                          branding. We extend departments from Fortune 500
-                          companies and growing startups by putting their
-                          product's best foot forward in the digital space.
-                        </Text>
-                      </div>
+                      <Text
+                        tag="h4"
+                        size="small"
+                        uppercase
+                        className={styles.AboutTitle}
+                      >
+                        Approach
+                      </Text>
+                      <Text
+                        tag="h5"
+                        size="h1"
+                        color="var(--color-heading-neg)"
+                        className={styles.AboutTagline}
+                      >
+                        Candid communication. Creative collaboration.
+                      </Text>
+                      <Text color="var(--color-text-neg)" hyphenated>
+                        We take a project from scratch to finish: strategy,
+                        creation, execution, to evalution. We cut to the chase
+                        by actively listening to you and focusing on solving the
+                        problem at hand and bringing the best to the table.
+                      </Text>
                     </div>
                   </div>
                 </Grid.ScreenWidth>

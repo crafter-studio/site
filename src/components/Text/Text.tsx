@@ -15,6 +15,7 @@ interface Props {
   subdued?: boolean;
   spaceUnder?: 'tight' | 'loose' | 'extra-loose';
   italic?: boolean;
+  className?: string;
 }
 
 type State = {};
@@ -97,6 +98,7 @@ export default class Text extends React.PureComponent<ComposedProps, State> {
       subdued,
       italic,
       hyphenated,
+      className,
       children,
     } = this.props;
 
@@ -108,6 +110,7 @@ export default class Text extends React.PureComponent<ComposedProps, State> {
       align && styles[classVariants('align', align)],
       tag && styles[classVariants('tag', tag)],
       size && styles[classVariants('size', size)],
+      className && className,
     );
 
     const content = wrapComponentWithTag(children, composedClass, tag, color);
