@@ -1,9 +1,34 @@
 .Background {
   position: absolute;
+  overflow-x: hidden;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: -1;
   transition: background-color $animation-duration-long ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.Blob {
+  animation: fadeIn $animation-duration-long 1.5s ease-in-out both;
+  transition: transform $animation-duration ease-in-out;
+  transform: scale(0.6);
+
+  @include small {
+    transform: scale(0.75);
+  }
+
+  @include medium {
+    transform: scale(1);
+  }
 }
