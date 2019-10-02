@@ -21,20 +21,30 @@ export default class Contact extends React.PureComponent<ComposedProps, State> {
                   Refer a friend. Recieve $400.
                 </Text>
                 <Text>
-                  Know a business that is in need for a specialized web
-                  solution? At Crafter Studio, we build cutting-edge web
+                  Just fill the form below and submit the form, it's as simple
+                  as that. At Crafter Studio, we build cutting-edge web
                   experiences for tomorrow's brands. Refer a friend, and we'll
-                  wire you $400 USD for the successful shoutout.
+                  wire you $400 CAD for the successful shoutout.
+                </Text>
+                <Text tag="h3" size="small" uppercase>
+                  How does it work?
+                </Text>
+                <Text>
+                  We believe in establishing trust and producing quality work
+                  with great clients. Once we have signed the contract with the
+                  client, we will instantly send you the $400 through your
+                  preferred method. You will be informed by email during the
+                  entire process of the referral. No catch whatsoever.
                 </Text>
               </div>
               <form name="Referral Form" method="POST" data-netlify="true">
                 <input type="hidden" name="form-name" value="Referral Form" />
                 <Input
                   name="email"
-                  label="email"
+                  label="your email"
                   type="email"
                   id="email"
-                  placeholder="Ex. youremail@example.com"
+                  placeholder="Ex. name@example.com"
                 />
                 <Input
                   name="name"
@@ -43,14 +53,14 @@ export default class Contact extends React.PureComponent<ComposedProps, State> {
                   id="company"
                   placeholder="Ex. Crafter Studio"
                 />
-                <Input
-                  textarea
-                  name="message"
-                  label="Your Message"
-                  type="text"
-                  id="message"
-                  placeholder="Write your message here"
-                />
+                <Input.Select
+                  name="payment_method"
+                  label="Preferred Payment Method"
+                  id="payment_method"
+                >
+                  <option>Paypal</option>
+                  <option>TransferWise</option>
+                </Input.Select>
                 <Button submit value="Submit" />
               </form>
             </Grid>
