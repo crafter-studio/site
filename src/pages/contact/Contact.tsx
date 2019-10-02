@@ -21,8 +21,8 @@ export default class Contact extends React.PureComponent<ComposedProps, State> {
                   Ready to work with us?
                 </Text>
                 <Text>
-                  Whether it be a vision, an idea, or a problem that you need
-                  solved, our team is eager to hear about it. We'll explore
+                  Whether it be a vision, an idea, or a problem that you need to
+                  be solved, our team is eager to hear about it. We'll explore
                   different ideas together, brainstorm a few solutions, and in
                   the end craft something beautiful — sure, we'll probably make
                   a few mistakes on the way, but we'll also learn from that and
