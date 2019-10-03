@@ -216,7 +216,9 @@ class Home extends React.PureComponent<ComposedProps, State> {
                     </div>
                   </div>
                   <div className={styles.Content}>
-                    <div className={styles.Image} />
+                    <div className={styles.Image}>
+                      <Decor.Venn />
+                    </div>
                     <div className={styles.Text}>
                       <Text
                         tag="h4"

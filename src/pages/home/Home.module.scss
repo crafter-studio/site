@@ -206,7 +206,9 @@
 
     &:nth-child(even) {
       .Image {
-        order: 1;
+        @include medium {
+          order: 1;
+        }
       }
     }
   }

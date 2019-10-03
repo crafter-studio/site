@@ -8,6 +8,7 @@ import {
   ResponsiveDesign,
   Triangle,
   TriangleProps,
+  Venn,
 } from './components';
 
 interface Props {}
@@ -21,6 +22,7 @@ export default class Decor extends React.PureComponent<ComposedProps, State> {
   static Noise;
   static ResponsiveDesign;
   static Triangle: React.SFC<TriangleProps>;
+  static Venn;
   render() {
     return null;
   }
@@ -31,3 +33,4 @@ Decor.Line = Line;
 Decor.Noise = Noise;
 Decor.ResponsiveDesign = ResponsiveDesign;
 Decor.Triangle = Triangle;
+Decor.Venn = Venn;
