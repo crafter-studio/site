@@ -181,10 +181,10 @@ class Home extends React.PureComponent<ComposedProps, State> {
           {/* ================================================================================================================= */}
           {/* ABOUT SECTION */}
           {/* ================================================================================================================= */}
-          <Theme bgColor="var(--color-dark-grey)">
+          <Theme darkMode bgColor="#202020">
             <div className={styles.AboutSection}>
               <Grid>
-                <Grid.ScreenWidth>
+                <div className={styles.AboutGrid}>
                   <div className={styles.Content}>
                     <div className={styles.Image}>
                       <Decor.ResponsiveDesign />
@@ -244,14 +244,14 @@ class Home extends React.PureComponent<ComposedProps, State> {
                       </Text>
                     </div>
                   </div>
-                </Grid.ScreenWidth>
+                </div>
               </Grid>
             </div>
           </Theme>
           {/* ================================================================================================================= */}
           {/* ABOUT TEXT */}
           {/* ================================================================================================================= */}
-          <Theme darkMode bgColor="var(--color-black)">
+          <Theme bgColor="var(--color-primary)">
             <Page.Section>
               <div className={styles.AboutText}>
                 <Grid>

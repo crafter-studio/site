@@ -177,13 +177,24 @@
 // =================================================================================================
 
 .AboutSection {
+  .AboutGrid {
+    grid-column: 1 / -1;
+
+    @include medium {
+      grid-column: 2 / -2;
+    }
+  }
+
   .Content {
     background-color: $color-black;
     display: flex;
     flex-direction: column;
+    padding-top: $spacing-loose;
+    padding-bottom: $spacing-loose;
 
     @include medium {
       flex-direction: row;
+      padding: 0;
     }
 
     .Image {
