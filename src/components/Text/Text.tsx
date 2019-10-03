@@ -110,7 +110,7 @@ export default class Text extends React.PureComponent<ComposedProps, State> {
       align && styles[classVariants('align', align)],
       tag && styles[classVariants('tag', tag)],
       size && styles[classVariants('size', size)],
-      className && className,
+      className,
     );
 
     const content = wrapComponentWithTag(children, composedClass, tag, color);
