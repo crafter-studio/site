@@ -4,7 +4,7 @@ import cuid from 'cuid';
 
 import styles from './Article.module.scss';
 
-import {Text} from '../../components';
+import {Text, List} from '../../components';
 
 const options = {
   transform,
@@ -65,6 +65,14 @@ function transform(node) {
         {processNodes(node.children, transform)}
       </Text>
     );
+  }
+
+  if (node.type === 'tag' && node.name === 'ul') {
+    return <List>{processNodes(node.children, transform)}</List>;
+  }
+
+  if (node.type === 'tag' && node.name === 'li') {
+    return <List.Item>{processNodes(node.children, transform)}</List.Item>;
   }
 
   if (node.type == 'tag' && node.attribs.class != null) {

@@ -1,8 +1,8 @@
 .List {
   position: relative;
-  padding-left: $spacing;
-  margin-top: $spacing-tight / 2;
-  margin-bottom: $spacing-tight / 2;
+  padding-left: $spacing * 2;
+  margin-top: $spacing;
+  margin-bottom: $spacing;
   list-style: disc outside none;
 
   &.ordered {
