@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactHtmlParser, {processNodes} from 'react-html-parser';
 import cuid from 'cuid';
+import LazyLoad from 'react-lazy-load';
 
 import styles from './Article.module.scss';
 
@@ -64,6 +65,14 @@ function transform(node) {
       <Text key={cuid()} tag="h6">
         {processNodes(node.children, transform)}
       </Text>
+    );
+  }
+
+  if (node.type === 'tag' && node.name === 'figure') {
+    return (
+      <LazyLoad key={cuid()} offset={1000}>
+        <>{processNodes(node.children, transform)}</>
+      </LazyLoad>
     );
   }
 

@@ -92,7 +92,7 @@ class Work extends React.PureComponent<ComposedProps, State> {
       return null;
     }
 
-    const title = ReactHtmlParser(striptags(titleRaw));
+    const title = `${ReactHtmlParser(striptags(titleRaw))}`;
     const {stat_one_title, stat_one_description} = stat_one;
     const {stat_two_title, stat_two_description} = stat_two;
     const {stat_three_title, stat_three_description} = stat_three;
