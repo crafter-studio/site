@@ -38,7 +38,7 @@ class Footer extends React.PureComponent<ComposedProps, State> {
                 <Text tag="h4" size="small" uppercase>
                   Recent Blogs
                 </Text>
-                <List noPadding noBullets>
+                <List unstyled>
                   {posts.map((post, key) => (
                     <List.Item key={key}>
                       <Text size="small">
@@ -52,7 +52,7 @@ class Footer extends React.PureComponent<ComposedProps, State> {
                 <Text tag="h4" size="small" uppercase>
                   Like What You See?
                 </Text>
-                <List noPadding noBullets>
+                <List unstyled>
                   <List.Item>
                     <Text size="small">
                       Contact us through our email or contact page to discuss
