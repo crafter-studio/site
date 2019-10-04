@@ -93,7 +93,9 @@ class Home extends React.PureComponent<ComposedProps, State> {
                   {moment.utc(item.date).format('LL')}
                 </Text>
                 <Text.Container>
-                  <Text tag="h3">{item.title}</Text>
+                  <Text tag="h3" size="small" uppercase>
+                    {item.title}
+                  </Text>
                   <Text>
                     {truncate(ReactHtmlParser(striptags(item.content)), {
                       length: 280,

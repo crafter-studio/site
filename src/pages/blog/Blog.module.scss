@@ -7,6 +7,7 @@
 .Post {
   display: flex;
   flex-direction: column;
+  background-color: $color-dark-grey;
 
   @include medium {
     flex-direction: row;
@@ -22,17 +23,20 @@
 
 .PostImageContainer {
   flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .PostImage {
   height: 100%;
   width: 100%;
+  max-height: 320px;
   object-fit: cover;
 }
 
 .PostContentContainer {
   flex: 1;
-  background-color: $color-dark-grey;
 }
 
 .PostContent {
