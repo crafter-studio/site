@@ -68,14 +68,6 @@ function transform(node) {
     );
   }
 
-  if (node.type === 'tag' && node.name === 'figure') {
-    return (
-      <LazyLoad key={cuid()} offset={1000}>
-        <>{processNodes(node.children, transform)}</>
-      </LazyLoad>
-    );
-  }
-
   if (node.type === 'tag' && node.name === 'ul') {
     return <List>{processNodes(node.children, transform)}</List>;
   }
@@ -89,7 +81,9 @@ function transform(node) {
     if (className.includes('full-width')) {
       return (
         <Article.FullWidth key={cuid()}>
-          <figure>{processNodes(node.children, transform)}</figure>
+          <LazyLoad key={cuid()} offset={1000}>
+            <figure>{processNodes(node.children, transform)}</figure>
+          </LazyLoad>
         </Article.FullWidth>
       );
     }
