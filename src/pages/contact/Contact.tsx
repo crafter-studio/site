@@ -65,7 +65,7 @@ export default class Contact extends React.PureComponent<ComposedProps, State> {
                   Something else in mind?
                 </Text>
                 <Text align="center">
-                  Let us know about it at <Link aTag>hello@crafterstu.com</Link>
+                  Let us know about it at <Link aTag>hello@crafterstu.com</Link>{' '}
                   and we will reply in 1-2 business days — no ideas are too
                   crazy for us.
                 </Text>
