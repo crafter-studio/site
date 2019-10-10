@@ -1,0 +1,15 @@
+.SocialShareButtons {
+  display: block;
+  margin-top: $spacing;
+}
+
+.SocialShareButton {
+  display: inline-block;
+  margin-right: $spacing-tight / 2;
+  transition: transform $animation-duration-short ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+}

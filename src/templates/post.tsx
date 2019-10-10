@@ -31,7 +31,7 @@ type ComposedProps = Props;
 class Blog extends React.PureComponent<ComposedProps, State> {
   render() {
     const post = this.props.data.allWordpressPost.edges[0].node;
-    const {title, date, excerpt, content} = post;
+    const {title, date, excerpt, content, slug} = post;
     const description = striptags(excerpt);
     return (
       <Page
@@ -42,7 +42,7 @@ class Blog extends React.PureComponent<ComposedProps, State> {
       >
         <Page.Layout>
           <div style={{marginTop: '80px', marginBottom: '80px'}}>
-            <Article title={title} date={date} html={content} />
+            <Article title={title} date={date} html={content} slug={slug} />
           </div>
         </Page.Layout>
       </Page>

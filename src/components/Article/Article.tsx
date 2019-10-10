@@ -7,7 +7,7 @@ import moment from 'moment';
 
 import styles from './Article.module.scss';
 
-import {Text, List, Link} from '../../components';
+import {Text, List, Link, SocialShare} from '../../components';
 
 const options = {
   transform,
@@ -71,7 +71,11 @@ function transform(node) {
   }
 
   if (node.type === 'tag' && node.name === 'a') {
-    return <Link key={cuid()}>{processNodes(node.children, transform)}</Link>;
+    return (
+      <Link to={node.attribs.href} aTag key={cuid()}>
+        {processNodes(node.children, transform)}
+      </Link>
+    );
   }
 
   if (node.type === 'tag' && node.name === 'ul') {
@@ -109,9 +113,11 @@ function transform(node) {
 }
 
 export interface Props {
-  title?: string;
+  data?: any;
   date: string;
   html: string;
+  title?: string;
+  slug?: string;
 }
 
 type State = {};
@@ -122,7 +128,7 @@ class Article extends React.PureComponent<ComposedProps, State> {
   static Wide;
 
   render() {
-    const {title, date, html} = this.props;
+    const {title, date, html, slug} = this.props;
     const markup = ReactHtmlParser(html, options);
     const readTime = `${Math.round(
       striptags(html).trim().length / 1200,
@@ -137,6 +143,7 @@ class Article extends React.PureComponent<ComposedProps, State> {
         <Text className={styles.Time} size="subscript" italic>
           {`${moment.utc(date).format('LL')}`}
         </Text>
+        <SocialShare relativeUrl={`/blog/${slug}`} />
       </div>
     ) : (
       ''
@@ -160,4 +167,5 @@ const Wide = ({children}) => <div className={styles.Wide}>{children}</div>;
 
 Article.FullWidth = FullWidth;
 Article.Wide = Wide;
+
 export default Article;

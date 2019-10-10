@@ -3,6 +3,7 @@ module.exports = {
     title: `Crafter Studio`,
     description: `Crafter Studio is a web development and design agency creating product-focused microsites and Shopify stores.`,
     author: `@leroywan`,
+    baseUrl: 'https://crafterstu.com',
   },
   pathPrefix: `/`,
   plugins: [

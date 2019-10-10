@@ -26,6 +26,8 @@ export {default as ScrambledText} from './ScrambledText';
 
 export {default as Scroll} from './Scroll';
 
+export {default as SocialShare} from './SocialShare';
+
 export {default as Theme} from './Theme';
 
 export {default as SeoWrapper} from './SeoWrapper';
