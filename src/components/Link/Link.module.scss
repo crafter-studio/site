@@ -3,8 +3,13 @@
 
   & > a {
     position: relative;
-    text-decoration: underline;
+    text-decoration: none;
+    border-bottom: 1px dotted $color-text;
     color: $color-link;
+
+    &:visited {
+      color: $color-link-visited;
+    }
   }
 
   &.secondaryFont {

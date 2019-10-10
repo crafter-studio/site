@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactHtmlParser, {processNodes} from 'react-html-parser';
+import striptags from 'striptags';
 import cuid from 'cuid';
 import LazyLoad from 'react-lazy-load';
+import moment from 'moment';
 
 import styles from './Article.module.scss';
 
-import {Text, List} from '../../components';
+import {Text, List, Link} from '../../components';
 
 const options = {
   transform,
@@ -68,12 +70,20 @@ function transform(node) {
     );
   }
 
+  if (node.type === 'tag' && node.name === 'a') {
+    return <Link key={cuid()}>{processNodes(node.children, transform)}</Link>;
+  }
+
   if (node.type === 'tag' && node.name === 'ul') {
-    return <List>{processNodes(node.children, transform)}</List>;
+    return <List key={cuid()}>{processNodes(node.children, transform)}</List>;
   }
 
   if (node.type === 'tag' && node.name === 'li') {
-    return <List.Item>{processNodes(node.children, transform)}</List.Item>;
+    return (
+      <List.Item key={cuid()}>
+        {processNodes(node.children, transform)}
+      </List.Item>
+    );
   }
 
   if (node.type == 'tag' && node.attribs.class != null) {
@@ -114,10 +124,19 @@ class Article extends React.PureComponent<ComposedProps, State> {
   render() {
     const {title, date, html} = this.props;
     const markup = ReactHtmlParser(html, options);
+    const readTime = `${Math.round(
+      striptags(html).trim().length / 1200,
+    )} min read`;
 
     const titleMarkup = title ? (
       <div className={styles.ArticleTitle}>
         <Text tag="h1">{title}</Text>
+        <Text className={styles.Author} size="small" italic>
+          {`${readTime} · Leroy Wan`}
+        </Text>
+        <Text className={styles.Time} size="subscript" italic>
+          {`${moment.utc(date).format('LL')}`}
+        </Text>
       </div>
     ) : (
       ''

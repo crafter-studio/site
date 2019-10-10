@@ -12,6 +12,15 @@ $max-article-width: 640px;
   }
 }
 
+.Author,
+.Time {
+  margin: 0 !important;
+}
+
+.Time {
+  color: rgba($color-text, $semi-opaque);
+}
+
 .Article {
   overflow-x: hidden;
   display: grid;
