@@ -15,11 +15,7 @@ const options = {
 
 function transform(node) {
   if (node.type === 'tag' && node.name === 'p') {
-    return (
-      <Text hyphenated key={cuid()}>
-        {processNodes(node.children, transform)}
-      </Text>
-    );
+    return <Text key={cuid()}>{processNodes(node.children, transform)}</Text>;
   }
 
   if (node.type === 'tag' && node.name === 'h1') {
