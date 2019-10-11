@@ -338,6 +338,14 @@ h6 {
   font-size: $font-size-h6;
 }
 
+code {
+  color: $color-code;
+  font-size: $font-size-small;
+  padding-left: $spacing-tight;
+  padding-right: $spacing-tight;
+  background-color: darken($color-bg, 5);
+}
+
 img {
   width: 100%;
   height: 100%;
