@@ -93,7 +93,7 @@ export default () => (
   <StaticQuery
     query={graphql`
       query {
-        allWordpressPost(limit: 5) {
+        allWordpressPost(limit: 5, sort: {fields: [date], order: DESC}) {
           edges {
             node {
               title

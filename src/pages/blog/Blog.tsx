@@ -111,7 +111,10 @@ export default () => (
   <StaticQuery
     query={graphql`
       query {
-        recentPosts: allWordpressPost(limit: 10) {
+        recentPosts: allWordpressPost(
+          limit: 10
+          sort: {fields: [date], order: DESC}
+        ) {
           edges {
             node {
               id
