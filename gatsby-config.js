@@ -3,7 +3,7 @@ module.exports = {
     title: `Crafter Studio`,
     description: `Crafter Studio is a web development and design agency creating product-focused microsites and Shopify stores.`,
     author: `@leroywan`,
-    baseUrl: 'https://crafterstu.com',
+    siteUrl: 'https://crafterstu.com',
   },
   pathPrefix: `/`,
   plugins: [
@@ -49,6 +49,19 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: 'UA-149287059-1',
+      },
+    },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        exclude: [
+          '/about/*',
+          '/home/*',
+          '/contact/*',
+          '/referral/*',
+          '/work/Work',
+          '/blog/Blog',
+        ],
       },
     },
     {

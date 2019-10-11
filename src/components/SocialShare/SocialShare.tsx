@@ -27,14 +27,13 @@ export default ({relativeUrl}: Props) => (
       {
         site {
           siteMetadata {
-            baseUrl
+            siteUrl
           }
         }
       }
     `}
     render={(data) => {
-      const socialUrl = `${data.site.siteMetadata.baseUrl}${relativeUrl}`;
-      console.log(socialUrl);
+      const socialUrl = `${data.site.siteMetadata.siteUrl}${relativeUrl}`;
       const buttonSize = 42;
       return (
         <div
