@@ -40,6 +40,31 @@ $max-article-width: 640px;
     }
   }
 
+  hr {
+    border: none;
+    width: 100%;
+    margin-top: $spacing;
+    margin-bottom: $spacing * 2;
+
+    &:after {
+      content: '...';
+      font-size: 50px;
+      color: $color-black;
+      display: block;
+      text-align: center;
+      letter-spacing: 6px;
+    }
+
+    & + h1,
+    & + h2,
+    & + h3,
+    & + h4,
+    & + h5,
+    & + h6 {
+      margin-top: 0;
+    }
+  }
+
   blockquote {
     text-align: center;
     p {

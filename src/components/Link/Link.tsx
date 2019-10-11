@@ -50,7 +50,9 @@ class Link extends React.PureComponent<Props & ReduxState> {
     );
 
     const tagMarkup = aTag ? (
-      <a href={to}>{children}</a>
+      <a href={to} target="_blank">
+        {children}
+      </a>
     ) : (
       <GatsbyLink to={to}>{children}</GatsbyLink>
     );
