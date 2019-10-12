@@ -156,8 +156,8 @@ class Home extends React.PureComponent<ComposedProps, State> {
 
     return (
       <Page title="Web Design and Development">
-        <Page.Background blob />
         <Page.Layout>
+        <Page.Background blob />
           {/* ================================================================================================================= */}
           {/* HERO SECTION */}
           {/* ================================================================================================================= */}
