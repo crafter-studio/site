@@ -14,6 +14,7 @@
 }
 
 .Content {
+  position: relative;
   overflow: auto;
   opacity: 1;
   animation: fadeInFull $animation-duration-long ease-in-out forwards;
