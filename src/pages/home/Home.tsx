@@ -157,7 +157,7 @@ class Home extends React.PureComponent<ComposedProps, State> {
     return (
       <Page title="Web Design and Development">
         <Page.Layout>
-        <Page.Background blob />
+          <Page.Background blob />
           {/* ================================================================================================================= */}
           {/* HERO SECTION */}
           {/* ================================================================================================================= */}
@@ -316,6 +316,7 @@ class Home extends React.PureComponent<ComposedProps, State> {
                           />
                         </Link>
                         <Link
+                          unstyled
                           to="/work/santas-postal-service"
                           className={styles.B}
                         >
@@ -336,7 +337,7 @@ class Home extends React.PureComponent<ComposedProps, State> {
                             className={styles.GatsbyImage}
                           />
                         </Link>
-                        <Link to="/work" className={styles.C}>
+                        <Link unstyled to="/work" className={styles.C}>
                           <div className={styles.ImageOverlay}>
                             <div>
                               <Text tag="h5" size="small" uppercase>
@@ -354,7 +355,11 @@ class Home extends React.PureComponent<ComposedProps, State> {
                             className={styles.GatsbyImage}
                           />
                         </Link>
-                        <Link to="/work/dyson-supersonic" className={styles.D}>
+                        <Link
+                          unstyled
+                          to="/work/dyson-supersonic"
+                          className={styles.D}
+                        >
                           <div className={styles.ImageOverlay}>
                             <div>
                               <div className={styles.WorkTitle}>
