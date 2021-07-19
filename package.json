@@ -21,7 +21,7 @@
     "gatsby-plugin-sitemap": "^2.2.17",
     "gatsby-plugin-typescript": "^2.0.13",
     "gatsby-source-filesystem": "^2.0.32",
-    "gatsby-source-wordpress": "^3.0.61",
+    "gatsby-source-wordpress": "^4.0.8",
     "gatsby-transformer-sharp": "^2.1.18",
     "moment": "^2.24.0",
     "node-sass": "^4.11.0",
